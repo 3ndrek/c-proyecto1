@@ -70,6 +70,12 @@
     <Compile Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.designer.cs">
       <DependentUpon>EliminarCubierta.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\InicioSesion\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\InicioSesion\Inicio.designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Viaje\GenerarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.resx">
       <DependentUpon>EliminarCubierta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\InicioSesion\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Viaje\GenerarViaje.resx">
       <DependentUpon>GenerarViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +184,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -191,9 +201,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\" />
-    <Folder Include="Recursos\" />
     <Folder Include="Repositorios\" />
     <Folder Include="Servicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
