@@ -1,6 +1,6 @@
 ﻿namespace PAV1
 {
-    partial class Inicio
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.lblUSR = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.TxtContrasenia = new System.Windows.Forms.TextBox();
+            this.BtnIngresar = new System.Windows.Forms.Button();
+            this.BtnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -43,10 +43,9 @@
             this.lblUSR.BackColor = System.Drawing.Color.Transparent;
             this.lblUSR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUSR.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUSR.Location = new System.Drawing.Point(25, 50);
-            this.lblUSR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUSR.Location = new System.Drawing.Point(33, 62);
             this.lblUSR.Name = "lblUSR";
-            this.lblUSR.Size = new System.Drawing.Size(50, 13);
+            this.lblUSR.Size = new System.Drawing.Size(61, 16);
             this.lblUSR.TabIndex = 0;
             this.lblUSR.Text = "Usuario";
             this.lblUSR.Click += new System.EventHandler(this.label1_Click);
@@ -57,49 +56,48 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(25, 88);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(33, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña";
             // 
-            // textBox1
+            // TxtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 50);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 2;
+            this.TxtUsuario.Location = new System.Drawing.Point(127, 62);
+            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(209, 22);
+            this.TxtUsuario.TabIndex = 2;
             // 
-            // textBox2
+            // TxtContrasenia
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 88);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
-            this.textBox2.TabIndex = 3;
+            this.TxtContrasenia.Location = new System.Drawing.Point(127, 108);
+            this.TxtContrasenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtContrasenia.Name = "TxtContrasenia";
+            this.TxtContrasenia.Size = new System.Drawing.Size(209, 22);
+            this.TxtContrasenia.TabIndex = 3;
             // 
-            // button1
+            // BtnIngresar
             // 
-            this.button1.Location = new System.Drawing.Point(225, 212);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnIngresar.Location = new System.Drawing.Point(300, 261);
+            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnIngresar.Name = "BtnIngresar";
+            this.BtnIngresar.Size = new System.Drawing.Size(81, 32);
+            this.BtnIngresar.TabIndex = 4;
+            this.BtnIngresar.Text = "Ingresar";
+            this.BtnIngresar.UseVisualStyleBackColor = true;
+            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
-            // button2
+            // BtnSalir
             // 
-            this.button2.Location = new System.Drawing.Point(300, 212);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSalir.Location = new System.Drawing.Point(400, 261);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnSalir.Name = "BtnSalir";
+            this.BtnSalir.Size = new System.Drawing.Size(79, 32);
+            this.BtnSalir.TabIndex = 5;
+            this.BtnSalir.Text = "Salir";
+            this.BtnSalir.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -107,30 +105,29 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(9, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 17);
+            this.label1.Size = new System.Drawing.Size(479, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Bienvenido al sistema de gestion de navios de Sea-Star";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // Inicio
+            // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav_TP.Properties.Resources.f_elconfidencial_com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(434, 256);
+            this.ClientSize = new System.Drawing.Size(517, 324);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.BtnSalir);
+            this.Controls.Add(this.BtnIngresar);
+            this.Controls.Add(this.TxtContrasenia);
+            this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUSR);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Inicio";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "FrmLogin";
             this.Text = "Iniciar Sesion";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -142,10 +139,10 @@
 
         private System.Windows.Forms.Label lblUSR;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox TxtUsuario;
+        private System.Windows.Forms.TextBox TxtContrasenia;
+        private System.Windows.Forms.Button BtnIngresar;
+        private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.Label label1;
     }
 }

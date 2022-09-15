@@ -27,14 +27,14 @@ namespace Pav_TP.Servicios
             return true;
         }
 
-        public List<Usuario> GetUsuarios()
+        /*public List<Usuario> GetUsuarios()
         {
             return usuariosRepositorio.GetUsuarios();
         }
-
-        public List<Usuario> GetUsuarios(Usuario filtros, bool soloActivo)
+        */
+        /*public List<Usuario> GetUsuarios(Usuario filtros, bool soloActivo)
         {
             return usuariosRepositorio.GetUsuarios(filtros, soloActivo);
-        }
+        }*/
     }
 }

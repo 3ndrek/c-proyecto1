@@ -10,9 +10,12 @@ namespace Pav_TP.Repositorios
 {
     public class UsuariosRepositorio
     {
+        //Hay que ver si hace falta el perfil... Y como usarlo en el login
+        //Si no sirve hay que redefininr la consulta
         public Usuario LoginBD(Usuario usuario)
         {
-            var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil where activo='S' and usuario='{usuario.NombreUsuario}' and password='{usuario.Contrasenia}'";
+            //var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil where activo='S' and usuario='{usuario.NombreUsuario}' and password='{usuario.Contrasenia}'";
+            var sql = $"SELECT u.* FROM Usuarios u where activo='S' and usuario='{{usuario.NombreUsuario}}' and password='{{usuario.Contrasenia}}'";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             Usuario usuarioLoguado = null;
             if (tablaResultado.Rows.Count == 1)
@@ -34,8 +37,8 @@ namespace Pav_TP.Repositorios
 
             return usuarioLoguado;
         }
-
-        public List<Usuario> GetUsuarios()
+        //Este metodo hay que ver si es util porque muestra una lista de usuarios...
+        /*public List<Usuario> GetUsuarios()
         {
             var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
@@ -62,7 +65,10 @@ namespace Pav_TP.Repositorios
 
             return usuarios;
         }
+        */
 
+        //Este tambien hay que ver si sirve (Sobrecarga de "GetUsuarios()")
+        /*
         public List<Usuario> GetUsuarios(Usuario filtro, bool soloActivos)
         {
             var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil WHERE 1=1";
@@ -102,6 +108,6 @@ namespace Pav_TP.Repositorios
 
             return usuarios;
         }
-
+        */
     }
 }
