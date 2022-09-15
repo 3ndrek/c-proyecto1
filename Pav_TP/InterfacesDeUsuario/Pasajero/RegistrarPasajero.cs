@@ -23,7 +23,7 @@ namespace TrabajoPracticoPav
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3k2_2022_12;Password=PAV_3k2_2022_12";
+            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
             myconn = new SqlConnection
             {
                 ConnectionString = conbas
@@ -37,7 +37,7 @@ namespace TrabajoPracticoPav
             datotipo.Load(myconn2.ExecuteReader());
             comboBoxDni.DataSource = datotipo;
             comboBoxDni.DisplayMember = "desc";
-            comboBoxDni.ValueMember = "tipo_doc";
+            comboBoxDni.ValueMember = "tipo";
 
             SqlCommand myconn3 = new SqlCommand();
             myconn3.CommandType = CommandType.Text;
@@ -47,7 +47,7 @@ namespace TrabajoPracticoPav
             datociudad.Load(myconn2.ExecuteReader());
             comboBoxCiudad.DataSource = datociudad;
             comboBoxCiudad.DisplayMember = "nombre";
-            comboBoxCiudad.ValueMember = "ciudad_procedente";
+            comboBoxCiudad.ValueMember = "cod_ciudad";
 
             SqlCommand myconn4 = new SqlCommand();
             myconn4.CommandType = CommandType.Text;
@@ -57,7 +57,7 @@ namespace TrabajoPracticoPav
             datopais.Load(myconn2.ExecuteReader());
             comboBoxDni.DataSource = datopais;
             comboBoxDni.DisplayMember = "nombre";
-            comboBoxDni.ValueMember = "pais_procedente";
+            comboBoxDni.ValueMember = "cod_pais";
 
             SqlCommand myconn5 = new SqlCommand();
             myconn5.CommandType = CommandType.Text;
@@ -67,7 +67,7 @@ namespace TrabajoPracticoPav
             datogenero.Load(myconn2.ExecuteReader());
             comboBoxDni.DataSource = datogenero;
             comboBoxDni.DisplayMember = "desc";
-            comboBoxDni.ValueMember = "genero";
+            comboBoxDni.ValueMember = "tipo";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
