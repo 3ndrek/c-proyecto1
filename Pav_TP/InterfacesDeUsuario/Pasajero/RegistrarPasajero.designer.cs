@@ -29,160 +29,40 @@ namespace TrabajoPracticoPav
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.nombre = new System.Windows.Forms.Label();
-            this.dni = new System.Windows.Forms.Label();
-            this.tipoDni = new System.Windows.Forms.Label();
-            this.ciudad_procedente = new System.Windows.Forms.Label();
-            this.pais_procedente = new System.Windows.Forms.Label();
-            this.textNom = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.fecha = new System.Windows.Forms.Label();
-            this.apellido = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPasajero));
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.genero = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.TxtApe = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtNom = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBoxDni = new System.Windows.Forms.ComboBox();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtDni = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cod = new System.Windows.Forms.Label();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 0;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSize = true;
-            this.nombre.Location = new System.Drawing.Point(27, 32);
-            this.nombre.Name = "nombre";
-            this.nombre.Size = new System.Drawing.Size(44, 13);
-            this.nombre.TabIndex = 1;
-            this.nombre.Text = "Nombre";
-            this.nombre.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // dni
-            // 
-            this.dni.AutoSize = true;
-            this.dni.Location = new System.Drawing.Point(226, 72);
-            this.dni.Name = "dni";
-            this.dni.Size = new System.Drawing.Size(26, 13);
-            this.dni.TabIndex = 2;
-            this.dni.Text = "DNI";
-            this.dni.Click += new System.EventHandler(this.label2_Click_1);
-            // 
-            // tipoDni
-            // 
-            this.tipoDni.AutoSize = true;
-            this.tipoDni.Location = new System.Drawing.Point(27, 67);
-            this.tipoDni.Name = "tipoDni";
-            this.tipoDni.Size = new System.Drawing.Size(50, 13);
-            this.tipoDni.TabIndex = 3;
-            this.tipoDni.Text = "Tipo DNI";
-            // 
-            // ciudad_procedente
-            // 
-            this.ciudad_procedente.AutoSize = true;
-            this.ciudad_procedente.Location = new System.Drawing.Point(27, 181);
-            this.ciudad_procedente.Name = "ciudad_procedente";
-            this.ciudad_procedente.Size = new System.Drawing.Size(89, 13);
-            this.ciudad_procedente.TabIndex = 4;
-            this.ciudad_procedente.Text = "Ciudad de Origen";
-            // 
-            // pais_procedente
-            // 
-            this.pais_procedente.AutoSize = true;
-            this.pais_procedente.Location = new System.Drawing.Point(27, 146);
-            this.pais_procedente.Name = "pais_procedente";
-            this.pais_procedente.Size = new System.Drawing.Size(78, 13);
-            this.pais_procedente.TabIndex = 5;
-            this.pais_procedente.Text = "País de Origen";
-            // 
-            // textNom
-            // 
-            this.textNom.Location = new System.Drawing.Point(83, 29);
-            this.textNom.Name = "textNom";
-            this.textNom.Size = new System.Drawing.Size(121, 20);
-            this.textNom.TabIndex = 6;
-            this.textNom.TextChanged += new System.EventHandler(this.textNom_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(290, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(290, 64);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 10;
-            // 
-            // fecha
-            // 
-            this.fecha.AutoSize = true;
-            this.fecha.Location = new System.Drawing.Point(27, 217);
-            this.fecha.Name = "fecha";
-            this.fecha.Size = new System.Drawing.Size(108, 13);
-            this.fecha.TabIndex = 11;
-            this.fecha.Text = "Fecha de Nacimiento";
-            // 
-            // apellido
-            // 
-            this.apellido.AutoSize = true;
-            this.apellido.Location = new System.Drawing.Point(226, 29);
-            this.apellido.Name = "apellido";
-            this.apellido.Size = new System.Drawing.Size(44, 13);
-            this.apellido.TabIndex = 12;
-            this.apellido.Text = "Apellido";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(141, 143);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 15;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(141, 180);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 16;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 217);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 17;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(181, 324);
+            this.btnGuardar.Location = new System.Drawing.Point(214, 374);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 18;
@@ -190,119 +70,286 @@ namespace TrabajoPracticoPav
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Location = new System.Drawing.Point(323, 324);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Location = new System.Drawing.Point(316, 374);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // groupBox1
+            // button1
             // 
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.genero);
-            this.groupBox1.Controls.Add(this.email);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.nombre);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.dni);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.tipoDni);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.ciudad_procedente);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.pais_procedente);
-            this.groupBox1.Controls.Add(this.apellido);
-            this.groupBox1.Controls.Add(this.textNom);
-            this.groupBox1.Controls.Add(this.fecha);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Location = new System.Drawing.Point(33, 41);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 261);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información Pasajero";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.button1.Location = new System.Drawing.Point(363, 685);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // button2
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(290, 101);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 21;
+            this.button2.Location = new System.Drawing.Point(214, 685);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // groupBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(83, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 20;
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.comboBoxCiudad);
+            this.groupBox2.Controls.Add(this.btnedit);
+            this.groupBox2.Controls.Add(this.cod);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.TxtDni);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.comboBoxGenero);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.comboBoxPais);
+            this.groupBox2.Controls.Add(this.comboBoxDni);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.TxtNom);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.TxtApe);
+            this.groupBox2.Controls.Add(this.TxtEmail);
+            this.groupBox2.Location = new System.Drawing.Point(27, 42);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(534, 304);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informacion Pasajeros";
             // 
-            // genero
+            // TxtEmail
             // 
-            this.genero.AutoSize = true;
-            this.genero.Location = new System.Drawing.Point(226, 107);
-            this.genero.Name = "genero";
-            this.genero.Size = new System.Drawing.Size(42, 13);
-            this.genero.TabIndex = 19;
-            this.genero.Text = "Genero";
+            this.TxtEmail.Location = new System.Drawing.Point(141, 177);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(121, 20);
+            this.TxtEmail.TabIndex = 30;
             // 
-            // email
+            // TxtApe
             // 
-            this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(27, 104);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(32, 13);
-            this.email.TabIndex = 18;
-            this.email.Text = "Email";
+            this.TxtApe.Location = new System.Drawing.Point(141, 76);
+            this.TxtApe.Name = "TxtApe";
+            this.TxtApe.Size = new System.Drawing.Size(121, 20);
+            this.TxtApe.TabIndex = 29;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Fecha de Nacimiento";
+            // 
+            // TxtNom
+            // 
+            this.TxtNom.Location = new System.Drawing.Point(141, 40);
+            this.TxtNom.Name = "TxtNom";
+            this.TxtNom.Size = new System.Drawing.Size(121, 20);
+            this.TxtNom.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Apellido";
+            // 
+            // comboBoxDni
+            // 
+            this.comboBoxDni.FormattingEnabled = true;
+            this.comboBoxDni.Location = new System.Drawing.Point(141, 112);
+            this.comboBoxDni.Name = "comboBoxDni";
+            this.comboBoxDni.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDni.TabIndex = 33;
+            // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Location = new System.Drawing.Point(391, 180);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPais.TabIndex = 34;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Tipo DNI";
+            // 
+            // comboBoxGenero
+            // 
+            this.comboBoxGenero.FormattingEnabled = true;
+            this.comboBoxGenero.Location = new System.Drawing.Point(141, 210);
+            this.comboBoxGenero.Name = "comboBoxGenero";
+            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGenero.TabIndex = 35;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "DNI";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(141, 246);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker2.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Nombre";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Email";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 210);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Genero";
+            // 
+            // TxtDni
+            // 
+            this.TxtDni.Location = new System.Drawing.Point(141, 145);
+            this.TxtDni.Name = "TxtDni";
+            this.TxtDni.Size = new System.Drawing.Size(121, 20);
+            this.TxtDni.TabIndex = 39;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(346, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 98);
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cod
+            // 
+            this.cod.AutoSize = true;
+            this.cod.Location = new System.Drawing.Point(277, 180);
+            this.cod.Name = "cod";
+            this.cod.Size = new System.Drawing.Size(76, 13);
+            this.cod.TabIndex = 42;
+            this.cod.Text = "País de origen";
+            // 
+            // btnedit
+            // 
+            this.btnedit.Location = new System.Drawing.Point(361, 143);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(75, 23);
+            this.btnedit.TabIndex = 43;
+            this.btnedit.Text = "Editar";
+            this.btnedit.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(277, 211);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 45;
+            this.label1.Text = "Ciudad de origen\r\n";
+            // 
+            // comboBoxCiudad
+            // 
+            this.comboBoxCiudad.FormattingEnabled = true;
+            this.comboBoxCiudad.Location = new System.Drawing.Point(391, 211);
+            this.comboBoxCiudad.Name = "comboBoxCiudad";
+            this.comboBoxCiudad.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCiudad.TabIndex = 44;
             // 
             // RegistrarPasajero
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(620, 400);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(620, 464);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGuardar);
             this.Name = "RegistrarPasajero";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.Text = "RegistrarPasajero";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label nombre;
-        private System.Windows.Forms.Label dni;
-        private System.Windows.Forms.Label tipoDni;
-        private System.Windows.Forms.Label ciudad_procedente;
-        private System.Windows.Forms.Label pais_procedente;
-        private System.Windows.Forms.TextBox textNom;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label fecha;
-        private System.Windows.Forms.Label apellido;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label genero;
-        private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnedit;
+        private System.Windows.Forms.Label cod;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox TxtDni;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxGenero;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxPais;
+        private System.Windows.Forms.ComboBox comboBoxDni;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox TxtNom;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TxtApe;
+        private System.Windows.Forms.TextBox TxtEmail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxCiudad;
     }
 }
 
