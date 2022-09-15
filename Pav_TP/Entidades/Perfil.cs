@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Pav_TP.Entidades
+{
+    public class Perfil
+    {   
+        public long Id { get; set; }
+        public string Nombre { get; set; }
+    }
+}

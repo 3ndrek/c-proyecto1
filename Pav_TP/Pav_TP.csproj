@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="InterfacesDeUsuario\Cubierta\RegistrarCubierta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\DBHelper.cs" />
+    <Compile Include="Repositorios\UsuariosRepositorio.cs" />
+    <Compile Include="Servicios\UsuariosServicio.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\RegistrarCubierta.resx">
       <DependentUpon>RegistrarCubierta.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,11 +204,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Repositorios\" />
-    <Folder Include="Servicios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
   </ItemGroup>
