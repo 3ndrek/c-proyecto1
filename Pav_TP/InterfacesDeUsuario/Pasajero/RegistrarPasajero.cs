@@ -78,8 +78,8 @@ namespace TrabajoPracticoPav
             SqlCommand registrar = new SqlCommand();
             registrar.CommandType = CommandType.Text;
             registrar.Connection = myconn;
-            registrar.CommandText = "$ INSERT INTO pasajeros (tipo_doc,nro_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero,foto)" +
-                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text + "','" + TxtNom.Text + "','" + TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "'," + Convert.ToDateTime(dateTimePicker2.Value.Date.ToString("dd-MM-yyyy")) + "," + comboBoxGenero.SelectedValue.ToString() +","+ mensaje.GetBuffer() + ")";
+            registrar.CommandText = "INSERT INTO pasajeros (tipo_doc,num_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero)" +
+                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text +"','" + TxtNom.Text + "','" +TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "','" + dateTimePicker2.Text + "'," + comboBoxGenero.SelectedValue.ToString() + ")";
             registrar.ExecuteNonQuery();
             TxtDni.Text = "";
             TxtNom.Text = "";

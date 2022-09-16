@@ -229,9 +229,9 @@ namespace TrabajoPracticoPav
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(27, 145);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 24;
-            this.label6.Text = "DNI";
+            this.label6.Text = "Documento";
             // 
             // comboBoxGenero
             // 
@@ -246,9 +246,9 @@ namespace TrabajoPracticoPav
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(27, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 25;
-            this.label7.Text = "Tipo DNI";
+            this.label7.Text = "Tipo Doc";
             // 
             // comboBoxPais
             // 
