@@ -65,8 +65,8 @@ namespace TrabajoPracticoPav
             SqlCommand registrar = new SqlCommand();
             registrar.CommandType = CommandType.Text;
             registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO tripulantes (legajo,jefe,nombre,apellido,email,fechaNac,usuario,puesto)" +
-                "VALUES (" + 44 + "," + comboBoxJefe.SelectedValue.ToString() + ",'" + TxtNom.Text + "','" + TxtApe.Text + "','" + TxtEmail.Text + "','"+ Convert.ToDateTime(dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")) + "'," + comboBoxUsuario.SelectedValue.ToString() + "," + cmbCod.SelectedValue.ToString() + ")";
+            registrar.CommandText = "INSERT INTO tripulantes (jefe,nombre,apellido,email,fechaNac,usuario,puesto)" +
+                "VALUES (" + comboBoxJefe.SelectedValue.ToString() + ",'" + TxtNom.Text + "','" + TxtApe.Text + "','" + TxtEmail.Text + "','"+ Convert.ToDateTime(dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")) + "','" + comboBoxUsuario.SelectedValue.ToString() + "'," + cmbCod.SelectedValue.ToString() + ")";
             registrar.ExecuteNonQuery();
             TxtNom.Text = "";
             TxtApe.Text = "";

@@ -30,41 +30,30 @@ namespace TrabajoPracticoPav
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridEmial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridCiudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.GrillaTripulante = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtLegajo = new System.Windows.Forms.TextBox();
             this.genero = new System.Windows.Forms.Label();
             this.dni = new System.Windows.Forms.Label();
             this.apellido = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaTripulante)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.GrillaTripulante);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TxtLegajo);
             this.groupBox1.Controls.Add(this.genero);
             this.groupBox1.Controls.Add(this.dni);
             this.groupBox1.Controls.Add(this.apellido);
@@ -75,74 +64,23 @@ namespace TrabajoPracticoPav
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Tripulante";
             // 
-            // dataGridView1
+            // comboBox1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar,
-            this.Nombre,
-            this.Apellidos,
-            this.gridGenero,
-            this.gridEmial,
-            this.gridFecha,
-            this.gridTipo,
-            this.gridDni,
-            this.gridCiudad,
-            this.gridPais});
-            this.dataGridView1.Location = new System.Drawing.Point(44, 167);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(414, 150);
-            this.dataGridView1.TabIndex = 30;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(89, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 31;
             // 
-            // Seleccionar
+            // GrillaTripulante
             // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellido";
-            this.Apellidos.Name = "Apellidos";
-            // 
-            // gridGenero
-            // 
-            this.gridGenero.HeaderText = "Genero";
-            this.gridGenero.Name = "gridGenero";
-            // 
-            // gridEmial
-            // 
-            this.gridEmial.HeaderText = "Email";
-            this.gridEmial.Name = "gridEmial";
-            // 
-            // gridFecha
-            // 
-            this.gridFecha.HeaderText = "Fecha";
-            this.gridFecha.Name = "gridFecha";
-            // 
-            // gridTipo
-            // 
-            this.gridTipo.HeaderText = "Tipo DNI";
-            this.gridTipo.Name = "gridTipo";
-            // 
-            // gridDni
-            // 
-            this.gridDni.HeaderText = "DNI";
-            this.gridDni.Name = "gridDni";
-            // 
-            // gridCiudad
-            // 
-            this.gridCiudad.HeaderText = "Ciudad Origen";
-            this.gridCiudad.Name = "gridCiudad";
-            // 
-            // gridPais
-            // 
-            this.gridPais.HeaderText = "País";
-            this.gridPais.Name = "gridPais";
+            this.GrillaTripulante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaTripulante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleccionar});
+            this.GrillaTripulante.Location = new System.Drawing.Point(44, 167);
+            this.GrillaTripulante.Name = "GrillaTripulante";
+            this.GrillaTripulante.Size = new System.Drawing.Size(414, 150);
+            this.GrillaTripulante.TabIndex = 30;
             // 
             // btnCancel
             // 
@@ -171,6 +109,7 @@ namespace TrabajoPracticoPav
             this.btnBuscar.TabIndex = 27;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
@@ -183,20 +122,12 @@ namespace TrabajoPracticoPav
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // comboBox4
+            // TxtLegajo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(89, 96);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 25;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 23;
+            this.TxtLegajo.Location = new System.Drawing.Point(89, 92);
+            this.TxtLegajo.Name = "TxtLegajo";
+            this.TxtLegajo.Size = new System.Drawing.Size(121, 20);
+            this.TxtLegajo.TabIndex = 23;
             // 
             // genero
             // 
@@ -226,13 +157,10 @@ namespace TrabajoPracticoPav
             this.apellido.TabIndex = 21;
             this.apellido.Text = "Apellido";
             // 
-            // comboBox1
+            // Seleccionar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 31;
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
             // 
             // ConsultarTripulante
             // 
@@ -242,9 +170,10 @@ namespace TrabajoPracticoPav
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultarTripulante";
             this.Text = "ConsultarTripulante";
+            this.Load += new System.EventHandler(this.ConsultarTripulante_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaTripulante)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,26 +181,16 @@ namespace TrabajoPracticoPav
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridGenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridEmial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridDni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridCiudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridPais;
+        private System.Windows.Forms.DataGridView GrillaTripulante;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtLegajo;
         private System.Windows.Forms.Label genero;
         private System.Windows.Forms.Label dni;
         private System.Windows.Forms.Label apellido;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
     }
 }

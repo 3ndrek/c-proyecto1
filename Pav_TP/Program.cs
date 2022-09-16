@@ -16,7 +16,7 @@ namespace TrabajoPracticoPav
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrarPasajero());
+            Application.Run(new ConsultarTripulante());
         }
     }
 }
