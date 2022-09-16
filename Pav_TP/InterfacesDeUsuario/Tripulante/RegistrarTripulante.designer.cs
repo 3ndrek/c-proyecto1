@@ -33,28 +33,26 @@ namespace TrabajoPracticoPav
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cod = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.genero = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dni = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.tipoDni = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxJefe = new System.Windows.Forms.ComboBox();
+            this.cmbCod = new System.Windows.Forms.ComboBox();
             this.apellido = new System.Windows.Forms.Label();
-            this.textNom = new System.Windows.Forms.TextBox();
+            this.TxtNom = new System.Windows.Forms.TextBox();
             this.fecha = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtApe = new System.Windows.Forms.TextBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(332, 339);
+            this.btnCancel.Location = new System.Drawing.Point(323, 269);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 22;
@@ -64,7 +62,7 @@ namespace TrabajoPracticoPav
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(203, 339);
+            this.btnGuardar.Location = new System.Drawing.Point(203, 269);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 21;
@@ -74,26 +72,24 @@ namespace TrabajoPracticoPav
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxUsuario);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cod);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.genero);
             this.groupBox1.Controls.Add(this.email);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.nombre);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.dni);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.tipoDni);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxJefe);
+            this.groupBox1.Controls.Add(this.cmbCod);
             this.groupBox1.Controls.Add(this.apellido);
-            this.groupBox1.Controls.Add(this.textNom);
+            this.groupBox1.Controls.Add(this.TxtNom);
             this.groupBox1.Controls.Add(this.fecha);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.TxtApe);
+            this.groupBox1.Controls.Add(this.TxtEmail);
             this.groupBox1.Location = new System.Drawing.Point(43, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 279);
+            this.groupBox1.Size = new System.Drawing.Size(534, 206);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion Tripulantes";
@@ -102,32 +98,25 @@ namespace TrabajoPracticoPav
             // cod
             // 
             this.cod.AutoSize = true;
-            this.cod.Location = new System.Drawing.Point(9, 194);
+            this.cod.Location = new System.Drawing.Point(277, 45);
             this.cod.Name = "cod";
-            this.cod.Size = new System.Drawing.Size(90, 13);
+            this.cod.Size = new System.Drawing.Size(40, 13);
             this.cod.TabIndex = 42;
-            this.cod.Text = "Código de puesto";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(123, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 39;
+            this.cod.Text = "Puesto";
             // 
             // genero
             // 
             this.genero.AutoSize = true;
-            this.genero.Location = new System.Drawing.Point(285, 75);
+            this.genero.Location = new System.Drawing.Point(277, 69);
             this.genero.Name = "genero";
-            this.genero.Size = new System.Drawing.Size(42, 13);
+            this.genero.Size = new System.Drawing.Size(27, 13);
             this.genero.TabIndex = 38;
-            this.genero.Text = "Genero";
+            this.genero.Text = "Jefe";
             // 
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(285, 45);
+            this.email.Location = new System.Drawing.Point(9, 104);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(32, 13);
             this.email.TabIndex = 37;
@@ -152,102 +141,94 @@ namespace TrabajoPracticoPav
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(399, 111);
+            this.dateTimePicker1.Location = new System.Drawing.Point(123, 130);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker1.TabIndex = 36;
             // 
-            // dni
+            // comboBoxJefe
             // 
-            this.dni.AutoSize = true;
-            this.dni.Location = new System.Drawing.Point(9, 153);
-            this.dni.Name = "dni";
-            this.dni.Size = new System.Drawing.Size(62, 13);
-            this.dni.TabIndex = 24;
-            this.dni.Text = "Documento";
+            this.comboBoxJefe.FormattingEnabled = true;
+            this.comboBoxJefe.Location = new System.Drawing.Point(391, 64);
+            this.comboBoxJefe.Name = "comboBoxJefe";
+            this.comboBoxJefe.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxJefe.TabIndex = 35;
             // 
-            // comboBox3
+            // cmbCod
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(399, 75);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 35;
-            // 
-            // tipoDni
-            // 
-            this.tipoDni.AutoSize = true;
-            this.tipoDni.Location = new System.Drawing.Point(9, 120);
-            this.tipoDni.Name = "tipoDni";
-            this.tipoDni.Size = new System.Drawing.Size(54, 13);
-            this.tipoDni.TabIndex = 25;
-            this.tipoDni.Text = "Tipo DOC";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(123, 186);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 34;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 33;
+            this.cmbCod.FormattingEnabled = true;
+            this.cmbCod.Location = new System.Drawing.Point(391, 37);
+            this.cmbCod.Name = "cmbCod";
+            this.cmbCod.Size = new System.Drawing.Size(121, 21);
+            this.cmbCod.TabIndex = 34;
             // 
             // apellido
             // 
             this.apellido.AutoSize = true;
-            this.apellido.Location = new System.Drawing.Point(9, 84);
+            this.apellido.Location = new System.Drawing.Point(9, 78);
             this.apellido.Name = "apellido";
             this.apellido.Size = new System.Drawing.Size(44, 13);
             this.apellido.TabIndex = 32;
             this.apellido.Text = "Apellido";
             // 
-            // textNom
+            // TxtNom
             // 
-            this.textNom.Location = new System.Drawing.Point(123, 45);
-            this.textNom.Name = "textNom";
-            this.textNom.Size = new System.Drawing.Size(121, 20);
-            this.textNom.TabIndex = 28;
+            this.TxtNom.Location = new System.Drawing.Point(123, 45);
+            this.TxtNom.Name = "TxtNom";
+            this.TxtNom.Size = new System.Drawing.Size(121, 20);
+            this.TxtNom.TabIndex = 28;
             // 
             // fecha
             // 
             this.fecha.AutoSize = true;
-            this.fecha.Location = new System.Drawing.Point(285, 117);
+            this.fecha.Location = new System.Drawing.Point(9, 136);
             this.fecha.Name = "fecha";
             this.fecha.Size = new System.Drawing.Size(108, 13);
             this.fecha.TabIndex = 31;
             this.fecha.Text = "Fecha de Nacimiento";
             // 
-            // textBox1
+            // TxtApe
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 29;
+            this.TxtApe.Location = new System.Drawing.Point(123, 75);
+            this.TxtApe.Name = "TxtApe";
+            this.TxtApe.Size = new System.Drawing.Size(121, 20);
+            this.TxtApe.TabIndex = 29;
             // 
-            // textBox4
+            // TxtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(399, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 30;
+            this.TxtEmail.Location = new System.Drawing.Point(123, 101);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(121, 20);
+            this.TxtEmail.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(277, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Usuario";
+            // 
+            // comboBoxUsuario
+            // 
+            this.comboBoxUsuario.FormattingEnabled = true;
+            this.comboBoxUsuario.Location = new System.Drawing.Point(391, 91);
+            this.comboBoxUsuario.Name = "comboBoxUsuario";
+            this.comboBoxUsuario.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxUsuario.TabIndex = 44;
             // 
             // RegistrarTripulante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 423);
+            this.ClientSize = new System.Drawing.Size(620, 342);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnGuardar);
             this.Name = "RegistrarTripulante";
             this.Text = "RegistrarTripulante";
+            this.Load += new System.EventHandler(this.RegistrarTripulante_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -259,22 +240,20 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label genero;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label dni;
-        private System.Windows.Forms.Label tipoDni;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label apellido;
-        private System.Windows.Forms.TextBox textNom;
+        private System.Windows.Forms.TextBox TxtNom;
         private System.Windows.Forms.Label fecha;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtApe;
+        private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label cod;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbCod;
+        private System.Windows.Forms.ComboBox comboBoxJefe;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxUsuario;
     }
 }

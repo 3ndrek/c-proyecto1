@@ -78,7 +78,7 @@ namespace TrabajoPracticoPav
             registrar.CommandType = CommandType.Text;
             registrar.Connection = myconn;
             registrar.CommandText = "INSERT INTO pasajeros (tipo_doc,num_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero)" +
-                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text +"','" + TxtNom.Text + "','" +TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "','" + dateTimePicker2.Text + "'," + comboBoxGenero.SelectedValue.ToString() + ")";
+                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text +"','" + TxtNom.Text + "','" +TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "','" + Convert.ToDateTime(dateTimePicker2.Value.Date.ToString("yyyy-MM-dd")) + "'," + comboBoxGenero.SelectedValue.ToString() + ")";
             registrar.ExecuteNonQuery();
             TxtDni.Text = "";
             TxtNom.Text = "";
