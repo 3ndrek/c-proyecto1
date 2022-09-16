@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pav_TP
+namespace Pav_TP.InterfacesDeUsuario.Puerto
 {
-    public partial class Form1 : Form
+    public partial class ModificarPuerto : Form
     {
-        public Form1()
+        public ModificarPuerto()
         {
             InitializeComponent();
         }
