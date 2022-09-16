@@ -72,8 +72,7 @@ namespace TrabajoPracticoPav
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            System.IO.MemoryStream mensaje = new System.IO.MemoryStream();
-            picture.Image.Save(mensaje, System.Drawing.Imaging.ImageFormat.Jpeg);
+            
 
             SqlCommand registrar = new SqlCommand();
             registrar.CommandType = CommandType.Text;
@@ -88,44 +87,12 @@ namespace TrabajoPracticoPav
             TxtDni.Focus();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textNom_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnedit_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog foto = new OpenFileDialog();
-            DialogResult respuesta = foto.ShowDialog();
-            if(respuesta == DialogResult.OK)
-            {
-                picture.Image = Image.FromFile(foto.FileName);
-            }
-        }
+       
     }
 }

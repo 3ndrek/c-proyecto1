@@ -29,17 +29,14 @@ namespace TrabajoPracticoPav
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPasajero));
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
-            this.btnedit = new System.Windows.Forms.Button();
             this.cod = new System.Windows.Forms.Label();
-            this.picture = new System.Windows.Forms.PictureBox();
             this.TxtDni = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,12 +54,11 @@ namespace TrabajoPracticoPav
             this.TxtApe = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(214, 374);
+            this.btnGuardar.Location = new System.Drawing.Point(203, 339);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 18;
@@ -70,15 +66,15 @@ namespace TrabajoPracticoPav
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnClose
+            // btnCancelar
             // 
-            this.btnClose.Location = new System.Drawing.Point(316, 374);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 19;
-            this.btnClose.Text = "Salir";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(332, 339);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // button1
             // 
@@ -102,9 +98,7 @@ namespace TrabajoPracticoPav
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBoxCiudad);
-            this.groupBox2.Controls.Add(this.btnedit);
             this.groupBox2.Controls.Add(this.cod);
-            this.groupBox2.Controls.Add(this.picture);
             this.groupBox2.Controls.Add(this.TxtDni);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -121,9 +115,9 @@ namespace TrabajoPracticoPav
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.TxtApe);
             this.groupBox2.Controls.Add(this.TxtEmail);
-            this.groupBox2.Location = new System.Drawing.Point(27, 42);
+            this.groupBox2.Location = new System.Drawing.Point(43, 41);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(534, 304);
+            this.groupBox2.Size = new System.Drawing.Size(534, 279);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Pasajeros";
@@ -131,7 +125,7 @@ namespace TrabajoPracticoPav
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(277, 211);
+            this.label1.Location = new System.Drawing.Point(27, 216);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 45;
@@ -140,40 +134,19 @@ namespace TrabajoPracticoPav
             // comboBoxCiudad
             // 
             this.comboBoxCiudad.FormattingEnabled = true;
-            this.comboBoxCiudad.Location = new System.Drawing.Point(391, 211);
+            this.comboBoxCiudad.Location = new System.Drawing.Point(141, 216);
             this.comboBoxCiudad.Name = "comboBoxCiudad";
             this.comboBoxCiudad.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCiudad.TabIndex = 44;
             // 
-            // btnedit
-            // 
-            this.btnedit.Location = new System.Drawing.Point(361, 143);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 23);
-            this.btnedit.TabIndex = 43;
-            this.btnedit.Text = "Editar";
-            this.btnedit.UseVisualStyleBackColor = true;
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
             // cod
             // 
             this.cod.AutoSize = true;
-            this.cod.Location = new System.Drawing.Point(277, 180);
+            this.cod.Location = new System.Drawing.Point(27, 185);
             this.cod.Name = "cod";
             this.cod.Size = new System.Drawing.Size(76, 13);
             this.cod.TabIndex = 42;
             this.cod.Text = "País de origen";
-            // 
-            // picture
-            // 
-            this.picture.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
-            this.picture.Location = new System.Drawing.Point(346, 35);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(106, 98);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picture.TabIndex = 41;
-            this.picture.TabStop = false;
             // 
             // TxtDni
             // 
@@ -185,7 +158,7 @@ namespace TrabajoPracticoPav
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 210);
+            this.label2.Location = new System.Drawing.Point(286, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 38;
@@ -194,7 +167,7 @@ namespace TrabajoPracticoPav
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 180);
+            this.label3.Location = new System.Drawing.Point(286, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 37;
@@ -219,7 +192,7 @@ namespace TrabajoPracticoPav
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(141, 246);
+            this.dateTimePicker2.Location = new System.Drawing.Point(400, 109);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker2.TabIndex = 36;
@@ -236,7 +209,7 @@ namespace TrabajoPracticoPav
             // comboBoxGenero
             // 
             this.comboBoxGenero.FormattingEnabled = true;
-            this.comboBoxGenero.Location = new System.Drawing.Point(141, 210);
+            this.comboBoxGenero.Location = new System.Drawing.Point(400, 73);
             this.comboBoxGenero.Name = "comboBoxGenero";
             this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
             this.comboBoxGenero.TabIndex = 35;
@@ -253,7 +226,7 @@ namespace TrabajoPracticoPav
             // comboBoxPais
             // 
             this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(391, 180);
+            this.comboBoxPais.Location = new System.Drawing.Point(141, 185);
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPais.TabIndex = 34;
@@ -285,7 +258,7 @@ namespace TrabajoPracticoPav
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 246);
+            this.label9.Location = new System.Drawing.Point(286, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 13);
             this.label9.TabIndex = 31;
@@ -300,7 +273,7 @@ namespace TrabajoPracticoPav
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(141, 177);
+            this.TxtEmail.Location = new System.Drawing.Point(400, 40);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(121, 20);
             this.TxtEmail.TabIndex = 30;
@@ -308,11 +281,11 @@ namespace TrabajoPracticoPav
             // RegistrarPasajero
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(620, 464);
+            this.ClientSize = new System.Drawing.Size(620, 423);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Name = "RegistrarPasajero";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
@@ -320,20 +293,17 @@ namespace TrabajoPracticoPav
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Label cod;
-        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.TextBox TxtDni;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
