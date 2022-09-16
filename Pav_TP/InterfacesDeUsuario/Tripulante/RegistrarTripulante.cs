@@ -46,8 +46,18 @@ namespace TrabajoPracticoPav
             DataTable datousuario = new DataTable();
             datousuario.Load(myconn3.ExecuteReader());
             comboBoxUsuario.DataSource = datousuario;
-            comboBoxUsuario.DisplayMember = "perfil";
+            comboBoxUsuario.DisplayMember = "usuario";
             comboBoxUsuario.ValueMember = "usuario";
+
+            SqlCommand myconn4 = new SqlCommand();
+            myconn4.CommandType = CommandType.Text;
+            myconn4.Connection = myconn;
+            myconn4.CommandText = "SELECT * FROM tripulantes WHERE jefe is NULL";
+            DataTable datojefe = new DataTable();
+            datojefe.Load(myconn4.ExecuteReader());
+            comboBoxJefe.DataSource = datojefe;
+            comboBoxJefe.DisplayMember = "nombre";
+            comboBoxJefe.ValueMember = "legajo";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -55,16 +65,13 @@ namespace TrabajoPracticoPav
             SqlCommand registrar = new SqlCommand();
             registrar.CommandType = CommandType.Text;
             registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO pasajeros (legajo,jefe,nombre,apellido,cod_puesto,usuario,email,fechaNac)" +
-                "VALUES (" + 44 + ",'" + comboBoxJefe.Text + "','" + TxtNom.Text + "','" + TxtApe.Text + "'," + cmbCod.SelectedValue.ToString() + "," + + ",'" + TxtEmail.Text + "','" + Convert.ToDateTime(dateTimePicker2.Value.Date.ToString("yyyy-MM-dd")) + "'," + comboBoxJefe.SelectedValue.ToString() + ")";
+            registrar.CommandText = "INSERT INTO tripulantes (legajo,jefe,nombre,apellido,email,fechaNac,usuario,puesto)" +
+                "VALUES (" + 44 + "," + comboBoxJefe.SelectedValue.ToString() + ",'" + TxtNom.Text + "','" + TxtApe.Text + "','" + TxtEmail.Text + "','"+ Convert.ToDateTime(dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")) + "'," + comboBoxUsuario.SelectedValue.ToString() + "," + cmbCod.SelectedValue.ToString() + ")";
             registrar.ExecuteNonQuery();
-         
             TxtNom.Text = "";
             TxtApe.Text = "";
             TxtEmail.Text = "";
-
-
-
+            TxtNom.Focus();
 
         }
       
