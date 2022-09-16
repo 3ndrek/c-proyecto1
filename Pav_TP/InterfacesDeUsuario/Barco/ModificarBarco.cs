@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pav_TP
+namespace Pav_TP.InterfacesDeUsuario.Barco
 {
-    public partial class Form1 : Form
+    public partial class ModificarBarco : Form
     {
-        public Form1()
+        public ModificarBarco()
         {
             InitializeComponent();
         }

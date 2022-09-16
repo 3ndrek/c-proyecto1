@@ -46,14 +46,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InterfacesDeUsuario\Form1.cs">
+    <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InterfacesDeUsuario\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.Designer.cs">
+      <DependentUpon>ConsultarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\EliminarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\EliminarBarco.Designer.cs">
+      <DependentUpon>EliminarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\ModificarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\ModificarBarco.Designer.cs">
+      <DependentUpon>ModificarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\RegistrarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\RegistrarBarco.Designer.cs">
+      <DependentUpon>RegistrarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\ConsultarItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\ConsultarItinerario.Designer.cs">
+      <DependentUpon>ConsultarItinerario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\EliminarItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\EliminarItinerario.Designer.cs">
+      <DependentUpon>EliminarItinerario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\ModificarItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\ModificarItinerario.Designer.cs">
+      <DependentUpon>ModificarItinerario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\RegistrarItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Itinerario\RegistrarItinerario.Designer.cs">
+      <DependentUpon>RegistrarItinerario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
+      <DependentUpon>ConsultarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\EliminarBarco.resx">
+      <DependentUpon>EliminarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\ModificarBarco.resx">
+      <DependentUpon>ModificarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\RegistrarBarco.resx">
+      <DependentUpon>RegistrarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Itinerario\ConsultarItinerario.resx">
+      <DependentUpon>ConsultarItinerario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Itinerario\EliminarItinerario.resx">
+      <DependentUpon>EliminarItinerario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Itinerario\ModificarItinerario.resx">
+      <DependentUpon>ModificarItinerario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Itinerario\RegistrarItinerario.resx">
+      <DependentUpon>RegistrarItinerario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
