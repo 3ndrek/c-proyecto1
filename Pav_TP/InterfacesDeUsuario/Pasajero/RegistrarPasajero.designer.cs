@@ -35,29 +35,29 @@ namespace TrabajoPracticoPav
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TxtEmail = new System.Windows.Forms.TextBox();
-            this.TxtApe = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TxtNom = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxDni = new System.Windows.Forms.ComboBox();
-            this.comboBoxPais = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtDni = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cod = new System.Windows.Forms.Label();
-            this.btnedit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCiudad = new System.Windows.Forms.ComboBox();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.cod = new System.Windows.Forms.Label();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.TxtDni = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxPais = new System.Windows.Forms.ComboBox();
+            this.comboBoxDni = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtNom = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TxtApe = new System.Windows.Forms.TextBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -104,7 +104,7 @@ namespace TrabajoPracticoPav
             this.groupBox2.Controls.Add(this.comboBoxCiudad);
             this.groupBox2.Controls.Add(this.btnedit);
             this.groupBox2.Controls.Add(this.cod);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.picture);
             this.groupBox2.Controls.Add(this.TxtDni);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
@@ -128,164 +128,6 @@ namespace TrabajoPracticoPav
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Pasajeros";
             // 
-            // TxtEmail
-            // 
-            this.TxtEmail.Location = new System.Drawing.Point(141, 177);
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(121, 20);
-            this.TxtEmail.TabIndex = 30;
-            // 
-            // TxtApe
-            // 
-            this.TxtApe.Location = new System.Drawing.Point(141, 76);
-            this.TxtApe.Name = "TxtApe";
-            this.TxtApe.Size = new System.Drawing.Size(121, 20);
-            this.TxtApe.TabIndex = 29;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(27, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Fecha de Nacimiento";
-            // 
-            // TxtNom
-            // 
-            this.TxtNom.Location = new System.Drawing.Point(141, 40);
-            this.TxtNom.Name = "TxtNom";
-            this.TxtNom.Size = new System.Drawing.Size(121, 20);
-            this.TxtNom.TabIndex = 28;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 79);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Apellido";
-            // 
-            // comboBoxDni
-            // 
-            this.comboBoxDni.FormattingEnabled = true;
-            this.comboBoxDni.Location = new System.Drawing.Point(141, 112);
-            this.comboBoxDni.Name = "comboBoxDni";
-            this.comboBoxDni.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxDni.TabIndex = 33;
-            // 
-            // comboBoxPais
-            // 
-            this.comboBoxPais.FormattingEnabled = true;
-            this.comboBoxPais.Location = new System.Drawing.Point(391, 180);
-            this.comboBoxPais.Name = "comboBoxPais";
-            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPais.TabIndex = 34;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Tipo DNI";
-            // 
-            // comboBoxGenero
-            // 
-            this.comboBoxGenero.FormattingEnabled = true;
-            this.comboBoxGenero.Location = new System.Drawing.Point(141, 210);
-            this.comboBoxGenero.Name = "comboBoxGenero";
-            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGenero.TabIndex = 35;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "DNI";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(141, 246);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 36;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Nombre";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 210);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Genero";
-            // 
-            // TxtDni
-            // 
-            this.TxtDni.Location = new System.Drawing.Point(141, 145);
-            this.TxtDni.Name = "TxtDni";
-            this.TxtDni.Size = new System.Drawing.Size(121, 20);
-            this.TxtDni.TabIndex = 39;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(346, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 98);
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cod
-            // 
-            this.cod.AutoSize = true;
-            this.cod.Location = new System.Drawing.Point(277, 180);
-            this.cod.Name = "cod";
-            this.cod.Size = new System.Drawing.Size(76, 13);
-            this.cod.TabIndex = 42;
-            this.cod.Text = "País de origen";
-            // 
-            // btnedit
-            // 
-            this.btnedit.Location = new System.Drawing.Point(361, 143);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 23);
-            this.btnedit.TabIndex = 43;
-            this.btnedit.Text = "Editar";
-            this.btnedit.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -303,6 +145,166 @@ namespace TrabajoPracticoPav
             this.comboBoxCiudad.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCiudad.TabIndex = 44;
             // 
+            // btnedit
+            // 
+            this.btnedit.Location = new System.Drawing.Point(361, 143);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(75, 23);
+            this.btnedit.TabIndex = 43;
+            this.btnedit.Text = "Editar";
+            this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // cod
+            // 
+            this.cod.AutoSize = true;
+            this.cod.Location = new System.Drawing.Point(277, 180);
+            this.cod.Name = "cod";
+            this.cod.Size = new System.Drawing.Size(76, 13);
+            this.cod.TabIndex = 42;
+            this.cod.Text = "País de origen";
+            // 
+            // picture
+            // 
+            this.picture.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.picture.Image = ((System.Drawing.Image)(resources.GetObject("picture.Image")));
+            this.picture.Location = new System.Drawing.Point(346, 35);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(106, 98);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture.TabIndex = 41;
+            this.picture.TabStop = false;
+            // 
+            // TxtDni
+            // 
+            this.TxtDni.Location = new System.Drawing.Point(141, 145);
+            this.TxtDni.Name = "TxtDni";
+            this.TxtDni.Size = new System.Drawing.Size(121, 20);
+            this.TxtDni.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 210);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Genero";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(77, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Nombre";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(141, 246);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker2.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "DNI";
+            // 
+            // comboBoxGenero
+            // 
+            this.comboBoxGenero.FormattingEnabled = true;
+            this.comboBoxGenero.Location = new System.Drawing.Point(141, 210);
+            this.comboBoxGenero.Name = "comboBoxGenero";
+            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGenero.TabIndex = 35;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Tipo DNI";
+            // 
+            // comboBoxPais
+            // 
+            this.comboBoxPais.FormattingEnabled = true;
+            this.comboBoxPais.Location = new System.Drawing.Point(391, 180);
+            this.comboBoxPais.Name = "comboBoxPais";
+            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPais.TabIndex = 34;
+            // 
+            // comboBoxDni
+            // 
+            this.comboBoxDni.FormattingEnabled = true;
+            this.comboBoxDni.Location = new System.Drawing.Point(141, 112);
+            this.comboBoxDni.Name = "comboBoxDni";
+            this.comboBoxDni.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDni.TabIndex = 33;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Apellido";
+            // 
+            // TxtNom
+            // 
+            this.TxtNom.Location = new System.Drawing.Point(141, 40);
+            this.TxtNom.Name = "TxtNom";
+            this.TxtNom.Size = new System.Drawing.Size(121, 20);
+            this.TxtNom.TabIndex = 28;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(27, 246);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Fecha de Nacimiento";
+            // 
+            // TxtApe
+            // 
+            this.TxtApe.Location = new System.Drawing.Point(141, 76);
+            this.TxtApe.Name = "TxtApe";
+            this.TxtApe.Size = new System.Drawing.Size(121, 20);
+            this.TxtApe.TabIndex = 29;
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(141, 177);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(121, 20);
+            this.TxtEmail.TabIndex = 30;
+            // 
             // RegistrarPasajero
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -318,7 +320,7 @@ namespace TrabajoPracticoPav
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,7 +333,7 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Label cod;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.TextBox TxtDni;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

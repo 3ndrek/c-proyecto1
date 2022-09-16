@@ -42,9 +42,9 @@ namespace TrabajoPracticoPav
             SqlCommand myconn3 = new SqlCommand();
             myconn3.CommandType = CommandType.Text;
             myconn3.Connection = myconn;
-            myconn3.CommandText = "SELECT * FROM ciudades";
+            myconn3.CommandText = "SELECT C.cod_ciudad , c.nombre FROM paisesXciudades PC join ciudades C on PC.cod_ciudad=C.cod_ciudad";
             DataTable datociudad = new DataTable();
-            datociudad.Load(myconn2.ExecuteReader());
+            datociudad.Load(myconn3.ExecuteReader());
             comboBoxCiudad.DataSource = datociudad;
             comboBoxCiudad.DisplayMember = "nombre";
             comboBoxCiudad.ValueMember = "cod_ciudad";
@@ -54,29 +54,32 @@ namespace TrabajoPracticoPav
             myconn4.Connection = myconn;
             myconn4.CommandText = "SELECT * FROM paises";
             DataTable datopais = new DataTable();
-            datopais.Load(myconn2.ExecuteReader());
-            comboBoxDni.DataSource = datopais;
-            comboBoxDni.DisplayMember = "nombre";
-            comboBoxDni.ValueMember = "cod_pais";
+            datopais.Load(myconn4.ExecuteReader());
+            comboBoxPais.DataSource = datopais;
+            comboBoxPais.DisplayMember = "nombre";
+            comboBoxPais.ValueMember = "cod_pais";
 
             SqlCommand myconn5 = new SqlCommand();
             myconn5.CommandType = CommandType.Text;
             myconn5.Connection = myconn;
             myconn5.CommandText = "SELECT * FROM genero";
             DataTable datogenero = new DataTable();
-            datogenero.Load(myconn2.ExecuteReader());
-            comboBoxDni.DataSource = datogenero;
-            comboBoxDni.DisplayMember = "desc";
-            comboBoxDni.ValueMember = "tipo";
+            datogenero.Load(myconn5.ExecuteReader());
+            comboBoxGenero.DataSource = datogenero;
+            comboBoxGenero.DisplayMember = "desc";
+            comboBoxGenero.ValueMember = "tipo";
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            System.IO.MemoryStream mensaje = new System.IO.MemoryStream();
+            picture.Image.Save(mensaje, System.Drawing.Imaging.ImageFormat.Jpeg);
+
             SqlCommand registrar = new SqlCommand();
             registrar.CommandType = CommandType.Text;
             registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO pasajeros (tipo_doc,nro_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero,foto)" +
-                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text + "','" + TxtNom.Text + "','" + TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "'," + dateTimePicker2.CustomFormat + "," + comboBoxGenero.SelectedValue.ToString() + ")";
+            registrar.CommandText = "$ INSERT INTO pasajeros (tipo_doc,nro_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero,foto)" +
+                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text + "','" + TxtNom.Text + "','" + TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "'," + Convert.ToDateTime(dateTimePicker2.Value.Date.ToString("dd-MM-yyyy")) + "," + comboBoxGenero.SelectedValue.ToString() +","+ mensaje.GetBuffer() + ")";
             registrar.ExecuteNonQuery();
             TxtDni.Text = "";
             TxtNom.Text = "";
@@ -115,6 +118,14 @@ namespace TrabajoPracticoPav
 
         }
 
-        
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog foto = new OpenFileDialog();
+            DialogResult respuesta = foto.ShowDialog();
+            if(respuesta == DialogResult.OK)
+            {
+                picture.Image = Image.FromFile(foto.FileName);
+            }
+        }
     }
 }
