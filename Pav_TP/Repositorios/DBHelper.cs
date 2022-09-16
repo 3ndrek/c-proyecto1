@@ -21,7 +21,7 @@ namespace Pav_TP.Repositorios
         {
 
             // string_conexion = "Data Source=DESKTOP-LBVUJ09\\SQLEXPRESS;Initial Catalog=BTSPAVI3K220201;Integrated Security=True;MultipleActiveResultSets=True";
-            string_conexion = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3k2_2022_12;Password=PAV_3k2_2022_12";
+            string_conexion = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
         }
 
         public static DBHelper GetDBHelper()
@@ -50,6 +50,7 @@ namespace Pav_TP.Repositorios
             catch (Exception ex)
             {
                 throw new ApplicationException("Ocurrio un problema desconocido con el almacenamento de datos");
+                
             }
 
         }

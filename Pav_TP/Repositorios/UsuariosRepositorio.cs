@@ -15,7 +15,7 @@ namespace Pav_TP.Repositorios
         public Usuario LoginBD(Usuario usuario)
         {
             //var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil where activo='S' and usuario='{usuario.NombreUsuario}' and password='{usuario.Contrasenia}'";
-            var sql = $"SELECT u.* FROM Usuarios u where activo='S' and usuario='{{usuario.NombreUsuario}}' and password='{{usuario.Contrasenia}}'";
+            var sql = $"SELECT u.usuario, u.contraseña from usuarios u where usuario='{usuario.NombreUsuario}' and contraseña='{usuario.Contrasenia}'";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             Usuario usuarioLoguado = null;
             if (tablaResultado.Rows.Count == 1)
@@ -23,16 +23,18 @@ namespace Pav_TP.Repositorios
                 var fila = tablaResultado.Rows[0];
                 usuarioLoguado = new Usuario();
                 usuarioLoguado.NombreUsuario = fila["usuario"].ToString();
-                usuarioLoguado.Id = Convert.ToInt64(fila["id_usuario"].ToString());
+                //usuarioLoguado.Id = Convert.ToInt64(fila["id_usuario"].ToString());
                 // activo
-                var activo = fila["activo"].ToString();
-                usuarioLoguado.Estado = activo == "S";
+                //var activo = fila["activo"].ToString();
+                //usuarioLoguado.Estado = activo == "S";
 
                 // perfil
+                /*
                 var perfil = new Perfil();
                 perfil.Nombre = fila["perfil"].ToString();
                 perfil.Id = Convert.ToInt64(fila["id_perfil"].ToString());
                 usuarioLoguado.Perfil = perfil;
+                */
             }
 
             return usuarioLoguado;

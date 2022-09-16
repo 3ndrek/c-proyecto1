@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pav_TP;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace TrabajoPracticoPav
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrarPasajero());
+            Application.Run(new FrmPrincipal());
         }
     }
 }
