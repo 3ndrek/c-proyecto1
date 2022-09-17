@@ -95,8 +95,7 @@ namespace seastar
 
         private void generarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form re = new RegistrarPuerto();
-            re.ShowDialog();
+           
         }
     }
 }
