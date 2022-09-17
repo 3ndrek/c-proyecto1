@@ -22,7 +22,6 @@ namespace TrabajoPracticoPav
         }
 
        
-
         private void ConsultarTripulante_Load(object sender, EventArgs e)
         {
             string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";

@@ -202,28 +202,28 @@
             // registrarToolStripMenuItem2
             // 
             this.registrarToolStripMenuItem2.Name = "registrarToolStripMenuItem2";
-            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(147, 26);
             this.registrarToolStripMenuItem2.Text = "Registrar";
             this.registrarToolStripMenuItem2.Click += new System.EventHandler(this.registrarToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem4
             // 
             this.modificarToolStripMenuItem4.Name = "modificarToolStripMenuItem4";
-            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.modificarToolStripMenuItem4.Size = new System.Drawing.Size(147, 26);
             this.modificarToolStripMenuItem4.Text = "Modificar";
             this.modificarToolStripMenuItem4.Click += new System.EventHandler(this.modificarToolStripMenuItem4_Click);
             // 
             // consultarToolStripMenuItem4
             // 
             this.consultarToolStripMenuItem4.Name = "consultarToolStripMenuItem4";
-            this.consultarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.consultarToolStripMenuItem4.Size = new System.Drawing.Size(147, 26);
             this.consultarToolStripMenuItem4.Text = "Consultar";
             this.consultarToolStripMenuItem4.Click += new System.EventHandler(this.consultarToolStripMenuItem4_Click);
             // 
             // eliminarToolStripMenuItem4
             // 
             this.eliminarToolStripMenuItem4.Name = "eliminarToolStripMenuItem4";
-            this.eliminarToolStripMenuItem4.Size = new System.Drawing.Size(180, 26);
+            this.eliminarToolStripMenuItem4.Size = new System.Drawing.Size(147, 26);
             this.eliminarToolStripMenuItem4.Text = "Eliminar";
             // 
             // viajesToolStripMenuItem
@@ -238,8 +238,9 @@
             // generarViajeToolStripMenuItem
             // 
             this.generarViajeToolStripMenuItem.Name = "generarViajeToolStripMenuItem";
-            this.generarViajeToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
+            this.generarViajeToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.generarViajeToolStripMenuItem.Text = "Generar viaje";
+            this.generarViajeToolStripMenuItem.Click += new System.EventHandler(this.generarViajeToolStripMenuItem_Click);
             // 
             // itinerarioToolStripMenuItem
             // 

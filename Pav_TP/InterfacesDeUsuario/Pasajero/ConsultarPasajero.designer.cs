@@ -30,22 +30,12 @@ namespace TrabajoPracticoPav
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtDni = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridEmial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridDni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridCiudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gridPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.genero = new System.Windows.Forms.Label();
@@ -57,12 +47,12 @@ namespace TrabajoPracticoPav
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TxtDni);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.genero);
@@ -75,74 +65,20 @@ namespace TrabajoPracticoPav
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "InformaciónPasajero";
             // 
+            // TxtDni
+            // 
+            this.TxtDni.Location = new System.Drawing.Point(89, 96);
+            this.TxtDni.Name = "TxtDni";
+            this.TxtDni.Size = new System.Drawing.Size(121, 20);
+            this.TxtDni.TabIndex = 31;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar,
-            this.Nombre,
-            this.Apellidos,
-            this.gridGenero,
-            this.gridEmial,
-            this.gridFecha,
-            this.gridTipo,
-            this.gridDni,
-            this.gridCiudad,
-            this.gridPais});
             this.dataGridView1.Location = new System.Drawing.Point(44, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(414, 150);
             this.dataGridView1.TabIndex = 30;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellido";
-            this.Apellidos.Name = "Apellidos";
-            // 
-            // gridGenero
-            // 
-            this.gridGenero.HeaderText = "Genero";
-            this.gridGenero.Name = "gridGenero";
-            // 
-            // gridEmial
-            // 
-            this.gridEmial.HeaderText = "Email";
-            this.gridEmial.Name = "gridEmial";
-            // 
-            // gridFecha
-            // 
-            this.gridFecha.HeaderText = "Fecha";
-            this.gridFecha.Name = "gridFecha";
-            // 
-            // gridTipo
-            // 
-            this.gridTipo.HeaderText = "Tipo DNI";
-            this.gridTipo.Name = "gridTipo";
-            // 
-            // gridDni
-            // 
-            this.gridDni.HeaderText = "DNI";
-            this.gridDni.Name = "gridDni";
-            // 
-            // gridCiudad
-            // 
-            this.gridCiudad.HeaderText = "Ciudad Origen";
-            this.gridCiudad.Name = "gridCiudad";
-            // 
-            // gridPais
-            // 
-            this.gridPais.HeaderText = "País";
-            this.gridPais.Name = "gridPais";
             // 
             // btnCancel
             // 
@@ -163,7 +99,7 @@ namespace TrabajoPracticoPav
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnBuscar
             // 
@@ -173,7 +109,6 @@ namespace TrabajoPracticoPav
             this.btnBuscar.TabIndex = 27;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEliminar
             // 
@@ -185,14 +120,6 @@ namespace TrabajoPracticoPav
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(89, 96);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 25;
             // 
             // textBox1
             // 
@@ -211,17 +138,16 @@ namespace TrabajoPracticoPav
             // genero
             // 
             this.genero.AutoSize = true;
-            this.genero.Location = new System.Drawing.Point(21, 99);
+            this.genero.Location = new System.Drawing.Point(21, 62);
             this.genero.Name = "genero";
-            this.genero.Size = new System.Drawing.Size(42, 13);
+            this.genero.Size = new System.Drawing.Size(44, 13);
             this.genero.TabIndex = 22;
-            this.genero.Text = "Genero";
-            this.genero.Click += new System.EventHandler(this.genero_Click);
+            this.genero.Text = "Apellido";
             // 
             // dni
             // 
             this.dni.AutoSize = true;
-            this.dni.Location = new System.Drawing.Point(19, 62);
+            this.dni.Location = new System.Drawing.Point(21, 99);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(26, 13);
             this.dni.TabIndex = 20;
@@ -244,6 +170,7 @@ namespace TrabajoPracticoPav
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultarPasajero";
             this.Text = "ConsultarPasajero";
+            this.Load += new System.EventHandler(this.ConsultarPasajero_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -259,21 +186,11 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.Label apellido;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridGenero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridEmial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridDni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridCiudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gridPais;
+        private System.Windows.Forms.TextBox TxtDni;
     }
 }

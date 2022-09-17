@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Puerto.cs" />
     <Compile Include="Entidades\Tripulante.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.cs">

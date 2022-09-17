@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Pav_TP.InterfacesDeUsuario.Puerto;
 using Pav_TP.Servicios;
 using PAV1;
 using TrabajoPracticoPav;
@@ -91,6 +91,12 @@ namespace seastar
         private void puertoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void generarViajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form re = new RegistrarPuerto();
+            re.ShowDialog();
         }
     }
 }
