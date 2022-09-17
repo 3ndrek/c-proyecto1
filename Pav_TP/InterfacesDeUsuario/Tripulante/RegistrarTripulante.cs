@@ -73,12 +73,15 @@ namespace TrabajoPracticoPav
             TxtEmail.Text = "";
             TxtNom.Focus();
 
+
+            MessageBox.Show("Se cargo con exito");
+
         }
       
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         

@@ -85,12 +85,14 @@ namespace TrabajoPracticoPav
             TxtApe.Text = "";
             TxtEmail.Text = "";
             TxtDni.Focus();
+
+            MessageBox.Show("Se cargo con exito");
         }
 
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
        
