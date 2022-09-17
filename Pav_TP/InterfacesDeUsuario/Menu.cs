@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Pav_TP.InterfacesDeUsuario.Barco;
+
 using Pav_TP.Servicios;
 using PAV1;
 using TrabajoPracticoPav;
@@ -73,26 +73,9 @@ namespace seastar
 
         private void registrarBarco_Click(object sender, EventArgs e)
         {
-            Form registrarBarco = new RegistrarBarco();
-            registrarBarco.ShowDialog();
+           
         }
-        private void modificarBarco_Click(object sender, EventArgs e)
-        {
-            Form modificarBarco = new ModificarBarco();
-            modificarBarco.ShowDialog();
-        }
-
-        private void consultarBarco_Click(object sender, EventArgs e)
-        {
-            Form consultarBarco = new ConsultarBarco();
-            consultarBarco.ShowDialog();
-        }
-
-        private void eliminarBarco_Click(object sender, EventArgs e)
-        {
-            Form eliminarBarco = new EliminarBarco();
-            eliminarBarco.ShowDialog();
-        }
+      
 
         private void consultarCubierta_Click(object sender, EventArgs e)
         {
@@ -101,6 +84,11 @@ namespace seastar
         }
 
         private void registrarCubierta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puertoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

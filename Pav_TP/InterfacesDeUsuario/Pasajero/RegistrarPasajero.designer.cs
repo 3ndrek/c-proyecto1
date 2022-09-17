@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace TrabajoPracticoPav
 {
-    partial class RegistrarBarco
+    partial class RegistrarPasajero
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -15,7 +15,7 @@ namespace TrabajoPracticoPav
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
-        protected override void Dispose(bool disposing)
+        protected override void Dispose (bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -326,10 +326,7 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCiudad;
 
-        public static implicit operator Form(RegistrarBarco v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
 
