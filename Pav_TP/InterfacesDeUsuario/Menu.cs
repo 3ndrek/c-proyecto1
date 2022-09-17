@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.Servicios;
 using PAV1;
+using TrabajoPracticoPav;
 
 namespace seastar
 {
@@ -19,20 +21,8 @@ namespace seastar
             InitializeComponent();
         }
 
-        private void aaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void sToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void registarrToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -54,6 +44,64 @@ namespace seastar
             }
 
             */
+
+        }
+
+        private void registrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form registrarTripulante = new RegistrarTripulante();
+            registrarTripulante.ShowDialog();
+        }
+
+        private void modificarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Form consultarTripulante = new ConsultarTripulante();
+            consultarTripulante.ShowDialog();
+        }
+
+        private void registrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Form registrarPasajero = new RegistrarPasajero();
+            registrarPasajero.ShowDialog();
+        }
+
+
+        private void registrarBarco_Click(object sender, EventArgs e)
+        {
+            Form registrarBarco = new RegistrarBarco();
+            registrarBarco.ShowDialog();
+        }
+        private void modificarBarco_Click(object sender, EventArgs e)
+        {
+            Form modificarBarco = new ModificarBarco();
+            modificarBarco.ShowDialog();
+        }
+
+        private void consultarBarco_Click(object sender, EventArgs e)
+        {
+            Form consultarBarco = new ConsultarBarco();
+            consultarBarco.ShowDialog();
+        }
+
+        private void eliminarBarco_Click(object sender, EventArgs e)
+        {
+            Form eliminarBarco = new EliminarBarco();
+            eliminarBarco.ShowDialog();
+        }
+
+        private void consultarCubierta_Click(object sender, EventArgs e)
+        {
+            Form consultarCubierta = new ConsultarCubierta();
+            consultarCubierta.ShowDialog();
+        }
+
+        private void registrarCubierta_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,7 +1,10 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace TrabajoPracticoPav
 {
-    partial class RegistrarPasajero
+    partial class RegistrarBarco
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -322,6 +325,11 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.TextBox TxtEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCiudad;
+
+        public static implicit operator Form(RegistrarBarco v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
