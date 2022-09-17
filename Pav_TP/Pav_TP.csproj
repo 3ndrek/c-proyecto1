@@ -279,9 +279,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InterfacesDeUsuario\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Recursos\barco.jpg" />
     <Content Include="Recursos\cru2.jpg" />
