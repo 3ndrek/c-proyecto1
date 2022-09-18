@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.Servicios;
 using PAV1;
 using TrabajoPracticoPav;
@@ -32,9 +32,6 @@ namespace seastar
         private void Menu_Load(object sender, EventArgs e)
 
         {
-            /*
-             * esperemos que nacho arregle el login
-             * esta es la carga para que aparezca primero el Login 
             if(UsuariosServicio.UsuarioLogueado == null)
             {
                 
@@ -42,8 +39,6 @@ namespace seastar
                 frmLogin.ShowDialog();
                 
             }
-
-            */
 
         }
 
@@ -91,6 +86,12 @@ namespace seastar
         private void puertoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form registrarUsuario = new RegistrarUsuario();
+            registrarUsuario.ShowDialog();
         }
     }
 }

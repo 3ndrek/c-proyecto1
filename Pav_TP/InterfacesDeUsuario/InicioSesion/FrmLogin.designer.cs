@@ -77,6 +77,7 @@
             this.TxtContrasenia.Name = "TxtContrasenia";
             this.TxtContrasenia.Size = new System.Drawing.Size(209, 22);
             this.TxtContrasenia.TabIndex = 3;
+            this.TxtContrasenia.UseSystemPasswordChar = true;
             // 
             // BtnIngresar
             // 

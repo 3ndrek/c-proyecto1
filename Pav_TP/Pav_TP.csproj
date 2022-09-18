@@ -86,6 +86,12 @@
     <Compile Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.Designer.cs">
       <DependentUpon>ModificarTripulante.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.cs">
       <SubType>Form</SubType>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.resx">
       <DependentUpon>ModificarTripulante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Viaje\GenerarViaje.resx">
       <DependentUpon>GenerarViaje.cs</DependentUpon>
