@@ -86,11 +86,22 @@
     <Compile Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.Designer.cs">
       <DependentUpon>ModificarTripulante.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.Designer.cs">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.Designer.cs">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.cs">
@@ -247,6 +258,9 @@
     <EmbeddedResource Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.resx">
       <DependentUpon>ModificarTripulante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.resx">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.resx">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +298,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="PAV_3K2_2022_12DataSet1.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet1.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
