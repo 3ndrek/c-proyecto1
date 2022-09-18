@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using seastar;
 
 namespace PAV1
 {
@@ -25,6 +26,13 @@ namespace PAV1
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuForm menu = new MenuForm();
+            menu.Show();
+            this.Hide();
         }
     }
 }

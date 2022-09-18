@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using seastar;
 
 namespace Pav_TP.InterfacesDeUsuario.Barco
 {
@@ -15,6 +16,13 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
         public EliminarBarco()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuForm menu = new MenuForm();
+            menu.Show();
+            this.Hide();
         }
     }
 }

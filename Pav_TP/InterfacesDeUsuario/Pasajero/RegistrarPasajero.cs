@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using seastar;
 
 namespace TrabajoPracticoPav
 {
@@ -92,7 +93,9 @@ namespace TrabajoPracticoPav
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MenuForm menu = new MenuForm();
+            menu.Show();
+            this.Hide();
         }
 
        

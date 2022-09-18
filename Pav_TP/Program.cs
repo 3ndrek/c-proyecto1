@@ -16,7 +16,7 @@ namespace seastar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
+            Application.Run(new MenuForm());
         }
     }
 }
