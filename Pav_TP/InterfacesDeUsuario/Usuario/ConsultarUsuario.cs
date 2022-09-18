@@ -43,7 +43,7 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
             DataTable midata = new DataTable();
             midata.Load(consultar.ExecuteReader());
             GrillaUsuario.DataSource = midata;
-            MessageBox.Show("Usuario: Nombre: " + midata.Rows[0][0].ToString() + " contraseña:" + midata.Rows[0][1].ToString());
+            //MessageBox.Show("Usuario: Nombre: " + midata.Rows[0][0].ToString() + " contraseña:" + midata.Rows[0][1].ToString());
 
 
         }
@@ -65,6 +65,14 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
                     //GrillaUsuario.Rows.RemoveAt(lis.Index);
                 }
             }
+            SqlCommand consultar = new SqlCommand();
+            consultar.CommandType = CommandType.Text;
+            consultar.Connection = myconn;
+            consultar.CommandText = "select * from usuarios";
+            DataTable midata = new DataTable();
+            midata.Load(consultar.ExecuteReader());
+            GrillaUsuario.DataSource = midata;
+            //MessageBox.Show("Usuario: Nombre: " + midata.Rows[0][0].ToString() + " contraseña:" + midata.Rows[0][1].ToString());
         }
     }
 }
