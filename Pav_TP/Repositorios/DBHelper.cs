@@ -68,6 +68,8 @@ namespace Pav_TP.Repositorios
             return afectadas;
         }
 
+
+
         private void CloseConnection(SqlConnection cnn)
         {
             if (cnn.State == ConnectionState.Open)

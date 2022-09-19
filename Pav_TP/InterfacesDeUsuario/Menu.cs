@@ -80,7 +80,8 @@ namespace seastar
 
         private void registrarCubierta_Click(object sender, EventArgs e)
         {
-
+            Form registrarCubierta = new RegistrarCubierta();
+            registrarCubierta.ShowDialog();
         }
 
         private void puertoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,6 +93,18 @@ namespace seastar
         {
             Form registrarUsuario = new RegistrarUsuario();
             registrarUsuario.ShowDialog();
+        }
+
+        private void eliminarCubierta_Click(object sender, EventArgs e)
+        {
+            Form eliminarCubierta = new EliminarCubierta();
+            eliminarCubierta.ShowDialog();
+        }
+
+        private void modificarCubierta_Click(object sender, EventArgs e)
+        {
+            Form modificarCubierta = new ModificarCubierta();
+           modificarCubierta.ShowDialog();
         }
     }
 }

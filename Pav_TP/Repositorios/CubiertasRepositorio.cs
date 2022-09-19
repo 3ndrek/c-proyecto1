@@ -44,7 +44,7 @@ namespace Pav_TP.Repositorios
                 var cubiertaFiltrada = new Cubierta();
                 cubiertaFiltrada.cod_navio = Convert.ToInt32(fila["cod_navio"].ToString());
                 cubiertaFiltrada.num_cubierta = Convert.ToInt32(fila["num_cubierta"].ToString());
-                cubiertaFiltrada.desc = fila["desc"].ToString();
+                cubiertaFiltrada.desc = fila["descripcion"].ToString();
                 cubiertaFiltrada.leg_encargado = Convert.ToInt32(fila["leg_encargado"].ToString());
 
                 cubiertas.Add(cubiertaFiltrada);
@@ -73,7 +73,7 @@ namespace Pav_TP.Repositorios
                 var cubiertaFiltrada = new Cubierta();
                 cubiertaFiltrada.cod_navio = Convert.ToInt32(fila["cod_navio"].ToString());
                 cubiertaFiltrada.num_cubierta = Convert.ToInt32(fila["num_cubierta"].ToString());
-                cubiertaFiltrada.desc = fila["desc"].ToString();
+                cubiertaFiltrada.desc = fila["descripcion"].ToString();
                 cubiertaFiltrada.leg_encargado = Convert.ToInt32(fila["leg_encargado"].ToString());
 
                 cubiertas.Add(cubiertaFiltrada);
@@ -81,6 +81,48 @@ namespace Pav_TP.Repositorios
 
             return cubiertas;
 
+
+        }
+
+        public void EliminarCubiertas(Cubierta filtro)
+        {
+                var sql = $"DELETE from cubiertas WHERE cod_navio = {filtro.cod_navio} and num_cubierta = {filtro.num_cubierta}";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+
+
+
+
+        }
+
+        public List<Tripulante> CargaTripulantes()
+        {
+            var sql = $"SELECT * FROM tripulantes";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            var cubiertas = new List<Tripulante>();
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var tripulantebuscado = new Tripulante();
+                tripulantebuscado.legajo = Convert.ToInt32(fila["legajo"].ToString());
+                tripulantebuscado.nombre = fila["nombre"].ToString();
+                tripulantebuscado.apellido = fila["apellido"].ToString();
+                cubiertas.Add(tripulantebuscado);
+            }
+            return cubiertas;
+        }
+
+
+        public void RegistrarCubierta(Cubierta cubierta)
+        {
+            var sql = $"INSERT INTO cubiertas(cod_navio, descripcion, leg_encargado) values({cubierta.cod_navio},'{cubierta.desc}', {cubierta.leg_encargado})";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+        }
+
+
+        public void ModificarCubierta(Cubierta cubierta)
+        {
+            var sql = $"UPDATE cubiertas SET descripcion= '{cubierta.desc}', Leg_encargado= {cubierta.leg_encargado} WHERE cod_navio = {cubierta.cod_navio} and num_cubierta ={cubierta.num_cubierta}";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
     }
 }

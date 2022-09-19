@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Pav_TP.Entidades
 {
-    class Tripulante
+    public class Tripulante
     {
-        private int legajo { get; set; }
-        private int jefe { get; set; }
-        private string nombre { get; set; }
-        private string apellido { get; set; }
+        public int legajo { get; set; }
+        public int jefe { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
         private int cod_puesto { get; set; }
         private int usuario { get; set; }
     }
