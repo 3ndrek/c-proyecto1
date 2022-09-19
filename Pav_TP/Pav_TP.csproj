@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6B50ED9-9538-46B9-B71B-D29A715D75DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pav_TP</RootNamespace>
+    <AssemblyName>Pav_TP</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidades\Barco.cs" />
+    <Compile Include="Entidades\Clasificacion.cs" />
+    <Compile Include="Entidades\Cubierta.cs" />
+    <Compile Include="Entidades\Pasajero.cs" />
+    <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Tripulante.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.designer.cs">
+      <DependentUpon>ConsultarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\InicioSesion\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\InicioSesion\FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\ModificarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\ModificarBarco.designer.cs">
+      <DependentUpon>ModificarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\FrmPrincipal.designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.Designer.cs">
+      <DependentUpon>ModificarTripulante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.Designer.cs">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\ModificarUsuario.Designer.cs">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.Designer.cs">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.designer.cs">
+      <DependentUpon>ConsultarPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\RegistrarCubierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\RegistrarCubierta.Designer.cs">
+      <DependentUpon>RegistrarCubierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\ModificarCubierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\ModificarCubierta.designer.cs">
+      <DependentUpon>ModificarCubierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\ConsultarCubierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\ConsultarCubierta.designer.cs">
+      <DependentUpon>ConsultarCubierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.designer.cs">
+      <DependentUpon>EliminarCubierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\EliminarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\EliminarPuerto.designer.cs">
+      <DependentUpon>EliminarPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\ModificarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\ModificarPuerto.designer.cs">
+      <DependentUpon>ModificarPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\RegistrarPuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Puerto\RegistrarPuerto.designer.cs">
+      <DependentUpon>RegistrarPuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\RegistrarBarco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Barco\RegistrarBarco.designer.cs">
+      <DependentUpon>RegistrarBarco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\GenerarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\GenerarViaje.designer.cs">
+      <DependentUpon>GenerarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\ModificarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\ModificarViaje.designer.cs">
+      <DependentUpon>ModificarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\ConsultarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\ConsultarViaje.designer.cs">
+      <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\EliminarViaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Viaje\.designer.cs">
+      <DependentUpon>EliminarViaje.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\ConsultarPasajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\ConsultarPasajero.designer.cs">
+      <DependentUpon>ConsultarPasajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\ConsultarTripulante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\ConsultarTripulante.Designer.cs">
+      <DependentUpon>ConsultarTripulante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\RegistrarPasajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\RegistrarPasajero.designer.cs">
+      <DependentUpon>RegistrarPasajero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\RegistrarTripulante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Tripulante\RegistrarTripulante.designer.cs">
+      <DependentUpon>RegistrarTripulante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\BarcosRepositorio.cs" />
+    <Compile Include="Repositorios\ClasificacionesRepositorio.cs" />
+    <Compile Include="Repositorios\CubiertasRepositorio.cs" />
+    <Compile Include="Repositorios\DBHelper.cs" />
+    <Compile Include="Repositorios\PerfilesRepositorio.cs" />
+    <Compile Include="Repositorios\UsuariosRepositorio.cs" />
+    <Compile Include="Servicios\BarcosServicios.cs" />
+    <Compile Include="Servicios\ClasificacionesServicios.cs" />
+    <Compile Include="Servicios\CubiertasServicio.cs" />
+    <Compile Include="Servicios\PerfilesServicio.cs" />
+    <Compile Include="Servicios\UsuariosServicio.cs" />
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
+      <DependentUpon>ConsultarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\InicioSesion\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\ModificarBarco.resx">
+      <DependentUpon>ModificarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.resx">
+      <DependentUpon>ConsultarPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\RegistrarCubierta.resx">
+      <DependentUpon>RegistrarCubierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\ModificarCubierta.resx">
+      <DependentUpon>ModificarCubierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\ConsultarCubierta.resx">
+      <DependentUpon>ConsultarCubierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.resx">
+      <DependentUpon>EliminarCubierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Puerto\EliminarPuerto.resx">
+      <DependentUpon>EliminarPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Puerto\ModificarPuerto.resx">
+      <DependentUpon>ModificarPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Puerto\RegistrarPuerto.resx">
+      <DependentUpon>RegistrarPuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Barco\RegistrarBarco.resx">
+      <DependentUpon>RegistrarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.resx">
+      <DependentUpon>ModificarTripulante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.resx">
+      <DependentUpon>ConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.resx">
+      <DependentUpon>RegistrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\GenerarViaje.resx">
+      <DependentUpon>GenerarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\ModificarViaje.resx">
+      <DependentUpon>ModificarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\ConsultarViaje.resx">
+      <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\EliminarViaje.resx">
+      <DependentUpon>EliminarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Pasajero\ConsultarPasajero.resx">
+      <DependentUpon>ConsultarPasajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Tripulante\ConsultarTripulante.resx">
+      <DependentUpon>ConsultarTripulante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Pasajero\RegistrarPasajero.resx">
+      <DependentUpon>RegistrarPasajero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Tripulante\RegistrarTripulante.resx">
+      <DependentUpon>RegistrarTripulante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="PAV_3K2_2022_12DataSet1.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet1.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet12.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet12.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recursos\barco.jpg" />
+    <Content Include="Recursos\cru2.jpg" />
+    <Content Include="Recursos\cruc.jpg" />
+    <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
+    <Content Include="Recursos\pers.jpg" />
+    <Content Include="Recursos\vaije.jpg" />
+    <None Include="Resources\vaije.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
