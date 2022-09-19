@@ -351,24 +351,28 @@
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
             this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // cambiarContraseñaToolStripMenuItem
             // 
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Text = "Modificar Usuario";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // perfilToolStripMenuItem
             // 
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
             this.perfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.perfilToolStripMenuItem.Text = "Perfil";
+            this.perfilToolStripMenuItem.Text = "Registrar Usuario";
+            this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // cambiarUsuarioToolStripMenuItem
             // 
             this.cambiarUsuarioToolStripMenuItem.Name = "cambiarUsuarioToolStripMenuItem";
             this.cambiarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cambiarUsuarioToolStripMenuItem.Text = "Cambiar usuario";
+            this.cambiarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
+            this.cambiarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambiarUsuarioToolStripMenuItem_Click);
             // 
             // btnCerrarSesion
             // 

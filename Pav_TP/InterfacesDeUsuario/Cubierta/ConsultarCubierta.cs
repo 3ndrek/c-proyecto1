@@ -19,10 +19,10 @@ namespace PAV1
 
     {
         private readonly CubiertasServicio cubiertasServicio;
-        private readonly Menu menu;
+
         private readonly FrmPrincipal frmPrincipal;
 
-        SqlConnection myconn;
+        
         public ConsultarCubierta(FrmPrincipal frmPrincipal1)
         {
             frmPrincipal = frmPrincipal1;

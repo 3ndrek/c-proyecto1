@@ -13,6 +13,7 @@ using PAV1;
 using TrabajoPracticoPav;
 using Pav_TP.InterfacesDeUsuario;
 using Pav_TP.InterfacesDeUsuario.Barco;
+using Pav_TP.InterfacesDeUsuario.Usuario;
 
 namespace seastar
 {
@@ -159,6 +160,32 @@ namespace seastar
         private void cubiertaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarUsuario modificarUsuario = new ModificarUsuario(/*this*/);
+            modificarUsuario.Show();
+            this.Hide();
+        }
+
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario(/*this*/);
+            registrarUsuario.Show();
+            Hide();
+        }
+
+        private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarUsuario consultarUsuario = new ConsultarUsuario(/*this*/);
+            consultarUsuario.Show();
+            Hide( );
         }
     }
 }
