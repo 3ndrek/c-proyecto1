@@ -29,57 +29,57 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.CbClasificacion = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.TxtTripulantes = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.TxtMotores = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.TxtPasajeros = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.TxtCamarotes = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TxtAutonomia = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TxtDesplazamiento = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtManga = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TxtEslora = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtAltura = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnAceptar = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.CbClasificacion);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.TxtTripulantes);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.TxtMotores);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.TxtPasajeros);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.TxtCamarotes);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.TxtAutonomia);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.TxtDesplazamiento);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.TxtManga);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.TxtEslora);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.TxtAltura);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.TxtNombre);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(31, 73);
             this.groupBox2.Name = "groupBox2";
@@ -88,14 +88,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrar Barco";
             // 
-            // textBox13
+            // CbClasificacion
             // 
-            this.textBox13.Location = new System.Drawing.Point(456, 215);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 61;
-            this.textBox13.Text = "Seleccione...\r\nTuristico\r\nPrivado\r\nMilitar";
+            this.CbClasificacion.FormattingEnabled = true;
+            this.CbClasificacion.Location = new System.Drawing.Point(456, 215);
+            this.CbClasificacion.Name = "CbClasificacion";
+            this.CbClasificacion.Size = new System.Drawing.Size(100, 21);
+            this.CbClasificacion.TabIndex = 80;
             // 
             // label12
             // 
@@ -106,12 +105,12 @@
             this.label12.TabIndex = 79;
             this.label12.Text = "Clasificación";
             // 
-            // textBox11
+            // TxtTripulantes
             // 
-            this.textBox11.Location = new System.Drawing.Point(456, 165);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 78;
+            this.TxtTripulantes.Location = new System.Drawing.Point(456, 165);
+            this.TxtTripulantes.Name = "TxtTripulantes";
+            this.TxtTripulantes.Size = new System.Drawing.Size(100, 20);
+            this.TxtTripulantes.TabIndex = 78;
             // 
             // label11
             // 
@@ -122,12 +121,12 @@
             this.label11.TabIndex = 77;
             this.label11.Text = "Cant. tripulantes";
             // 
-            // textBox10
+            // TxtMotores
             // 
-            this.textBox10.Location = new System.Drawing.Point(456, 114);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 76;
+            this.TxtMotores.Location = new System.Drawing.Point(456, 114);
+            this.TxtMotores.Name = "TxtMotores";
+            this.TxtMotores.Size = new System.Drawing.Size(100, 20);
+            this.TxtMotores.TabIndex = 76;
             // 
             // label10
             // 
@@ -138,12 +137,12 @@
             this.label10.TabIndex = 75;
             this.label10.Text = "Cant. motores";
             // 
-            // textBox9
+            // TxtPasajeros
             // 
-            this.textBox9.Location = new System.Drawing.Point(456, 63);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 74;
+            this.TxtPasajeros.Location = new System.Drawing.Point(456, 63);
+            this.TxtPasajeros.Name = "TxtPasajeros";
+            this.TxtPasajeros.Size = new System.Drawing.Size(100, 20);
+            this.TxtPasajeros.TabIndex = 74;
             // 
             // label9
             // 
@@ -154,12 +153,12 @@
             this.label9.TabIndex = 73;
             this.label9.Text = "Cant. max. pasajeros";
             // 
-            // textBox8
+            // TxtCamarotes
             // 
-            this.textBox8.Location = new System.Drawing.Point(456, 19);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 72;
+            this.TxtCamarotes.Location = new System.Drawing.Point(456, 19);
+            this.TxtCamarotes.Name = "TxtCamarotes";
+            this.TxtCamarotes.Size = new System.Drawing.Size(100, 20);
+            this.TxtCamarotes.TabIndex = 72;
             // 
             // label8
             // 
@@ -170,12 +169,12 @@
             this.label8.TabIndex = 71;
             this.label8.Text = "Cant. camarotes";
             // 
-            // textBox7
+            // TxtAutonomia
             // 
-            this.textBox7.Location = new System.Drawing.Point(115, 262);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 70;
+            this.TxtAutonomia.Location = new System.Drawing.Point(115, 262);
+            this.TxtAutonomia.Name = "TxtAutonomia";
+            this.TxtAutonomia.Size = new System.Drawing.Size(100, 20);
+            this.TxtAutonomia.TabIndex = 70;
             // 
             // label7
             // 
@@ -186,12 +185,12 @@
             this.label7.TabIndex = 69;
             this.label7.Text = "Autonomía";
             // 
-            // textBox6
+            // TxtDesplazamiento
             // 
-            this.textBox6.Location = new System.Drawing.Point(115, 215);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 68;
+            this.TxtDesplazamiento.Location = new System.Drawing.Point(115, 215);
+            this.TxtDesplazamiento.Name = "TxtDesplazamiento";
+            this.TxtDesplazamiento.Size = new System.Drawing.Size(100, 20);
+            this.TxtDesplazamiento.TabIndex = 68;
             // 
             // label6
             // 
@@ -202,12 +201,12 @@
             this.label6.TabIndex = 67;
             this.label6.Text = "Desplazamiento";
             // 
-            // textBox5
+            // TxtManga
             // 
-            this.textBox5.Location = new System.Drawing.Point(115, 165);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 66;
+            this.TxtManga.Location = new System.Drawing.Point(115, 165);
+            this.TxtManga.Name = "TxtManga";
+            this.TxtManga.Size = new System.Drawing.Size(100, 20);
+            this.TxtManga.TabIndex = 66;
             // 
             // label5
             // 
@@ -218,12 +217,12 @@
             this.label5.TabIndex = 65;
             this.label5.Text = "Manga";
             // 
-            // textBox4
+            // TxtEslora
             // 
-            this.textBox4.Location = new System.Drawing.Point(115, 114);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 64;
+            this.TxtEslora.Location = new System.Drawing.Point(115, 114);
+            this.TxtEslora.Name = "TxtEslora";
+            this.TxtEslora.Size = new System.Drawing.Size(100, 20);
+            this.TxtEslora.TabIndex = 64;
             // 
             // label4
             // 
@@ -234,12 +233,12 @@
             this.label4.TabIndex = 63;
             this.label4.Text = "Eslora";
             // 
-            // textBox3
+            // TxtAltura
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 62;
+            this.TxtAltura.Location = new System.Drawing.Point(115, 63);
+            this.TxtAltura.Name = "TxtAltura";
+            this.TxtAltura.Size = new System.Drawing.Size(100, 20);
+            this.TxtAltura.TabIndex = 62;
             // 
             // label3
             // 
@@ -250,12 +249,12 @@
             this.label3.TabIndex = 61;
             this.label3.Text = "Altura";
             // 
-            // textBox2
+            // TxtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 60;
+            this.TxtNombre.Location = new System.Drawing.Point(115, 19);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(100, 20);
+            this.TxtNombre.TabIndex = 60;
             // 
             // label2
             // 
@@ -266,23 +265,25 @@
             this.label2.TabIndex = 59;
             this.label2.Text = "Nombre";
             // 
-            // button2
+            // BtnAceptar
             // 
-            this.button2.Location = new System.Drawing.Point(352, 397);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 73;
-            this.button2.Text = "Aceptar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Location = new System.Drawing.Point(352, 397);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.BtnAceptar.TabIndex = 73;
+            this.BtnAceptar.Text = "Aceptar";
+            this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
-            // button1
+            // BtnCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(209, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 72;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Location = new System.Drawing.Point(209, 397);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 72;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // label13
             // 
@@ -300,11 +301,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(650, 444);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnAceptar);
+            this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.label13);
             this.Name = "RegistrarBarco";
             this.Text = "RegistrarBarco";
+            this.Load += new System.EventHandler(this.RegistrarBarco_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -315,30 +317,30 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox TxtTripulantes;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox TxtMotores;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox TxtPasajeros;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox TxtCamarotes;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TxtAutonomia;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TxtDesplazamiento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtManga;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TxtEslora;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TxtAltura;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnAceptar;
+        private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox CbClasificacion;
     }
 }
