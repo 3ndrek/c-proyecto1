@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.TxtContrasenia = new System.Windows.Forms.TextBox();
             this.CmbPerfil = new System.Windows.Forms.ComboBox();
+            this.TxtContrasenia = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -73,21 +73,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion de Usuario";
             // 
-            // label3
+            // CmbPerfil
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Perfil";
-            // 
-            // TxtNombre
-            // 
-            this.TxtNombre.Location = new System.Drawing.Point(120, 35);
-            this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(154, 22);
-            this.TxtNombre.TabIndex = 3;
+            this.CmbPerfil.FormattingEnabled = true;
+            this.CmbPerfil.Location = new System.Drawing.Point(120, 101);
+            this.CmbPerfil.Name = "CmbPerfil";
+            this.CmbPerfil.Size = new System.Drawing.Size(154, 24);
+            this.CmbPerfil.TabIndex = 5;
             // 
             // TxtContrasenia
             // 
@@ -96,13 +88,21 @@
             this.TxtContrasenia.Size = new System.Drawing.Size(154, 22);
             this.TxtContrasenia.TabIndex = 4;
             // 
-            // CmbPerfil
+            // TxtNombre
             // 
-            this.CmbPerfil.FormattingEnabled = true;
-            this.CmbPerfil.Location = new System.Drawing.Point(120, 101);
-            this.CmbPerfil.Name = "CmbPerfil";
-            this.CmbPerfil.Size = new System.Drawing.Size(154, 24);
-            this.CmbPerfil.TabIndex = 5;
+            this.TxtNombre.Location = new System.Drawing.Point(120, 35);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(154, 22);
+            this.TxtNombre.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Perfil";
             // 
             // btnGuardar
             // 
@@ -134,6 +134,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrarUsuario";
             this.Text = "RegistrarUsuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarUsuario_FormClosing);
             this.Load += new System.EventHandler(this.RegistrarUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
