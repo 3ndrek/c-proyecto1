@@ -81,7 +81,6 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
             new ModificarBarco(id).Show();
             DgvBarco.Rows.Clear();
             CargarBarcos();
-
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
@@ -104,10 +103,6 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
                 return;
             }
             CargarBarcos();
-
-
-
-
         }
 
 
@@ -115,7 +110,6 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
         {
             frmPrincipal.Show();
             this.Dispose();
-
         }
 
         private void ConsultarBarco_FormClosing(object sender, FormClosingEventArgs e)

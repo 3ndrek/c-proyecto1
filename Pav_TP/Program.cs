@@ -1,4 +1,5 @@
-﻿using Pav_TP.InterfacesDeUsuario.Usuario;
+﻿using Pav_TP.InterfacesDeUsuario.Puerto;
+using Pav_TP.InterfacesDeUsuario.Usuario;
 using PAV1;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace seastar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(new ConsultarPuerto());
         }
     }
 }

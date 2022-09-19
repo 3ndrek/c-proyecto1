@@ -60,6 +60,7 @@
     <Compile Include="Entidades\Cubierta.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Puerto.cs" />
     <Compile Include="Entidades\Tripulante.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.cs">
@@ -151,12 +152,6 @@
     <Compile Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.designer.cs">
       <DependentUpon>EliminarCubierta.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfacesDeUsuario\Puerto\EliminarPuerto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfacesDeUsuario\Puerto\EliminarPuerto.designer.cs">
-      <DependentUpon>EliminarPuerto.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfacesDeUsuario\Puerto\ModificarPuerto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,11 +225,13 @@
     <Compile Include="Repositorios\CubiertasRepositorio.cs" />
     <Compile Include="Repositorios\DBHelper.cs" />
     <Compile Include="Repositorios\PerfilesRepositorio.cs" />
+    <Compile Include="Repositorios\PuertosRepositorio.cs" />
     <Compile Include="Repositorios\UsuariosRepositorio.cs" />
     <Compile Include="Servicios\BarcosServicios.cs" />
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
     <Compile Include="Servicios\PerfilesServicio.cs" />
+    <Compile Include="Servicios\PuertosServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
       <DependentUpon>ConsultarBarco.cs</DependentUpon>
@@ -262,9 +259,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Cubierta\EliminarCubierta.resx">
       <DependentUpon>EliminarCubierta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InterfacesDeUsuario\Puerto\EliminarPuerto.resx">
-      <DependentUpon>EliminarPuerto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Puerto\ModificarPuerto.resx">
       <DependentUpon>ModificarPuerto.cs</DependentUpon>

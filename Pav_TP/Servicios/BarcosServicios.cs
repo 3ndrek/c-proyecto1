@@ -66,7 +66,7 @@ namespace Pav_TP.Servicios
         {
             var filasAfectadas = barcosRepositorio.EliminarBarco(id);
             if (filasAfectadas != 1)
-                throw new ApplicationException("Hubo un problema al actualizar");
+                throw new ApplicationException("Hubo un problema al eliminar");
         }
     }
 }

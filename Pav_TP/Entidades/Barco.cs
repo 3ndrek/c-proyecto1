@@ -23,69 +23,70 @@ namespace Pav_TP.Entidades
 
         public void ValidarNombre()
         {
-            if(string.IsNullOrEmpty(this.Nombre))
+            if (string.IsNullOrEmpty(this.Nombre))
                 crearException("El nombre del barco es requerido.");
             if (!string.IsNullOrEmpty(Nombre) && Nombre.Length > 10)
-                crearException("El nombre del barco no debe superar los 10 caracteres.");
+                crearException("El nombre");
         }
 
         public void ValidarAltura()
         {
-            if (string.IsNullOrEmpty(this.Altura.ToString()) && this.Altura < 0)
-                crearException("La Altura del barco es requerido.");
+            if (this.Altura < 0)
+                crearException("La altura");
         }
 
         public void ValidarManga()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.Manga < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.Manga < 0)
+                crearException("La manga");
         }
 
         public void ValidarDesplazamiento()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.Desplazamiento < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.Desplazamiento < 0)
+                crearException("El desplazamiento");
         }
 
         public void ValidarAutonomia()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.Autonomia < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.Autonomia < 0)
+                crearException("La autonomía");
         }
 
         public void ValidarCamarotes()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.CantCamarote < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.CantCamarote < 0)
+                crearException("La cantidad de camarotes");
         }
 
         public void ValidarPasajeros()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.CantMaxPasajeros < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.CantMaxPasajeros < 0)
+                crearException("La cantidad máxima de pasajeros");
         }
 
         public void ValidarMotores()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.CantMotores < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.CantMotores < 0)
+                crearException("La cantidad de motores");
         }
 
         public void ValidarTripulacion()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()) && this.CantTripulante < 0)
-                crearException("El nombre del barco es requerido.");
+            if (this.CantTripulante < 0)
+                crearException("La cantidad de tripulantes");
+
         }
 
         public void ValidarClasificacion()
         {
-            if (string.IsNullOrEmpty(this.Manga.ToString()))
-                crearException("El nombre del barco es requerido.");
+            if (this.Clasificacion == 0)
+                crearException("La clasificación");
         }
 
         public ApplicationException crearException(string mensaje)
         {
-            return new ApplicationException(mensaje);
+            throw new ApplicationException($"{mensaje} del barco incorrecta, intentenlo nuevamente.");
         }
 
     }
