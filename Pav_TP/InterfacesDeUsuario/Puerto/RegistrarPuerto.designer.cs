@@ -117,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistrarPuerto";
             this.Text = "RegistrarPuerto";
+            this.Load += new System.EventHandler(this.RegistrarPuerto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

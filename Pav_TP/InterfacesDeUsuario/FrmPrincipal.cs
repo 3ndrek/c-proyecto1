@@ -59,7 +59,7 @@ namespace seastar
         }
         private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            Form consultarTripulante = new ConsultarTripulante();
+            Form consultarTripulante = new ConsultarTripulante(this);
             consultarTripulante.Show();
             this.Hide();
         }
