@@ -93,5 +93,17 @@ namespace seastar
             Form registrarUsuario = new RegistrarUsuario();
             registrarUsuario.ShowDialog();
         }
+
+        private void consultarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form consultarUsuario = new ConsultarUsuario();
+            consultarUsuario.ShowDialog();
+        }
+
+        private void modificarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form modificarUsuario = new ModificarUsuario();
+            modificarUsuario.ShowDialog();
+        }
     }
 }
