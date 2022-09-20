@@ -43,12 +43,12 @@
             this.usuariosTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet1TableAdapters.usuariosTableAdapter();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtNombreM = new System.Windows.Forms.TextBox();
-            this.TxtContraseniaM = new System.Windows.Forms.TextBox();
             this.CmbPerfil = new System.Windows.Forms.ComboBox();
+            this.TxtContraseniaM = new System.Windows.Forms.TextBox();
+            this.TxtNombreM = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).BeginInit();
@@ -184,23 +184,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevos datos del usuario";
             // 
-            // label2
+            // CmbPerfil
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.CmbPerfil.FormattingEnabled = true;
+            this.CmbPerfil.Location = new System.Drawing.Point(112, 90);
+            this.CmbPerfil.Name = "CmbPerfil";
+            this.CmbPerfil.Size = new System.Drawing.Size(121, 24);
+            this.CmbPerfil.TabIndex = 6;
             // 
-            // label3
+            // TxtContraseniaM
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Contrasenia";
+            this.TxtContraseniaM.Location = new System.Drawing.Point(112, 61);
+            this.TxtContraseniaM.Name = "TxtContraseniaM";
+            this.TxtContraseniaM.Size = new System.Drawing.Size(100, 22);
+            this.TxtContraseniaM.TabIndex = 5;
+            // 
+            // TxtNombreM
+            // 
+            this.TxtNombreM.Location = new System.Drawing.Point(112, 33);
+            this.TxtNombreM.Name = "TxtNombreM";
+            this.TxtNombreM.Size = new System.Drawing.Size(100, 22);
+            this.TxtNombreM.TabIndex = 4;
             // 
             // label4
             // 
@@ -211,27 +215,23 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Perfil";
             // 
-            // TxtNombreM
+            // label3
             // 
-            this.TxtNombreM.Location = new System.Drawing.Point(112, 33);
-            this.TxtNombreM.Name = "TxtNombreM";
-            this.TxtNombreM.Size = new System.Drawing.Size(100, 22);
-            this.TxtNombreM.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Contrasenia";
             // 
-            // TxtContraseniaM
+            // label2
             // 
-            this.TxtContraseniaM.Location = new System.Drawing.Point(112, 61);
-            this.TxtContraseniaM.Name = "TxtContraseniaM";
-            this.TxtContraseniaM.Size = new System.Drawing.Size(100, 22);
-            this.TxtContraseniaM.TabIndex = 5;
-            // 
-            // CmbPerfil
-            // 
-            this.CmbPerfil.FormattingEnabled = true;
-            this.CmbPerfil.Location = new System.Drawing.Point(112, 90);
-            this.CmbPerfil.Name = "CmbPerfil";
-            this.CmbPerfil.Size = new System.Drawing.Size(121, 24);
-            this.CmbPerfil.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
             // 
             // groupBox3
             // 
@@ -253,6 +253,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ModificarUsuario";
             this.Text = "ModificarUsuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarUsuario_FormClosing);
             this.Load += new System.EventHandler(this.ModificarUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

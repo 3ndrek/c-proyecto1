@@ -1,4 +1,5 @@
-﻿using System;
+﻿using seastar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,10 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
     public partial class ConsultarUsuario : Form
     {
         SqlConnection myconn;
-        public ConsultarUsuario()
+        private readonly FrmPrincipal frmPrincipal;
+        public ConsultarUsuario(FrmPrincipal frmPrincipal1)
         {
+            frmPrincipal = frmPrincipal1;
             InitializeComponent();
         }
 
@@ -77,7 +80,7 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            Form registrarUsuario = new RegistrarUsuario();
+            Form registrarUsuario = new RegistrarUsuario(frmPrincipal);
             registrarUsuario.ShowDialog();
             SqlCommand consultar = new SqlCommand();
             consultar.CommandType = CommandType.Text;
@@ -88,6 +91,17 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
             GrillaUsuario.DataSource = midata;
 
 
+        }
+        private void CerrarFormulario()
+        {
+            frmPrincipal.Show();
+            this.Dispose();
+
+        }
+
+        private void ConsultarUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
         }
     }
 }

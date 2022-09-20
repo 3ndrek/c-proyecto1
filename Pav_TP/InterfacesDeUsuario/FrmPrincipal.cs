@@ -59,7 +59,7 @@ namespace seastar
         }
         private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            Form consultarTripulante = new ConsultarTripulante();
+            Form consultarTripulante = new ConsultarTripulante(this);
             consultarTripulante.Show();
             this.Hide();
         }
@@ -169,23 +169,23 @@ namespace seastar
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarUsuario modificarUsuario = new ModificarUsuario(/*this*/);
+            ModificarUsuario modificarUsuario = new ModificarUsuario(this);
             modificarUsuario.Show();
             this.Hide();
         }
 
         private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistrarUsuario registrarUsuario = new RegistrarUsuario(/*this*/);
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario(this);
             registrarUsuario.Show();
-            Hide();
+            this.Hide();
         }
 
         private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarUsuario consultarUsuario = new ConsultarUsuario(/*this*/);
+            ConsultarUsuario consultarUsuario = new ConsultarUsuario(this);
             consultarUsuario.Show();
-            Hide( );
+            this.Hide( );
         }
     }
 }
