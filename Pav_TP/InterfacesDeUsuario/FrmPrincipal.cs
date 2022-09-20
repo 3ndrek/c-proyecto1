@@ -187,5 +187,24 @@ namespace seastar
             consultarUsuario.Show();
             this.Hide( );
         }
+
+        private void itinerarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarPuerto_Click(object sender, EventArgs e)
+        {
+            RegistrarPuerto registrarPuerto = new RegistrarPuerto();
+            registrarPuerto.Show();
+            this.Hide();
+        }
+
+        private void consultarPuerto_Click(object sender, EventArgs e)
+        {
+            ConsultarPuerto consultarPuerto = new ConsultarPuerto();
+            consultarPuerto.Show();
+            this.Hide();
+        }
     }
 }

@@ -63,6 +63,16 @@ namespace Pav_TP.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barcoimg {
+            get {
+                object obj = ResourceManager.GetObject("barcoimg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap f_elconfidencial_com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e__1_ {
             get {
                 object obj = ResourceManager.GetObject("f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e (1)", resourceCulture);
@@ -76,6 +86,16 @@ namespace Pav_TP.Properties {
         internal static System.Drawing.Bitmap vaije {
             get {
                 object obj = ResourceManager.GetObject("vaije", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap viajeimg {
+            get {
+                object obj = ResourceManager.GetObject("viajeimg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

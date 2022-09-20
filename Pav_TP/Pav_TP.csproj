@@ -370,6 +370,7 @@
     <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
     <Content Include="Recursos\pers.jpg" />
     <Content Include="Recursos\vaije.jpg" />
+    <None Include="Resources\barcoimg.png" />
     <None Include="Resources\vaije.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
