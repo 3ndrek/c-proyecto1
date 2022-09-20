@@ -56,11 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Barco.cs" />
+    <Compile Include="Entidades\Ciudad.cs" />
     <Compile Include="Entidades\Clasificacion.cs" />
     <Compile Include="Entidades\Cubierta.cs" />
+    <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Puestos.cs" />
+    <Compile Include="Entidades\TipoDoc.cs" />
+    <Compile Include="Repositorios\CiudadesRepositorio.cs" />
+    <Compile Include="Repositorios\GeneroRepositorio.cs" />
+    <Compile Include="Repositorios\PaisesRepositorio.cs" />
+    <Compile Include="Repositorios\TipoDocRepositorio.cs" />
     <Compile Include="Entidades\Tripulante.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="InterfacesDeUsuario\Barco\ConsultarBarco.cs">
@@ -242,11 +250,16 @@
     <Compile Include="Repositorios\TripulantesRepositorio.cs" />
     <Compile Include="Repositorios\UsuariosRepositorio.cs" />
     <Compile Include="Servicios\BarcosServicios.cs" />
+    <Compile Include="Servicios\CiudadServicios.cs" />
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
+    <Compile Include="Servicios\GeneroServicios.cs" />
+    <Compile Include="Servicios\PaisesServicios.cs" />
     <Compile Include="Servicios\PasajerosServicios.cs" />
     <Compile Include="Servicios\PerfilesServicio.cs" />
     <Compile Include="Servicios\PuestosServicios.cs" />
+    <Compile Include="Servicios\TipoDocServicio.cs" />
+    <Compile Include="Servicios\TipoDocServicios.cs" />
     <Compile Include="Servicios\TripulantesServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
@@ -260,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Pasajero\ModificarPasajero.resx">
+      <DependentUpon>ModificarPasajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.resx">
       <DependentUpon>ConsultarPuerto.cs</DependentUpon>

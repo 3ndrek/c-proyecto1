@@ -1,4 +1,6 @@
-﻿using seastar;
+﻿using Pav_TP.Entidades;
+using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,87 +17,173 @@ namespace TrabajoPracticoPav
     public partial class RegistrarPasajero : Form
     {
 
-        SqlConnection myconn;
+        private Pasajero pasajero;
+        private TipoDocServicio tipoServicio;
+        private CiudadServicios ciudadServicios;
+        private PaisesServicios paisesServicios;
+        private GeneroServicios generoServicios;
+        private PasajerosServicios pasajerosServicios;
+
+        private readonly FrmPrincipal frmPrincipal;
+
         public RegistrarPasajero(FrmPrincipal frmPrincipal1)
         {
+            frmPrincipal = frmPrincipal1;
+            pasajerosServicios = new PasajerosServicios();
+            tipoServicio = new TipoDocServicio();
+            ciudadServicios = new CiudadServicios();
+            paisesServicios = new PaisesServicios();
+            generoServicios = new GeneroServicios();
             InitializeComponent();
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
-            myconn = new SqlConnection
-            {
-                ConnectionString = conbas
-            };
-            myconn.Open();
-            SqlCommand myconn2 = new SqlCommand();
-            myconn2.CommandType = CommandType.Text;
-            myconn2.Connection = myconn;
-            myconn2.CommandText = "SELECT * FROM tipo_doc";
-            DataTable datotipo = new DataTable();
-            datotipo.Load(myconn2.ExecuteReader());
-            comboBoxDni.DataSource = datotipo;
+            CargarTipo();
+            CargarCiudad();
+            CargarPais();
+            CargarGenero();
+        }
+
+        public void CargarTipo()
+        {
+            var tipos = tipoServicio.GetTipos();
+            var tipoSeleccionar = new TipoDoc();
+            tipoSeleccionar.desc = "Seleccionar";
+            tipos.Add(tipoSeleccionar);
+
+            var conector = new BindingSource();
+            conector.DataSource = tipos;
+
+            comboBoxDni.DataSource = conector;
             comboBoxDni.DisplayMember = "desc";
             comboBoxDni.ValueMember = "tipo";
+            comboBoxDni.SelectedItem = tipoSeleccionar;
+        }
 
-            SqlCommand myconn3 = new SqlCommand();
-            myconn3.CommandType = CommandType.Text;
-            myconn3.Connection = myconn;
-            myconn3.CommandText = "SELECT C.cod_ciudad , c.nombre FROM paisesXciudades PC join ciudades C on PC.cod_ciudad=C.cod_ciudad";
-            DataTable datociudad = new DataTable();
-            datociudad.Load(myconn3.ExecuteReader());
-            comboBoxCiudad.DataSource = datociudad;
+        public void CargarCiudad()
+        {
+            var ciudad = ciudadServicios.GetCiudades();
+            var ciudadSeleccionar = new Ciudad();
+            ciudadSeleccionar.nombre = "Seleccionar";
+            ciudad.Add(ciudadSeleccionar);
+
+            var conector = new BindingSource();
+            conector.DataSource = ciudad;
+
+            comboBoxCiudad.DataSource = conector;
             comboBoxCiudad.DisplayMember = "nombre";
             comboBoxCiudad.ValueMember = "cod_ciudad";
+            comboBoxCiudad.SelectedItem = ciudadSeleccionar;
+        }
 
-            SqlCommand myconn4 = new SqlCommand();
-            myconn4.CommandType = CommandType.Text;
-            myconn4.Connection = myconn;
-            myconn4.CommandText = "SELECT * FROM paises";
-            DataTable datopais = new DataTable();
-            datopais.Load(myconn4.ExecuteReader());
-            comboBoxPais.DataSource = datopais;
+        public void CargarPais()
+        {
+            var pais = paisesServicios.GetPaises();
+            var paisSeleccionar = new Paises();
+            paisSeleccionar.nombre = "Seleccionar";
+            pais.Add(paisSeleccionar);
+
+            var conector = new BindingSource();
+            conector.DataSource = pais;
+
+            comboBoxPais.DataSource = conector;
             comboBoxPais.DisplayMember = "nombre";
-            comboBoxPais.ValueMember = "cod_pais";
+            comboBoxPais.ValueMember = "cod_ciudad";
+            comboBoxPais.SelectedItem = paisSeleccionar;
+        }
 
-            SqlCommand myconn5 = new SqlCommand();
-            myconn5.CommandType = CommandType.Text;
-            myconn5.Connection = myconn;
-            myconn5.CommandText = "SELECT * FROM genero";
-            DataTable datogenero = new DataTable();
-            datogenero.Load(myconn5.ExecuteReader());
-            comboBoxGenero.DataSource = datogenero;
+        public void CargarGenero()
+        {
+            var genero = generoServicios.GetGeneros();
+            var generoSeleccionar = new Genero();
+            generoSeleccionar.desc = "Seleccionar";
+            genero.Add(generoSeleccionar);
+
+            var conector = new BindingSource();
+            conector.DataSource = genero;
+
+            comboBoxGenero.DataSource = conector;
             comboBoxGenero.DisplayMember = "desc";
             comboBoxGenero.ValueMember = "tipo";
+            comboBoxGenero.SelectedItem = generoSeleccionar;
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-
-            SqlCommand registrar = new SqlCommand();
-            registrar.CommandType = CommandType.Text;
-            registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO pasajeros (tipo_doc,num_doc,nombre,apellido,ciudad_procedente,pais_procedente,email,fechaNac,genero)" +
-                "VALUES (" + comboBoxDni.SelectedValue.ToString() + ",'" + TxtDni.Text +"','" + TxtNom.Text + "','" +TxtApe.Text + "'," + comboBoxCiudad.SelectedValue.ToString() + "," + comboBoxPais.SelectedValue.ToString() + ",'" + TxtEmail.Text + "','" + Convert.ToDateTime(dateTimePicker2.Value.Date.ToString("yyyy-MM-dd")) + "'," + comboBoxGenero.SelectedValue.ToString() + ")";
-            registrar.ExecuteNonQuery();
-            TxtDni.Text = "";
-            TxtNom.Text = "";
-            TxtApe.Text = "";
-            TxtEmail.Text = "";
-            TxtDni.Focus();
-
-            MessageBox.Show("Se cargo con exito");
+            try
+            {
+                if (!esOperacionConfirmada())
+                    return;
+                if (!esPasajeroValido())
+                    return;
+                RegistrarPasajeroo();
+            }
+            catch (ApplicationException aex)
+            {
+                MessageBox.Show(aex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public bool esOperacionConfirmada()
+        {
+            var respuesta = MessageBox.Show("Desea confirmar la operación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes) { return true; }
+            return false;
         }
 
+        public bool esPasajeroValido()
+        {
+            var nombre = TxtNom.Text;
+            var apellido = TxtApe.Text.Trim();
+            var ciudad_procedente = (Ciudad)comboBoxCiudad.SelectedItem;
+            var pais_procedente = (Paises)comboBoxPais.SelectedItem;
+            var email = TxtEmail.Text.Trim();
+            var fechaNac = Convert.ToDateTime(dateTimePicker2.Text.Trim());
+            var genero = (Genero)comboBoxGenero.SelectedItem;
+           
+
+            var pasajeroIngresado = new Pasajero();
+            pasajeroIngresado.nombre = nombre;
+            pasajeroIngresado.apellido = apellido;
+            pasajeroIngresado.ciudad_procedente = ciudad_procedente.cod_ciudad;
+            pasajeroIngresado.pais_procedente= pais_procedente.cod_pais;
+            pasajeroIngresado.email = email;
+            pasajeroIngresado.fechaNac = fechaNac;
+            pasajeroIngresado.genero = genero.tipo;
+            
+
+            pasajerosServicios.ValidarPasajeros(pasajeroIngresado);
+            pasajero = pasajeroIngresado;
+            return true;
+        }
+
+        public void RegistrarPasajeroo()
+        {
+            if (pasajerosServicios.RegistrarPasajero(pasajero))
+            {
+                MessageBox.Show("El pasajero se registro exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            MessageBox.Show("Ocurrio un problema para registrar , intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CerrarFormulario();
         }
+        private void CerrarFormulario()
+        {
+            frmPrincipal.Show();
+            this.Dispose();
 
-       
+        }
+        private void RegistrarBarco_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
+        }
     }
 }

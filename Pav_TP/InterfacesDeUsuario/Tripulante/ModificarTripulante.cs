@@ -29,7 +29,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         private void ModificarTripulante_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            CargarClasificaciones();
+            CargarPuestos();
         }
 
         private void CargarDatos()
@@ -43,7 +43,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
             
         }
 
-        public void CargarClasificaciones()
+        public void CargarPuestos()
         {
             var puestos = puestosServicios.GetPuestos();
             var conector = new BindingSource();

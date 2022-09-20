@@ -1,5 +1,4 @@
 ﻿using Pav_TP.Entidades;
-using Pav_TP.InterfacesDeUsuario.Pasajero;
 using Pav_TP.Servicios;
 using PAV1;
 using seastar;
@@ -7,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,16 +29,16 @@ namespace TrabajoPracticoPav
 
         private void ConsultarPasajero_Load(object sender, EventArgs e)
         {
-            CargarPasajero();
+            CargarPasajeros();
         }
 
-        private void CargarPasajero()
+        private void CargarPasajeros()
         {
             var pasajeros = pasajerosServicios.GetPasajeros();
             GrillaPasajero.Rows.Clear();
             FuncionalidadCargarPasajeros(pasajeros);
         }
-        private void CargarBarcos(Pasajero bf)
+        private void CargarPasajeros(Pasajero bf)
         {
             var pasajeros = pasajerosServicios.GetPasajeros(bf);
             GrillaPasajero.Rows.Clear();
@@ -67,7 +65,30 @@ namespace TrabajoPracticoPav
             }
         }
 
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new RegistrarPasajero(frmPrincipal).Show();
+        }
 
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(GrillaPasajero.SelectedRows[0].Cells["num_doc"].Value);
+
+            // this.Hide();
+            new ModificarPasajero(id).Show();
+            GrillaPasajero.Rows.Clear();
+            CargarPasajeros();
+
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(GrillaPasajero.SelectedRows[0].Cells["num_doc"].Value);
+            pasajerosServicios.EliminarPasajero(id);
+            GrillaPasajero.Rows.Clear();
+            CargarPasajeros();
+        }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             var buscar = new Pasajero();
@@ -78,7 +99,6 @@ namespace TrabajoPracticoPav
                 return;
             }
             CargarPasajeros();
-
             
         }
 

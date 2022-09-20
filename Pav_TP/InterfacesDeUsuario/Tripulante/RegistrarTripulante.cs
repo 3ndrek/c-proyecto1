@@ -15,14 +15,12 @@ namespace TrabajoPracticoPav
     {
         SqlConnection myconn;
 
-        public RegistrarTripulante(seastar.FrmPrincipal frmPrincipal)
+        public RegistrarTripulante()
         {
             InitializeComponent();
         }
 
-        public RegistrarTripulante()
-        {
-        }
+        
 
         private void RegistrarTripulante_Load(object sender, EventArgs e)
         {

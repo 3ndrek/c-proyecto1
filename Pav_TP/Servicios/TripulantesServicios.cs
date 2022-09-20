@@ -44,7 +44,7 @@ namespace Pav_TP.Servicios
 
         public bool RegistrarTripulante(Tripulante t)
         {
-            var filasAfectadas = tripulanteRepositorio.RegistrarTripulante(t);
+            var filasAfectadas = tripulanteRepositorio.RegistrarTripulantet(t);
             if (filasAfectadas == 1)
                 return true;
 

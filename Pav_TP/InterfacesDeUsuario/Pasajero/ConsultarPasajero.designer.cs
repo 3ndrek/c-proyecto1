@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TrabajoPracticoPav
 {
     partial class ConsultarPasajero
@@ -41,9 +43,9 @@ namespace TrabajoPracticoPav
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.TxtDni = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dni = new System.Windows.Forms.Label();
@@ -58,7 +60,6 @@ namespace TrabajoPracticoPav
             // 
             this.groupBox1.Controls.Add(this.btnModificar);
             this.groupBox1.Controls.Add(this.GrillaPasajero);
-            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Location = new System.Drawing.Point(40, 199);
@@ -95,7 +96,7 @@ namespace TrabajoPracticoPav
             this.email,
             this.fechaNac,
             this.genero});
-            this.GrillaPasajero.Location = new System.Drawing.Point(25, 28);
+            this.GrillaPasajero.Location = new System.Drawing.Point(22, 28);
             this.GrillaPasajero.MultiSelect = false;
             this.GrillaPasajero.Name = "GrillaPasajero";
             this.GrillaPasajero.ReadOnly = true;
@@ -156,16 +157,6 @@ namespace TrabajoPracticoPav
             this.genero.Name = "genero";
             this.genero.ReadOnly = true;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(322, 110);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 29;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Lime;
@@ -187,6 +178,15 @@ namespace TrabajoPracticoPav
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(291, 448);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 29;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // TxtDni
             // 
@@ -242,6 +242,7 @@ namespace TrabajoPracticoPav
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 501);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultarPasajero";
@@ -254,6 +255,16 @@ namespace TrabajoPracticoPav
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
         }
 
         #endregion

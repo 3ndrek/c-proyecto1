@@ -60,7 +60,7 @@ namespace Pav_TP.Repositorios
 
         public int RegistrarPasajero(Pasajero p)
         {
-            var sentenciaSql = $"INSERT INTO pasajeros (tipo_doc, num_doc, nombre, apellido, ciudad_procedente, pais_procedente, email, fechaNac, genero) VALUES ('{p.tipo_doc}', {p.num_doc}, {p.nombre}, {p.apellido}, {p.ciudad_procedente}, {p.pais_procedente}, {p.email}, {p.fechaNac}, {p.genero})";
+            var sentenciaSql = $"INSERT INTO pasajeros (tipo_doc, num_doc, nombre, apellido, ciudad_procedente, pais_procedente, email, fechaNac, genero) VALUES ({p.tipo_doc}, {p.num_doc}, '{p.nombre}', '{p.apellido}', {p.ciudad_procedente}, {p.pais_procedente}, '{p.email}', '{p.fechaNac}', {p.genero})";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
@@ -82,11 +82,10 @@ namespace Pav_TP.Repositorios
 
             return pasajero;
         }
-
         public int ActualizarPasajero(Pasajero p)
         {
-            var sentenciaSql = $"UPDATE pasajeros SET tipo_doc ={p.tipo_doc}, num_doc ={p.num_doc}, nombre ='{p.nombre}', apellido ='{p.apellido}', " +
-                $"ciudad_procedente= {p.ciudad_procedente}, pais_procedente = {p.pais_procedente}, email= '{p.email}', fechaNac ='{p.fechaNac}', genero ={p.genero}";
+            var sentenciaSql = $"UPDATE pasajeros SET nombre ='{p.nombre}', apellido ='{p.apellido}', " +
+                $"ciudad_procedente= {p.ciudad_procedente}, pais_procedente = {p.pais_procedente}, email= '{p.email}', fechaNac ='{p.fechaNac}', genero ={p.genero} WHERE tipo_doc={p.tipo_doc} AND num_doc={p.num_doc}";
 
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 

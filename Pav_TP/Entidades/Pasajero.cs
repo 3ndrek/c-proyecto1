@@ -71,7 +71,7 @@ namespace Pav_TP.Entidades
 
         public ApplicationException crearException(string mensaje)
         {
-            return new ApplicationException(mensaje);
+            throw new ApplicationException(mensaje);
         }
 
     }

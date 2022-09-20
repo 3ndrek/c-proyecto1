@@ -110,7 +110,7 @@ namespace TrabajoPracticoPav
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var id = Convert.ToInt32(GrillaTripulante.SelectedRows[0].Cells["legajo"].Value);
+            var id = Convert.ToInt32(GrillaTripulante.SelectedRows[0].Cells["nombre"].Value);
 
             // this.Hide();
             new ModificarTripulante(id).Show();
