@@ -90,7 +90,7 @@ namespace TrabajoPracticoPav
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Form registrarTripulante = new RegistrarTripulante();
+            Form registrarTripulante = new RegistrarTripulante(this);
             registrarTripulante.ShowDialog();
         }
 
@@ -110,7 +110,7 @@ namespace TrabajoPracticoPav
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var id = Convert.ToInt32(GrillaTripulante.SelectedRows[0].Cells["nombre"].Value);
+            var id = Convert.ToInt32(GrillaTripulante.SelectedRows[0].Cells["legajo"].Value);
 
             // this.Hide();
             new ModificarTripulante(id).Show();

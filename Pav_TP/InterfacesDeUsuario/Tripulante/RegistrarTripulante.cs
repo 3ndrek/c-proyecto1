@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Pav_TP.Entidades;
+using Pav_TP.Servicios;
+using seastar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,80 +16,149 @@ namespace TrabajoPracticoPav
 {
     public partial class RegistrarTripulante : Form
     {
-        SqlConnection myconn;
+        private Tripulante tripu;
+        private PuestosServicios puestosServicios;
+        private TripulantesServicios tripulantesServicios;
+        private ConsultarTripulante consultarTripulante;
+        private JefeServicios jefeServicios;
 
-        public RegistrarTripulante()
+        private readonly FrmPrincipal frmPrincipal;
+        public RegistrarTripulante( FrmPrincipal frmPrincipal1)
         {
+            frmPrincipal = frmPrincipal1;
+            tripulantesServicios = new TripulantesServicios();
+            puestosServicios = new PuestosServicios();
+            jefeServicios = new JefeServicios();
             InitializeComponent();
         }
 
-        
+        public RegistrarTripulante(ConsultarTripulante consultarTripulante)
+        {
+            this.consultarTripulante = consultarTripulante;
+        }
 
         private void RegistrarTripulante_Load(object sender, EventArgs e)
         {
-            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
-            myconn = new SqlConnection
-            {
-                ConnectionString = conbas
-            };
-            myconn.Open();
-            
-            SqlCommand myconn2 = new SqlCommand();
-            myconn2.CommandType = CommandType.Text;
-            myconn2.Connection = myconn;
-            myconn2.CommandText = "SELECT * FROM puestos";
-            DataTable datopuesto = new DataTable();
-            datopuesto.Load(myconn2.ExecuteReader());
-            cmbCod.DataSource = datopuesto;
+            CargarPuesto();
+            CargarJefe();
+        }
+
+        public void CargarPuesto()
+        {
+            var puestos = puestosServicios.GetPuestos();
+            var puestoSeleccionar = new Puestos();
+            puestoSeleccionar.desc = "Seleccionar";
+            puestos.Add(puestoSeleccionar);
+
+            var conector = new BindingSource();
+            conector.DataSource = puestos;
+
+            cmbCod.DataSource = conector;
             cmbCod.DisplayMember = "desc";
             cmbCod.ValueMember = "cod_puesto";
+            cmbCod.SelectedItem = puestoSeleccionar;
+        }
 
-            SqlCommand myconn3 = new SqlCommand();
-            myconn3.CommandType = CommandType.Text;
-            myconn3.Connection = myconn;
-            myconn3.CommandText = "SELECT * FROM usuarios";
-            DataTable datousuario = new DataTable();
-            datousuario.Load(myconn3.ExecuteReader());
-            comboBoxUsuario.DataSource = datousuario;
-            comboBoxUsuario.DisplayMember = "usuario";
-            comboBoxUsuario.ValueMember = "usuario";
+        public void CargarJefe()
+        {
+            var jefe = jefeServicios.GetJefes();
+            var jefeDefault = new Tripulante();
+            jefeDefault.legajo = 0;
+            jefeDefault.nombre = "Seleccionar";
+            jefe.Add(jefeDefault);
+            var conector = new BindingSource();
+            conector.DataSource = jefe;
 
-            SqlCommand myconn4 = new SqlCommand();
-            myconn4.CommandType = CommandType.Text;
-            myconn4.Connection = myconn;
-            myconn4.CommandText = "SELECT * FROM tripulantes WHERE jefe is NULL";
-            DataTable datojefe = new DataTable();
-            datojefe.Load(myconn4.ExecuteReader());
-            comboBoxJefe.DataSource = datojefe;
+            comboBoxJefe.DataSource = conector;
             comboBoxJefe.DisplayMember = "nombre";
             comboBoxJefe.ValueMember = "legajo";
+            comboBoxJefe.SelectedItem = jefeDefault;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            SqlCommand registrar = new SqlCommand();
-            registrar.CommandType = CommandType.Text;
-            registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO tripulantes (jefe,nombre,apellido,email,fechaNac,usuario,puesto)" +
-                "VALUES (" + comboBoxJefe.SelectedValue.ToString() + ",'" + TxtNom.Text + "','" + TxtApe.Text + "','" + TxtEmail.Text + "','"+ Convert.ToDateTime(dateTimePicker1.Value.Date.ToString("yyyy-MM-dd")) + "','" + comboBoxUsuario.SelectedValue.ToString() + "'," + cmbCod.SelectedValue.ToString() + ")";
-            registrar.ExecuteNonQuery();
-            TxtNom.Text = "";
-            TxtApe.Text = "";
-            TxtEmail.Text = "";
-            TxtNom.Focus();
-
-
-            MessageBox.Show("Se cargo con exito");
+            try
+            {
+                if (!esOperacionConfirmada())
+                    return;
+                if (!esTripulanteValido())
+                    return;
+                RegistrarTripulantee();
+            }
+            catch (ApplicationException aex)
+            {
+                MessageBox.Show(aex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
-      
+
+        public bool esOperacionConfirmada()
+        {
+            var respuesta = MessageBox.Show("Desea confirmar la operación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta == DialogResult.Yes) { return true; }
+            return false;
+        }
+        public bool esTripulanteValido()
+        {
+            var jefe = (Tripulante)comboBoxJefe.SelectedItem;
+            var nombre = TxtNom.Text;
+            var apellido = TxtApe.Text.Trim();
+            var email = TxtEmail.Text.Trim();
+            var fechaNac = Convert.ToDateTime(dateTimePicker1.Text.Trim());
+            var puesto = (Puestos)cmbCod.SelectedItem;
+
+
+            var tripulanteIngresado = new Tripulante();
+            tripulanteIngresado.jefe = jefe.jefe;
+            tripulanteIngresado.nombre = nombre;
+            tripulanteIngresado.apellido = apellido;
+            tripulanteIngresado.email = email;
+            tripulanteIngresado. fechaNac = fechaNac;
+            tripulanteIngresado.puesto = puesto.cod_puesto;
+
+
+            tripulantesServicios.ValidarTripulante(tripulanteIngresado);
+            tripu = tripulanteIngresado;
+            return true;
+        }
+
+        public void RegistrarTripulantee()
+        {
+            if (tripulantesServicios.RegistrarTripulante(tripu))
+            {
+                MessageBox.Show("El tripulante se registro exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            MessageBox.Show("Ocurrio un problema para registrar , intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CerrarFormulario();
         }
 
-        
+         private void CerrarFormulario()
+        {
+            frmPrincipal.Show();
+            this.Dispose();
+
+        }
+
+        private void RegistrarTripulante_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {

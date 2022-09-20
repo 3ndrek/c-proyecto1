@@ -45,8 +45,6 @@ namespace TrabajoPracticoPav
             this.fecha = new System.Windows.Forms.Label();
             this.TxtApe = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,8 +70,6 @@ namespace TrabajoPracticoPav
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxUsuario);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cod);
             this.groupBox1.Controls.Add(this.genero);
             this.groupBox1.Controls.Add(this.email);
@@ -201,23 +197,6 @@ namespace TrabajoPracticoPav
             this.TxtEmail.Size = new System.Drawing.Size(121, 20);
             this.TxtEmail.TabIndex = 30;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Usuario";
-            // 
-            // comboBoxUsuario
-            // 
-            this.comboBoxUsuario.FormattingEnabled = true;
-            this.comboBoxUsuario.Location = new System.Drawing.Point(391, 91);
-            this.comboBoxUsuario.Name = "comboBoxUsuario";
-            this.comboBoxUsuario.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxUsuario.TabIndex = 44;
-            // 
             // RegistrarTripulante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +232,5 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.Label cod;
         private System.Windows.Forms.ComboBox cmbCod;
         private System.Windows.Forms.ComboBox comboBoxJefe;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxUsuario;
     }
 }

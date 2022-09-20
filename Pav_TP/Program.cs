@@ -19,7 +19,7 @@ namespace seastar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ConsultarTripulante());
+            Application.Run(new FrmPrincipal());
         }
     }
 }

@@ -18,10 +18,12 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         private Entidades.Tripulante tripulante;
         private TripulantesServicios tripulantesServicios;
         private PuestosServicios puestosServicios;
+        private JefeServicios jefesServicios;
         public ModificarTripulante(int id)
         {
             tripulantesServicios = new TripulantesServicios();
             puestosServicios = new PuestosServicios();
+            jefesServicios = new JefeServicios();
             tripulante = tripulantesServicios.GetTripulantes(id);
             InitializeComponent();
         }
@@ -30,7 +32,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         {
             CargarDatos();
             CargarPuestos();
-        }
+            CargarJefe();      }
 
         private void CargarDatos()
         {
@@ -55,6 +57,22 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
 
             var puestoSeleccionada = puestos.First(p => p.cod_puesto == tripulante.puesto);
             cmbCod.SelectedItem = puestoSeleccionada;
+        }
+
+        public void CargarJefe()
+        {
+            var jefe = jefesServicios.GetJefes();
+            var jefeDefault = new Entidades.Tripulante();
+            jefeDefault.legajo = 0;
+            jefeDefault.nombre = "Seleccionar";
+            jefe.Add(jefeDefault);
+            var conector = new BindingSource();
+            conector.DataSource =jefe;
+
+            comboBoxJefe.DataSource = conector;
+            comboBoxJefe.DisplayMember = "nombre";
+            comboBoxJefe.ValueMember =  "legajo" ;
+            comboBoxJefe.SelectedItem = jefeDefault;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -91,7 +109,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
             var puesto = (Puestos)cmbCod.SelectedItem;
 
             var tripulanteIngresado = new Entidades.Tripulante();
-            tripulanteIngresado.jefe = tripulante.jefe;
+            tripulanteIngresado.jefe = jefe;
             tripulanteIngresado.nombre = nombre;
             tripulanteIngresado.apellido = apellido;
             tripulanteIngresado.email = email;

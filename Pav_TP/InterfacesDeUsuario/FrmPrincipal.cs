@@ -49,7 +49,7 @@ namespace seastar
 
         private void registrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Form registrarTripulante = new RegistrarTripulante();
+            Form registrarTripulante = new RegistrarTripulante(this);
             registrarTripulante.Show();
             this.Hide();
         }
@@ -66,13 +66,13 @@ namespace seastar
 
         private void registrarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            Form registrarPasajero = new RegistrarPasajero();
+            Form registrarPasajero = new RegistrarPasajero(this);
             registrarPasajero.Show();
             this.Hide();
         }
         private void consultarPasajero_Click(object sender, EventArgs e)
         {
-            ConsultarPasajero consultarPasajero = new ConsultarPasajero();
+            ConsultarPasajero consultarPasajero = new ConsultarPasajero(this);
             consultarPasajero.Show();
             this.Hide();
         }

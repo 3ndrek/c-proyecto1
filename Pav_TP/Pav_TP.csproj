@@ -67,6 +67,7 @@
     <Compile Include="Entidades\TipoDoc.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
     <Compile Include="Repositorios\GeneroRepositorio.cs" />
+    <Compile Include="Repositorios\JefeRepositorio.cs" />
     <Compile Include="Repositorios\PaisesRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocRepositorio.cs" />
     <Compile Include="Entidades\Tripulante.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
     <Compile Include="Servicios\GeneroServicios.cs" />
+    <Compile Include="Servicios\JefeServicios.cs" />
     <Compile Include="Servicios\PaisesServicios.cs" />
     <Compile Include="Servicios\PasajerosServicios.cs" />
     <Compile Include="Servicios\PerfilesServicio.cs" />
