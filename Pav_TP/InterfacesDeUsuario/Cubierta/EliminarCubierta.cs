@@ -35,6 +35,8 @@ namespace PAV1
 
             foreach (var cubierta in cubiertas)
             {
+                LblDesc.Show();
+                LblEncargado.Show();
                 LblDesc.Text = cubierta.desc;
                 LblEncargado.Text = cubierta.leg_encargado.ToString();
 
@@ -100,6 +102,8 @@ namespace PAV1
 
         private void EliminarCubierta_Load(object sender, EventArgs e)
         {
+            LblDesc.Hide();
+            LblEncargado.Hide();
             CargarBarco();
         }
 

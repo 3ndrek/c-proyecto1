@@ -89,6 +89,7 @@
             this.TxtDesc.Name = "TxtDesc";
             this.TxtDesc.Size = new System.Drawing.Size(210, 67);
             this.TxtDesc.TabIndex = 6;
+            this.TxtDesc.TextChanged += new System.EventHandler(this.TxtDesc_TextChanged);
             // 
             // label6
             // 

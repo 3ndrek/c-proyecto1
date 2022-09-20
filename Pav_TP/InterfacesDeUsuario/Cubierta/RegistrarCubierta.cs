@@ -77,6 +77,8 @@ namespace PAV1
             registrarCubierta(dato);
 
             MessageBox.Show("cubierta cargada con Exito", "Registrar Cubierta", MessageBoxButtons.OK);
+
+            TxtDesc.Text = "" ;
         }
 
         private void CerrarFormulario()
@@ -94,6 +96,11 @@ namespace PAV1
         private void button2_Click(object sender, EventArgs e)
         {
             CerrarFormulario();
+        }
+
+        private void TxtDesc_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
