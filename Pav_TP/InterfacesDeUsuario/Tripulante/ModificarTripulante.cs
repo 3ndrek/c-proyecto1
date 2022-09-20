@@ -32,7 +32,8 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         {
             CargarDatos();
             CargarPuestos();
-            CargarJefe();      }
+            CargarJefe();     
+        }
 
         private void CargarDatos()
         {
@@ -100,8 +101,8 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         }
 
         public bool EsTripulanteValido()
-        {
-            var jefe = Convert.ToInt32(comboBoxJefe.SelectedItem);
+        { 
+            var jefe = (Entidades.Tripulante)comboBoxJefe.SelectedItem;
             var nombre = TxtNom.Text;
             var apellido = TxtApe.Text;
             var email = TxtEmail.Text;
@@ -109,7 +110,8 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
             var puesto = (Puestos)cmbCod.SelectedItem;
 
             var tripulanteIngresado = new Entidades.Tripulante();
-            tripulanteIngresado.jefe = jefe;
+            tripulanteIngresado.legajo = tripulante.legajo;
+            tripulanteIngresado.jefe = jefe.jefe;
             tripulanteIngresado.nombre = nombre;
             tripulanteIngresado.apellido = apellido;
             tripulanteIngresado.email = email;

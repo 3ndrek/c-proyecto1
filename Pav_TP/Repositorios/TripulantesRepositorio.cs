@@ -60,7 +60,7 @@ namespace Pav_TP.Repositorios
 
         public int RegistrarTripulantet(Tripulante t)
         {
-            var sentenciaSql = $"INSERT INTO tripulantes (legajo, jefe, nombre, apellido, email, fechaNac, puesto) VALUES ('{t.legajo}', {t.nombre}, {t.apellido}, {t.email}, {t.fechaNac}, {t.puesto})";
+            var sentenciaSql = $"INSERT INTO tripulantes ( jefe, nombre, apellido, email, fechaNac, puesto) VALUES ( {t.jefe}, '{t.nombre}', '{t.apellido}', '{t.email}', '{t.fechaNac}', {t.puesto})";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
@@ -84,7 +84,8 @@ namespace Pav_TP.Repositorios
         public int ActualizarTripulante(Tripulante t)
         {
             var sentenciaSql = $"UPDATE tripulantes SET jefe ={t.jefe}, nombre ='{t.nombre}', apellido ='{t.apellido}', " +
-                $"fechaNac ='{t.fechaNac}', puesto ={t.puesto} WHERE legajo={t.legajo} ";
+                $"puesto ={t.puesto} WHERE legajo={t.legajo} ";
+
 
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 

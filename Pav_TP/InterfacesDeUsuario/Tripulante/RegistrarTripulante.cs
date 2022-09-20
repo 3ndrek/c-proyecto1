@@ -16,14 +16,15 @@ namespace TrabajoPracticoPav
 {
     public partial class RegistrarTripulante : Form
     {
-        private Tripulante tripu;
+        private Tripulante tripulante;
         private PuestosServicios puestosServicios;
         private TripulantesServicios tripulantesServicios;
         private ConsultarTripulante consultarTripulante;
         private JefeServicios jefeServicios;
 
         private readonly FrmPrincipal frmPrincipal;
-        public RegistrarTripulante( FrmPrincipal frmPrincipal1)
+        private readonly ConsultarTripulante frmConsultarTripulante;
+        public RegistrarTripulante(FrmPrincipal frmPrincipal1)
         {
             frmPrincipal = frmPrincipal1;
             tripulantesServicios = new TripulantesServicios();
@@ -32,9 +33,13 @@ namespace TrabajoPracticoPav
             InitializeComponent();
         }
 
-        public RegistrarTripulante(ConsultarTripulante consultarTripulante)
+        public RegistrarTripulante(ConsultarTripulante frmConsultarTripulante)
         {
-            this.consultarTripulante = consultarTripulante;
+            frmConsultarTripulante = frmConsultarTripulante;
+            tripulantesServicios = new TripulantesServicios();
+            puestosServicios = new PuestosServicios();
+            jefeServicios = new JefeServicios();
+            InitializeComponent();
         }
 
         private void RegistrarTripulante_Load(object sender, EventArgs e)
@@ -122,13 +127,13 @@ namespace TrabajoPracticoPav
 
 
             tripulantesServicios.ValidarTripulante(tripulanteIngresado);
-            tripu = tripulanteIngresado;
+            tripulante= tripulanteIngresado;
             return true;
         }
 
         public void RegistrarTripulantee()
         {
-            if (tripulantesServicios.RegistrarTripulante(tripu))
+            if (tripulantesServicios.RegistrarTripulante(tripulante))
             {
                 MessageBox.Show("El tripulante se registro exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
