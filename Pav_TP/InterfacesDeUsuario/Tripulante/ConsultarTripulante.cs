@@ -113,8 +113,7 @@ namespace TrabajoPracticoPav
             var id = Convert.ToInt32(GrillaTripulante.SelectedRows[0].Cells["legajo"].Value);
 
             // this.Hide();
-            var frmModificarTripulante = new ModificarTripulante(id);
-            frmModificarTripulante.Show();
+            new ModificarTripulante(id).Show();
 
             GrillaTripulante.Rows.Clear();
             CargarTripulantes();

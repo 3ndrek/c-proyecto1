@@ -87,6 +87,12 @@
     <Compile Include="InterfacesDeUsuario\FrmPrincipal.designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\ModificarPasajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Pasajero\ModificarPasajero.Designer.cs">
+      <DependentUpon>ModificarPasajero.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Tripulante\ModificarTripulante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,7 @@
     <Compile Include="Repositorios\ClasificacionesRepositorio.cs" />
     <Compile Include="Repositorios\CubiertasRepositorio.cs" />
     <Compile Include="Repositorios\DBHelper.cs" />
+    <Compile Include="Repositorios\PasajerosRepositorio.cs" />
     <Compile Include="Repositorios\PerfilesRepositorio.cs" />
     <Compile Include="Repositorios\PuestosRepositorio.cs" />
     <Compile Include="Repositorios\TripulantesRepositorio.cs" />
@@ -237,6 +244,7 @@
     <Compile Include="Servicios\BarcosServicios.cs" />
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
+    <Compile Include="Servicios\PasajerosServicios.cs" />
     <Compile Include="Servicios\PerfilesServicio.cs" />
     <Compile Include="Servicios\PuestosServicios.cs" />
     <Compile Include="Servicios\TripulantesServicios.cs" />

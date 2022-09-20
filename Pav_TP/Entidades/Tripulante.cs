@@ -19,7 +19,7 @@ namespace Pav_TP.Entidades
        
         public void ValidarJefe()
         {
-            if (string.IsNullOrEmpty(this.jefe.ToString()) && this.jefe< 0)
+            if (string.IsNullOrEmpty(this.jefe.ToString()) && this.jefe<= 0)
                 crearException("Este campo es requerido.");
         }
 

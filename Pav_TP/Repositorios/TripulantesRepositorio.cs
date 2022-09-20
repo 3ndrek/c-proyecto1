@@ -83,8 +83,8 @@ namespace Pav_TP.Repositorios
 
         public int ActualizarTripulante(Tripulante t)
         {
-            var sentenciaSql = $"UPDATE tripulantes SET legajo ='{t.legajo}', jefe ={t.jefe}, nombre ={t.nombre}, apellido ={t.apellido}, " +
-                $"fechaNac ={t.fechaNac}, puesto ={t.puesto}";
+            var sentenciaSql = $"UPDATE tripulantes SET legajo ={t.legajo}, jefe ={t.jefe}, nombre ='{t.nombre}', apellido ='{t.apellido}', " +
+                $"fechaNac ='{t.fechaNac}', puesto ={t.puesto}";
 
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 

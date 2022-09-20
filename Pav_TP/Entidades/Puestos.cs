@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pav_TP.Entidades
 {
-    class Puestos
+    public class Puestos
     {
         public int cod_puesto { get; set; }
         public string desc { get; set; }

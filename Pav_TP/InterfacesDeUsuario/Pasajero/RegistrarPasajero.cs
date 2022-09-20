@@ -1,4 +1,5 @@
-﻿using System;
+﻿using seastar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace TrabajoPracticoPav
     {
 
         SqlConnection myconn;
-        public RegistrarPasajero()
+        public RegistrarPasajero(FrmPrincipal frmPrincipal1)
         {
             InitializeComponent();
         }
