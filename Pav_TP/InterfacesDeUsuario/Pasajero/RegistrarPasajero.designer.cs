@@ -129,7 +129,7 @@ namespace TrabajoPracticoPav
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 222);
+            this.label1.Location = new System.Drawing.Point(19, 265);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 45;
@@ -146,7 +146,7 @@ namespace TrabajoPracticoPav
             // cod
             // 
             this.cod.AutoSize = true;
-            this.cod.Location = new System.Drawing.Point(19, 271);
+            this.cod.Location = new System.Drawing.Point(19, 223);
             this.cod.Name = "cod";
             this.cod.Size = new System.Drawing.Size(76, 13);
             this.cod.TabIndex = 42;

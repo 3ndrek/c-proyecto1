@@ -21,14 +21,14 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
         private PaisesServicios paisesServicios;
         private GeneroServicios generoServicios;
         
-        public ModificarPasajero(int id)
+        public ModificarPasajero(int tipo, int id)
         {
             pasajerosServicios = new PasajerosServicios();
             tipoServicio = new TipoDocServicios();
             ciudadServicios = new CiudadServicios();
             paisesServicios = new PaisesServicios();
             generoServicios = new GeneroServicios();
-            pasajero = pasajerosServicios.GetPasajeros(id);
+            pasajero = pasajerosServicios.GetPasajeros(tipo,id);
             InitializeComponent();
         }
 
@@ -38,18 +38,35 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
             CargarCiudad();
             CargarPais();
             CargarGenero();
+            CargarDoc();
         }
+
 
         private void CargarDatos()
         {
             TxtNom.Text = pasajero.nombre;
             TxtApe.Text = pasajero.apellido;
+            TxtDni.Text = pasajero.num_doc.ToString();
             comboBoxCiudad.Text = pasajero.ciudad_procedente.ToString();
             comboBoxPais.Text = pasajero.pais_procedente.ToString();
             TxtEmail.Text = pasajero.email;
-            dateTimePicker2.Text = pasajero.ToString();
+            dateTimePicker2.Text = pasajero.fechaNac.ToString();
             comboBoxGenero.Text = pasajero.genero.ToString();
             
+        }
+
+        public void CargarDoc()
+        {
+            var doc = tipoServicio.GetTipos();
+            var conector = new BindingSource();
+            conector.DataSource = doc;
+
+            comboBoxDni.DataSource = conector;
+            comboBoxDni.DisplayMember = "desc";
+            comboBoxDni.ValueMember = "tipo";
+
+            var tipoSeleccionada = doc.First(p => p.tipo == pasajero.tipo_doc);
+            comboBoxDni.SelectedItem = tipoSeleccionada;
         }
 
         public void CargarCiudad()
@@ -121,6 +138,8 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
 
         public bool esPasajeroValido()
         {
+            var tipo = (TipoDoc)comboBoxDni.SelectedItem;
+            var num = Convert.ToInt32(TxtDni.Text.Trim());
             var nombre = TxtNom.Text;
             var apellido = TxtApe.Text.Trim();
             var ciudad_procedente = (Ciudad)comboBoxCiudad.SelectedItem;
@@ -131,6 +150,8 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
 
 
             var pasajeroIngresado = new Entidades.Pasajero();
+            pasajeroIngresado.tipo_doc = tipo.tipo;
+            pasajeroIngresado.num_doc = num;
             pasajeroIngresado.nombre = nombre;
             pasajeroIngresado.apellido = apellido;
             pasajeroIngresado.ciudad_procedente = ciudad_procedente.cod_ciudad;

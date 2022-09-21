@@ -186,9 +186,6 @@ namespace TrabajoPracticoPav
             this.Dispose();
 
         }
-        private void RegistrarBarco_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CerrarFormulario();
-        }
+       
     }
 }

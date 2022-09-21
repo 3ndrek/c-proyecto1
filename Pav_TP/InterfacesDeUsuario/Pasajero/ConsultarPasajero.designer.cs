@@ -79,6 +79,7 @@ namespace TrabajoPracticoPav
             this.btnModificar.TabIndex = 32;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // GrillaPasajero
             // 
@@ -100,6 +101,7 @@ namespace TrabajoPracticoPav
             this.GrillaPasajero.MultiSelect = false;
             this.GrillaPasajero.Name = "GrillaPasajero";
             this.GrillaPasajero.ReadOnly = true;
+            this.GrillaPasajero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GrillaPasajero.Size = new System.Drawing.Size(534, 150);
             this.GrillaPasajero.TabIndex = 30;
             // 
@@ -178,6 +180,7 @@ namespace TrabajoPracticoPav
             this.btnEliminar.TabIndex = 26;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnCancel
             // 
@@ -187,6 +190,7 @@ namespace TrabajoPracticoPav
             this.btnCancel.TabIndex = 29;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // TxtDni
             // 
@@ -204,6 +208,7 @@ namespace TrabajoPracticoPav
             this.btnBuscar.TabIndex = 27;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // dni
             // 

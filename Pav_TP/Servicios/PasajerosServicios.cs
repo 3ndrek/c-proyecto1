@@ -27,9 +27,9 @@ namespace Pav_TP.Servicios
             return pasajerosRepositorio.GetPasajeros(p);
         }
 
-        public Pasajero GetPasajeros(int id)
+        public Pasajero GetPasajeros(int tipo, int id)
         {
-            return pasajerosRepositorio.GetPasajeros(id);
+            return pasajerosRepositorio.GetPasajeros(tipo, id);
         }
 
         public void ValidarPasajeros(Pasajero p)
@@ -60,9 +60,9 @@ namespace Pav_TP.Servicios
                 throw new ApplicationException("Hubo un problema al actualizar");
         }
 
-        public void EliminarPasajero(int id)
+        public void EliminarPasajero(int tipo, int id)
         {
-            var filasAfectadas = pasajerosRepositorio.EliminarPasajero(id);
+            var filasAfectadas = pasajerosRepositorio.EliminarPasajero(tipo,id);
             if (filasAfectadas != 1)
                 throw new ApplicationException("Hubo un problema al actualizar");
         }

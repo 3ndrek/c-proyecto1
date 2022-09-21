@@ -44,10 +44,10 @@ namespace Pav_TP.Repositorios
             return pasajeros;
         }
 
-        public Pasajero GetPasajeros(int id)
+        public Pasajero GetPasajeros(int tipo, int id)
         {
             var pasajero = new Pasajero();
-            var sentenciaSql = $"SELECT * FROM pasajeros WHERE dni = {id}";
+            var sentenciaSql = $"SELECT * FROM pasajeros WHERE num_doc= {id} AND tipo_doc={tipo}";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -84,17 +84,16 @@ namespace Pav_TP.Repositorios
         }
         public int ActualizarPasajero(Pasajero p)
         {
-            var sentenciaSql = $"UPDATE pasajeros SET nombre ='{p.nombre}', apellido ='{p.apellido}', " +
-                $"ciudad_procedente= {p.ciudad_procedente}, pais_procedente = {p.pais_procedente}, email= '{p.email}', fechaNac ='{p.fechaNac}', genero ={p.genero} WHERE tipo_doc={p.tipo_doc} AND num_doc={p.num_doc}";
+            var sentenciaSql = $"UPDATE pasajeros SET nombre = '{p.nombre}', apellido = '{p.apellido}', ciudad_procedente = {p.ciudad_procedente}, pais_procedente = {p.pais_procedente}, email = '{p.email}', fechaNac = '{p.fechaNac}', genero = {p.genero} WHERE tipo_doc = {p.tipo_doc} AND num_doc = {p.num_doc}";
 
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
         }
 
-        public int EliminarPasajero(int id)
+        public int EliminarPasajero(int tipo, int id)
         {
-            var sentenciaSql = $"DELETE FROM pasajeros WHERE num_doc ={id}";
+            var sentenciaSql = $"DELETE FROM pasajeros WHERE num_doc={id} AND tipo_doc={tipo}";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
