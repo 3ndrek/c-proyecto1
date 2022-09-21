@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,9 +45,10 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
 
         private void CargarDatos()
         {
+            comboBoxDni.Text = pasajero.tipo_doc.ToString();
+            TxtDni.Text = pasajero.num_doc.ToString();
             TxtNom.Text = pasajero.nombre;
             TxtApe.Text = pasajero.apellido;
-            TxtDni.Text = pasajero.num_doc.ToString();
             comboBoxCiudad.Text = pasajero.ciudad_procedente.ToString();
             comboBoxPais.Text = pasajero.pais_procedente.ToString();
             TxtEmail.Text = pasajero.email;

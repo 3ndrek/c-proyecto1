@@ -137,8 +137,9 @@ namespace TrabajoPracticoPav
             // 
             // comboBoxCiudad
             // 
+            this.comboBoxCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCiudad.FormattingEnabled = true;
-            this.comboBoxCiudad.Location = new System.Drawing.Point(115, 262);
+            this.comboBoxCiudad.Location = new System.Drawing.Point(115, 265);
             this.comboBoxCiudad.Name = "comboBoxCiudad";
             this.comboBoxCiudad.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCiudad.TabIndex = 44;
@@ -212,6 +213,7 @@ namespace TrabajoPracticoPav
             // 
             // comboBoxGenero
             // 
+            this.comboBoxGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenero.FormattingEnabled = true;
             this.comboBoxGenero.Location = new System.Drawing.Point(429, 63);
             this.comboBoxGenero.Name = "comboBoxGenero";
@@ -229,6 +231,7 @@ namespace TrabajoPracticoPav
             // 
             // comboBoxPais
             // 
+            this.comboBoxPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPais.FormattingEnabled = true;
             this.comboBoxPais.Location = new System.Drawing.Point(115, 215);
             this.comboBoxPais.Name = "comboBoxPais";
@@ -237,6 +240,7 @@ namespace TrabajoPracticoPav
             // 
             // comboBoxDni
             // 
+            this.comboBoxDni.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDni.FormattingEnabled = true;
             this.comboBoxDni.Location = new System.Drawing.Point(115, 114);
             this.comboBoxDni.Name = "comboBoxDni";

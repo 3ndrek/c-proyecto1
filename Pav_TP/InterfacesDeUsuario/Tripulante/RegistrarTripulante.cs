@@ -67,17 +67,31 @@ namespace TrabajoPracticoPav
         public void CargarJefe()
         {
             var jefe = jefeServicios.GetJefes();
-            var jefeDefault = new Tripulante();
-            jefeDefault.legajo = 0;
-            jefeDefault.nombre = "Seleccionar";
-            jefe.Add(jefeDefault);
+            var jefeSeleccionar = new Tripulante();
+            jefeSeleccionar.nombre = "Seleccionar";
+            jefe.Add(jefeSeleccionar);
+
             var conector = new BindingSource();
             conector.DataSource = jefe;
 
             comboBoxJefe.DataSource = conector;
             comboBoxJefe.DisplayMember = "nombre";
             comboBoxJefe.ValueMember = "legajo";
-            comboBoxJefe.SelectedItem = jefeDefault;
+            comboBoxJefe.SelectedItem = jefeSeleccionar;
+       
+
+        //var jefe = jefeServicios.GetJefes();
+        //var jefeDefault = new Tripulante();
+
+        //jefeDefault.nombre = "Seleccionar";
+        //jefe.Add(jefeDefault);
+        //var conector = new BindingSource();
+        //conector.DataSource = jefe;
+
+        //comboBoxJefe.DataSource = conector;
+        //comboBoxJefe.DisplayMember = "nombre";
+        //comboBoxJefe.ValueMember = "legajo";
+        //comboBoxJefe.SelectedItem = jefeDefault;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

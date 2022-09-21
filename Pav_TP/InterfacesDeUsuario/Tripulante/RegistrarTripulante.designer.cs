@@ -144,6 +144,7 @@ namespace TrabajoPracticoPav
             // 
             // comboBoxJefe
             // 
+            this.comboBoxJefe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJefe.FormattingEnabled = true;
             this.comboBoxJefe.Location = new System.Drawing.Point(391, 64);
             this.comboBoxJefe.Name = "comboBoxJefe";
@@ -152,6 +153,7 @@ namespace TrabajoPracticoPav
             // 
             // cmbCod
             // 
+            this.cmbCod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCod.FormattingEnabled = true;
             this.cmbCod.Location = new System.Drawing.Point(391, 37);
             this.cmbCod.Name = "cmbCod";

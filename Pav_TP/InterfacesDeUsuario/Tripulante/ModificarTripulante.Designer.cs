@@ -72,6 +72,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
             // 
             // comboBoxJefe
             // 
+            this.comboBoxJefe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJefe.FormattingEnabled = true;
             this.comboBoxJefe.Location = new System.Drawing.Point(435, 66);
             this.comboBoxJefe.Name = "comboBoxJefe";
@@ -80,6 +81,7 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
             // 
             // cmbCod
             // 
+            this.cmbCod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCod.FormattingEnabled = true;
             this.cmbCod.Location = new System.Drawing.Point(435, 23);
             this.cmbCod.Name = "cmbCod";

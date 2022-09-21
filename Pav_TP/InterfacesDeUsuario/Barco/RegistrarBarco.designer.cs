@@ -90,6 +90,7 @@
             // 
             // CbClasificacion
             // 
+            this.CbClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbClasificacion.FormattingEnabled = true;
             this.CbClasificacion.Location = new System.Drawing.Point(456, 215);
             this.CbClasificacion.Name = "CbClasificacion";
