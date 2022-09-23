@@ -204,6 +204,7 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
             this.comboBoxPais.Name = "comboBoxPais";
             this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
             this.comboBoxPais.TabIndex = 34;
+            this.comboBoxPais.SelectedIndexChanged += new System.EventHandler(this.comboBoxPais_SelectedIndexChanged);
             // 
             // comboBoxDni
             // 

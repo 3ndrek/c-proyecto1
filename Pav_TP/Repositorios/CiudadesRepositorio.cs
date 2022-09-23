@@ -10,10 +10,10 @@ namespace Pav_TP.Repositorios
 {
     public class CiudadesRepositorio
     {
-        public List<Ciudad> GetCiudades()
+        public List<Ciudad> GetCiudades(Paises pais)
         {
             var ciudades = new List<Ciudad>();
-            var sentenciaSql = $"SELECT * FROM ciudades";
+            var sentenciaSql = $"SELECT C.* FROM ciudades C JOIN paisesXciudades PxC ON C.cod_ciudad = PxC.cod_ciudad JOIN paises P ON Pxc.cod_pais = P.cod_pais WHERE P.cod_pais = {pais.cod_pais}";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)

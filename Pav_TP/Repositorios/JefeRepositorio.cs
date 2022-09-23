@@ -22,6 +22,7 @@ namespace Pav_TP.Repositorios
                 tr.jefe= Convert.ToInt32(fila["jefe"]);
                 tr.nombre = fila["nombre"].ToString();
                 tr.apellido = fila["apellido"].ToString();
+                tr.legajo = Convert.ToInt32(fila["legajo"].ToString());
                
                 t.Add(tr);
             }

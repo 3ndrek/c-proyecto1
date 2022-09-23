@@ -132,7 +132,7 @@ namespace TrabajoPracticoPav
 
 
             var tripulanteIngresado = new Tripulante();
-            tripulanteIngresado.jefe = jefe.jefe;
+            tripulanteIngresado.jefe = jefe.legajo;
             tripulanteIngresado.nombre = nombre;
             tripulanteIngresado.apellido = apellido;
             tripulanteIngresado.email = email;

@@ -36,7 +36,7 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
         private void ModificarPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            CargarCiudad();
+            
             CargarPais();
             CargarGenero();
             CargarDoc();
@@ -71,19 +71,7 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
             comboBoxDni.SelectedItem = tipoSeleccionada;
         }
 
-        public void CargarCiudad()
-        {
-            var c = ciudadServicios.GetCiudades();
-            var conector = new BindingSource();
-            conector.DataSource = c;
-
-            comboBoxCiudad.DataSource = conector;
-            comboBoxCiudad.DisplayMember = "nombre";
-            comboBoxCiudad.ValueMember = "cod_ciudad";
-
-            var cSeleccionada = c.First(p => p.cod_ciudad == pasajero.ciudad_procedente);
-            comboBoxCiudad.SelectedItem = cSeleccionada;
-        }
+       
 
         public void CargarPais()
         {
@@ -176,6 +164,21 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
         private void CerrarFormulario()
         {
             this.Dispose();
+        }
+
+        private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            var seleccionado = (Paises)comboBoxPais.SelectedItem;
+            var ciudades = ciudadServicios.GetCiudades(seleccionado);
+
+            var conector = new BindingSource();
+            conector.DataSource = ciudades;
+
+            comboBoxCiudad.DataSource = conector;
+            comboBoxCiudad.DisplayMember = "nombre";
+            comboBoxCiudad.ValueMember = "cod_ciudad";
+
         }
     }
 }

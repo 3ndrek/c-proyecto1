@@ -17,9 +17,9 @@ namespace Pav_TP.Servicios
             ciudadRepositorio = new CiudadesRepositorio();
         }
 
-        public List<Ciudad> GetCiudades()
+        public List<Ciudad> GetCiudades(Paises pais)
         {
-            return ciudadRepositorio.GetCiudades();
+            return ciudadRepositorio.GetCiudades(pais);
         }
     }
 }

@@ -42,7 +42,7 @@ namespace TrabajoPracticoPav
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarTipo();
-            CargarCiudad();
+            
             CargarPais();
             CargarGenero();
         }
@@ -63,21 +63,6 @@ namespace TrabajoPracticoPav
             comboBoxDni.SelectedItem = tipoSeleccionar;
         }
 
-        public void CargarCiudad()
-        {
-            var ciudad = ciudadServicios.GetCiudades();
-            var ciudadSeleccionar = new Ciudad();
-            ciudadSeleccionar.nombre = "Seleccionar";
-            ciudad.Add(ciudadSeleccionar);
-
-            var conector = new BindingSource();
-            conector.DataSource = ciudad;
-
-            comboBoxCiudad.DataSource = conector;
-            comboBoxCiudad.DisplayMember = "nombre";
-            comboBoxCiudad.ValueMember = "cod_ciudad";
-            comboBoxCiudad.SelectedItem = ciudadSeleccionar;
-        }
 
         public void CargarPais()
         {
@@ -186,6 +171,19 @@ namespace TrabajoPracticoPav
             this.Dispose();
 
         }
-       
+
+        private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var seleccionado = (Paises)comboBoxPais.SelectedItem;
+            var ciudades = ciudadServicios.GetCiudades(seleccionado);
+
+            var conector = new BindingSource();
+            conector.DataSource = ciudades;
+
+            comboBoxCiudad.DataSource = conector;
+            comboBoxCiudad.DisplayMember = "nombre";
+            comboBoxCiudad.ValueMember = "cod_ciudad";
+
+        }
     }
 }
