@@ -14,6 +14,7 @@ using TrabajoPracticoPav;
 using Pav_TP.InterfacesDeUsuario;
 using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.InterfacesDeUsuario.Usuario;
+using Pav_TP.InterfacesDeUsuario.Camarote;
 
 namespace seastar
 {
@@ -186,6 +187,27 @@ namespace seastar
             ConsultarUsuario consultarUsuario = new ConsultarUsuario(this);
             consultarUsuario.Show();
             this.Hide( );
+        }
+
+        private void registrarCamaroteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarCamarote registrarCamarote = new RegistrarCamarote(this);
+            registrarCamarote.Show();
+            this.Hide();
+        }
+
+        private void consultarCamarotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarCamarote consultarCamarote = new ConsultarCamarote(this);
+            consultarCamarote.Show();
+            this.Hide();
+        }
+
+        private void modificarCamarotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarCamarote modificarCamarote = new ModificarCamarote(this);
+            modificarCamarote.Show();
+            this.Hide();
         }
     }
 }

@@ -25,5 +25,15 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.viajeTableAdapter.Fill(this.pAV_3K2_2022_12DataSet3.viaje);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
