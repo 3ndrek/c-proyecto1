@@ -169,23 +169,42 @@ namespace seastar
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModificarUsuario modificarUsuario = new ModificarUsuario(/*this*/);
+            ModificarUsuario modificarUsuario = new ModificarUsuario();
             modificarUsuario.Show();
             this.Hide();
         }
 
         private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistrarUsuario registrarUsuario = new RegistrarUsuario(/*this*/);
+            RegistrarUsuario registrarUsuario = new RegistrarUsuario();
             registrarUsuario.Show();
-            Hide();
+            this.Hide();
         }
 
         private void cambiarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarUsuario consultarUsuario = new ConsultarUsuario(/*this*/);
+            ConsultarUsuario consultarUsuario = new ConsultarUsuario();
             consultarUsuario.Show();
-            Hide( );
+            this.Hide( );
+        }
+
+        private void itinerarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarPuerto_Click(object sender, EventArgs e)
+        {
+            RegistrarPuerto registrarPuerto = new RegistrarPuerto();
+            registrarPuerto.Show();
+            this.Hide();
+        }
+
+        private void consultarPuerto_Click(object sender, EventArgs e)
+        {
+            ConsultarPuerto consultarPuerto = new ConsultarPuerto();
+            consultarPuerto.Show();
+            this.Hide();
         }
     }
 }

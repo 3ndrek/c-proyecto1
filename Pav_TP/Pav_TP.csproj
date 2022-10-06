@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Barco.cs" />
+    <Compile Include="Entidades\Camarote.cs" />
     <Compile Include="Entidades\Ciudad.cs" />
     <Compile Include="Entidades\Clasificacion.cs" />
     <Compile Include="Entidades\Cubierta.cs" />
@@ -65,6 +66,45 @@
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Puestos.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
+    <Compile Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.Designer.cs">
+      <DependentUpon>ConsultarCamarote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\ModificarCamarote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\ModificarCamarote.Designer.cs">
+      <DependentUpon>ModificarCamarote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\RegistrarCamarote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\RegistrarCamarote.Designer.cs">
+      <DependentUpon>RegistrarCamarote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet211.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PAV_3K2_2022_12DataSet51.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
     <Compile Include="Repositorios\GeneroRepositorio.cs" />
     <Compile Include="Repositorios\JefeRepositorio.cs" />
@@ -251,6 +291,7 @@
     <Compile Include="Repositorios\TripulantesRepositorio.cs" />
     <Compile Include="Repositorios\UsuariosRepositorio.cs" />
     <Compile Include="Servicios\BarcosServicios.cs" />
+    <Compile Include="Servicios\CamaroteServicios.cs" />
     <Compile Include="Servicios\CiudadServicios.cs" />
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
@@ -262,10 +303,31 @@
     <Compile Include="Servicios\PuestosServicios.cs" />
     <Compile Include="Servicios\TipoDocServicio.cs" />
     <Compile Include="Servicios\TipoDocServicios.cs" />
+    <Compile Include="InterfacesDeUsuario\Transacciones\Cobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Transacciones\Cobro.Designer.cs">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Transacciones\Reserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Transacciones\Reserva.Designer.cs">
+      <DependentUpon>Reserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\TripulantesServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
       <DependentUpon>ConsultarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.resx">
+      <DependentUpon>ConsultarCamarote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Camarote\ModificarCamarote.resx">
+      <DependentUpon>ModificarCamarote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Camarote\RegistrarCamarote.resx">
+      <DependentUpon>RegistrarCamarote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\InicioSesion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -352,6 +414,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="InterfacesDeUsuario\Transacciones\Cobro.resx">
+      <DependentUpon>Cobro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Transacciones\Reserva.resx">
+      <DependentUpon>Reserva.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="PAV_3K2_2022_12DataSet1.xsc">
       <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
     </None>
@@ -374,6 +442,50 @@
     <None Include="PAV_3K2_2022_12DataSet12.xss">
       <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
     </None>
+    <None Include="PAV_3K2_2022_12DataSet21.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet211.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet21.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet3.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet3.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet4.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet41.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet4.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet5.xsc">
+      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PAV_3K2_2022_12DataSet51.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PAV_3K2_2022_12DataSet5.xss">
+      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -391,11 +503,13 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Recursos\barco.jpg" />
+    <Content Include="Recursos\barcoimg.png" />
     <Content Include="Recursos\cru2.jpg" />
     <Content Include="Recursos\cruc.jpg" />
     <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
     <Content Include="Recursos\pers.jpg" />
     <Content Include="Recursos\vaije.jpg" />
+    <Content Include="Resources\barcoimg.png" />
     <None Include="Resources\vaije.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
