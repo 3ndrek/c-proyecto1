@@ -1,4 +1,5 @@
-﻿using System;
+﻿using seastar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,10 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
     public partial class ConsultarUsuario : Form
     {
         SqlConnection myconn;
-        public ConsultarUsuario()
+        private readonly FrmPrincipal frmPrincipal;
+        public ConsultarUsuario(FrmPrincipal f)
         {
+            frmPrincipal = f;
             InitializeComponent();
         }
 
@@ -88,6 +91,17 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
             GrillaUsuario.DataSource = midata;
 
 
+        }
+        private void CerrarFormulario()
+        {
+            frmPrincipal.Show();
+            this.Dispose();
+
+        }
+
+        private void ConsultarUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
         }
     }
 }

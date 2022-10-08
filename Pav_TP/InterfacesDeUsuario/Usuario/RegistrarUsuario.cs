@@ -1,4 +1,5 @@
-﻿using System;
+﻿using seastar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,14 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
     public partial class RegistrarUsuario : Form
     {
         SqlConnection myconn;
+        private readonly FrmPrincipal frmPrincipal;
         public RegistrarUsuario()
         {
+            InitializeComponent();
+        }
+        public RegistrarUsuario(FrmPrincipal f)
+        {
+            frmPrincipal = f;
             InitializeComponent();
         }
 
@@ -52,10 +59,26 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
             MessageBox.Show("Se cargo con exito");
 
         }
+        private void CerrarFormulario()
+        {
+            if(frmPrincipal != null)
+            {
+                frmPrincipal.Show();
+                this.Dispose();
+            }
+            else 
+                this.Dispose();
+
+        }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CerrarFormulario();
+        }
+
+        private void RegistrarUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
         }
     }
 }

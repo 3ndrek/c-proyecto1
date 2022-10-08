@@ -180,6 +180,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultarUsuario";
             this.Text = "ConsultarUsuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarUsuario_FormClosing);
             this.Load += new System.EventHandler(this.ConsultarUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

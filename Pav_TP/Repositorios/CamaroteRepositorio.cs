@@ -57,7 +57,7 @@ namespace Pav_TP.Repositorios
             {
                 var tipoCamarote = new TipoCamarote();
                 tipoCamarote.tipo = Convert.ToInt32(fila["tipo"]);
-                tipoCamarote.desc = fila["desc"].ToString();
+                tipoCamarote.desc = fila["descripcion"].ToString();
                 tiposDeCamarotes.Add(tipoCamarote);
             }
             return tiposDeCamarotes;
@@ -73,7 +73,7 @@ namespace Pav_TP.Repositorios
             {
                 var ubi = new Ubicacion();
                 ubi.num = Convert.ToInt32(fila["num"]);
-                ubi.desc = fila["desc"].ToString();
+                ubi.desc = fila["descripcion"].ToString();
                 ubicaciones.Add(ubi);
             }
             return ubicaciones;

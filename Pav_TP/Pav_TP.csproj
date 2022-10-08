@@ -65,7 +65,9 @@
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Puestos.cs" />
+    <Compile Include="Entidades\TipoCamarote.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
+    <Compile Include="Entidades\Ubicacion.cs" />
     <Compile Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.cs">
       <SubType>Form</SubType>
     </Compile>

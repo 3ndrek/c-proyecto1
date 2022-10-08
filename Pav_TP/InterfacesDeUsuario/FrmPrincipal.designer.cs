@@ -40,6 +40,10 @@
             this.registrarCubierta = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarCubierta = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarCubierta = new System.Windows.Forms.ToolStripMenuItem();
+            this.camaroteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarCamaroteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarCamaroteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarCamaroteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +59,8 @@
             this.eliminarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.puertosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPuerto = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarPuerto = new System.Windows.Forms.ToolStripMenuItem();
             this.pasajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPasajero = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,8 +74,6 @@
             this.cambiarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.registrarPuerto = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPuerto = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +82,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.barcoToolStripMenuItem,
+            this.camaroteToolStripMenuItem1,
             this.puertoToolStripMenuItem,
             this.viajesToolStripMenuItem,
             this.itinerarioToolStripMenuItem,
@@ -178,6 +183,38 @@
             this.eliminarCubierta.Text = "Eliminar";
             this.eliminarCubierta.Click += new System.EventHandler(this.eliminarCubierta_Click);
             // 
+            // camaroteToolStripMenuItem1
+            // 
+            this.camaroteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarCamaroteToolStripMenuItem,
+            this.consultarCamaroteToolStripMenuItem,
+            this.modificarCamaroteToolStripMenuItem});
+            this.camaroteToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camaroteToolStripMenuItem1.Name = "camaroteToolStripMenuItem1";
+            this.camaroteToolStripMenuItem1.Size = new System.Drawing.Size(111, 32);
+            this.camaroteToolStripMenuItem1.Text = "Camarote";
+            // 
+            // registrarCamaroteToolStripMenuItem
+            // 
+            this.registrarCamaroteToolStripMenuItem.Name = "registrarCamaroteToolStripMenuItem";
+            this.registrarCamaroteToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
+            this.registrarCamaroteToolStripMenuItem.Text = "Registrar Camarote";
+            this.registrarCamaroteToolStripMenuItem.Click += new System.EventHandler(this.registrarCamaroteToolStripMenuItem_Click);
+            // 
+            // consultarCamaroteToolStripMenuItem
+            // 
+            this.consultarCamaroteToolStripMenuItem.Name = "consultarCamaroteToolStripMenuItem";
+            this.consultarCamaroteToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
+            this.consultarCamaroteToolStripMenuItem.Text = "Consultar Camarote";
+            this.consultarCamaroteToolStripMenuItem.Click += new System.EventHandler(this.consultarCamaroteToolStripMenuItem_Click);
+            // 
+            // modificarCamaroteToolStripMenuItem
+            // 
+            this.modificarCamaroteToolStripMenuItem.Name = "modificarCamaroteToolStripMenuItem";
+            this.modificarCamaroteToolStripMenuItem.Size = new System.Drawing.Size(272, 32);
+            this.modificarCamaroteToolStripMenuItem.Text = "Modificar Camarote";
+            this.modificarCamaroteToolStripMenuItem.Click += new System.EventHandler(this.modificarCamaroteToolStripMenuItem_Click);
+            // 
             // puertoToolStripMenuItem
             // 
             this.puertoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -192,14 +229,14 @@
             // registrarToolStripMenuItem2
             // 
             this.registrarToolStripMenuItem2.Name = "registrarToolStripMenuItem2";
-            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(224, 32);
+            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(181, 32);
             this.registrarToolStripMenuItem2.Text = "Registrar";
             this.registrarToolStripMenuItem2.Click += new System.EventHandler(this.registrarToolStripMenuItem2_Click);
             // 
             // consultarToolStripMenuItem4
             // 
             this.consultarToolStripMenuItem4.Name = "consultarToolStripMenuItem4";
-            this.consultarToolStripMenuItem4.Size = new System.Drawing.Size(224, 32);
+            this.consultarToolStripMenuItem4.Size = new System.Drawing.Size(181, 32);
             this.consultarToolStripMenuItem4.Text = "Consultar";
             this.consultarToolStripMenuItem4.Click += new System.EventHandler(this.consultarToolStripMenuItem4_Click);
             // 
@@ -296,6 +333,20 @@
             this.puertosToolStripMenuItem.Size = new System.Drawing.Size(254, 32);
             this.puertosToolStripMenuItem.Text = "Gestionar puertos";
             // 
+            // registrarPuerto
+            // 
+            this.registrarPuerto.Name = "registrarPuerto";
+            this.registrarPuerto.Size = new System.Drawing.Size(181, 32);
+            this.registrarPuerto.Text = "Registrar";
+            this.registrarPuerto.Click += new System.EventHandler(this.registrarPuerto_Click);
+            // 
+            // consultarPuerto
+            // 
+            this.consultarPuerto.Name = "consultarPuerto";
+            this.consultarPuerto.Size = new System.Drawing.Size(181, 32);
+            this.consultarPuerto.Text = "Consultar";
+            this.consultarPuerto.Click += new System.EventHandler(this.consultarPuerto_Click);
+            // 
             // pasajeroToolStripMenuItem
             // 
             this.pasajeroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -309,14 +360,14 @@
             // registrarToolStripMenuItem3
             // 
             this.registrarToolStripMenuItem3.Name = "registrarToolStripMenuItem3";
-            this.registrarToolStripMenuItem3.Size = new System.Drawing.Size(224, 32);
+            this.registrarToolStripMenuItem3.Size = new System.Drawing.Size(181, 32);
             this.registrarToolStripMenuItem3.Text = "Registrar";
             this.registrarToolStripMenuItem3.Click += new System.EventHandler(this.registrarToolStripMenuItem3_Click);
             // 
             // consultarPasajero
             // 
             this.consultarPasajero.Name = "consultarPasajero";
-            this.consultarPasajero.Size = new System.Drawing.Size(224, 32);
+            this.consultarPasajero.Size = new System.Drawing.Size(181, 32);
             this.consultarPasajero.Text = "Consultar";
             this.consultarPasajero.Click += new System.EventHandler(this.consultarPasajero_Click);
             // 
@@ -356,29 +407,30 @@
             this.cambiarContraseñaToolStripMenuItem,
             this.perfilToolStripMenuItem,
             this.cambiarUsuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 32);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(93, 32);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // cambiarContraseñaToolStripMenuItem
             // 
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
-            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(254, 32);
             this.cambiarContraseñaToolStripMenuItem.Text = "Modificar Usuario";
             this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // perfilToolStripMenuItem
             // 
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(254, 32);
             this.perfilToolStripMenuItem.Text = "Registrar Usuario";
             this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // cambiarUsuarioToolStripMenuItem
             // 
             this.cambiarUsuarioToolStripMenuItem.Name = "cambiarUsuarioToolStripMenuItem";
-            this.cambiarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.cambiarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(254, 32);
             this.cambiarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
             this.cambiarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambiarUsuarioToolStripMenuItem_Click);
             // 
@@ -386,7 +438,7 @@
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.Location = new System.Drawing.Point(704, 169);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(241, 50);
             this.btnCerrarSesion.TabIndex = 2;
@@ -404,20 +456,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "¡Bienvenido!";
             // 
-            // registrarPuerto
-            // 
-            this.registrarPuerto.Name = "registrarPuerto";
-            this.registrarPuerto.Size = new System.Drawing.Size(224, 32);
-            this.registrarPuerto.Text = "Registrar";
-            this.registrarPuerto.Click += new System.EventHandler(this.registrarPuerto_Click);
-            // 
-            // consultarPuerto
-            // 
-            this.consultarPuerto.Name = "consultarPuerto";
-            this.consultarPuerto.Size = new System.Drawing.Size(224, 32);
-            this.consultarPuerto.Text = "Consultar";
-            this.consultarPuerto.Click += new System.EventHandler(this.consultarPuerto_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,7 +465,7 @@
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -483,6 +521,10 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarViajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPuerto;
         private System.Windows.Forms.ToolStripMenuItem consultarPuerto;
+        private System.Windows.Forms.ToolStripMenuItem camaroteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registrarCamaroteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarCamaroteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarCamaroteToolStripMenuItem;
     }
 }
 
