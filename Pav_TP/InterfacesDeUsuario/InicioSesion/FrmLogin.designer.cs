@@ -48,7 +48,6 @@
             this.lblUSR.Size = new System.Drawing.Size(61, 16);
             this.lblUSR.TabIndex = 0;
             this.lblUSR.Text = "Usuario";
-            this.lblUSR.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -111,7 +110,6 @@
             this.label1.Size = new System.Drawing.Size(479, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Bienvenido al sistema de gestion de navios de Sea-Star";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // FrmLogin
             // 
@@ -130,7 +128,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";
             this.Text = "Iniciar Sesion";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

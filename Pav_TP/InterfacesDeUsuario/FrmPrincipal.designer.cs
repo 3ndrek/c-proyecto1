@@ -52,6 +52,9 @@
             this.consultarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itinerarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,6 +88,7 @@
             this.camaroteToolStripMenuItem1,
             this.puertoToolStripMenuItem,
             this.viajesToolStripMenuItem,
+            this.reservaToolStripMenuItem,
             this.itinerarioToolStripMenuItem,
             this.pasajeroToolStripMenuItem,
             this.reservacionesToolStripMenuItem,
@@ -280,6 +284,30 @@
             this.eliminarViajeToolStripMenuItem.Text = "Eliminar viaje";
             this.eliminarViajeToolStripMenuItem.Click += new System.EventHandler(this.eliminarViajeToolStripMenuItem_Click);
             // 
+            // reservaToolStripMenuItem
+            // 
+            this.reservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarToolStripMenuItem,
+            this.cobrarToolStripMenuItem});
+            this.reservaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
+            this.reservaToolStripMenuItem.Size = new System.Drawing.Size(92, 32);
+            this.reservaToolStripMenuItem.Text = "Reserva";
+            // 
+            // registrarToolStripMenuItem
+            // 
+            this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(175, 32);
+            this.registrarToolStripMenuItem.Text = "Registrar";
+            this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
+            // 
+            // cobrarToolStripMenuItem
+            // 
+            this.cobrarToolStripMenuItem.Name = "cobrarToolStripMenuItem";
+            this.cobrarToolStripMenuItem.Size = new System.Drawing.Size(175, 32);
+            this.cobrarToolStripMenuItem.Text = "Cobrar";
+            this.cobrarToolStripMenuItem.Click += new System.EventHandler(this.cobrarToolStripMenuItem_Click);
+            // 
             // itinerarioToolStripMenuItem
             // 
             this.itinerarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -300,6 +328,7 @@
             this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
             this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(254, 32);
             this.registrarToolStripMenuItem1.Text = "Registrar";
+            this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem3
             // 
@@ -525,6 +554,9 @@
         private System.Windows.Forms.ToolStripMenuItem registrarCamaroteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarCamaroteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarCamaroteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cobrarToolStripMenuItem;
     }
 }
 

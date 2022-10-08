@@ -15,6 +15,7 @@ using Pav_TP.InterfacesDeUsuario;
 using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.InterfacesDeUsuario.Camarote;
+using Pav_TP.InterfacesDeUsuario.Transacciones;
 
 namespace seastar
 {
@@ -37,11 +38,9 @@ namespace seastar
 
         {
             if(UsuariosServicio.UsuarioLogueado == null)
-            {
-                
+            {   
                 var frmLogin = new FrmLogin();
-                frmLogin.ShowDialog();
-                
+                frmLogin.ShowDialog();   
             }
 
            
@@ -226,6 +225,27 @@ namespace seastar
         {
             ModificarCamarote modificarCamarote = new ModificarCamarote(this);
             modificarCamarote.Show();
+            this.Hide();
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reserva reserva = new Reserva();
+            reserva.Show();
+            this.Hide();
+        }
+
+        private void cobrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cobro cobro = new Cobro();
+            cobro.Show();
+            this.Hide();
+        }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Itinerario itinerario = new Itinerario();
+            itinerario.Show();
             this.Hide();
         }
     }

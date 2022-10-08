@@ -25,10 +25,6 @@ namespace PAV1
             usuarioServicio = new UsuariosServicio();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
@@ -46,15 +42,14 @@ namespace PAV1
             }
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void CerrarFormulario()
         {
-
+            this.Dispose();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            CerrarFormulario();
         }
     }
 }

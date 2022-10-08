@@ -27,9 +27,9 @@ namespace Pav_TP.Servicios
             viaje.ValidarOrigen();
         }
 
-        public Viaje GetViaje(long id)
+        /*public Viaje GetViaje(long id)
         {
             return repositorio.GetViaje(id);
-        }
+        }*/
     }
 }
