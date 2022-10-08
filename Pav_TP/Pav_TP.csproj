@@ -61,6 +61,7 @@
     <Compile Include="Entidades\Clasificacion.cs" />
     <Compile Include="Entidades\Cubierta.cs" />
     <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\Itinerario.cs" />
     <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Entidades\TipoCamarote.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
     <Compile Include="Entidades\Ubicacion.cs" />
+    <Compile Include="Entidades\Viaje.cs" />
     <Compile Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +294,7 @@
     <Compile Include="Repositorios\PuestosRepositorio.cs" />
     <Compile Include="Repositorios\TripulantesRepositorio.cs" />
     <Compile Include="Repositorios\UsuariosRepositorio.cs" />
+    <Compile Include="Repositorios\ViajesRepositorio.cs" />
     <Compile Include="Servicios\BarcosServicios.cs" />
     <Compile Include="Servicios\CamaroteServicios.cs" />
     <Compile Include="Servicios\CiudadServicios.cs" />
@@ -319,6 +322,7 @@
     </Compile>
     <Compile Include="Servicios\TripulantesServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
+    <Compile Include="Servicios\ViajesServicios.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
       <DependentUpon>ConsultarBarco.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pav_TP.Entidades;
+using Pav_TP.Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,12 @@ namespace PAV1
 {
     public partial class GenerarViaje : Form
     {
+        private readonly PaisesServicios paisesServicios;
+        private readonly ViajesServicios viajesServicios;
+        //private readonly ItinerariosServicios itinerariosServicios;
         public GenerarViaje()
-        {
+        {   
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
