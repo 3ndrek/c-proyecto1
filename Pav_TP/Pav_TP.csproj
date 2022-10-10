@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Barco.cs" />
     <Compile Include="Entidades\Camarote.cs" />
+    <Compile Include="Entidades\CategoriasItinerarios.cs" />
     <Compile Include="Entidades\Ciudad.cs" />
     <Compile Include="Entidades\Clasificacion.cs" />
     <Compile Include="Entidades\Cubierta.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
     <Compile Include="Entidades\Perfil.cs" />
+    <Compile Include="Entidades\Puertos.cs" />
     <Compile Include="Entidades\Puestos.cs" />
     <Compile Include="Entidades\TipoCamarote.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
     <Compile Include="Repositorios\GeneroRepositorio.cs" />
+    <Compile Include="Repositorios\ItinerarioRepositorio.cs" />
     <Compile Include="Repositorios\JefeRepositorio.cs" />
     <Compile Include="Repositorios\PaisesRepositorio.cs" />
     <Compile Include="Repositorios\TipoDocRepositorio.cs" />
@@ -307,6 +310,7 @@
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
     <Compile Include="Servicios\GeneroServicios.cs" />
+    <Compile Include="Servicios\ItinerarioServicios.cs" />
     <Compile Include="Servicios\JefeServicios.cs" />
     <Compile Include="Servicios\PaisesServicios.cs" />
     <Compile Include="Servicios\PasajerosServicios.cs" />
