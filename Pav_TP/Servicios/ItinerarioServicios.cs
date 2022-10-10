@@ -56,6 +56,37 @@ namespace Pav_TP.Servicios
             cmb.SelectedItem = catDefault;
             
         }
+        public int GenerarCodItinerario()
+        {
+            return itinerarioRepositorio.GenerarCodItinerario();
+        }
+
+        public int RegistrarItinerario(int cod_i, int cat )
+        {
+            var sql = $"insert into itinerarios(cod_itinerario,categoria) values ({cod_i},{cat})";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+            return cod_i;
+        }
+
+        public void RegistrarPuertosXItinerario(DataGridView dgv, int cod_i)
+        {
+            int c = dgv.Rows.Count - 1;
+            for(int i = 0; i < c; i++)
+            {
+                DataGridViewRow row = dgv.Rows[i];
+                int cod_p = Convert.ToInt32(row.Cells[1].Value);
+                int num_e = Convert.ToInt32(row.Cells[2].Value);
+                itinerarioRepositorio.RegistrarPuertosXItinerario(cod_i, num_e, cod_p);
+            }
+
+            /*for(DataGridViewRow row in dgv.Rows)
+            {
+                int cod_p = Convert.ToInt32(row.Cells[1].Value);
+                int num_e = Convert.ToInt32(row.Cells[2].Value);
+                MessageBox.Show(cod_p.ToString());
+                //itinerarioRepositorio.RegistrarPuertosXItinerario(cod_i, num_e, cod_p);
+            }*/
+        }
 
     }
 }

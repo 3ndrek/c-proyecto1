@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(14, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(666, 350);
+            this.groupBox1.Size = new System.Drawing.Size(760, 350);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione los puertos que desea incluir en el itinerario:";
@@ -88,7 +88,7 @@
             this.dgvPuertos.Name = "dgvPuertos";
             this.dgvPuertos.RowHeadersWidth = 51;
             this.dgvPuertos.RowTemplate.Height = 24;
-            this.dgvPuertos.Size = new System.Drawing.Size(654, 150);
+            this.dgvPuertos.Size = new System.Drawing.Size(748, 150);
             this.dgvPuertos.TabIndex = 5;
             // 
             // cmbPais
@@ -172,6 +172,7 @@
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 603);
+            this.ClientSize = new System.Drawing.Size(786, 603);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

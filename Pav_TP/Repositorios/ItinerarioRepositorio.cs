@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Pav_TP.Repositorios
 {
@@ -58,6 +59,21 @@ namespace Pav_TP.Repositorios
                 puertos.Add(puerto);
             }
             return puertos;
+        }
+
+        public int GenerarCodItinerario()
+        {
+            var sql = $"select count(i.cod_itinerario) from itinerarios i";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            int cod_itinerario = Convert.ToInt32(tablaResultado.Rows[0][0]);
+            return cod_itinerario+1;
+
+        }
+
+        public void RegistrarPuertosXItinerario(int cod_i, int num_e, int cod_p)
+        {
+            var sql = $"insert into puertoXitinerarios(cod_itinerarios,num_escala,cod_puerto) values ({cod_i},{num_e},{cod_p})";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
     }
 }
