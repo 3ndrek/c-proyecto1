@@ -51,9 +51,10 @@ namespace Pav_TP.Servicios
             conector.DataSource = categorias;
 
             cmb.DataSource = conector;
-            cmb.DisplayMember = "categoria";
-            cmb.ValueMember = "descripcion";
+            cmb.DisplayMember = "descripcion";
+            cmb.ValueMember = "categoria";
             cmb.SelectedItem = catDefault;
+            
         }
 
     }
