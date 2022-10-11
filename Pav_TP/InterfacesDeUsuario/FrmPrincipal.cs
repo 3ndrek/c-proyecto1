@@ -244,7 +244,7 @@ namespace seastar
 
         private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Itinerario itinerario = new Itinerario();
+            Itinerario itinerario = new Itinerario(this);
             itinerario.Show();
             this.Hide();
         }

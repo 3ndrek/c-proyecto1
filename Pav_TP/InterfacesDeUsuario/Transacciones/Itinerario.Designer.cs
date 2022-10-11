@@ -182,6 +182,7 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label5
             // 
@@ -204,6 +205,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Itinerario";
             this.Text = "Itinerario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Itinerario_FormClosing);
             this.Load += new System.EventHandler(this.Itinerario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
