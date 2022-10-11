@@ -37,10 +37,31 @@ namespace seastar
         private void Menu_Load(object sender, EventArgs e)
 
         {
-            if(UsuariosServicio.UsuarioLogueado == null)
+            while (UsuariosServicio.UsuarioLogueado == null)
             {   
-                var frmLogin = new FrmLogin();
-                frmLogin.ShowDialog();   
+               var frmLogin = new FrmLogin(this);
+               frmLogin.ShowDialog();
+               
+                if (UsuariosServicio.UsuarioLogueado == null)
+                {
+                    DialogResult result = MessageBox.Show("error ingrese un usuario","Inicio de sesión erroneo", MessageBoxButtons.RetryCancel);
+
+                    if (result == DialogResult.Retry)
+                    {
+                        var frmLogin1 = new FrmLogin(this);
+                        frmLogin1.ShowDialog();
+
+                    }
+
+                    else if (result == DialogResult.Cancel)
+                    {
+                        this.Dispose();
+                    }
+
+
+
+                }
+
             }
 
            
@@ -247,6 +268,11 @@ namespace seastar
             Itinerario itinerario = new Itinerario(this);
             itinerario.Show();
             this.Hide();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

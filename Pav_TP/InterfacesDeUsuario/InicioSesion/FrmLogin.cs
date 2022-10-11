@@ -1,5 +1,6 @@
 ﻿using Pav_TP.Entidades;
 using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +17,15 @@ namespace PAV1
 
     {
         private readonly UsuariosServicio usuarioServicio;
+        private readonly FrmPrincipal frmPrincipal;
 
         //private object usuariosServicio;
 
-        public FrmLogin()
+        public FrmLogin(FrmPrincipal frmPrincipal)
         {
             InitializeComponent();
             usuarioServicio = new UsuariosServicio();
+            frmPrincipal = new FrmPrincipal();
         }
 
 
@@ -50,6 +53,11 @@ namespace PAV1
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             CerrarFormulario();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
