@@ -105,9 +105,6 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
             }
             CargarBarcos();
 
-
-
-
         }
 
 

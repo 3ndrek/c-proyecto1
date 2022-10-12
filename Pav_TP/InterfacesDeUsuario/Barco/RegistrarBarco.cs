@@ -14,9 +14,7 @@ using System.Windows.Forms;
 
 namespace Pav_TP.InterfacesDeUsuario.Barco
 {
-    public partial class RegistrarBarco : Form
-
-        
+    public partial class RegistrarBarco : Form 
     {
         private Entidades.Barco barco;
         private ClasificacionesServicios clasificacionesServicios;
