@@ -155,7 +155,7 @@ namespace seastar
 
         private void generarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GenerarViaje generarViaje = new GenerarViaje();
+            GenerarViaje generarViaje = new GenerarViaje(this);
             generarViaje.Show();
             this.Hide();
         }

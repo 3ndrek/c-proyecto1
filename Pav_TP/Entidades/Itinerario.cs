@@ -9,7 +9,6 @@ namespace Pav_TP.Entidades
     public class Itinerario
     {
         public int Cod_Itinerario { get; set; }
-        public string Descripcion { get; set; }
         public int Categoria { get; set; }
-}
+    }   
 }
