@@ -10,6 +10,10 @@ namespace Pav_TP.Entidades
     {
         public int modo_pago { get; set; } 
         public string descripcion { get; set; }
+
+
+
+        // prueba para pushear modo pago 
     }
 
 
