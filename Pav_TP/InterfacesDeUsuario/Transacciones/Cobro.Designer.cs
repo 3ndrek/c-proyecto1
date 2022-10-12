@@ -55,10 +55,10 @@
             // 
             this.groupBox1.Controls.Add(this.CmbReservas);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 11);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(7, 100);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(317, 72);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -68,7 +68,7 @@
             // 
             this.CmbReservas.FormattingEnabled = true;
             this.CmbReservas.Location = new System.Drawing.Point(116, 25);
-            this.CmbReservas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbReservas.Margin = new System.Windows.Forms.Padding(2);
             this.CmbReservas.Name = "CmbReservas";
             this.CmbReservas.Size = new System.Drawing.Size(92, 21);
             this.CmbReservas.TabIndex = 1;
@@ -91,10 +91,10 @@
             this.groupBox2.Controls.Add(this.CmbModosPagos);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(10, 89);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(7, 178);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(317, 110);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -113,7 +113,7 @@
             // FechaPagoSeleccionador
             // 
             this.FechaPagoSeleccionador.Location = new System.Drawing.Point(116, 76);
-            this.FechaPagoSeleccionador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FechaPagoSeleccionador.Margin = new System.Windows.Forms.Padding(2);
             this.FechaPagoSeleccionador.Name = "FechaPagoSeleccionador";
             this.FechaPagoSeleccionador.Size = new System.Drawing.Size(189, 20);
             this.FechaPagoSeleccionador.TabIndex = 4;
@@ -121,7 +121,7 @@
             // TxtMonto
             // 
             this.TxtMonto.Location = new System.Drawing.Point(116, 48);
-            this.TxtMonto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtMonto.Margin = new System.Windows.Forms.Padding(2);
             this.TxtMonto.Name = "TxtMonto";
             this.TxtMonto.Size = new System.Drawing.Size(92, 20);
             this.TxtMonto.TabIndex = 3;
@@ -130,10 +130,11 @@
             // 
             this.CmbModosPagos.FormattingEnabled = true;
             this.CmbModosPagos.Location = new System.Drawing.Point(116, 24);
-            this.CmbModosPagos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbModosPagos.Margin = new System.Windows.Forms.Padding(2);
             this.CmbModosPagos.Name = "CmbModosPagos";
             this.CmbModosPagos.Size = new System.Drawing.Size(92, 21);
             this.CmbModosPagos.TabIndex = 2;
+            this.CmbModosPagos.SelectionChangeCommitted += new System.EventHandler(this.CmbModosPagos_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -161,10 +162,10 @@
             this.groupBox3.Controls.Add(this.TxtNroDoc);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(9, 212);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(7, 11);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(317, 81);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -174,7 +175,7 @@
             // 
             this.CmbTipoDoc.FormattingEnabled = true;
             this.CmbTipoDoc.Location = new System.Drawing.Point(133, 19);
-            this.CmbTipoDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CmbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
             this.CmbTipoDoc.Name = "CmbTipoDoc";
             this.CmbTipoDoc.Size = new System.Drawing.Size(92, 21);
             this.CmbTipoDoc.TabIndex = 6;
@@ -182,7 +183,7 @@
             // TxtNroDoc
             // 
             this.TxtNroDoc.Location = new System.Drawing.Point(133, 43);
-            this.TxtNroDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtNroDoc.Margin = new System.Windows.Forms.Padding(2);
             this.TxtNroDoc.Name = "TxtNroDoc";
             this.TxtNroDoc.Size = new System.Drawing.Size(92, 20);
             this.TxtNroDoc.TabIndex = 7;
@@ -219,20 +220,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(185, 337);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(185, 332);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.Size = new System.Drawing.Size(56, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(257, 337);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(257, 332);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
+            this.button2.Size = new System.Drawing.Size(67, 28);
             this.button2.TabIndex = 4;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
@@ -241,14 +242,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 366);
+            this.ClientSize = new System.Drawing.Size(341, 367);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Cobro";
             this.Text = "Cobro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cobro_FormClosing);

@@ -50,7 +50,6 @@
             this.viajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -251,7 +250,6 @@
             this.viajesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarViajeToolStripMenuItem,
             this.consultarViajeToolStripMenuItem,
-            this.modificarViajeToolStripMenuItem,
             this.eliminarViajeToolStripMenuItem});
             this.viajesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viajesToolStripMenuItem.Name = "viajesToolStripMenuItem";
@@ -271,13 +269,6 @@
             this.consultarViajeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.consultarViajeToolStripMenuItem.Text = "Consultar viaje";
             this.consultarViajeToolStripMenuItem.Click += new System.EventHandler(this.consultarViajeToolStripMenuItem_Click);
-            // 
-            // modificarViajeToolStripMenuItem
-            // 
-            this.modificarViajeToolStripMenuItem.Name = "modificarViajeToolStripMenuItem";
-            this.modificarViajeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-            this.modificarViajeToolStripMenuItem.Text = "Modificar viaje";
-            this.modificarViajeToolStripMenuItem.Click += new System.EventHandler(this.modificarViajeToolStripMenuItem_Click);
             // 
             // eliminarViajeToolStripMenuItem
             // 
@@ -546,7 +537,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificarCubierta;
         private System.Windows.Forms.ToolStripMenuItem eliminarCubierta;
         private System.Windows.Forms.ToolStripMenuItem consultarViajeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarViajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarViajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPuerto;
         private System.Windows.Forms.ToolStripMenuItem consultarPuerto;

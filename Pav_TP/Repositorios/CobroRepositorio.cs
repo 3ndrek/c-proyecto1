@@ -18,6 +18,8 @@ namespace Pav_TP.Repositorios
             var sql = " select R.cod_navio, R.num_cubierta,R.num_camarotes,R.fecha_viaje,R.cama_ocupada,R.cama_ocupada, R.tipo_doc, R.num_doc, R.nro_reservacion, p.nombre, p.apellido " +
             "from reservaciones R join pasajeros P ON p.tipo_doc = r.tipo_doc and p.num_doc = r.num_doc ";
 
+            // join de pasajerosXreservaciones para traer el estado de reservacion 
+
             var tablaReservaciones = DBHelper.GetDBHelper().ConsultaSQL(sql);
 
             foreach (DataRow fila in tablaReservaciones.Rows )
@@ -39,6 +41,42 @@ namespace Pav_TP.Repositorios
         }
 
 
+        public List<Modo_pago> GetModo_Pagos()
+        {
+            var modoPagoX = new List<Modo_pago>();
+            var sql = "select * from Modospagos";
 
+            var tablasModos = DBHelper.GetDBHelper().ConsultaSQL(sql);
+
+            foreach (DataRow fila in tablasModos.Rows )
+            {
+                var modoTraido = new Modo_pago();
+                modoTraido.modo_pago = Convert.ToInt32(fila["modo_pago"]);
+                modoTraido.descripcion = fila["descripcion"].ToString();
+
+                modoPagoX.Add(modoTraido);
+            }
+            return modoPagoX;
+        }
+
+        public List<tiposDoc> GetTiposDocs()
+        {
+            var GetsTipos = new List<tiposDoc>();
+            var sql = "select * from tipo_doc";
+
+            var tablasTipos = DBHelper.GetDBHelper().ConsultaSQL(sql);
+
+            foreach  (DataRow fila in tablasTipos.Rows )
+            {
+                var tipoTraido = new tiposDoc();
+                tipoTraido.tipo = Convert.ToInt32(fila["tipo"]);
+                tipoTraido.descripcion = fila["descripcion"].ToString();
+
+                GetsTipos.Add(tipoTraido);
+            }
+
+            return GetsTipos;
+
+        }
     }
 }

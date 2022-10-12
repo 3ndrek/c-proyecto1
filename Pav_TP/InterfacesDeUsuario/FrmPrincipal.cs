@@ -161,16 +161,12 @@ namespace seastar
         }
         private void consultarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarViaje consultarViaje = new ConsultarViaje();
+            ConsultarViaje consultarViaje = new ConsultarViaje(this);
             consultarViaje.Show();
             this.Hide();
         }
-        private void modificarViajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModificarViaje modificarViaje = new ModificarViaje();
-            modificarViaje.Show();
-            this.Hide();
-        }
+
+
         private void eliminarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form9 eliminarViaje = new Form9();

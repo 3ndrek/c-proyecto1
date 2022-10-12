@@ -17,6 +17,7 @@ namespace Pav_TP.Entidades
         public int num_reservacion { get; set;  }
         public DateTime fecha_viaje { get; set;  }
 
+        public string estado_reserva { get; set; }
 
     }
 }

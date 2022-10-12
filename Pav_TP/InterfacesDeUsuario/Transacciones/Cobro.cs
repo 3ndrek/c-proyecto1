@@ -17,12 +17,12 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
     public partial class Cobro : Form
     {
         private readonly CobroServicios cobroServicio;
-        private readonly FrmPrincipal frmPrincipal;
+        private readonly FrmPrincipal frmPrincipa;
 
         public Cobro(FrmPrincipal frmPrincipal)
         {
             cobroServicio = new CobroServicios();
-            frmPrincipal = new FrmPrincipal();
+            frmPrincipa = frmPrincipal;
             InitializeComponent();
 
         }
@@ -30,6 +30,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private void Cobro_Load(object sender, EventArgs e)
         {
             cargarReservaciones();
+            cargarModos();
         }
 
         private void cargarReservaciones()
@@ -50,6 +51,25 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         }
 
+        private void cargarModos()
+        {
+            var modos2= cobroServicio.GetModos();
+            var modoDefault = new Modo_pago();
+            modoDefault.descripcion="Seleccionar";
+            modos2.Add(modoDefault);
+
+            var conector = new BindingSource();
+            conector.DataSource = modos2;
+
+            CmbModosPagos.DataSource = conector;
+            CmbModosPagos.DisplayMember = "descripcion";
+            CmbModosPagos.ValueMember = "modo_pago";
+            CmbModosPagos.SelectedItem = modoDefault;
+
+        }
+
+
+
         private void Cobro_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cerrar_cuestionario();
@@ -57,8 +77,13 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void Cerrar_cuestionario()
         {
-            frmPrincipal.Show();
+            frmPrincipa.Show();
             Dispose();
+        }
+
+        private void CmbModosPagos_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
         }
     }
 }
