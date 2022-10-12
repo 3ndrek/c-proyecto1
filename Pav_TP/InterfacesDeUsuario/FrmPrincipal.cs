@@ -258,7 +258,7 @@ namespace seastar
 
         private void cobrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cobro cobro = new Cobro();
+            Cobro cobro = new Cobro(this);
             cobro.Show();
             this.Hide();
         }
@@ -271,6 +271,11 @@ namespace seastar
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
