@@ -22,10 +22,8 @@ namespace Pav_TP.Servicios
         {
             var list = new List<Reservaciones> ();
             var lista = new List<Reservaciones> ();
-            list = cobroRepositorio.Getreservaciones();
+            list = cobroRepositorio.Getreservaciones(pasajeroFiltro);
 
-
-            // ver que devuelve el array desde bd 
             foreach (Reservaciones reservacion  in list)
             {
                 
@@ -41,10 +39,20 @@ namespace Pav_TP.Servicios
             return cobroRepositorio.GetModo_Pagos();
         }
 
-        public List<tiposDoc> GetTipos()
+        public List<TipoDoc> GetTipos()
         {
             return cobroRepositorio.GetTiposDocs();
         }
 
+
+        public List<Pasajero> GetPasajeros(Pasajero pasajero)
+        {
+            return cobroRepositorio.GetPasajeros(pasajero);
+        }
+
+        public void registrarPxR (pasajeroXreserva pXr)
+        {
+            cobroRepositorio.RegistrarCobroReserva(pXr);
+        }
     }
 }

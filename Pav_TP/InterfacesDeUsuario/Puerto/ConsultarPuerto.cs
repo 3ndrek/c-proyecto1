@@ -16,5 +16,10 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
         {
             InitializeComponent();
         }
+
+        private void ConsultarPuerto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

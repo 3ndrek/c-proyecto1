@@ -39,13 +39,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnPasajero = new System.Windows.Forms.Button();
             this.CmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.TxtNroDoc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.PasajeroInfo = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NombrePasajero = new System.Windows.Forms.Label();
+            this.ApellidoMostrar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -55,7 +60,7 @@
             // 
             this.groupBox1.Controls.Add(this.CmbReservas);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(7, 100);
+            this.groupBox1.Location = new System.Drawing.Point(7, 161);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -72,6 +77,7 @@
             this.CmbReservas.Name = "CmbReservas";
             this.CmbReservas.Size = new System.Drawing.Size(92, 21);
             this.CmbReservas.TabIndex = 1;
+            this.CmbReservas.SelectionChangeCommitted += new System.EventHandler(this.CmbReservas_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -91,7 +97,7 @@
             this.groupBox2.Controls.Add(this.CmbModosPagos);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(7, 178);
+            this.groupBox2.Location = new System.Drawing.Point(7, 239);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -158,6 +164,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BtnPasajero);
             this.groupBox3.Controls.Add(this.CmbTipoDoc);
             this.groupBox3.Controls.Add(this.TxtNroDoc);
             this.groupBox3.Controls.Add(this.label6);
@@ -171,6 +178,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ingrese los datos del pasajero";
             // 
+            // BtnPasajero
+            // 
+            this.BtnPasajero.Location = new System.Drawing.Point(237, 53);
+            this.BtnPasajero.Name = "BtnPasajero";
+            this.BtnPasajero.Size = new System.Drawing.Size(75, 23);
+            this.BtnPasajero.TabIndex = 8;
+            this.BtnPasajero.Text = "Buscar ";
+            this.BtnPasajero.UseVisualStyleBackColor = true;
+            this.BtnPasajero.Click += new System.EventHandler(this.BtnPasajero_Click);
+            // 
             // CmbTipoDoc
             // 
             this.CmbTipoDoc.FormattingEnabled = true;
@@ -179,6 +196,7 @@
             this.CmbTipoDoc.Name = "CmbTipoDoc";
             this.CmbTipoDoc.Size = new System.Drawing.Size(92, 21);
             this.CmbTipoDoc.TabIndex = 6;
+            this.CmbTipoDoc.SelectionChangeCommitted += new System.EventHandler(this.CmbTipoDoc_SelectionChangeCommitted);
             // 
             // TxtNroDoc
             // 
@@ -211,26 +229,27 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(105, 306);
+            this.label7.Location = new System.Drawing.Point(105, 367);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(219, 13);
             this.label7.TabIndex = 2;
             this.label7.Text = "Esta seguro que desea abonar esta reserva?";
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.Location = new System.Drawing.Point(185, 332);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAceptar.Location = new System.Drawing.Point(185, 393);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(56, 28);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(257, 332);
+            this.button2.Location = new System.Drawing.Point(257, 393);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(67, 28);
@@ -238,13 +257,53 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // PasajeroInfo
+            // 
+            this.PasajeroInfo.AutoSize = true;
+            this.PasajeroInfo.Location = new System.Drawing.Point(32, 98);
+            this.PasajeroInfo.Name = "PasajeroInfo";
+            this.PasajeroInfo.Size = new System.Drawing.Size(50, 13);
+            this.PasajeroInfo.TabIndex = 5;
+            this.PasajeroInfo.Text = "Nombre: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(32, 129);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Apellido:";
+            // 
+            // NombrePasajero
+            // 
+            this.NombrePasajero.AutoSize = true;
+            this.NombrePasajero.Location = new System.Drawing.Point(123, 98);
+            this.NombrePasajero.Name = "NombrePasajero";
+            this.NombrePasajero.Size = new System.Drawing.Size(29, 13);
+            this.NombrePasajero.TabIndex = 7;
+            this.NombrePasajero.Text = "label";
+            // 
+            // ApellidoMostrar
+            // 
+            this.ApellidoMostrar.AutoSize = true;
+            this.ApellidoMostrar.Location = new System.Drawing.Point(123, 129);
+            this.ApellidoMostrar.Name = "ApellidoMostrar";
+            this.ApellidoMostrar.Size = new System.Drawing.Size(29, 13);
+            this.ApellidoMostrar.TabIndex = 8;
+            this.ApellidoMostrar.Text = "label";
+            // 
             // Cobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 367);
+            this.ClientSize = new System.Drawing.Size(341, 451);
+            this.Controls.Add(this.ApellidoMostrar);
+            this.Controls.Add(this.NombrePasajero);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.PasajeroInfo);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -283,7 +342,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnPasajero;
+        private System.Windows.Forms.Label PasajeroInfo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label NombrePasajero;
+        private System.Windows.Forms.Label ApellidoMostrar;
     }
 }

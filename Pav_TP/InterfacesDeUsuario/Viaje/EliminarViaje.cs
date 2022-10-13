@@ -16,5 +16,10 @@ namespace PAV1
         {
             InitializeComponent();
         }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

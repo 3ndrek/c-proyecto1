@@ -64,8 +64,10 @@
     <Compile Include="Entidades\Cubierta.cs" />
     <Compile Include="Entidades\Genero.cs" />
     <Compile Include="Entidades\Itinerario.cs" />
+    <Compile Include="Entidades\Modo_pago.cs" />
     <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
+    <Compile Include="Entidades\pasajeroXreserva.cs" />
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Puertos.cs" />
     <Compile Include="Entidades\Puestos.cs" />
