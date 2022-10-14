@@ -140,7 +140,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
             }
             // por el camino del bien funciona, ahora hay que hacer la validación para que se actualice cuando no se encuentra nada 
-            catch (NullReferenceException ex)
+            catch (Exception ex)
             {
 
                 throw new Exception(ex.Message);
@@ -159,7 +159,24 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cargaPasajero(); 
+            try
+            {
+                cargaPasajero();
+
+                DialogResult result = MessageBox.Show("se registró el cobro con exito", "Cobro", MessageBoxButtons.OK);
+               
+                TxtNroDoc.Clear();
+                NombrePasajero.Hide();
+                ApellidoMostrar.Hide();
+                TxtMonto.Clear();
+            }
+            catch (Exception)
+            {
+                DialogResult result = MessageBox.Show("No se pudo realizar el cobro ", "Cobro", MessageBoxButtons.OK);
+
+                
+            }
+           
 
 
         }
@@ -177,7 +194,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             pxR.estado_reserva = "c";
             cobroServicio.registrarPxR(pxR);
 
-            MessageBox.Show("se registró el cobro con exito", "Cobro", MessageBoxButtons.OK);
+           
         }
 
 

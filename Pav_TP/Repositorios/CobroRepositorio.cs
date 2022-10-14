@@ -116,7 +116,11 @@ namespace Pav_TP.Repositorios
 
                     throw new ApplicationException("hubo un problema al registrar el cobro ");
                 }
-
+                
+                finally
+                {
+                    DBHelper.GetDBHelper().CloseConnection();
+                }
 
             }
 
