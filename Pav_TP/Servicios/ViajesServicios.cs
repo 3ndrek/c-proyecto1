@@ -17,19 +17,63 @@ namespace Pav_TP.Servicios
             repositorio = new ViajesRepositorio();
         }
 
-        public void Validar(Viaje viaje)
+        public List<Viaje> GetViajes()
         {
-            viaje.ValidarCodigo();
-            viaje.ValidarDestino();
-            viaje.ValidarDuracion();
-            viaje.ValidarFecha();
-            viaje.ValidarItininerario();
-            viaje.ValidarOrigen();
+            return repositorio.GetViajes();
         }
 
-        /*public Viaje GetViaje(long id)
+        public List<Viaje> GetViajes(Viaje viaje)
         {
-            return repositorio.GetViaje(id);
-        }*/
+            return repositorio.GetViajes(viaje);
+        }
+
+        public List<Itinerario> GetItinerarios()
+        {
+            return repositorio.GetItinerario();
+        }
+
+        public List<Barco> ObtenerBarco()
+        {
+            return repositorio.ObtenerBarcos();
+        }
+
+        public Viaje GetViajes(int id, DateTime fecha)
+        {
+            return repositorio.GetViajes(id, fecha);
+        }
+
+        public void ValidarViaje(Viaje viajes)
+        {
+            viajes.ValidarCodigo();
+            viajes.ValidarDestino();
+            viajes.ValidarDuracion();
+            viajes.ValidarFecha();
+            viajes.ValidarItininerario();
+            viajes.ValidarOrigen();
+
+        }
+
+        public bool RegistrarViaje(Viaje viajes)
+        {
+            var filasAfectadas = repositorio.RegistrarViaje(viajes);
+            if (filasAfectadas == 1)
+                return true;
+
+            return false;
+        }
+
+        public void ActualizarViaje(Viaje viaje)
+        {
+            var filasAfectadas = repositorio.ActualizarViaje(viaje);
+            if (filasAfectadas != 1)
+                throw new ApplicationException("Hubo un problema al actualizar");
+        }
+
+        public void EliminarViaje(int id, DateTime fecha)
+        {
+            var filasAfectadas = repositorio.EliminarViaje(id, fecha);
+            if (filasAfectadas != 1)
+                throw new ApplicationException("Hubo un problema al actualizar");
+        }
     }
 }

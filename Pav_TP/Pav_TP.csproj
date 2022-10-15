@@ -250,24 +250,11 @@
     <Compile Include="InterfacesDeUsuario\Viaje\GenerarViaje.designer.cs">
       <DependentUpon>GenerarViaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="InterfacesDeUsuario\Viaje\ModificarViaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfacesDeUsuario\Viaje\ModificarViaje.designer.cs">
-      <DependentUpon>ModificarViaje.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfacesDeUsuario\Viaje\ConsultarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfacesDeUsuario\Viaje\ConsultarViaje.designer.cs">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InterfacesDeUsuario\Viaje\EliminarViaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfacesDeUsuario\Viaje\.designer.cs">
-      <DependentUpon>EliminarViaje.cs</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="InterfacesDeUsuario\Pasajero\ConsultarPasajero.cs">
       <SubType>Form</SubType>
@@ -402,14 +389,8 @@
     <EmbeddedResource Include="InterfacesDeUsuario\Viaje\GenerarViaje.resx">
       <DependentUpon>GenerarViaje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\ModificarViaje.resx">
-      <DependentUpon>ModificarViaje.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Viaje\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InterfacesDeUsuario\Viaje\EliminarViaje.resx">
-      <DependentUpon>EliminarViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Pasajero\ConsultarPasajero.resx">
       <DependentUpon>ConsultarPasajero.cs</DependentUpon>

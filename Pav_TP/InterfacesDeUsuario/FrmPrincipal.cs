@@ -155,29 +155,17 @@ namespace seastar
 
         private void generarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GenerarViaje generarViaje = new GenerarViaje();
+            GenerarViaje generarViaje = new GenerarViaje(this);
             generarViaje.Show();
             this.Hide();
         }
         private void consultarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarViaje consultarViaje = new ConsultarViaje();
+            ConsultarViaje consultarViaje = new ConsultarViaje(this);
             consultarViaje.Show();
             this.Hide();
         }
-        private void modificarViajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ModificarViaje modificarViaje = new ModificarViaje();
-            modificarViaje.Show();
-            this.Hide();
-        }
-        private void eliminarViajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form9 eliminarViaje = new Form9();
-            eliminarViaje.Show();
-            this.Hide();
-        }
-
+      
         private void cubiertaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
