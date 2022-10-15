@@ -66,7 +66,7 @@
             // TxtUsuario
             // 
             this.TxtUsuario.Location = new System.Drawing.Point(95, 50);
-            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(158, 20);
             this.TxtUsuario.TabIndex = 2;
@@ -74,7 +74,7 @@
             // TxtContrasenia
             // 
             this.TxtContrasenia.Location = new System.Drawing.Point(95, 88);
-            this.TxtContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.TxtContrasenia.Name = "TxtContrasenia";
             this.TxtContrasenia.Size = new System.Drawing.Size(158, 20);
             this.TxtContrasenia.TabIndex = 3;
@@ -83,7 +83,7 @@
             // BtnIngresar
             // 
             this.BtnIngresar.Location = new System.Drawing.Point(225, 212);
-            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(61, 26);
             this.BtnIngresar.TabIndex = 4;
@@ -94,12 +94,13 @@
             // BtnSalir
             // 
             this.BtnSalir.Location = new System.Drawing.Point(300, 212);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(59, 26);
             this.BtnSalir.TabIndex = 5;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // label1
             // 
@@ -128,7 +129,7 @@
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUSR);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
             this.Text = "Iniciar Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);

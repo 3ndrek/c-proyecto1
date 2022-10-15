@@ -1,6 +1,7 @@
 ﻿using Pav_TP.Entidades;
 using Pav_TP.Repositorios;
 using Pav_TP.Servicios;
+using Pav_TP.ValidadoresUtiles;
 using seastar;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private readonly Entidades.Pasajero pasajeroFiltro;
         private readonly Entidades.Cobros cobro1;
         private readonly pasajeroXreserva pxR;
-
+        private readonly Validadores validadores;
         public Cobro(FrmPrincipal frmPrincipal)
         {
             cobroServicio = new CobroServicios();
@@ -40,6 +41,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             cargarTiposDoc();
             NombrePasajero.Hide();
             ApellidoMostrar.Hide();
+
+            TxtNroDoc.MaxLength = 8;
         }
 
 
@@ -173,8 +176,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             catch (Exception)
             {
                 DialogResult result = MessageBox.Show("No se pudo realizar el cobro ", "Cobro", MessageBoxButtons.OK);
-
-                
             }
            
 
@@ -207,6 +208,51 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private void CmbReservas_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cobro1.nro_reserva = (int)CmbReservas.SelectedValue;
+        }
+
+        private void TxtNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (Char.IsPunctuation(e.KeyChar)) //Comparas si la tecla presionada corresponde a un signo de puntuacion
+            {
+                e.Handled = true; //Si coincide se controla el evento, es decir, no se escribe el caracter
+            }
+            if (Char.IsSymbol(e.KeyChar)) //Comparas si la tecla presionada corresponde a un simbolo
+            {
+                e.Handled = true;
+            }
+            if (Char.IsLetter(e.KeyChar)) //Comparas si la tecla presionada corresponde a una letra
+            {
+                e.Handled = true;
+            }
+
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void TxtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsPunctuation(e.KeyChar)) //Comparas si la tecla presionada corresponde a un signo de puntuacion
+            {
+                e.Handled = true; //Si coincide se controla el evento, es decir, no se escribe el caracter
+            }
+            if (Char.IsSymbol(e.KeyChar)) //Comparas si la tecla presionada corresponde a un simbolo
+            {
+                e.Handled = true;
+            }
+            if (Char.IsLetter(e.KeyChar)) //Comparas si la tecla presionada corresponde a una letra
+            {
+                e.Handled = true;
+            }
+
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

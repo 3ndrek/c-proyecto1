@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CmbReservas = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,9 +52,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.NombrePasajero = new System.Windows.Forms.Label();
             this.ApellidoMostrar = new System.Windows.Forms.Label();
+            this.ErrorDni = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorDni)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,13 +67,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(317, 72);
+            this.groupBox1.Size = new System.Drawing.Size(341, 72);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione la reserva que desea abonar:";
             // 
             // CmbReservas
             // 
+            this.CmbReservas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbReservas.FormattingEnabled = true;
             this.CmbReservas.Location = new System.Drawing.Point(116, 25);
             this.CmbReservas.Margin = new System.Windows.Forms.Padding(2);
@@ -101,7 +105,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(317, 110);
+            this.groupBox2.Size = new System.Drawing.Size(341, 110);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingrese los datos del pago";
@@ -121,7 +125,7 @@
             this.FechaPagoSeleccionador.Location = new System.Drawing.Point(116, 76);
             this.FechaPagoSeleccionador.Margin = new System.Windows.Forms.Padding(2);
             this.FechaPagoSeleccionador.Name = "FechaPagoSeleccionador";
-            this.FechaPagoSeleccionador.Size = new System.Drawing.Size(189, 20);
+            this.FechaPagoSeleccionador.Size = new System.Drawing.Size(221, 20);
             this.FechaPagoSeleccionador.TabIndex = 4;
             // 
             // TxtMonto
@@ -131,9 +135,11 @@
             this.TxtMonto.Name = "TxtMonto";
             this.TxtMonto.Size = new System.Drawing.Size(92, 20);
             this.TxtMonto.TabIndex = 3;
+            this.TxtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMonto_KeyPress);
             // 
             // CmbModosPagos
             // 
+            this.CmbModosPagos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbModosPagos.FormattingEnabled = true;
             this.CmbModosPagos.Location = new System.Drawing.Point(116, 24);
             this.CmbModosPagos.Margin = new System.Windows.Forms.Padding(2);
@@ -173,14 +179,14 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(317, 81);
+            this.groupBox3.Size = new System.Drawing.Size(341, 85);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ingrese los datos del pasajero";
             // 
             // BtnPasajero
             // 
-            this.BtnPasajero.Location = new System.Drawing.Point(237, 53);
+            this.BtnPasajero.Location = new System.Drawing.Point(261, 57);
             this.BtnPasajero.Name = "BtnPasajero";
             this.BtnPasajero.Size = new System.Drawing.Size(75, 23);
             this.BtnPasajero.TabIndex = 8;
@@ -190,6 +196,7 @@
             // 
             // CmbTipoDoc
             // 
+            this.CmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipoDoc.FormattingEnabled = true;
             this.CmbTipoDoc.Location = new System.Drawing.Point(133, 19);
             this.CmbTipoDoc.Margin = new System.Windows.Forms.Padding(2);
@@ -205,6 +212,7 @@
             this.TxtNroDoc.Name = "TxtNroDoc";
             this.TxtNroDoc.Size = new System.Drawing.Size(92, 20);
             this.TxtNroDoc.TabIndex = 7;
+            this.TxtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNroDoc_KeyPress);
             // 
             // label6
             // 
@@ -293,11 +301,15 @@
             this.ApellidoMostrar.TabIndex = 8;
             this.ApellidoMostrar.Text = "label";
             // 
+            // ErrorDni
+            // 
+            this.ErrorDni.ContainerControl = this;
+            // 
             // Cobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 451);
+            this.ClientSize = new System.Drawing.Size(359, 451);
             this.Controls.Add(this.ApellidoMostrar);
             this.Controls.Add(this.NombrePasajero);
             this.Controls.Add(this.label8);
@@ -319,6 +331,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorDni)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +362,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label NombrePasajero;
         private System.Windows.Forms.Label ApellidoMostrar;
+        private System.Windows.Forms.ErrorProvider ErrorDni;
     }
 }

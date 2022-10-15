@@ -37,34 +37,24 @@ namespace seastar
         private void Menu_Load(object sender, EventArgs e)
 
         {
-            while (UsuariosServicio.UsuarioLogueado == null)
-            {   
-               var frmLogin = new FrmLogin(this);
-               frmLogin.ShowDialog();
-               
-                if (UsuariosServicio.UsuarioLogueado == null)
+
+            while (UsuariosServicio.VarCierre == false)
+            {
+                var usuarioLog = 0;
+
+                if (UsuariosServicio.UsuarioLogueado == null & usuarioLog == 0)
                 {
-                    DialogResult result = MessageBox.Show("error ingrese un usuario","Inicio de sesión erroneo", MessageBoxButtons.RetryCancel);
-
-                    if (result == DialogResult.Retry)
-                    {
-                        var frmLogin1 = new FrmLogin(this);
-                        frmLogin1.ShowDialog();
-
-                    }
-
-                    else if (result == DialogResult.Cancel)
-                    {
-                        this.Dispose();
-                    }
-
-
-
+                    var frmLogin = new FrmLogin(this);
+                    frmLogin.ShowDialog();
                 }
 
             }
 
-           
+            if (UsuariosServicio.VarCierre)
+            {
+                this.Dispose();
+            }
+
 
         }
 

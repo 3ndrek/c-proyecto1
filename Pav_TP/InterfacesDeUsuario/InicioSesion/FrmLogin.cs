@@ -18,6 +18,7 @@ namespace PAV1
     {
         private readonly UsuariosServicio usuarioServicio;
         private readonly FrmPrincipal frmPrincipal;
+        public Boolean VarCierre; 
 
         //private object usuariosServicio;
 
@@ -47,17 +48,37 @@ namespace PAV1
         }
         private void CerrarFormulario()
         {
-            this.Dispose();
+            DialogResult result = MessageBox.Show("Desea cerrar el programa?", " inicio de sesion ", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            {
+                VarCierre = true;
+                usuarioServicio.CierrePrograma(VarCierre);
+            }
+
+            if (result == DialogResult.Cancel)
+            {
+                VarCierre = false;
+                usuarioServicio.CierrePrograma(VarCierre);
+            }
         }
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             CerrarFormulario();
+            
         }
+
+
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

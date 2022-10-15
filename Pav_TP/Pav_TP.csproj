@@ -333,6 +333,7 @@
     <Compile Include="Servicios\TripulantesServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <Compile Include="Servicios\ViajesServicios.cs" />
+    <Compile Include="ValidadoresUtiles\Validadores.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
       <DependentUpon>ConsultarBarco.cs</DependentUpon>
     </EmbeddedResource>
