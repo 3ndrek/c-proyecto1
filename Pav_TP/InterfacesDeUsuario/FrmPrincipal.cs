@@ -46,11 +46,12 @@ namespace seastar
                 {
                     var frmLogin = new FrmLogin(this);
                     frmLogin.ShowDialog();
+                    UsuariosServicio.VarCierre = true;
                 }
 
             }
 
-            if (UsuariosServicio.VarCierre)
+            if (UsuariosServicio.VarCierre & UsuariosServicio.UsuarioLogueado == null)
             {
                 this.Dispose();
             }

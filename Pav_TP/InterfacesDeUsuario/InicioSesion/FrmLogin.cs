@@ -65,8 +65,14 @@ namespace PAV1
 
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CerrarFormulario();
-            
+            if (UsuariosServicio.UsuarioLogueado != null)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                CerrarFormulario();
+            }
         }
 
 
