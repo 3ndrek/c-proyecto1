@@ -16,6 +16,7 @@ using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.InterfacesDeUsuario.Camarote;
 using Pav_TP.InterfacesDeUsuario.Transacciones;
+using Pav_TP.InterfacesDeUsuario.Pantallas.BarcosCarga;
 
 namespace seastar
 {
@@ -131,7 +132,8 @@ namespace seastar
 
         private void registrarBarco_Click_1(object sender, EventArgs e)
         {
-            RegistrarBarco registrarBarco = new RegistrarBarco(this);  
+            RegistrarBarco registrarBarco = new RegistrarBarco(this);
+
             registrarBarco.Show();
             this.Hide();
         }
@@ -238,7 +240,7 @@ namespace seastar
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reserva reserva = new Reserva();
+            Reserva reserva = new Reserva(this);
             reserva.Show();
             this.Hide();
         }
@@ -263,6 +265,22 @@ namespace seastar
         }
 
         private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            UsuariosServicio.UsuarioLogueado = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barcoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
