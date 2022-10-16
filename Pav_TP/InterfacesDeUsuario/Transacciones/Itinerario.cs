@@ -43,14 +43,14 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
             cmbPuerto.DataSource = conector;
             cmbPuerto.DisplayMember = "nombre";
-            cmbPuerto.ValueMember = "cod_puerto";
+            cmbPuerto.ValueMember = "nombre";
             cmbPuerto.SelectedItem = puertoDefault;
 
         }
 
         private void cmbPuerto_Click(object sender, EventArgs e)
         {
-            CargarPuertosXPais(Convert.ToInt32(cmbPais.SelectedValue));
+            CargarPuertosXPais(itinerarioServicios.GetCodPais(cmbPais.SelectedValue.ToString()));
         }
 
         private void CargarDgv()
@@ -63,18 +63,26 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string[] row = { $"{cmbPais.SelectedValue}", $"{cmbPuerto.SelectedValue}", $"{txtEscala.Text}" };
+            int n = itinerarioServicios.GenerarNroEscala(dgvPuertos);
+            string[] row = { $"{cmbPais.SelectedValue}", $"{cmbPuerto.SelectedValue}", $"{n}" };
 
             dgvPuertos.Rows.Add(row);
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             int cod_i = itinerarioServicios.GenerarCodItinerario();
+            string c =cmbCategoria.Text;
+            DataGridViewRow d1 = dgvPuertos.Rows[0];
+            DataGridViewRow d2 = dgvPuertos.Rows[dgvPuertos.RowCount-2];
+            string primerP = d1.Cells[1].Value.ToString();
+            string ultimoP = d2.Cells[1].Value.ToString();
+            string nombreI = c + " - " + primerP + " - " + ultimoP;
             int cat = Convert.ToInt32(cmbCategoria.SelectedValue);
-            itinerarioServicios.RegistrarItinerario(cod_i,cat);
+            itinerarioServicios.RegistrarItinerario(cod_i,cat,nombreI);
             itinerarioServicios.RegistrarPuertosXItinerario(dgvPuertos, cod_i);
-            MessageBox.Show("El itinerario se registro con exito...");
+            MessageBox.Show($"El itinerario {nombreI} se registro con exito...");
         }
 
         private void CerrarFormulario()

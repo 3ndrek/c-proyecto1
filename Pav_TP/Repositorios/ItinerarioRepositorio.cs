@@ -75,5 +75,22 @@ namespace Pav_TP.Repositorios
             var sql = $"insert into puertoXitinerarios(cod_itinerarios,num_escala,cod_puerto) values ({cod_i},{num_e},{cod_p})";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
+        public int GetCodPais(string n)
+        {
+            var sql = $"select p.cod_pais from paises p where p.nombre = '{n}'";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            DataRow row = tablaResultado.Rows[0];
+            int cod_p = (int)row[0];
+            return cod_p;
+        }
+
+        public int GetCodPuerto(string n)
+        {
+            var sql = $"select p.cod_puerto from puertos p where p.nombre = '{n}'";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            DataRow row = tablaResultado.Rows[0];
+            int cod_p = (int)row[0];
+            return cod_p;
+        }
     }
 }

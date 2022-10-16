@@ -34,9 +34,18 @@ namespace Pav_TP.Servicios
 
             cmb.DataSource = conector;
             cmb.DisplayMember = "nombre";
-            cmb.ValueMember = "cod_pais";
+            cmb.ValueMember = "nombre";
             cmb.SelectedItem = paisDefault;
 
+        }
+
+        public int GetCodPais(string n)
+        {
+            return itinerarioRepositorio.GetCodPais(n);
+        }
+        public int GetCodPuerto(string n) 
+        { 
+            return itinerarioRepositorio.GetCodPuerto(n); 
         }
 
         public void CargarCategorias(ComboBox cmb)
@@ -61,9 +70,9 @@ namespace Pav_TP.Servicios
             return itinerarioRepositorio.GenerarCodItinerario();
         }
 
-        public int RegistrarItinerario(int cod_i, int cat )
+        public int RegistrarItinerario(int cod_i, int cat, string n)
         {
-            var sql = $"insert into itinerarios(cod_itinerario,categoria) values ({cod_i},{cat})";
+            var sql = $"insert into itinerarios(cod_itinerario,categoria, nombre) values ({cod_i},{cat},'{n}')";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
             return cod_i;
         }
@@ -74,18 +83,16 @@ namespace Pav_TP.Servicios
             for(int i = 0; i < c; i++)
             {
                 DataGridViewRow row = dgv.Rows[i];
-                int cod_p = Convert.ToInt32(row.Cells[1].Value);
+                int cod_p = GetCodPuerto(row.Cells[1].Value.ToString());
                 int num_e = Convert.ToInt32(row.Cells[2].Value);
                 itinerarioRepositorio.RegistrarPuertosXItinerario(cod_i, num_e, cod_p);
             }
+        }
 
-            /*for(DataGridViewRow row in dgv.Rows)
-            {
-                int cod_p = Convert.ToInt32(row.Cells[1].Value);
-                int num_e = Convert.ToInt32(row.Cells[2].Value);
-                MessageBox.Show(cod_p.ToString());
-                //itinerarioRepositorio.RegistrarPuertosXItinerario(cod_i, num_e, cod_p);
-            }*/
+        public int GenerarNroEscala(DataGridView dgv)
+        {
+            int n = dgv.RowCount;
+            return n;
         }
 
     }

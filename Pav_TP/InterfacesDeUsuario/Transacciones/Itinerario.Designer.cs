@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtEscala = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvPuertos = new System.Windows.Forms.DataGridView();
             this.cmbPais = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,8 +48,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtEscala);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dgvPuertos);
             this.groupBox1.Controls.Add(this.cmbPais);
             this.groupBox1.Controls.Add(this.label2);
@@ -64,22 +60,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione los puertos que desea incluir en el itinerario:";
-            // 
-            // txtEscala
-            // 
-            this.txtEscala.Location = new System.Drawing.Point(136, 122);
-            this.txtEscala.Name = "txtEscala";
-            this.txtEscala.Size = new System.Drawing.Size(100, 22);
-            this.txtEscala.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Numero de escala";
             // 
             // dgvPuertos
             // 
@@ -223,8 +203,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox cmbPuerto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEscala;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPuertos;
         private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.Label label2;
