@@ -66,7 +66,7 @@
             // TxtUsuario
             // 
             this.TxtUsuario.Location = new System.Drawing.Point(95, 50);
-            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.TxtUsuario.Name = "TxtUsuario";
             this.TxtUsuario.Size = new System.Drawing.Size(158, 20);
             this.TxtUsuario.TabIndex = 2;
@@ -74,7 +74,7 @@
             // TxtContrasenia
             // 
             this.TxtContrasenia.Location = new System.Drawing.Point(95, 88);
-            this.TxtContrasenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtContrasenia.Margin = new System.Windows.Forms.Padding(2);
             this.TxtContrasenia.Name = "TxtContrasenia";
             this.TxtContrasenia.Size = new System.Drawing.Size(158, 20);
             this.TxtContrasenia.TabIndex = 3;
@@ -82,8 +82,8 @@
             // 
             // BtnIngresar
             // 
-            this.BtnIngresar.Location = new System.Drawing.Point(225, 212);
-            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnIngresar.Location = new System.Drawing.Point(289, 233);
+            this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(61, 26);
             this.BtnIngresar.TabIndex = 4;
@@ -93,13 +93,14 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(300, 212);
-            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSalir.Location = new System.Drawing.Point(364, 233);
+            this.BtnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(59, 26);
             this.BtnSalir.TabIndex = 5;
             this.BtnSalir.Text = "Salir";
             this.BtnSalir.UseVisualStyleBackColor = true;
+            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
             // label1
             // 
@@ -107,7 +108,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(9, 24);
+            this.label1.Location = new System.Drawing.Point(25, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(414, 17);
@@ -120,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav_TP.Properties.Resources.f_elconfidencial_com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(388, 263);
+            this.ClientSize = new System.Drawing.Size(463, 281);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnIngresar);
@@ -128,7 +129,7 @@
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblUSR);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
             this.Text = "Iniciar Sesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLogin_FormClosing);

@@ -13,6 +13,8 @@ namespace Pav_TP.Servicios
         private readonly UsuariosRepositorio usuariosRepositorio;
         public static Usuario UsuarioLogueado;
 
+        public static Boolean VarCierre;
+
         public UsuariosServicio()
         {
             usuariosRepositorio = new UsuariosRepositorio();
@@ -25,6 +27,12 @@ namespace Pav_TP.Servicios
                 return false;
             UsuarioLogueado = usuarioLogueado;
             return true;
+        }
+
+
+        public void CierrePrograma (Boolean b)
+        {
+            VarCierre = b; 
         }
 
         /*public List<Usuario> GetUsuarios()

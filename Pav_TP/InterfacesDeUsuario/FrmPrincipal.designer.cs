@@ -33,8 +33,6 @@
             this.registrarBarco = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarBarco = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.camaroteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnConsultarBarco = new System.Windows.Forms.ToolStripMenuItem();
             this.cubiertaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarCubierta = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarCubierta = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +48,7 @@
             this.viajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +74,9 @@
             this.cambiarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,7 +97,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(833, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(941, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -106,13 +108,13 @@
             this.registrarBarco,
             this.consultarBarco,
             this.eliminarToolStripMenuItem,
-            this.camaroteToolStripMenuItem,
             this.cubiertaToolStripMenuItem1});
             this.barcoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barcoToolStripMenuItem.Image = global::Pav_TP.Properties.Resources.f_elconfidencial_com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e__1_;
             this.barcoToolStripMenuItem.Name = "barcoToolStripMenuItem";
             this.barcoToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
             this.barcoToolStripMenuItem.Text = "Barco";
+            this.barcoToolStripMenuItem.Click += new System.EventHandler(this.barcoToolStripMenuItem_Click);
             // 
             // registrarBarco
             // 
@@ -132,20 +134,6 @@
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(187, 6);
-            // 
-            // camaroteToolStripMenuItem
-            // 
-            this.camaroteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnConsultarBarco});
-            this.camaroteToolStripMenuItem.Name = "camaroteToolStripMenuItem";
-            this.camaroteToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
-            this.camaroteToolStripMenuItem.Text = "Camarote";
-            // 
-            // btnConsultarBarco
-            // 
-            this.btnConsultarBarco.Name = "btnConsultarBarco";
-            this.btnConsultarBarco.Size = new System.Drawing.Size(147, 26);
-            this.btnConsultarBarco.Text = "Consultar";
             // 
             // cubiertaToolStripMenuItem1
             // 
@@ -248,7 +236,8 @@
             // 
             this.viajesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarViajeToolStripMenuItem,
-            this.consultarViajeToolStripMenuItem});
+            this.consultarViajeToolStripMenuItem,
+            this.eliminarViajeToolStripMenuItem});
             this.viajesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viajesToolStripMenuItem.Name = "viajesToolStripMenuItem";
             this.viajesToolStripMenuItem.Size = new System.Drawing.Size(63, 25);
@@ -267,6 +256,13 @@
             this.consultarViajeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.consultarViajeToolStripMenuItem.Text = "Consultar viaje";
             this.consultarViajeToolStripMenuItem.Click += new System.EventHandler(this.consultarViajeToolStripMenuItem_Click);
+            // 
+            // eliminarViajeToolStripMenuItem
+            // 
+            this.eliminarViajeToolStripMenuItem.Name = "eliminarViajeToolStripMenuItem";
+            this.eliminarViajeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.eliminarViajeToolStripMenuItem.Text = "Eliminar viaje";
+            this.eliminarViajeToolStripMenuItem.Click += new System.EventHandler(this.eliminarViajeToolStripMenuItem_Click);
             // 
             // reservaToolStripMenuItem
             // 
@@ -398,6 +394,7 @@
             this.gestionarReservasToolStripMenuItem.Name = "gestionarReservasToolStripMenuItem";
             this.gestionarReservasToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.gestionarReservasToolStripMenuItem.Text = "Gestionar reservas";
+            this.gestionarReservasToolStripMenuItem.Click += new System.EventHandler(this.gestionarReservasToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -450,28 +447,65 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(528, 137);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(748, 259);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(181, 41);
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(235, 96);
+            this.label1.Location = new System.Drawing.Point(397, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "¡Bienvenido!";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Salmon;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(748, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 50);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Cerrar Programa";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(443, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 5;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(450, 161);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.LblUsuario.TabIndex = 6;
+            this.LblUsuario.Text = "label3";
+            this.LblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 198);
+            this.ClientSize = new System.Drawing.Size(941, 380);
+            this.Controls.Add(this.LblUsuario);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.menuStrip1);
@@ -506,8 +540,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarBarco;
         private System.Windows.Forms.ToolStripMenuItem consultarBarco;
         private System.Windows.Forms.ToolStripSeparator eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem camaroteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem btnConsultarBarco;
         private System.Windows.Forms.ToolStripMenuItem cubiertaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarCubierta;
         private System.Windows.Forms.ToolStripMenuItem viajesToolStripMenuItem;
@@ -527,6 +559,7 @@
         private System.Windows.Forms.ToolStripMenuItem modificarCubierta;
         private System.Windows.Forms.ToolStripMenuItem eliminarCubierta;
         private System.Windows.Forms.ToolStripMenuItem consultarViajeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarViajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPuerto;
         private System.Windows.Forms.ToolStripMenuItem consultarPuerto;
         private System.Windows.Forms.ToolStripMenuItem camaroteToolStripMenuItem1;
@@ -536,6 +569,9 @@
         private System.Windows.Forms.ToolStripMenuItem reservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cobrarToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblUsuario;
     }
 }
 

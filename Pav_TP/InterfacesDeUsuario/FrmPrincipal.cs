@@ -17,6 +17,7 @@ using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.InterfacesDeUsuario.Camarote;
 using Pav_TP.InterfacesDeUsuario.Transacciones;
 
+
 namespace seastar
 {
     public partial class FrmPrincipal : Form
@@ -37,34 +38,35 @@ namespace seastar
         private void Menu_Load(object sender, EventArgs e)
 
         {
-            while (UsuariosServicio.UsuarioLogueado == null)
-            {   
-               var frmLogin = new FrmLogin(this);
-               frmLogin.ShowDialog();
-               
-                if (UsuariosServicio.UsuarioLogueado == null)
+            validadSesion();
+
+        }
+
+
+        private void validadSesion()
+        {
+           
+            while (UsuariosServicio.VarCierre == false)
+            {
+                var usuarioLog = 0;
+
+                if (UsuariosServicio.UsuarioLogueado == null & usuarioLog == 0)
                 {
-                    DialogResult result = MessageBox.Show("error ingrese un usuario","Inicio de sesión erroneo", MessageBoxButtons.RetryCancel);
-
-                    if (result == DialogResult.Retry)
-                    {
-                        var frmLogin1 = new FrmLogin(this);
-                        frmLogin1.ShowDialog();
-
-                    }
-
-                    else if (result == DialogResult.Cancel)
-                    {
-                        this.Dispose();
-                    }
-
-
+                    this.Hide();
+                    var frmLogin = new FrmLogin(this);
+                    frmLogin.ShowDialog();
+                    UsuariosServicio.VarCierre = true;
+                    LblUsuario.Text = UsuariosServicio.UsuarioLogueado.NombreUsuario;
+                    this.Show();
 
                 }
 
             }
 
-           
+            if (UsuariosServicio.VarCierre & UsuariosServicio.UsuarioLogueado == null)
+            {
+                this.Dispose();
+            }
 
         }
 
@@ -140,7 +142,8 @@ namespace seastar
 
         private void registrarBarco_Click_1(object sender, EventArgs e)
         {
-            RegistrarBarco registrarBarco = new RegistrarBarco(this);  
+            RegistrarBarco registrarBarco = new RegistrarBarco(this);
+
             registrarBarco.Show();
             this.Hide();
         }
@@ -165,7 +168,19 @@ namespace seastar
             consultarViaje.Show();
             this.Hide();
         }
-      
+
+
+        private void eliminarViajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form9 eliminarViaje = new Form9();
+            eliminarViaje.Show();
+            this.Hide();
+        }
+
+            eliminarViaje.Show();
+            this.Hide();
+        }
+
         private void cubiertaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -239,14 +254,14 @@ namespace seastar
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reserva reserva = new Reserva();
+            Reserva reserva = new Reserva(this);
             reserva.Show();
             this.Hide();
         }
 
         private void cobrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cobro cobro = new Cobro();
+            Cobro cobro = new Cobro(this);
             cobro.Show();
             this.Hide();
         }
@@ -259,6 +274,29 @@ namespace seastar
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            UsuariosServicio.UsuarioLogueado = null;
+            UsuariosServicio.VarCierre = false;
+            validadSesion();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void barcoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

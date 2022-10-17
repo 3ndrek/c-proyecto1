@@ -208,6 +208,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvViaje)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

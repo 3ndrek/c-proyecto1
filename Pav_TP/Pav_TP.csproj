@@ -60,14 +60,18 @@
     <Compile Include="Entidades\CategoriasItinerarios.cs" />
     <Compile Include="Entidades\Ciudad.cs" />
     <Compile Include="Entidades\Clasificacion.cs" />
+    <Compile Include="Entidades\Cobros.cs" />
     <Compile Include="Entidades\Cubierta.cs" />
     <Compile Include="Entidades\Genero.cs" />
     <Compile Include="Entidades\Itinerario.cs" />
+    <Compile Include="Entidades\Modo_pago.cs" />
     <Compile Include="Entidades\Paises.cs" />
     <Compile Include="Entidades\Pasajero.cs" />
+    <Compile Include="Entidades\pasajeroXreserva.cs" />
     <Compile Include="Entidades\Perfil.cs" />
     <Compile Include="Entidades\Puertos.cs" />
     <Compile Include="Entidades\Puestos.cs" />
+    <Compile Include="Entidades\Reservaciones.cs" />
     <Compile Include="Entidades\TipoCamarote.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
     <Compile Include="Entidades\Ubicacion.cs" />
@@ -118,6 +122,7 @@
     </Compile>
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
+    <Compile Include="Repositorios\CobroRepositorio.cs" />
     <Compile Include="Repositorios\GeneroRepositorio.cs" />
     <Compile Include="Repositorios\ItinerarioRepositorio.cs" />
     <Compile Include="Repositorios\JefeRepositorio.cs" />
@@ -295,6 +300,7 @@
     <Compile Include="Servicios\CamaroteServicios.cs" />
     <Compile Include="Servicios\CiudadServicios.cs" />
     <Compile Include="Servicios\ClasificacionesServicios.cs" />
+    <Compile Include="Servicios\CobroServicios.cs" />
     <Compile Include="Servicios\CubiertasServicio.cs" />
     <Compile Include="Servicios\GeneroServicios.cs" />
     <Compile Include="Servicios\ItinerarioServicios.cs" />
@@ -320,6 +326,7 @@
     <Compile Include="Servicios\TripulantesServicios.cs" />
     <Compile Include="Servicios\UsuariosServicio.cs" />
     <Compile Include="Servicios\ViajesServicios.cs" />
+    <Compile Include="ValidadoresUtiles\Validadores.cs" />
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\ConsultarBarco.resx">
       <DependentUpon>ConsultarBarco.cs</DependentUpon>
     </EmbeddedResource>

@@ -42,7 +42,6 @@ namespace TrabajoPracticoPav
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarTipo();
-            
             CargarPais();
             CargarGenero();
         }

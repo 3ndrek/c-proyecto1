@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo de Navio";
             // 
-            // label3
+            // cmbDestino
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(19, 70);
@@ -87,7 +88,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 13;
             this.label6.Text = "Fecha de salida";
             // 
             // label8
@@ -100,7 +101,7 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Itinerario";
             // 
-            // label9
+            // dateTimePicker1
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(19, 70);
@@ -146,7 +147,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 13);
-            this.label5.TabIndex = 14;
+            this.label5.TabIndex = 22;
             this.label5.Text = "Esta seguro de que desea generar este viaje?";
             // 
             // button3
@@ -158,6 +159,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnGuardar
             // 
