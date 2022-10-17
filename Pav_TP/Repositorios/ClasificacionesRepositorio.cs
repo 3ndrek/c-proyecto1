@@ -20,7 +20,7 @@ namespace Pav_TP.Repositorios
             {
                 var clasificacion = new Clasificacion();
                 clasificacion.Cod = Convert.ToInt32(fila["cod"]);
-                clasificacion.Desc = fila["desc"].ToString();
+                clasificacion.Desc = fila["descripcion"].ToString();
 
                 clasificaciones.Add(clasificacion);
             }

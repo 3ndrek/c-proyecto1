@@ -43,12 +43,6 @@
             this.viajeTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet3TableAdapters.viajeTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet4 = new Pav_TP.PAV_3K2_2022_12DataSet4();
-            this.camarotesTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.codnavioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numcubiertaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numcamaroteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,12 @@
             this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantcamasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reservar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pAV_3K2_2022_12DataSet4 = new Pav_TP.PAV_3K2_2022_12DataSet4();
+            this.camarotesTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -212,50 +212,6 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // camarotesBindingSource
-            // 
-            this.camarotesBindingSource.DataMember = "camarotes";
-            this.camarotesBindingSource.DataSource = this.pAV_3K2_2022_12DataSet4;
-            // 
-            // pAV_3K2_2022_12DataSet4
-            // 
-            this.pAV_3K2_2022_12DataSet4.DataSetName = "PAV_3K2_2022_12DataSet4";
-            this.pAV_3K2_2022_12DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // camarotesTableAdapter
-            // 
-            this.camarotesTableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(748, 409);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Esta seguro de que desea reservar este camarote?";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(751, 436);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(923, 436);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 30);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // codnavioDataGridViewTextBoxColumn1
             // 
             this.codnavioDataGridViewTextBoxColumn1.DataPropertyName = "cod_navio";
@@ -306,6 +262,50 @@
             this.Reservar.MinimumWidth = 6;
             this.Reservar.Name = "Reservar";
             this.Reservar.Width = 125;
+            // 
+            // camarotesBindingSource
+            // 
+            this.camarotesBindingSource.DataMember = "camarotes";
+            this.camarotesBindingSource.DataSource = this.pAV_3K2_2022_12DataSet4;
+            // 
+            // pAV_3K2_2022_12DataSet4
+            // 
+            this.pAV_3K2_2022_12DataSet4.DataSetName = "PAV_3K2_2022_12DataSet4";
+            this.pAV_3K2_2022_12DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // camarotesTableAdapter
+            // 
+            this.camarotesTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(748, 409);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(248, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Esta seguro de que desea reservar este camarote?";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(751, 436);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(923, 436);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -364,7 +364,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(763, 496);
+            this.label5.Location = new System.Drawing.Point(732, 494);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(291, 13);
             this.label5.TabIndex = 10;

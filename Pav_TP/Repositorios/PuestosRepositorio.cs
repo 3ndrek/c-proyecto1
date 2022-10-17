@@ -20,7 +20,7 @@ namespace Pav_TP.Repositorios
             {
                 var puesto = new Puestos();
                 puesto.cod_puesto = Convert.ToInt32(fila["cod_puesto"]);
-                puesto.desc = fila["desc"].ToString();
+                puesto.desc = fila["descripcion"].ToString();
 
                 puestos.Add(puesto);
             }

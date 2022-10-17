@@ -16,7 +16,7 @@ using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.InterfacesDeUsuario.Camarote;
 using Pav_TP.InterfacesDeUsuario.Transacciones;
-using Pav_TP.InterfacesDeUsuario.Pantallas.BarcosCarga;
+
 
 namespace seastar
 {
@@ -38,16 +38,27 @@ namespace seastar
         private void Menu_Load(object sender, EventArgs e)
 
         {
+            validadSesion();
 
+        }
+
+
+        private void validadSesion()
+        {
+           
             while (UsuariosServicio.VarCierre == false)
             {
                 var usuarioLog = 0;
 
                 if (UsuariosServicio.UsuarioLogueado == null & usuarioLog == 0)
                 {
+                    this.Hide();
                     var frmLogin = new FrmLogin(this);
                     frmLogin.ShowDialog();
                     UsuariosServicio.VarCierre = true;
+                    LblUsuario.Text = UsuariosServicio.UsuarioLogueado.NombreUsuario;
+                    this.Show();
+
                 }
 
             }
@@ -56,7 +67,6 @@ namespace seastar
             {
                 this.Dispose();
             }
-
 
         }
 
@@ -271,13 +281,15 @@ namespace seastar
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Dispose();
             UsuariosServicio.UsuarioLogueado = null;
+            UsuariosServicio.VarCierre = false;
+            validadSesion();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Dispose();
         }
 
         private void barcoToolStripMenuItem_Click(object sender, EventArgs e)

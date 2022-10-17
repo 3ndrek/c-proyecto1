@@ -82,7 +82,7 @@
             // 
             // BtnIngresar
             // 
-            this.BtnIngresar.Location = new System.Drawing.Point(225, 212);
+            this.BtnIngresar.Location = new System.Drawing.Point(289, 233);
             this.BtnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(61, 26);
@@ -93,7 +93,7 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(300, 212);
+            this.BtnSalir.Location = new System.Drawing.Point(364, 233);
             this.BtnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(59, 26);
@@ -108,7 +108,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(9, 24);
+            this.label1.Location = new System.Drawing.Point(25, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(414, 17);
@@ -121,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav_TP.Properties.Resources.f_elconfidencial_com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(388, 263);
+            this.ClientSize = new System.Drawing.Size(463, 281);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnIngresar);
