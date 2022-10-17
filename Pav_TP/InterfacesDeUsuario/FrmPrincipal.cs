@@ -169,18 +169,6 @@ namespace seastar
             this.Hide();
         }
 
-
-        private void eliminarViajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form9 eliminarViaje = new Form9();
-            eliminarViaje.Show();
-            this.Hide();
-        }
-
-            eliminarViaje.Show();
-            this.Hide();
-        }
-
         private void cubiertaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 

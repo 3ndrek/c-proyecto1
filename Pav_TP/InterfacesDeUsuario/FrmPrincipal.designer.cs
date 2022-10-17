@@ -257,13 +257,6 @@
             this.consultarViajeToolStripMenuItem.Text = "Consultar viaje";
             this.consultarViajeToolStripMenuItem.Click += new System.EventHandler(this.consultarViajeToolStripMenuItem_Click);
             // 
-            // eliminarViajeToolStripMenuItem
-            // 
-            this.eliminarViajeToolStripMenuItem.Name = "eliminarViajeToolStripMenuItem";
-            this.eliminarViajeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
-            this.eliminarViajeToolStripMenuItem.Text = "Eliminar viaje";
-            this.eliminarViajeToolStripMenuItem.Click += new System.EventHandler(this.eliminarViajeToolStripMenuItem_Click);
-            // 
             // reservaToolStripMenuItem
             // 
             this.reservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {

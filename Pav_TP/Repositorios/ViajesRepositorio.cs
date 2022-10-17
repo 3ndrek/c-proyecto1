@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
         public List<Viaje> GetViajes(Viaje v)
         {
             var viajes = new List<Viaje>();
-            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_navio like '%{v.Cod_navio}%'AND fecha_viaje='{v.FechaSalida.ToString("yyyy-MM-dd")}'";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_navio = {v.Cod_navio}";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -66,6 +66,7 @@ namespace Pav_TP.Repositorios
                 var itinerario = new Itinerario();
                 itinerario.Cod_Itinerario = Convert.ToInt32(fila["cod_itinerario"]);
                 itinerario.Categoria = Convert.ToInt32(fila["categoria"]);
+                itinerario.Descripcion = fila["nombre"].ToString();
 
                 itinerarios.Add(itinerario);
             }

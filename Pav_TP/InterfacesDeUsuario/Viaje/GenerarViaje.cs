@@ -49,7 +49,7 @@ namespace PAV1
 
             cmbCod.DataSource = conector;
             cmbCod.DisplayMember = "nombre";
-            cmbCod.ValueMember = "altura";
+            cmbCod.ValueMember = "Codigo";
             cmbCod.SelectedItem = barcoSeleccionar;
         }
         public void CargarItinerario()
@@ -63,8 +63,8 @@ namespace PAV1
             conector.DataSource = itinerario;
 
             cmbItininerario.DataSource = conector;
-            cmbItininerario.DisplayMember = "categoria";
-            cmbItininerario.ValueMember = "cod_itinerario";
+            cmbItininerario.DisplayMember = "Descripcion";
+            cmbItininerario.ValueMember = "Cod_itinerario";
             cmbItininerario.SelectedItem = tipoSeleccionar;
         }
 
