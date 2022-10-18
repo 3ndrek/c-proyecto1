@@ -105,7 +105,7 @@ namespace Pav_TP.Repositorios
 
         public int RegistrarViaje(Viaje v)
         {
-            var sentenciaSql = $"INSERT INTO viaje (cod_navio, fecha_viaje, duracion, cod_itinerario, pais_origen, pais_destino) VALUES ({v.Cod_navio}, '{v.FechaSalida}', {v.Duracion}, {v.Itinerario}, {v.Origen}, {v.Destino})";
+            var sentenciaSql = $"INSERT INTO viaje (cod_navio, fecha_viaje, duracion, cod_itinerario) VALUES ({v.Cod_navio}, '{v.FechaSalida}', {v.Duracion}, {v.Itinerario})";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
@@ -118,16 +118,12 @@ namespace Pav_TP.Repositorios
             viaje.FechaSalida = Convert.ToDateTime(fila["fecha_viaje"].ToString());
             viaje.Duracion = Convert.ToInt32(fila["duracion"].ToString());
             viaje.Itinerario = Convert.ToInt32(fila["cod_itinerario"].ToString());
-            viaje.Origen = Convert.ToInt32(fila["pais_origen"].ToString());
-            viaje.Destino = Convert.ToInt32(fila["pais_destino"].ToString());
-
             return viaje;
         }
 
         public int ActualizarViaje(Viaje v)
         {
-            var sentenciaSql = $"UPDATE viaje SET duracion={v.Duracion}, cod_itinerario={v.Itinerario}, " +
-                $"pais_origen={v.Origen}, pais_destino={v.Destino} WHERE codigo_navio={v.Cod_navio} AND fecha_viaje= '{v.FechaSalida}'";
+            var sentenciaSql = $"UPDATE viaje SET duracion={v.Duracion}, cod_itinerario={v.Itinerario} WHERE codigo_navio={v.Cod_navio} AND fecha_viaje= '{v.FechaSalida}'";
 
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 

@@ -16,7 +16,6 @@ namespace PAV1
     public partial class GenerarViaje : Form
     {
         private Viaje viaje;
-        private readonly PaisesServicios paisesServicios;
         private readonly ViajesServicios viajesServicios;
         private readonly BarcosServicios barcosServicios;
 
@@ -24,7 +23,6 @@ namespace PAV1
         public GenerarViaje(FrmPrincipal frmPrincipal1)
         {
             frmPrincipal = frmPrincipal1;
-            paisesServicios = new PaisesServicios();
             viajesServicios = new ViajesServicios();
             barcosServicios = new BarcosServicios();
             InitializeComponent();
@@ -32,8 +30,6 @@ namespace PAV1
 
         private void GenerarViaje_Load(object sender, EventArgs e)
         {
-            CargarOrigen();
-            CargarDestino();
             CargarItinerario();
             CargarBarco();
         }
@@ -66,39 +62,6 @@ namespace PAV1
             cmbItininerario.DisplayMember = "Descripcion";
             cmbItininerario.ValueMember = "Cod_itinerario";
             cmbItininerario.SelectedItem = tipoSeleccionar;
-        }
-
-
-        public void CargarOrigen()
-        {
-            var pais = paisesServicios.GetPaises();
-            var paisSeleccionar = new Paises();
-            paisSeleccionar.nombre = "Seleccionar";
-            pais.Add(paisSeleccionar);
-
-            var conector = new BindingSource();
-            conector.DataSource = pais;
-
-            cmbOrigen.DataSource = conector;
-            cmbOrigen.DisplayMember = "nombre";
-            cmbOrigen.ValueMember = "cod_pais";
-            cmbOrigen.SelectedItem = paisSeleccionar;
-        }
-
-        public void CargarDestino()
-        {
-            var pais = paisesServicios.GetPaises();
-            var paisSeleccionar = new Paises();
-            paisSeleccionar.nombre = "Seleccionar";
-            pais.Add(paisSeleccionar);
-
-            var conector = new BindingSource();
-            conector.DataSource = pais;
-
-            cmbDestino.DataSource = conector;
-            cmbDestino.DisplayMember = "nombre";
-            cmbDestino.ValueMember = "cod_pais";
-            cmbDestino.SelectedItem = paisSeleccionar;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -135,16 +98,12 @@ namespace PAV1
             var fecha = Convert.ToDateTime(dateTimePicker1.Text.Trim());
             var duracion = Convert.ToInt32(TxtDuracion.Text.Trim());
             var itinerario = (Itinerario)cmbItininerario.SelectedItem;
-            var origen = (Paises)cmbOrigen.SelectedItem;
-            var destino = (Paises)cmbDestino.SelectedItem;
 
             var viajeIngresado = new Viaje();
             viajeIngresado.Cod_navio = cod.Codigo;
             viajeIngresado.FechaSalida = fecha;
             viajeIngresado.Itinerario = itinerario.Cod_Itinerario;
             viajeIngresado.Duracion = duracion;
-            viajeIngresado.Origen = origen.cod_pais;
-            viajeIngresado.Destino = destino.cod_pais;
 
             viajesServicios.ValidarViaje(viajeIngresado);
             viaje = viajeIngresado;

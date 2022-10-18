@@ -9,8 +9,6 @@ namespace Pav_TP.Entidades
     public class Viaje
     {
         public int Cod_navio { get; set; }
-        public int Origen { get; set; }
-        public int Destino { get; set; }
         public DateTime FechaSalida { get; set; }
         public int Itinerario { get; set; }
         public int Duracion { get; set; }
@@ -19,16 +17,6 @@ namespace Pav_TP.Entidades
         {
             if (Cod_navio == null)
                 throw new ApplicationException("El codigo es requerido.");
-        }
-        public void ValidarOrigen()
-        {
-            if (Origen == null)
-                throw new ApplicationException("El origen es requerido.");
-        }
-        public void ValidarDestino()
-        {
-            if (Destino == null)
-                throw new ApplicationException("El destino es requerido.");
         }
         public void ValidarItininerario()
         {

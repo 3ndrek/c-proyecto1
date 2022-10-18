@@ -45,12 +45,9 @@ namespace Pav_TP.Servicios
         public void ValidarViaje(Viaje viajes)
         {
             viajes.ValidarCodigo();
-            viajes.ValidarDestino();
             viajes.ValidarDuracion();
             viajes.ValidarFecha();
             viajes.ValidarItininerario();
-            viajes.ValidarOrigen();
-
         }
 
         public bool RegistrarViaje(Viaje viajes)
