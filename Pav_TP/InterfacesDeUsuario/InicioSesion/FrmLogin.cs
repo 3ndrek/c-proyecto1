@@ -29,23 +29,6 @@ namespace PAV1
             frmPrincipal = new FrmPrincipal();
         }
 
-
-        private void BtnIngresar_Click(object sender, EventArgs e)
-        {
-            var usuario = new Usuario();
-            usuario.NombreUsuario = TxtUsuario.Text.Trim();
-            usuario.Contrasenia = TxtContrasenia.Text.Trim();
-
-            if (usuarioServicio.Login(usuario))
-            {
-                this.Dispose();
-            }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña inválidas", "Información", MessageBoxButtons.OK);
-            }
-
-        }
         private void CerrarFormulario()
         {
             DialogResult result = MessageBox.Show("Desea cerrar el programa?", " inicio de sesion ", MessageBoxButtons.OKCancel);
@@ -80,6 +63,22 @@ namespace PAV1
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+            var usuario = new Usuario();
+            usuario.NombreUsuario = TxtUsuario.Text.Trim();
+            usuario.Contrasenia = TxtContrasenia.Text.Trim();
+
+            if (usuarioServicio.Login(usuario))
+            {
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o contraseña inválidas", "Información", MessageBoxButtons.OK);
+            }
         }
 
         private void BtnSalir_Click(object sender, EventArgs e)

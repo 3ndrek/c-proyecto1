@@ -29,8 +29,14 @@ namespace seastar
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            this.FormClosed += new FormClosedEventHandler(cerrarForm);
             validadSesion();
 
+        }
+
+        private void cerrarForm(object sender, EventArgs e)
+        {
+            Dispose();
         }
         private void validadSesion()
         {
@@ -254,28 +260,11 @@ namespace seastar
         {
 
         }
-
-        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        private void pruebaButton1_Click(object sender, EventArgs e)
         {
             UsuariosServicio.UsuarioLogueado = null;
             UsuariosServicio.VarCierre = false;
             validadSesion();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
-
-        private void barcoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

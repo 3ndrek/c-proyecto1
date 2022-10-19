@@ -76,6 +76,9 @@
     <Compile Include="Entidades\TipoDoc.cs" />
     <Compile Include="Entidades\Ubicacion.cs" />
     <Compile Include="Entidades\Viaje.cs" />
+    <Compile Include="InterfacesDeUsuario\PruebaButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Camarote\ConsultarCamarote.cs">
       <SubType>Form</SubType>
     </Compile>
