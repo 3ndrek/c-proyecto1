@@ -42,6 +42,22 @@ namespace Pav_TP.Repositorios
             return viajes;
         }
 
+        public List<Viaje> GetViajes(Entidades.Itinerario i)
+        {
+            var viajes = new List<Viaje>();
+            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_itinerario = {i.Cod_Itinerario}";
+
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var viaje = Mapear(fila);
+                viajes.Add(viaje);
+            }
+
+            return viajes;
+        }
+
         public Viaje GetViajes(int id, DateTime fecha)
         {
             var viaje = new Viaje();

@@ -91,7 +91,25 @@ namespace Pav_TP.Repositorios
                 camarote.num_cubierta = Convert.ToInt32(fila["num_cubierta"]);
                 camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
                 camarote.tipo = Convert.ToInt32(fila["tipo"]);
-                camarote.ubicacion = Convert.ToInt32(fila["ubicacion"]);
+                camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
+                camarotes.Add(camarote);
+            }
+            return camarotes;
+        }
+
+        public List<Camarote> ObtenerCamarotes(int cod_navio, int num)
+        {   
+            //join camarote
+            var sql = $"select c.* from camarotes c left join navio n on c.cod_navio =  n.codigo_navio where n.codigo_navio= {cod_navio} and c.cant_camas= {num}";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            var camarotes = new List<Camarote>();
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var camarote = new Camarote();
+                camarote.cod_navio = Convert.ToInt32(fila["cod_navio"]);
+                camarote.num_cubierta = Convert.ToInt32(fila["num_cubierta"]);
+                camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
+                camarote.tipo = Convert.ToInt32(fila["tipo"]);
                 camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
                 camarotes.Add(camarote);
             }
@@ -110,7 +128,6 @@ namespace Pav_TP.Repositorios
                 camarote.num_cubierta = Convert.ToInt32(fila["num_cubierta"]);
                 camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
                 camarote.tipo = Convert.ToInt32(fila["tipo"]);
-                camarote.ubicacion = Convert.ToInt32(fila["ubicacion"]);
                 camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
                 camarotes.Add(camarote);
             }
@@ -120,13 +137,13 @@ namespace Pav_TP.Repositorios
         public void RegistrarCamarote(Camarote camarote)
         {
             var sql = $"Insert into camarotes(cod_navio,num_cubierta, num_camarote,tipo,ubicacion,cant_camas) " +
-                $"values ({camarote.cod_navio}, {camarote.num_cubierta}, {camarote.num_camarote}, {camarote.tipo}, {camarote.ubicacion}, {camarote.cant_camas})";
+                $"values ({camarote.cod_navio}, {camarote.num_cubierta}, {camarote.num_camarote}, {camarote.tipo},{camarote.cant_camas})";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
         public void ModificarCamarote(Camarote camarote)
         {
-            var sql = $"Update camarotes set tipo = {camarote.tipo}, ubicacion = {camarote.ubicacion}, " +
+            var sql = $"Update camarotes set tipo = {camarote.tipo}," +
                 $"cant_camas = {camarote.cant_camas} where cod_navio = {camarote.cod_navio} and " +
                 $"num_cubierta = {camarote.num_cubierta} and num_camarote = {camarote.num_cubierta}";
             DBHelper.GetDBHelper().EjecutarSQL(sql);

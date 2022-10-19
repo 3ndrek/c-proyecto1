@@ -26,7 +26,10 @@ namespace Pav_TP.Servicios
         {
             return repositorio.GetViajes(viaje);
         }
-
+        public List<Viaje> GetViajes(Entidades.Itinerario itinerario)
+        {
+            return repositorio.GetViajes(itinerario);
+        }
         public List<Itinerario> GetItinerarios()
         {
             return repositorio.GetItinerario();

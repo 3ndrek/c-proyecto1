@@ -20,7 +20,7 @@ namespace Pav_TP.Repositorios
             {
                 var genero = new Genero();
                 genero.tipo = Convert.ToInt32(fila["tipo"]);
-                genero.desc = fila["desc"].ToString();
+                genero.desc = fila["descripcion"].ToString();
 
                 generos.Add(genero);
             }

@@ -1,4 +1,6 @@
-﻿using seastar;
+﻿using Pav_TP.Entidades;
+using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +15,17 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 {
     public partial class Reserva : Form
     {
+        private ReservacionesServicios reseracionesServicios;
+        private PuertoServicios puertoServicios;
+        private ViajesServicios viajesServicios;
         private static FrmPrincipal frmPrincipal;
 
         public Reserva(FrmPrincipal Principal)
         {
             frmPrincipal = Principal;
-
+            reseracionesServicios = new ReservacionesServicios();
+            puertoServicios = new PuertoServicios();
+            viajesServicios = new ViajesServicios();
             InitializeComponent();
         }
 
@@ -26,30 +33,61 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         {
             // TODO: This line of code loads data into the 'pAV_3K2_2022_12DataSet4.camarotes' table. You can move, or remove it, as needed.
             this.camarotesTableAdapter.Fill(this.pAV_3K2_2022_12DataSet4.camarotes);
-            // TODO: This line of code loads data into the 'pAV_3K2_2022_12DataSet3.viaje' table. You can move, or remove it, as needed.
-            this.viajeTableAdapter.Fill(this.pAV_3K2_2022_12DataSet3.viaje);
+            CargarItinerarios();
 
         }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void CargarItinerarios()
         {
+            var itine = reseracionesServicios.getItinerarios();
+            var itineDefecto = new Entidades.Itinerario();
+            itineDefecto.Descripcion = "Seleccionar";
+            itine.Add(itineDefecto);
+
+            var conector = new BindingSource();
+            conector.DataSource = itine;
+
+            CmbItinerario.DataSource = conector;
+            CmbItinerario.ValueMember = "cod_itinerario";
+            CmbItinerario.DisplayMember = "Descripcion";
+            CmbItinerario.SelectedValue = itineDefecto;
 
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Reserva_FormClosing(object sender, FormClosingEventArgs e)
         {
             Dispose();
             frmPrincipal.Show();
+        }
+
+        private void CmbItinerario_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            var seleccionadaIitinerario = (Entidades.Itinerario)CmbItinerario.SelectedItem;
+            var puertos = puertoServicios.GetPuertos(seleccionadaIitinerario);
+            DgvPuertos.Rows.Clear();
+            foreach (var puerto in puertos )
+            {
+                var fila = new string[]
+                {
+                puerto.nombre.ToString(),
+                };
+                DgvPuertos.Rows.Add(fila);
+            }
+
+            var viajes = viajesServicios.GetViajes(seleccionadaIitinerario);
+            DgvViajes.Rows.Clear();
+            foreach (var viaje in viajes)
+            {
+                var fila = new string[]
+                {
+                viaje.Cod_navio.ToString(),
+                viaje.FechaSalida.ToString(),
+                viaje.Duracion.ToString(),
+                };
+                DgvViajes.Rows.Add(fila);
+            }
+
+            var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
+            
+
         }
     }
 }

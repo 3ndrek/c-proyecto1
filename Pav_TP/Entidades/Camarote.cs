@@ -12,7 +12,6 @@ namespace Pav_TP.Entidades
         public int num_cubierta { get; set; }
         public int num_camarote { get; set; }
         public int tipo { get; set; }
-        public int ubicacion { get; set; }
         public int cant_camas { get; set; }
 
         public void ValidarNavio()

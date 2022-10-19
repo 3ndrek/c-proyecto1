@@ -45,6 +45,11 @@ namespace Pav_TP.Servicios
             return camaroteRepositorio.GetCamarotes(b, c);
         }
 
+        public List<Camarote> ObtenerCamarotes(int b, int c)
+        {
+            return camaroteRepositorio.ObtenerCamarotes(b, c);
+        }
+
         public void RegistrarCamarote(Camarote c)
         {
             camaroteRepositorio.RegistrarCamarote(c);

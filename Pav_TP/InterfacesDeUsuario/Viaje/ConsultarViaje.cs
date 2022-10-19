@@ -52,8 +52,6 @@ namespace PAV1
                     viaje.FechaSalida.ToString(),
                     viaje.Duracion.ToString(),
                     viaje.Itinerario.ToString(),
-                    viaje.Origen.ToString(),
-                    viaje.Destino.ToString(),
                 };
                 DgvViaje.Rows.Add(fila);
             }

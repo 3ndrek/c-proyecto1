@@ -27,22 +27,11 @@ namespace seastar
             InitializeComponent();
         }
 
-
-        
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Menu_Load(object sender, EventArgs e)
-
         {
             validadSesion();
 
         }
-
-
         private void validadSesion()
         {
            
@@ -56,13 +45,13 @@ namespace seastar
                     var frmLogin = new FrmLogin(this);
                     frmLogin.ShowDialog();
                     UsuariosServicio.VarCierre = true;
-                    LblUsuario.Text = UsuariosServicio.UsuarioLogueado.NombreUsuario;
+                    if (UsuariosServicio.UsuarioLogueado != null)
+                    {
+                        LblUsuario.Text = UsuariosServicio.UsuarioLogueado.NombreUsuario;
+                    }
                     this.Show();
-
                 }
-
             }
-
             if (UsuariosServicio.VarCierre & UsuariosServicio.UsuarioLogueado == null)
             {
                 this.Dispose();
