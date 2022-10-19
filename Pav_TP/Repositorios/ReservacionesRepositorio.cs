@@ -27,5 +27,10 @@ namespace Pav_TP.Repositorios
             }
             return itne;
         }
+
+        public void CargarReserva(Reservaciones r)
+        {
+
+        }
     }
 }

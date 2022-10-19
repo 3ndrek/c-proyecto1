@@ -1,4 +1,5 @@
 ﻿using Pav_TP.Entidades;
+using Pav_TP.InterfacesDeUsuario.Transacciones;
 using Pav_TP.Repositorios;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,18 @@ namespace Pav_TP.Servicios
 {
     public class ReservacionesServicios
     {
-        private static ReservacionesRepositorio itinerarios;
+        private static ReservacionesRepositorio reservacionesRepositorio;
         private static CamaroteRepositorio camarotess;
         public ReservacionesServicios()
         {
-            itinerarios = new ReservacionesRepositorio();
+            reservacionesRepositorio = new ReservacionesRepositorio();
             camarotess = new CamaroteRepositorio();
         }
 
-        public List<Itinerario> getItinerarios()
+        public List<Entidades.Itinerario> getItinerarios()
         {
-            return itinerarios.GetItinerarios();
+            return reservacionesRepositorio.GetItinerarios();
         }
-
 
         public List<Camarote> ObtenerCamarotes(int navio, int camas)
         {
@@ -35,10 +35,14 @@ namespace Pav_TP.Servicios
                 {
                     lista.Add(camarote);
                 }
-
             }
 
             return lista; 
+        }
+
+        public void CargarReserva(Reservaciones r)
+        {
+            reservacionesRepositorio.CargarReserva(r);
         }
     }
 }

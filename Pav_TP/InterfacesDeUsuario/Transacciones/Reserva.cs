@@ -19,9 +19,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private PuertoServicios puertoServicios;
         private ViajesServicios viajesServicios;
         private static FrmPrincipal frmPrincipal;
+        private readonly Reservaciones reserva;
 
         public Reserva(FrmPrincipal Principal)
         {
+            reserva = new Reservaciones();
             frmPrincipal = Principal;
             reseracionesServicios = new ReservacionesServicios();
             puertoServicios = new PuertoServicios();
@@ -31,10 +33,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void Reserva_Load(object sender, EventArgs e)
         {
-
             CargarItinerarios();
-
         }
+
         private void CargarItinerarios()
         {
             var itine = reseracionesServicios.getItinerarios();
@@ -49,8 +50,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             CmbItinerario.ValueMember = "cod_itinerario";
             CmbItinerario.DisplayMember = "Descripcion";
             CmbItinerario.SelectedValue = itineDefecto;
-
         }
+
         private void Reserva_FormClosing(object sender, FormClosingEventArgs e)
         {
             Dispose();
@@ -66,8 +67,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 var fila = new string[]
                 {
-
-                puerto.nombre.ToString(),
+                    puerto.nombre.ToString(),
                 };
                 DgvPuertos.Rows.Add(fila);
             }
@@ -78,22 +78,22 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 var fila = new string[]
                 {
-                viaje.Cod_navio.ToString(),
-                viaje.FechaSalida.ToString(),
-                viaje.Duracion.ToString(),
+                    viaje.Cod_navio.ToString(),
+                    viaje.FechaSalida.ToString(),
+                    viaje.Duracion.ToString(),
                 };
                 DgvViajes.Rows.Add(fila);
             }
-
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
-            var cant_camas= Convert.ToInt32( TxtCant.Text.Trim()) ;
+            var cant_camas = Convert.ToInt32(TxtCant.Text.Trim());
 
             var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
 
+            DgvCamarotes.Rows.Clear();
             foreach (var camarot in camarotes)
             {
                 var fila = new string[]
@@ -102,15 +102,42 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                     camarot.num_camarote.ToString(),
                     camarot.cubierta_desc.ToString(),
                     camarot.tipo_desc.ToString(),
-                    camarot.cant_camas.ToString()
-
+                    camarot.cant_camas.ToString(),
+                    camarot.num_cubierta.ToString()
                 };
                 DgvCamarotes.Rows.Add(fila);
             }
-
-
         }
 
-        
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarReserva();
+
+                DialogResult result = MessageBox.Show("se registró la reserva con exito", "Reserva", MessageBoxButtons.OK);
+
+                /*TxtNroDoc.Clear();
+                NombrePasajero.Hide();
+                ApellidoMostrar.Hide();
+                TxtMonto.Clear();*/
+            }
+            catch (Exception)
+            {
+                DialogResult result = MessageBox.Show("No se pudo realizar la reserva ", "Reserva", MessageBoxButtons.OK);
+            }
+        }
+
+        private void CargarReserva()
+        {
+            reserva.cod_navio = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["codigo_navio"].Value);
+            reserva.num_cubierta = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["num_cubierta"].Value);
+            reserva.num_camarote = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["num_camarote"].Value);
+            reserva.cama_ocupada = Convert.ToInt32(TxtCant.Text.Trim());
+            /*reserva.tipo_doc = */
+            reserva.fecha_viaje = Convert.ToDateTime(DgvViajes.SelectedRows[0].Cells["fecha_salida"].Value);
+            reserva.estado_reserva = "Activo";
+            reseracionesServicios.CargarReserva(reserva);
+        }
     }
 }

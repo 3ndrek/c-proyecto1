@@ -63,9 +63,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             CmbTipoDoc.SelectedItem = tipoDefault;
         }
 
-
-
-        
         private void cargarReservaciones(Entidades.Pasajero filtro)
         {
             var reservaciones = cobroServicio.GetReservaciones(filtro);
@@ -80,8 +77,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             CmbReservas.DisplayMember = "num_reservacion";
             CmbReservas.ValueMember = "num_reservacion";
             CmbReservas.SelectedItem = reservaDefault;
-            
-
         } 
 
         private void cargarModos()
@@ -98,10 +93,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             CmbModosPagos.DisplayMember = "descripcion";
             CmbModosPagos.ValueMember = "modo_pago";
             CmbModosPagos.SelectedItem = modoDefault;
-
         }
-
-
 
         private void Cobro_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -140,7 +132,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
                 cargarReservaciones(pasajeroFiltro);
 
-
             }
             // por el camino del bien funciona, ahora hay que hacer la validación para que se actualice cuando no se encuentra nada 
             catch (Exception ex)
@@ -155,10 +146,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         {
             pasajeroFiltro.tipo_doc = (int)CmbTipoDoc.SelectedValue;
         }
-
-
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -177,12 +164,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 DialogResult result = MessageBox.Show("No se pudo realizar el cobro ", "Cobro", MessageBoxButtons.OK);
             }
-           
-
-
         }
-
-
 
         private void cargaPasajero ()
         {
@@ -194,15 +176,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             pxR.num_doc= Convert.ToInt32(TxtNroDoc.Text);
             pxR.estado_reserva = "c";
             cobroServicio.registrarPxR(pxR);
-
-           
         }
-
 
         private void NuevoCobro()
         {
             cobro1.fecha_pago = FechaPagoSeleccionador.Value;
-
         }
 
         private void CmbReservas_SelectionChangeCommitted(object sender, EventArgs e)

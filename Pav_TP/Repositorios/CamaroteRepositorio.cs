@@ -106,7 +106,7 @@ namespace Pav_TP.Repositorios
                 $"left join ocupacionCamarotes Oc on Oc.tipo_ocupacion = Cv.ocupacion " +
                 $"left join cubiertas Cc on Cc.num_cubierta = c.num_cubierta " +
                 $"left join tipoCamarote Tc on Tc.tipo = c.tipo "+
-                $"where c.cod_navio = {cod_navio} and c.cant_camas= {num}";
+                $"where c.cod_navio = {cod_navio} and c.cant_camas >= {num}";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
