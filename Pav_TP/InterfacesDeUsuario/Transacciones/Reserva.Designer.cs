@@ -34,8 +34,10 @@
             this.viajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pAV_3K2_2022_12DataSet3 = new Pav_TP.PAV_3K2_2022_12DataSet3();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Reservar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            this.TxtCant = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DgvCamarotes = new System.Windows.Forms.DataGridView();
             this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pAV_3K2_2022_12DataSet4 = new Pav_TP.PAV_3K2_2022_12DataSet4();
             this.camarotesTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter();
@@ -45,21 +47,24 @@
             this.CmbItinerario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DgvPuertos = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.viajeTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet3TableAdapters.viajeTableAdapter();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtCant = new System.Windows.Forms.TextBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.cod_navio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_navio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.num_camarote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cubierta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_camarote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cant_camas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reservar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvViajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viajeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCamarotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPuertos)).BeginInit();
@@ -113,7 +118,7 @@
             this.groupBox2.Controls.Add(this.BtnBuscar);
             this.groupBox2.Controls.Add(this.TxtCant);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.DgvCamarotes);
             this.groupBox2.Location = new System.Drawing.Point(288, 201);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -123,25 +128,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione un camarote";
             // 
-            // dataGridView2
+            // BtnBuscar
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BtnBuscar.Location = new System.Drawing.Point(463, 18);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.TabIndex = 3;
+            this.BtnBuscar.Text = "Buscar";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // TxtCant
+            // 
+            this.TxtCant.Location = new System.Drawing.Point(312, 20);
+            this.TxtCant.Name = "TxtCant";
+            this.TxtCant.Size = new System.Drawing.Size(104, 20);
+            this.TxtCant.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(185, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Cant. De Pasajeros";
+            // 
+            // DgvCamarotes
+            // 
+            this.DgvCamarotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCamarotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo_navio,
+            this.num_camarote,
+            this.cubierta,
+            this.tipo_camarote,
+            this.cant_camas,
             this.Reservar});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(680, 122);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // Reservar
-            // 
-            this.Reservar.HeaderText = "reservar";
-            this.Reservar.MinimumWidth = 6;
-            this.Reservar.Name = "Reservar";
-            this.Reservar.Width = 125;
+            this.DgvCamarotes.Location = new System.Drawing.Point(12, 54);
+            this.DgvCamarotes.Margin = new System.Windows.Forms.Padding(2);
+            this.DgvCamarotes.Name = "DgvCamarotes";
+            this.DgvCamarotes.RowHeadersWidth = 51;
+            this.DgvCamarotes.RowTemplate.Height = 24;
+            this.DgvCamarotes.Size = new System.Drawing.Size(680, 122);
+            this.DgvCamarotes.TabIndex = 0;
             // 
             // camarotesBindingSource
             // 
@@ -216,6 +245,12 @@
             this.DgvPuertos.Size = new System.Drawing.Size(238, 316);
             this.DgvPuertos.TabIndex = 7;
             // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -229,42 +264,12 @@
             // 
             this.viajeTableAdapter.ClearBeforeFill = true;
             // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(185, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Cant. De Pasajeros";
-            // 
-            // TxtCant
-            // 
-            this.TxtCant.Location = new System.Drawing.Point(312, 20);
-            this.TxtCant.Name = "TxtCant";
-            this.TxtCant.Size = new System.Drawing.Size(104, 20);
-            this.TxtCant.TabIndex = 2;
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.Location = new System.Drawing.Point(463, 18);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscar.TabIndex = 3;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            // 
             // cod_navio
             // 
             this.cod_navio.HeaderText = "Codigo Navio";
             this.cod_navio.Name = "cod_navio";
             this.cod_navio.ReadOnly = true;
+            this.cod_navio.Visible = false;
             // 
             // fecha_salida
             // 
@@ -277,6 +282,46 @@
             this.duracion.HeaderText = "Duracion";
             this.duracion.Name = "duracion";
             this.duracion.ReadOnly = true;
+            // 
+            // codigo_navio
+            // 
+            this.codigo_navio.HeaderText = "navio";
+            this.codigo_navio.Name = "codigo_navio";
+            this.codigo_navio.ReadOnly = true;
+            this.codigo_navio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.codigo_navio.Visible = false;
+            // 
+            // num_camarote
+            // 
+            this.num_camarote.HeaderText = "Número de camarote";
+            this.num_camarote.Name = "num_camarote";
+            this.num_camarote.ReadOnly = true;
+            this.num_camarote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // cubierta
+            // 
+            this.cubierta.HeaderText = "cubierta";
+            this.cubierta.Name = "cubierta";
+            this.cubierta.ReadOnly = true;
+            // 
+            // tipo_camarote
+            // 
+            this.tipo_camarote.HeaderText = "Tipo Camarote";
+            this.tipo_camarote.Name = "tipo_camarote";
+            this.tipo_camarote.ReadOnly = true;
+            // 
+            // cant_camas
+            // 
+            this.cant_camas.HeaderText = "cantidad de camas";
+            this.cant_camas.Name = "cant_camas";
+            this.cant_camas.ReadOnly = true;
+            // 
+            // Reservar
+            // 
+            this.Reservar.HeaderText = "reservar";
+            this.Reservar.MinimumWidth = 6;
+            this.Reservar.Name = "Reservar";
+            this.Reservar.Width = 125;
             // 
             // Reserva
             // 
@@ -303,7 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCamarotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPuertos)).EndInit();
@@ -320,14 +365,13 @@
         private System.Windows.Forms.BindingSource viajeBindingSource;
         private PAV_3K2_2022_12DataSet3TableAdapters.viajeTableAdapter viajeTableAdapter;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DgvCamarotes;
         private PAV_3K2_2022_12DataSet4 pAV_3K2_2022_12DataSet4;
         private System.Windows.Forms.BindingSource camarotesBindingSource;
         private PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter camarotesTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Reservar;
         private System.Windows.Forms.ComboBox CmbItinerario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DgvPuertos;
@@ -339,5 +383,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_navio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
         private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_navio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn num_camarote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cubierta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_camarote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cant_camas;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Reservar;
     }
 }

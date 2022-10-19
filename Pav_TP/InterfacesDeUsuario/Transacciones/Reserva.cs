@@ -31,8 +31,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void Reserva_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pAV_3K2_2022_12DataSet4.camarotes' table. You can move, or remove it, as needed.
-            this.camarotesTableAdapter.Fill(this.pAV_3K2_2022_12DataSet4.camarotes);
+
             CargarItinerarios();
 
         }
@@ -67,6 +66,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 var fila = new string[]
                 {
+
                 puerto.nombre.ToString(),
                 };
                 DgvPuertos.Rows.Add(fila);
@@ -85,9 +85,32 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                 DgvViajes.Rows.Add(fila);
             }
 
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
             var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
-            
+            var cant_camas= Convert.ToInt32( TxtCant.Text.Trim()) ;
+
+            var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
+
+            foreach (var camarot in camarotes)
+            {
+                var fila = new string[]
+                {
+                    camarot.cod_navio.ToString(),
+                    camarot.num_camarote.ToString(),
+                    camarot.cubierta_desc.ToString(),
+                    camarot.tipo_desc.ToString(),
+                    camarot.cant_camas.ToString()
+
+                };
+                DgvCamarotes.Rows.Add(fila);
+            }
+
 
         }
+
+        
     }
 }

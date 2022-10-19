@@ -99,8 +99,15 @@ namespace Pav_TP.Repositorios
 
         public List<Camarote> ObtenerCamarotes(int cod_navio, int num)
         {   
-            //join camarote
-            var sql = $"select c.* from camarotes c left join navio n on c.cod_navio =  n.codigo_navio where n.codigo_navio= {cod_navio} and c.cant_camas= {num}";
+            //join camarot
+            var sql = $"select c.cod_navio,c.num_cubierta,c.tipo, c.num_camarote, c.cant_camas, Oc.descripcion as Ocupacion, Cc.descripcion as cubierta_desc, " +
+                $"Tc.descripcion as tipo_camarote " +
+                $"from camarotes c left join camarotesXviajes Cv on c.cod_navio = Cv.cod_navio " +
+                $"left join ocupacionCamarotes Oc on Oc.tipo_ocupacion = Cv.ocupacion " +
+                $"left join cubiertas Cc on Cc.num_cubierta = c.num_cubierta " +
+                $"left join tipoCamarote Tc on Tc.tipo = c.tipo "+
+                $"where c.cod_navio = {cod_navio} and c.cant_camas= {num}";
+
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
             foreach (DataRow fila in tablaResultado.Rows)
@@ -111,6 +118,11 @@ namespace Pav_TP.Repositorios
                 camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
                 camarote.tipo = Convert.ToInt32(fila["tipo"]);
                 camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
+
+                camarote.ocupacion = fila["Ocupacion"].ToString();
+                camarote.cubierta_desc = fila["cubierta_desc"].ToString();
+                camarote.tipo_desc = fila["tipo_camarote"].ToString();
+
                 camarotes.Add(camarote);
             }
             return camarotes;

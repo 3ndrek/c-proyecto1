@@ -14,6 +14,13 @@ namespace Pav_TP.Entidades
         public int tipo { get; set; }
         public int cant_camas { get; set; }
 
+
+        // ver si es valido registrar un camarote con estos nuevos atributos 
+        public string ocupacion { get; set; }
+
+        public string cubierta_desc { get; set; }
+        public string tipo_desc { get; set; } 
+
         public void ValidarNavio()
         {
             if (string.IsNullOrEmpty(this.cod_navio.ToString()) && this.cod_navio < 0) {
