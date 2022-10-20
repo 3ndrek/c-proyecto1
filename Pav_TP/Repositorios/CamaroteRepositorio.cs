@@ -101,26 +101,33 @@ namespace Pav_TP.Repositorios
         public List<Camarote> ObtenerCamarotes(int cod_navio, int num)
         {   
             //join camarot
-            var sql = $"select c.cod_navio,c.num_cubierta,c.tipo,c.monto ,c.num_camarote, c.cant_camas, Oc.descripcion as Ocupacion, Cc.descripcion as cubierta_desc, " +
-                $"Tc.descripcion as tipo_camarote " +
-                $"from camarotes c left join camarotesXviajes Cv on c.cod_navio = Cv.cod_navio " +
-                $"left join ocupacionCamarotes Oc on Oc.tipo_ocupacion = Cv.ocupacion " +
-                $"left join cubiertas Cc on Cc.num_cubierta = c.num_cubierta " +
-                $"left join tipoCamarote Tc on Tc.tipo = c.tipo "+
-                $"where c.cod_navio = {cod_navio} and c.cant_camas >= {num}";
+            var sql = $"select c.cod_navio,c.num_cubierta,c.tipo,c.monto ,c.num_camarote, c.cant_camas, Cv.ocupacion, Cc.descripcion as cubierta_desc,Tc.descripcion as tipo_camarote " +
+                $"from camarotes c left join camarotesXviajes Cv on c.num_camarote= Cv.num_camarote and c.cod_navio=Cv.cod_navio and c.num_cubierta= Cv.num_cubierta " +
+                $"left join cubiertas Cc on Cc.num_cubierta = c.num_cubierta left join tipoCamarote Tc on Tc.tipo = c.tipo " +
+                $"where c.cod_navio = {cod_navio} and c.cant_camas >= {num} ";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
             foreach (DataRow fila in tablaResultado.Rows)
             {
                 var camarote = new Camarote();
+                
                 camarote.cod_navio = Convert.ToInt32(fila["cod_navio"]);
                 camarote.num_cubierta = Convert.ToInt32(fila["num_cubierta"]);
                 camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
                 camarote.tipo = Convert.ToInt32(fila["tipo"]);
                 camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
 
-                camarote.ocupacion = fila["Ocupacion"].ToString();
+                // ClienteId = string.IsNullOrEmpty(txtClienteId.Text) ? (int ?)null : Convert.ToInt32(txtClienteId.Text);
+                if (string.IsNullOrEmpty(fila["ocupacion"].ToString()))
+                {
+                    camarote.ocupacion = 0;
+                }
+                else
+                {
+                    camarote.ocupacion = Convert.ToInt32(fila["ocupacion"]);
+                }
+
                 camarote.cubierta_desc = fila["cubierta_desc"].ToString();
                 camarote.tipo_desc = fila["tipo_camarote"].ToString();
                 camarote.monto= Convert.ToInt32(fila["monto"]);

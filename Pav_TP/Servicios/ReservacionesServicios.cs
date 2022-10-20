@@ -31,7 +31,7 @@ namespace Pav_TP.Servicios
 
             foreach (Camarote camarote in listaBDCamarotes)
             {
-                if (camarote.ocupacion != "ocupado")
+                if (camarote.ocupacion != 1)
                 {
                     lista.Add(camarote);
                 }

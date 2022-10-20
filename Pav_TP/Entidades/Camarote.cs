@@ -16,7 +16,7 @@ namespace Pav_TP.Entidades
 
 
         // ver si es valido registrar un camarote con estos nuevos atributos 
-        public string ocupacion { get; set; }
+        public int? ocupacion { get; set; }
 
         public string cubierta_desc { get; set; }
         public string tipo_desc { get; set; } 

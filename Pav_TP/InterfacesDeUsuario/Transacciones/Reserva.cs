@@ -145,7 +145,6 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             reserva.num_cubierta = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["num_cubierta"].Value);
             reserva.num_camarote = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["num_camarote"].Value);
             reserva.cama_ocupada = Convert.ToInt32(TxtCant.Text.Trim());
-            /*reserva.tipo_doc = */
             reserva.fecha_viaje = Convert.ToDateTime(DgvViajes.SelectedRows[0].Cells["fecha_salida"].Value);
             reserva.estado_reserva = "Activo";
             reserva.tipo_doc = (int)pasajero.tipo_doc;
@@ -160,6 +159,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                 {
                     reseracionesServicios.CargarReserva(reserva);
                     MessageBox.Show("se registró la reserva con exito", "Reserva", MessageBoxButtons.OK);
+                    nombrePasajero.Hide();
+                    apellidoPasajero.Hide();
                 }
                 catch (Exception)
                 {
