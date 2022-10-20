@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarBarco));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CbClasificacion = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -306,6 +307,7 @@
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.label13);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarBarco";
             this.Text = "RegistrarBarco";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegistrarBarco_FormClosing);

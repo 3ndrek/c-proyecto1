@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarBarco));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DgvBarco = new System.Windows.Forms.DataGridView();
@@ -69,7 +70,7 @@
             this.groupBox2.Size = new System.Drawing.Size(584, 233);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Resultados de la busqueda";
+            this.groupBox2.Text = "Resultados de la búsqueda";
             // 
             // BtnAgregar
             // 
@@ -282,6 +283,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarBarco";
             this.Text = "ConsultarBarco";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarBarco_FormClosing);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarBarco));
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -304,6 +305,7 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.label13);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarBarco";
             this.Text = "ModificarBarco";
             this.Load += new System.EventHandler(this.ModificarBarco_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Itinerario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvPuertos = new System.Windows.Forms.DataGridView();
             this.cmbPais = new System.Windows.Forms.ComboBox();
@@ -54,9 +55,11 @@
             this.groupBox1.Controls.Add(this.btnAgregar);
             this.groupBox1.Controls.Add(this.cmbPuerto);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(14, 13);
+            this.groupBox1.Location = new System.Drawing.Point(10, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 350);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(570, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione los puertos que desea incluir en el itinerario:";
@@ -64,35 +67,39 @@
             // dgvPuertos
             // 
             this.dgvPuertos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPuertos.Location = new System.Drawing.Point(6, 179);
+            this.dgvPuertos.Location = new System.Drawing.Point(4, 145);
+            this.dgvPuertos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPuertos.Name = "dgvPuertos";
             this.dgvPuertos.RowHeadersWidth = 51;
             this.dgvPuertos.RowTemplate.Height = 24;
-            this.dgvPuertos.Size = new System.Drawing.Size(748, 150);
+            this.dgvPuertos.Size = new System.Drawing.Size(561, 122);
             this.dgvPuertos.TabIndex = 5;
             // 
             // cmbPais
             // 
             this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Location = new System.Drawing.Point(61, 35);
+            this.cmbPais.Location = new System.Drawing.Point(46, 28);
+            this.cmbPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(121, 24);
+            this.cmbPais.Size = new System.Drawing.Size(92, 21);
             this.cmbPais.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 35);
+            this.label2.Location = new System.Drawing.Point(7, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 16);
+            this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Pais:";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(354, 121);
+            this.btnAgregar.Location = new System.Drawing.Point(266, 98);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 31);
+            this.btnAgregar.Size = new System.Drawing.Size(70, 25);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -101,18 +108,20 @@
             // cmbPuerto
             // 
             this.cmbPuerto.FormattingEnabled = true;
-            this.cmbPuerto.Location = new System.Drawing.Point(61, 69);
+            this.cmbPuerto.Location = new System.Drawing.Point(46, 56);
+            this.cmbPuerto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbPuerto.Name = "cmbPuerto";
-            this.cmbPuerto.Size = new System.Drawing.Size(121, 24);
+            this.cmbPuerto.Size = new System.Drawing.Size(92, 21);
             this.cmbPuerto.TabIndex = 1;
             this.cmbPuerto.Click += new System.EventHandler(this.cmbPuerto_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 72);
+            this.label1.Location = new System.Drawing.Point(4, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Puerto:";
             // 
@@ -120,9 +129,11 @@
             // 
             this.groupBox2.Controls.Add(this.cmbCategoria);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(14, 393);
+            this.groupBox2.Location = new System.Drawing.Point(10, 319);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(497, 100);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(565, 81);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione la categoria de itinerario que desea crear";
@@ -130,25 +141,28 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(100, 39);
+            this.cmbCategoria.Location = new System.Drawing.Point(75, 32);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 24);
+            this.cmbCategoria.Size = new System.Drawing.Size(92, 21);
             this.cmbCategoria.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 39);
+            this.label4.Location = new System.Drawing.Point(9, 32);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 16);
+            this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Categoria:";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(309, 569);
+            this.btnAceptar.Location = new System.Drawing.Point(227, 445);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(70, 25);
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -156,9 +170,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(414, 569);
+            this.btnCancelar.Location = new System.Drawing.Point(313, 445);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(70, 25);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -167,22 +182,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 514);
+            this.label5.Location = new System.Drawing.Point(10, 418);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(295, 16);
+            this.label5.Size = new System.Drawing.Size(233, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Esta seguro que desea confirmar este itinerario?";
             // 
             // Itinerario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 603);
+            this.ClientSize = new System.Drawing.Size(590, 490);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Itinerario";
             this.Text = "Itinerario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Itinerario_FormClosing);
