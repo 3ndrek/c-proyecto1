@@ -92,6 +92,7 @@ namespace Pav_TP.Repositorios
                 camarote.num_camarote = Convert.ToInt32(fila["num_camarote"]);
                 camarote.tipo = Convert.ToInt32(fila["tipo"]);
                 camarote.cant_camas = Convert.ToInt32(fila["cant_camas"]);
+                camarote.monto= Convert.ToInt32(fila["monto"]);
                 camarotes.Add(camarote);
             }
             return camarotes;
@@ -100,7 +101,7 @@ namespace Pav_TP.Repositorios
         public List<Camarote> ObtenerCamarotes(int cod_navio, int num)
         {   
             //join camarot
-            var sql = $"select c.cod_navio,c.num_cubierta,c.tipo, c.num_camarote, c.cant_camas, Oc.descripcion as Ocupacion, Cc.descripcion as cubierta_desc, " +
+            var sql = $"select c.cod_navio,c.num_cubierta,c.tipo,c.monto ,c.num_camarote, c.cant_camas, Oc.descripcion as Ocupacion, Cc.descripcion as cubierta_desc, " +
                 $"Tc.descripcion as tipo_camarote " +
                 $"from camarotes c left join camarotesXviajes Cv on c.cod_navio = Cv.cod_navio " +
                 $"left join ocupacionCamarotes Oc on Oc.tipo_ocupacion = Cv.ocupacion " +
@@ -122,7 +123,7 @@ namespace Pav_TP.Repositorios
                 camarote.ocupacion = fila["Ocupacion"].ToString();
                 camarote.cubierta_desc = fila["cubierta_desc"].ToString();
                 camarote.tipo_desc = fila["tipo_camarote"].ToString();
-
+                camarote.monto= Convert.ToInt32(fila["monto"]);
                 camarotes.Add(camarote);
             }
             return camarotes;

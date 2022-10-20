@@ -21,6 +21,8 @@ namespace Pav_TP.Entidades
         public string cubierta_desc { get; set; }
         public string tipo_desc { get; set; } 
 
+        // hay que agregarlo en la abm 
+        public int monto { get; set; } 
         public void ValidarNavio()
         {
             if (string.IsNullOrEmpty(this.cod_navio.ToString()) && this.cod_navio < 0) {
