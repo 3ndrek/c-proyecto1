@@ -58,28 +58,28 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.groupBox1.Controls.Add(this.TxtNumero);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(40, 68);
+            this.groupBox1.Location = new System.Drawing.Point(60, 105);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 118);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(876, 182);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar viaje por código o fecha";
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Location = new System.Drawing.Point(143, 35);
-            this.TxtNumero.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtNumero.Location = new System.Drawing.Point(214, 54);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(100, 20);
+            this.TxtNumero.Size = new System.Drawing.Size(148, 26);
             this.TxtNumero.TabIndex = 17;
             this.TxtNumero.Text = "0";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(484, 83);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(726, 128);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -88,10 +88,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 38);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(28, 58);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 13);
+            this.label8.Size = new System.Drawing.Size(150, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Número de Reserva";
             // 
@@ -99,9 +98,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 20);
+            this.label3.Location = new System.Drawing.Point(268, 31);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(305, 24);
+            this.label3.Size = new System.Drawing.Size(478, 33);
             this.label3.TabIndex = 29;
             this.label3.Text = "Consultar Información de la reserva";
             // 
@@ -111,18 +111,21 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.groupBox2.Controls.Add(this.DgvReserva);
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Location = new System.Drawing.Point(40, 213);
+            this.groupBox2.Location = new System.Drawing.Point(60, 328);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(584, 233);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(876, 358);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado de la busqueda";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(481, 195);
+            this.btnCancel.Location = new System.Drawing.Point(722, 300);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 35);
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -144,74 +147,93 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.num_doc,
             this.PrecioReserva,
             this.nro_reservacion});
-            this.DgvReserva.Location = new System.Drawing.Point(25, 28);
+            this.DgvReserva.Location = new System.Drawing.Point(38, 43);
+            this.DgvReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DgvReserva.MultiSelect = false;
             this.DgvReserva.Name = "DgvReserva";
             this.DgvReserva.ReadOnly = true;
+            this.DgvReserva.RowHeadersWidth = 62;
             this.DgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReserva.Size = new System.Drawing.Size(534, 150);
+            this.DgvReserva.Size = new System.Drawing.Size(801, 231);
             this.DgvReserva.TabIndex = 31;
             // 
             // cod_navio
             // 
             this.cod_navio.HeaderText = "Código Navio";
+            this.cod_navio.MinimumWidth = 8;
             this.cod_navio.Name = "cod_navio";
             this.cod_navio.ReadOnly = true;
+            this.cod_navio.Width = 150;
             // 
             // num_cubierta
             // 
             this.num_cubierta.HeaderText = "Número Cubierta";
+            this.num_cubierta.MinimumWidth = 8;
             this.num_cubierta.Name = "num_cubierta";
             this.num_cubierta.ReadOnly = true;
+            this.num_cubierta.Width = 150;
             // 
             // num_camarote
             // 
             this.num_camarote.HeaderText = "Número Camarote";
+            this.num_camarote.MinimumWidth = 8;
             this.num_camarote.Name = "num_camarote";
             this.num_camarote.ReadOnly = true;
+            this.num_camarote.Width = 150;
             // 
             // fecha_viaje
             // 
             this.fecha_viaje.HeaderText = "Fecha Viaje";
+            this.fecha_viaje.MinimumWidth = 8;
             this.fecha_viaje.Name = "fecha_viaje";
             this.fecha_viaje.ReadOnly = true;
+            this.fecha_viaje.Width = 150;
             // 
             // cama_ocupada
             // 
             this.cama_ocupada.HeaderText = "Camas";
+            this.cama_ocupada.MinimumWidth = 8;
             this.cama_ocupada.Name = "cama_ocupada";
             this.cama_ocupada.ReadOnly = true;
+            this.cama_ocupada.Width = 150;
             // 
             // tipo_doc
             // 
             this.tipo_doc.HeaderText = "Tipo Documento";
+            this.tipo_doc.MinimumWidth = 8;
             this.tipo_doc.Name = "tipo_doc";
             this.tipo_doc.ReadOnly = true;
+            this.tipo_doc.Width = 150;
             // 
             // num_doc
             // 
             this.num_doc.HeaderText = "Número de Documento";
+            this.num_doc.MinimumWidth = 8;
             this.num_doc.Name = "num_doc";
             this.num_doc.ReadOnly = true;
+            this.num_doc.Width = 150;
             // 
             // PrecioReserva
             // 
             this.PrecioReserva.HeaderText = "Precio";
+            this.PrecioReserva.MinimumWidth = 8;
             this.PrecioReserva.Name = "PrecioReserva";
             this.PrecioReserva.ReadOnly = true;
+            this.PrecioReserva.Width = 150;
             // 
             // nro_reservacion
             // 
             this.nro_reservacion.HeaderText = "Número de reserva";
+            this.nro_reservacion.MinimumWidth = 8;
             this.nro_reservacion.Name = "nro_reservacion";
             this.nro_reservacion.ReadOnly = true;
+            this.nro_reservacion.Width = 150;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(364, 195);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(546, 300);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(112, 35);
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -219,10 +241,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(250, 195);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(375, 300);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(112, 35);
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -230,14 +251,16 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // 
             // ConsultarReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 501);
+            this.ClientSize = new System.Drawing.Size(1006, 771);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ConsultarReserva";
             this.Text = "Consultar Reserva";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarReserva_FormClosing);
             this.Load += new System.EventHandler(this.ConsultarReserva_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

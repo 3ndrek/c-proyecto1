@@ -50,10 +50,9 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(484, 83);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Location = new System.Drawing.Point(726, 128);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -62,19 +61,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 38);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(28, 58);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.Size = new System.Drawing.Size(122, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Codigo de navio";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(364, 195);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(546, 300);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(112, 35);
             this.btnEliminar.TabIndex = 23;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -82,10 +79,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(250, 195);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(375, 300);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(112, 35);
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -96,19 +92,20 @@
             this.groupBox1.Controls.Add(this.TxtCodigo);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(40, 68);
+            this.groupBox1.Location = new System.Drawing.Point(60, 105);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 118);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(876, 182);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar viaje por código o fecha";
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.Location = new System.Drawing.Point(115, 31);
-            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCodigo.Location = new System.Drawing.Point(172, 48);
             this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.TxtCodigo.Size = new System.Drawing.Size(148, 26);
             this.TxtCodigo.TabIndex = 17;
             this.TxtCodigo.Text = "0";
             // 
@@ -118,18 +115,21 @@
             this.groupBox2.Controls.Add(this.DgvViaje);
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Location = new System.Drawing.Point(40, 213);
+            this.groupBox2.Location = new System.Drawing.Point(60, 328);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(584, 233);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(876, 358);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado de la busqueda";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(481, 195);
+            this.btnCancel.Location = new System.Drawing.Point(722, 300);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(112, 35);
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -148,60 +148,74 @@
             this.cod_itinerario,
             this.pais_origen,
             this.pais_destino});
-            this.DgvViaje.Location = new System.Drawing.Point(25, 28);
+            this.DgvViaje.Location = new System.Drawing.Point(38, 43);
+            this.DgvViaje.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DgvViaje.MultiSelect = false;
             this.DgvViaje.Name = "DgvViaje";
             this.DgvViaje.ReadOnly = true;
+            this.DgvViaje.RowHeadersWidth = 62;
             this.DgvViaje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvViaje.Size = new System.Drawing.Size(534, 150);
+            this.DgvViaje.Size = new System.Drawing.Size(801, 231);
             this.DgvViaje.TabIndex = 31;
             // 
             // cod_navio
             // 
             this.cod_navio.HeaderText = "cod_navio";
+            this.cod_navio.MinimumWidth = 8;
             this.cod_navio.Name = "cod_navio";
             this.cod_navio.ReadOnly = true;
+            this.cod_navio.Width = 150;
             // 
             // fecha_viaje
             // 
             this.fecha_viaje.HeaderText = "fecha_viaje";
+            this.fecha_viaje.MinimumWidth = 8;
             this.fecha_viaje.Name = "fecha_viaje";
             this.fecha_viaje.ReadOnly = true;
+            this.fecha_viaje.Width = 150;
             // 
             // duracion
             // 
             this.duracion.HeaderText = "duracion";
+            this.duracion.MinimumWidth = 8;
             this.duracion.Name = "duracion";
             this.duracion.ReadOnly = true;
+            this.duracion.Width = 150;
             // 
             // cod_itinerario
             // 
             this.cod_itinerario.HeaderText = "cod_itinerario";
+            this.cod_itinerario.MinimumWidth = 8;
             this.cod_itinerario.Name = "cod_itinerario";
             this.cod_itinerario.ReadOnly = true;
+            this.cod_itinerario.Width = 150;
             // 
             // pais_origen
             // 
             this.pais_origen.HeaderText = "pais_origen";
+            this.pais_origen.MinimumWidth = 8;
             this.pais_origen.Name = "pais_origen";
             this.pais_origen.ReadOnly = true;
+            this.pais_origen.Width = 150;
             // 
             // pais_destino
             // 
             this.pais_destino.HeaderText = "pais_destino";
+            this.pais_destino.MinimumWidth = 8;
             this.pais_destino.Name = "pais_destino";
             this.pais_destino.ReadOnly = true;
+            this.pais_destino.Width = 150;
             // 
             // ConsultarViaje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 501);
+            this.ClientSize = new System.Drawing.Size(1006, 771);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultarViaje";
             this.Text = "Consultar Viaje";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarViaje_FormClosing);
             this.Load += new System.EventHandler(this.ConsultarViaje_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

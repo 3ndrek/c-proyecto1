@@ -130,6 +130,11 @@ namespace PAV1
             this.Dispose();
 
         }
+
+        private void GenerarViaje_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
+        }
     }
     
 }

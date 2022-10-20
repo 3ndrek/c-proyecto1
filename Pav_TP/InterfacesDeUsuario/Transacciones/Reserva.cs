@@ -22,7 +22,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private readonly Reservaciones reserva;
         private readonly CobroServicios cobroServicio;
         private Entidades.Pasajero pasajero;
-
+        private int bloqueoBusqueda;
 
         public Reserva(FrmPrincipal Principal)
         {
@@ -33,6 +33,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             viajesServicios = new ViajesServicios();
             cobroServicio = new CobroServicios();
             pasajero = new Entidades.Pasajero();
+            bloqueoBusqueda = new int();
             InitializeComponent();
         }
 
@@ -42,6 +43,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             cargarTiposDoc();
             nombrePasajero.Hide();
             apellidoPasajero.Hide();
+            bloqueoBusqueda = 0;
         }
 
         private void CargarItinerarios()
@@ -89,23 +91,31 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                     viaje.Cod_navio.ToString(),
                     viaje.FechaSalida.ToString(),
                     viaje.Duracion.ToString(),
+
                 };
                 DgvViajes.Rows.Add(fila);
+
             }
+            bloqueoBusqueda = 1;
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
-            var cant_camas = Convert.ToInt32(TxtCant.Text.Trim());
-
-            var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
-
-            DgvCamarotes.Rows.Clear();
-            foreach (var camarot in camarotes)
+            if (bloqueoBusqueda != 0)
             {
-                var fila = new string[]
+
+
+
+                var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
+                var cant_camas = Convert.ToInt32(TxtCant.Text.Trim());
+
+                var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
+
+                DgvCamarotes.Rows.Clear();
+                foreach (var camarot in camarotes)
                 {
+                    var fila = new string[]
+                    {
                     camarot.cod_navio.ToString(),
                     camarot.num_camarote.ToString(),
                     camarot.cubierta_desc.ToString(),
@@ -113,8 +123,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                     camarot.cant_camas.ToString(),
                     camarot.num_cubierta.ToString(),
                     camarot.monto.ToString()
-                };
-                DgvCamarotes.Rows.Add(fila);
+                    };
+                    DgvCamarotes.Rows.Add(fila);
+                }
             }
         }
 
@@ -161,6 +172,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                     MessageBox.Show("se registró la reserva con exito", "Reserva", MessageBoxButtons.OK);
                     nombrePasajero.Hide();
                     apellidoPasajero.Hide();
+                    bloqueoBusqueda = 0;
                 }
                 catch (Exception)
                 {
@@ -222,6 +234,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void BtnBuscarPasajero_Click(object sender, EventArgs e)
         {
+            
             pasajero.num_doc = Convert.ToInt32(TxtNroDoc.Text);
 
             var pasajeroAMostrar = cobroServicio.GetPasajeros(pasajero);
@@ -238,6 +251,12 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             }
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            frmPrincipal.Show();
         }
     }
 }

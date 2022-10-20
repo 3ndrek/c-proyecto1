@@ -145,6 +145,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private void CmbTipoDoc_SelectionChangeCommitted(object sender, EventArgs e)
         {
             pasajeroFiltro.tipo_doc = (int)CmbTipoDoc.SelectedValue;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -186,6 +188,14 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private void CmbReservas_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cobro1.nro_reserva = (int)CmbReservas.SelectedValue;
+            var reservaciones = cobroServicio.GetReservaciones(pasajeroFiltro);
+            foreach ( var i in reservaciones)
+            {
+                if (cobro1.nro_reserva == i.num_reservacion)
+                {
+                    TxtMonto.Text = i.monto.ToString();
+                }
+            }
         }
 
         private void TxtNroDoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -231,6 +241,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                 e.Handled = true;
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cerrar_cuestionario();
         }
     }
 }

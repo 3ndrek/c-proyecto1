@@ -15,7 +15,7 @@ namespace Pav_TP.Repositorios
         {
             var Reservacion = new List<Reservaciones>();
 
-            var sql = $"select pr.* , r.cod_navio,r.num_cubierta,r.num_camarotes, r.fecha_viaje, r.cama_ocupada from pasajeroXreservaciones pr join reservaciones r on r.nro_reservacion = pr.nro_reserva and pr.tipo_doc={pasajeroFiltro.tipo_doc} and pr.num_doc={pasajeroFiltro.num_doc}";
+            var sql = $"select pr.* , r.cod_navio,r.num_cubierta,r.num_camarotes, r.fecha_viaje, r.cama_ocupada, r.PrecioReserva from pasajeroXreservaciones pr join reservaciones r on r.nro_reservacion = pr.nro_reserva and pr.tipo_doc={pasajeroFiltro.tipo_doc} and pr.num_doc={pasajeroFiltro.num_doc}";
 
             // join de pasajerosXreservaciones para traer el estado de reservacion 
 
@@ -31,7 +31,7 @@ namespace Pav_TP.Repositorios
                 reservacionFiltrada.num_cubierta = Convert.ToInt32(fila["num_cubierta"]);
                 reservacionFiltrada.cod_navio = Convert.ToInt32(fila["cod_navio"]);
                 reservacionFiltrada.num_camarote = Convert.ToInt32(fila["num_camarotes"]);
-
+                reservacionFiltrada.monto = Convert.ToInt32(fila["PrecioReserva"]);
                 Reservacion.Add(reservacionFiltrada);
             }
 

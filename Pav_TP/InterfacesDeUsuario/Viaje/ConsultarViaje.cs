@@ -95,5 +95,10 @@ namespace PAV1
         {
             CerrarFormulario();
         }
+
+        private void ConsultarViaje_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
+        }
     }
 }

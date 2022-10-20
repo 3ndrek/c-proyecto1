@@ -103,5 +103,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             DgvReserva.Rows.Clear();
             CargarReserva();
         }
+
+        private void ConsultarReserva_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarFormulario();
+        }
     }
 }
