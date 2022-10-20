@@ -21,7 +21,7 @@ namespace Pav_TP.Entidades
             {
                 var tipo = new  TipoDoc();
                 tipo.tipo = Convert.ToInt32(fila["tipo"]);
-                tipo.desc = fila["desc"].ToString();
+                tipo.desc = fila["descripcion"].ToString();
 
                 tipos.Add(tipo);
             }

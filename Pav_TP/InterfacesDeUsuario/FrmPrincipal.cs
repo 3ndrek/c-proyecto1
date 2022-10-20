@@ -71,10 +71,7 @@ namespace seastar
             registrarTripulante.Show();
             this.Hide();
         }
-        private void modificarTriToolStripMenuItem4_Click(object sender, EventArgs e)
-        {
-            
-        }
+
         private void consultarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
             Form consultarTripulante = new ConsultarTripulante(this);
@@ -88,6 +85,7 @@ namespace seastar
             registrarPasajero.Show();
             this.Hide();
         }
+
         private void consultarPasajero_Click(object sender, EventArgs e)
         {
             ConsultarPasajero consultarPasajero = new ConsultarPasajero(this);
@@ -95,32 +93,27 @@ namespace seastar
             this.Hide();
         }
 
-
-        private void registrarBarco_Click(object sender, EventArgs e)
-        { 
-            
-           
-        }
-      
-
         private void consultarCubierta_Click(object sender, EventArgs e)
         {
             Form consultarCubierta = new ConsultarCubierta(this);
             consultarCubierta.Show();
             this.Hide();
         }
+
         private void registrarCubierta_Click(object sender, EventArgs e)
         {
             RegistrarCubierta registrarCubierta = new RegistrarCubierta(this);
             registrarCubierta.Show();
             this.Hide();
         }
+
         private void modificarCubierta_Click(object sender, EventArgs e)
         {
             ModificarCubierta modificarCubierta = new ModificarCubierta(this);
             modificarCubierta.Show();
             this.Hide();
         }
+
         private void eliminarCubierta_Click(object sender, EventArgs e)
         {
             EliminarCubierta eliminarCubierta = new EliminarCubierta(this);
@@ -133,8 +126,6 @@ namespace seastar
 
         }
 
-        
-
         private void registrarBarco_Click_1(object sender, EventArgs e)
         {
             RegistrarBarco registrarBarco = new RegistrarBarco(this);
@@ -142,8 +133,6 @@ namespace seastar
             registrarBarco.Show();
             this.Hide();
         }
-
-
         private void consultarBarco_Click(object sender, EventArgs e)
         {
             ConsultarBarco consultarBarco = new ConsultarBarco(this);
@@ -157,21 +146,12 @@ namespace seastar
             generarViaje.Show();
             this.Hide();
         }
+
         private void consultarViajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarViaje consultarViaje = new ConsultarViaje(this);
             consultarViaje.Show();
             this.Hide();
-        }
-
-        private void cubiertaToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,11 +173,6 @@ namespace seastar
             ConsultarUsuario consultarUsuario = new ConsultarUsuario(this);
             consultarUsuario.Show();
             this.Hide( );
-        }
-
-        private void itinerarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void registrarPuerto_Click(object sender, EventArgs e)
@@ -256,15 +231,18 @@ namespace seastar
             this.Hide();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
         private void pruebaButton1_Click(object sender, EventArgs e)
         {
             UsuariosServicio.UsuarioLogueado = null;
             UsuariosServicio.VarCierre = false;
             validadSesion();
+        }
+
+        private void consultarReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarReserva consultarReserva = new ConsultarReserva(this);
+            consultarReserva.Show();
+            this.Hide();
         }
     }
 }

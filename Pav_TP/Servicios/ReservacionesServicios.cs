@@ -44,5 +44,20 @@ namespace Pav_TP.Servicios
         {
             reservacionesRepositorio.CargarReserva(r);
         }
+
+        public List<Reservaciones> GetReservaciones()
+        {
+            return reservacionesRepositorio.GetReservaciones();
+        }
+
+        public List<Reservaciones> GetReservaciones(Reservaciones reserva)
+        {
+            return reservacionesRepositorio.GetReservaciones(reserva);
+        }
+
+        public void EliminarReserva(int id,int num, DateTime fecha, int cubierta, int navio)
+        {
+           reservacionesRepositorio.EliminarReserva(id, num, fecha, cubierta, navio);
+        }
     }
 }

@@ -49,7 +49,6 @@
             this.viajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarViajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cobrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +73,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.LblUsuario = new System.Windows.Forms.Label();
+            this.consultarReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCerrarSesion = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(721, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // barcoToolStripMenuItem
             // 
@@ -141,7 +140,6 @@
             this.cubiertaToolStripMenuItem1.Name = "cubiertaToolStripMenuItem1";
             this.cubiertaToolStripMenuItem1.Size = new System.Drawing.Size(190, 26);
             this.cubiertaToolStripMenuItem1.Text = "Cubierta";
-            this.cubiertaToolStripMenuItem1.Click += new System.EventHandler(this.cubiertaToolStripMenuItem1_Click);
             // 
             // consultarCubierta
             // 
@@ -232,8 +230,7 @@
             // 
             this.viajesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarViajeToolStripMenuItem,
-            this.consultarViajeToolStripMenuItem,
-            this.eliminarViajeToolStripMenuItem});
+            this.consultarViajeToolStripMenuItem});
             this.viajesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viajesToolStripMenuItem.Name = "viajesToolStripMenuItem";
             this.viajesToolStripMenuItem.Size = new System.Drawing.Size(63, 25);
@@ -253,15 +250,11 @@
             this.consultarViajeToolStripMenuItem.Text = "Consultar Viaje";
             this.consultarViajeToolStripMenuItem.Click += new System.EventHandler(this.consultarViajeToolStripMenuItem_Click);
             // 
-            // eliminarViajeToolStripMenuItem
-            // 
-            this.eliminarViajeToolStripMenuItem.Name = "eliminarViajeToolStripMenuItem";
-            this.eliminarViajeToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
-            // 
             // reservaToolStripMenuItem
             // 
             this.reservaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarToolStripMenuItem,
+            this.consultarReservaToolStripMenuItem,
             this.cobrarToolStripMenuItem});
             this.reservaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reservaToolStripMenuItem.Name = "reservaToolStripMenuItem";
@@ -271,14 +264,14 @@
             // registrarToolStripMenuItem
             // 
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.registrarToolStripMenuItem.Text = "Registrar Reserva";
             this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
             // 
             // cobrarToolStripMenuItem
             // 
             this.cobrarToolStripMenuItem.Name = "cobrarToolStripMenuItem";
-            this.cobrarToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.cobrarToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.cobrarToolStripMenuItem.Text = "Cobrar";
             this.cobrarToolStripMenuItem.Click += new System.EventHandler(this.cobrarToolStripMenuItem_Click);
             // 
@@ -295,7 +288,6 @@
             this.itinerarioToolStripMenuItem.Name = "itinerarioToolStripMenuItem";
             this.itinerarioToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
             this.itinerarioToolStripMenuItem.Text = "Itinerario";
-            this.itinerarioToolStripMenuItem.Click += new System.EventHandler(this.itinerarioToolStripMenuItem_Click);
             // 
             // registrarToolStripMenuItem1
             // 
@@ -339,14 +331,14 @@
             // registrarPuerto
             // 
             this.registrarPuerto.Name = "registrarPuerto";
-            this.registrarPuerto.Size = new System.Drawing.Size(147, 26);
+            this.registrarPuerto.Size = new System.Drawing.Size(180, 26);
             this.registrarPuerto.Text = "Registrar";
             this.registrarPuerto.Click += new System.EventHandler(this.registrarPuerto_Click);
             // 
             // consultarPuerto
             // 
             this.consultarPuerto.Name = "consultarPuerto";
-            this.consultarPuerto.Size = new System.Drawing.Size(147, 26);
+            this.consultarPuerto.Size = new System.Drawing.Size(180, 26);
             this.consultarPuerto.Text = "Consultar";
             this.consultarPuerto.Click += new System.EventHandler(this.consultarPuerto_Click);
             // 
@@ -399,7 +391,6 @@
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(76, 25);
             this.usuarioToolStripMenuItem.Text = "Usuario";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // cambiarContraseñaToolStripMenuItem
             // 
@@ -452,6 +443,13 @@
             this.LblUsuario.TabIndex = 6;
             this.LblUsuario.Text = "label3 ";
             this.LblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // consultarReservaToolStripMenuItem
+            // 
+            this.consultarReservaToolStripMenuItem.Name = "consultarReservaToolStripMenuItem";
+            this.consultarReservaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.consultarReservaToolStripMenuItem.Text = "Consultar Reserva";
+            this.consultarReservaToolStripMenuItem.Click += new System.EventHandler(this.consultarReservaToolStripMenuItem_Click);
             // 
             // btnCerrarSesion
             // 
@@ -534,7 +532,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificarCubierta;
         private System.Windows.Forms.ToolStripMenuItem eliminarCubierta;
         private System.Windows.Forms.ToolStripMenuItem consultarViajeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarViajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarPuerto;
         private System.Windows.Forms.ToolStripMenuItem consultarPuerto;
         private System.Windows.Forms.ToolStripMenuItem camaroteToolStripMenuItem1;
@@ -547,6 +544,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblUsuario;
         private Pav_TP.InterfacesDeUsuario.PruebaButton btnCerrarSesion;
+        private System.Windows.Forms.ToolStripMenuItem consultarReservaToolStripMenuItem;
     }
 }
 
