@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,29 +37,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            this.GrillaCamarotes = new System.Windows.Forms.DataGridView();
-            this.codnavioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numcubiertaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numcamaroteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ubicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantcamasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet5 = new Pav_TP.PAV_3K2_2022_12DataSet5();
-            this.camarotesTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet5TableAdapters.camarotesTableAdapter();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.BtnSalir = new System.Windows.Forms.Button();
+            this.GrillaCamarotes = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCamarotes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet5)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCamarotes)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -150,95 +137,6 @@
             this.BtnBuscar.UseVisualStyleBackColor = true;
             this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
-            // GrillaCamarotes
-            // 
-            this.GrillaCamarotes.AutoGenerateColumns = false;
-            this.GrillaCamarotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaCamarotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codnavioDataGridViewTextBoxColumn,
-            this.numcubiertaDataGridViewTextBoxColumn,
-            this.numcamaroteDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
-            this.ubicacionDataGridViewTextBoxColumn,
-            this.cantcamasDataGridViewTextBoxColumn,
-            this.Seleccionar});
-            this.GrillaCamarotes.DataSource = this.camarotesBindingSource;
-            this.GrillaCamarotes.Location = new System.Drawing.Point(12, 268);
-            this.GrillaCamarotes.Name = "GrillaCamarotes";
-            this.GrillaCamarotes.RowHeadersWidth = 51;
-            this.GrillaCamarotes.RowTemplate.Height = 24;
-            this.GrillaCamarotes.Size = new System.Drawing.Size(1230, 237);
-            this.GrillaCamarotes.TabIndex = 8;
-            // 
-            // codnavioDataGridViewTextBoxColumn
-            // 
-            this.codnavioDataGridViewTextBoxColumn.DataPropertyName = "cod_navio";
-            this.codnavioDataGridViewTextBoxColumn.HeaderText = "cod_navio";
-            this.codnavioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codnavioDataGridViewTextBoxColumn.Name = "codnavioDataGridViewTextBoxColumn";
-            this.codnavioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // numcubiertaDataGridViewTextBoxColumn
-            // 
-            this.numcubiertaDataGridViewTextBoxColumn.DataPropertyName = "num_cubierta";
-            this.numcubiertaDataGridViewTextBoxColumn.HeaderText = "num_cubierta";
-            this.numcubiertaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numcubiertaDataGridViewTextBoxColumn.Name = "numcubiertaDataGridViewTextBoxColumn";
-            this.numcubiertaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // numcamaroteDataGridViewTextBoxColumn
-            // 
-            this.numcamaroteDataGridViewTextBoxColumn.DataPropertyName = "num_camarote";
-            this.numcamaroteDataGridViewTextBoxColumn.HeaderText = "Nro de Camarote";
-            this.numcamaroteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numcamaroteDataGridViewTextBoxColumn.Name = "numcamaroteDataGridViewTextBoxColumn";
-            this.numcamaroteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo de Camarote";
-            this.tipoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ubicacionDataGridViewTextBoxColumn
-            // 
-            this.ubicacionDataGridViewTextBoxColumn.DataPropertyName = "ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.HeaderText = "Ubicacion";
-            this.ubicacionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ubicacionDataGridViewTextBoxColumn.Name = "ubicacionDataGridViewTextBoxColumn";
-            this.ubicacionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cantcamasDataGridViewTextBoxColumn
-            // 
-            this.cantcamasDataGridViewTextBoxColumn.DataPropertyName = "cant_camas";
-            this.cantcamasDataGridViewTextBoxColumn.HeaderText = "Cantidad de Camas";
-            this.cantcamasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cantcamasDataGridViewTextBoxColumn.Name = "cantcamasDataGridViewTextBoxColumn";
-            this.cantcamasDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.MinimumWidth = 6;
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Width = 125;
-            // 
-            // camarotesBindingSource
-            // 
-            this.camarotesBindingSource.DataMember = "camarotes";
-            this.camarotesBindingSource.DataSource = this.pAV_3K2_2022_12DataSet5;
-            // 
-            // pAV_3K2_2022_12DataSet5
-            // 
-            this.pAV_3K2_2022_12DataSet5.DataSetName = "PAV_3K2_2022_12DataSet5";
-            this.pAV_3K2_2022_12DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // camarotesTableAdapter
-            // 
-            this.camarotesTableAdapter.ClearBeforeFill = true;
-            // 
             // BtnAgregar
             // 
             this.BtnAgregar.Location = new System.Drawing.Point(99, 29);
@@ -291,7 +189,7 @@
             // 
             // BtnSalir
             // 
-            this.BtnSalir.Location = new System.Drawing.Point(1193, 541);
+            this.BtnSalir.Location = new System.Drawing.Point(1167, 539);
             this.BtnSalir.Name = "BtnSalir";
             this.BtnSalir.Size = new System.Drawing.Size(75, 23);
             this.BtnSalir.TabIndex = 13;
@@ -299,11 +197,21 @@
             this.BtnSalir.UseVisualStyleBackColor = true;
             this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
             // 
+            // GrillaCamarotes
+            // 
+            this.GrillaCamarotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrillaCamarotes.Location = new System.Drawing.Point(12, 268);
+            this.GrillaCamarotes.Name = "GrillaCamarotes";
+            this.GrillaCamarotes.RowHeadersWidth = 51;
+            this.GrillaCamarotes.RowTemplate.Height = 24;
+            this.GrillaCamarotes.Size = new System.Drawing.Size(1230, 237);
+            this.GrillaCamarotes.TabIndex = 8;
+            // 
             // ConsultarCamarote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 585);
+            this.ClientSize = new System.Drawing.Size(1273, 585);
             this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -315,12 +223,10 @@
             this.Load += new System.EventHandler(this.ConsultarCamarote_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GrillaCamarotes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet5)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GrillaCamarotes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,23 +241,13 @@
         private System.Windows.Forms.TextBox TxtNro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnBuscar;
-        private System.Windows.Forms.DataGridView GrillaCamarotes;
         private System.Windows.Forms.Label label1;
-        private PAV_3K2_2022_12DataSet5 pAV_3K2_2022_12DataSet5;
-        private System.Windows.Forms.BindingSource camarotesBindingSource;
-        private PAV_3K2_2022_12DataSet5TableAdapters.camarotesTableAdapter camarotesTableAdapter;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codnavioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numcubiertaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numcamaroteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ubicacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantcamasDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BtnSalir;
+        private System.Windows.Forms.DataGridView GrillaCamarotes;
     }
 }

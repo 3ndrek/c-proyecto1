@@ -22,7 +22,7 @@ namespace Pav_TP.Entidades
         public string Email { get; set; }
 
         public bool Estado { get; set; }
-
-        public Perfil Perfil { get; set; }
+        public long Perfil { get; set; }
+        //public Perfil Perfil { get; set; }
     }
 }

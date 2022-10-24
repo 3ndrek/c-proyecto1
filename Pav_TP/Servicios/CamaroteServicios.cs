@@ -2,6 +2,7 @@
 using Pav_TP.Repositorios;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,11 +29,6 @@ namespace Pav_TP.Servicios
         public List<TipoCamarote> GetTipoCamarotes()
         {
             return camaroteRepositorio.GetTipoCamarotes();
-        }
-
-        public List<Ubicacion> GetUbicaciones()
-        {
-            return camaroteRepositorio.GetUbicaciones();
         }
 
         public List<Camarote> GetCamarotes(int b)
@@ -65,6 +61,17 @@ namespace Pav_TP.Servicios
             camaroteRepositorio.EliminarCamarote(c);
         }
 
+        public void CargarGrillaCamarotes(DataGridView dgv)
+        {
+            camaroteRepositorio.CargarGrillaCamarotes(dgv);
+        }
+
+        public DataTable ConsultarCamarote(Camarote camarote)
+        {
+            DataTable datos = camaroteRepositorio.ConsultarCamarote(camarote);
+            return datos;
+        }
+
         public void ValidarCamarote(Camarote c)
         {
             c.ValidarNavio();
@@ -76,7 +83,7 @@ namespace Pav_TP.Servicios
         public void CargarBarcos(ComboBox cmb)
         {
             var barcos = GetBarcos();
-            var barcoDefault = new Pav_TP.Entidades.Barco();
+            var barcoDefault = new Entidades.Barco();
             barcoDefault.Codigo = 0;
             barcos.Add(barcoDefault);
 
@@ -106,20 +113,5 @@ namespace Pav_TP.Servicios
             cmb.SelectedItem = tipoDefault;
         }
 
-        public void CargarUbicaciones(ComboBox cmb)
-        {
-            var ubicaciones = GetUbicaciones();
-            var ubiDefault = new Ubicacion();
-            ubiDefault.num = 0;
-
-            var conector = new BindingSource();
-            conector.DataSource = ubicaciones;
-
-            cmb.DataSource = conector;
-            cmb.DisplayMember = "desc";
-            cmb.ValueMember = "num";
-            cmb.SelectedItem = ubiDefault;
-        }
-        
     }
 }

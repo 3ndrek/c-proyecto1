@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Pav_TP.Repositorios
 {
@@ -61,22 +63,6 @@ namespace Pav_TP.Repositorios
                 tiposDeCamarotes.Add(tipoCamarote);
             }
             return tiposDeCamarotes;
-        }
-
-        public List<Ubicacion> GetUbicaciones()
-        {
-            var sql = $"select * from ubicaciones";
-            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
-            var ubicaciones = new List<Ubicacion>();
-
-            foreach(DataRow fila in tablaResultado.Rows)
-            {
-                var ubi = new Ubicacion();
-                ubi.num = Convert.ToInt32(fila["num"]);
-                ubi.desc = fila["descripcion"].ToString();
-                ubicaciones.Add(ubi);
-            }
-            return ubicaciones;
         }
 
         public List<Camarote> GetCamarotes(int cod_navio)
@@ -154,16 +140,27 @@ namespace Pav_TP.Repositorios
             return camarotes;
         }
 
+        public void CargarGrillaCamarotes(DataGridView dgv)
+        {
+            var sql = "select * from camarotes";
+            var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            dgv.DataSource = midata;
+            var col = new DataGridViewCheckBoxColumn();
+            col.Name = "Seleccionar";
+            dgv.Columns.Add(col);
+
+        }
+
         public void RegistrarCamarote(Camarote camarote)
         {
-            var sql = $"Insert into camarotes(cod_navio,num_cubierta, num_camarote,tipo,ubicacion,cant_camas) " +
-                $"values ({camarote.cod_navio}, {camarote.num_cubierta}, {camarote.num_camarote}, {camarote.tipo},{camarote.cant_camas})";
+            var sql = $"Insert into camarotes(cod_navio,num_cubierta, num_camarote,tipo,monto,cant_camas) " +
+                $"values ({camarote.cod_navio}, {camarote.num_cubierta}, {camarote.num_camarote}, {camarote.tipo},{camarote.monto},{camarote.cant_camas})";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
         public void ModificarCamarote(Camarote camarote)
         {
-            var sql = $"Update camarotes set tipo = {camarote.tipo}," +
+            var sql = $"Update camarotes set tipo = {camarote.tipo}, monto = {camarote.monto}," +
                 $"cant_camas = {camarote.cant_camas} where cod_navio = {camarote.cod_navio} and " +
                 $"num_cubierta = {camarote.num_cubierta} and num_camarote = {camarote.num_cubierta}";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
@@ -176,6 +173,19 @@ namespace Pav_TP.Repositorios
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
+        public DataTable ConsultarCamarote(Camarote camarote)
+        {
+            var sql = "";
+            if (camarote.num_camarote == 0)
+            {
+                sql = $"select c.cod_navio,c.num_cubierta,c.num_camarote, c.tipo,c.monto,c.cant_camas from camarotes c " +
+                    $"where c.cod_navio = {camarote.cod_navio} and c.num_cubierta = {camarote.num_cubierta} ";
+            }
+            else sql += $"and c.num_camarote = {camarote.num_camarote}";
+            DataTable datos = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            return datos;
+
+        }
 
 
     }

@@ -31,7 +31,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtCantCamas = new System.Windows.Forms.TextBox();
             this.TxtNumCamarote = new System.Windows.Forms.TextBox();
-            this.CmbUbicacion = new System.Windows.Forms.ComboBox();
             this.CmbTipoCam = new System.Windows.Forms.ComboBox();
             this.CmbCubierta = new System.Windows.Forms.ComboBox();
             this.CmbNavio = new System.Windows.Forms.ComboBox();
@@ -44,14 +43,15 @@
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtMonto);
             this.groupBox1.Controls.Add(this.TxtCantCamas);
             this.groupBox1.Controls.Add(this.TxtNumCamarote);
-            this.groupBox1.Controls.Add(this.CmbUbicacion);
             this.groupBox1.Controls.Add(this.CmbTipoCam);
             this.groupBox1.Controls.Add(this.CmbCubierta);
             this.groupBox1.Controls.Add(this.CmbNavio);
@@ -70,7 +70,7 @@
             // 
             // TxtCantCamas
             // 
-            this.TxtCantCamas.Location = new System.Drawing.Point(136, 247);
+            this.TxtCantCamas.Location = new System.Drawing.Point(137, 205);
             this.TxtCantCamas.Name = "TxtCantCamas";
             this.TxtCantCamas.Size = new System.Drawing.Size(100, 22);
             this.TxtCantCamas.TabIndex = 11;
@@ -81,16 +81,6 @@
             this.TxtNumCamarote.Name = "TxtNumCamarote";
             this.TxtNumCamarote.Size = new System.Drawing.Size(100, 22);
             this.TxtNumCamarote.TabIndex = 10;
-            // 
-            // CmbUbicacion
-            // 
-            this.CmbUbicacion.DisplayMember = "num";
-            this.CmbUbicacion.FormattingEnabled = true;
-            this.CmbUbicacion.Location = new System.Drawing.Point(84, 202);
-            this.CmbUbicacion.Name = "CmbUbicacion";
-            this.CmbUbicacion.Size = new System.Drawing.Size(121, 24);
-            this.CmbUbicacion.TabIndex = 9;
-            this.CmbUbicacion.ValueMember = "num";
             // 
             // CmbTipoCam
             // 
@@ -126,7 +116,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 250);
+            this.label6.Location = new System.Drawing.Point(7, 208);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 16);
             this.label6.TabIndex = 5;
@@ -135,11 +125,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 205);
+            this.label5.Location = new System.Drawing.Point(6, 251);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 16);
+            this.label5.Size = new System.Drawing.Size(44, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Ubicacion";
+            this.label5.Text = "Monto";
             // 
             // label4
             // 
@@ -206,6 +196,13 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Esta seguro de que quiere registrar este camarote?";
             // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(66, 248);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(100, 22);
+            this.txtMonto.TabIndex = 12;
+            // 
             // RegistrarCamarote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox CmbUbicacion;
         private System.Windows.Forms.ComboBox CmbTipoCam;
         private System.Windows.Forms.ComboBox CmbCubierta;
         private System.Windows.Forms.ComboBox CmbNavio;
@@ -244,5 +240,6 @@
         private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMonto;
     }
 }

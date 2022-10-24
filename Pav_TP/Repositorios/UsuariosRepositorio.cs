@@ -5,109 +5,97 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Pav_TP.Repositorios
 {
     public class UsuariosRepositorio
     {
-        //Hay que ver si hace falta el perfil... Y como usarlo en el login
-        //Si no sirve hay que redefininr la consulta
         public Usuario LoginBD(Usuario usuario)
         {
-            //var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil where activo='S' and usuario='{usuario.NombreUsuario}' and password='{usuario.Contrasenia}'";
-            var sql = $"SELECT u.* FROM Usuarios u where usuario='{usuario.NombreUsuario}' and contraseña='{usuario.Contrasenia}'";
+            var sql = $"SELECT * FROM usuarios  where usuario='{usuario.NombreUsuario}' and contraseña='{usuario.Contrasenia}'";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
-            Usuario usuarioLoguado = null;
+            Usuario usuarioLogueado = null;
             if (tablaResultado.Rows.Count == 1)
             {
                 var fila = tablaResultado.Rows[0];
-                usuarioLoguado = new Usuario();
-                usuarioLoguado.NombreUsuario = fila["usuario"].ToString();
-                //usuarioLoguado.Id = Convert.ToInt64(fila["id_usuario"].ToString());
-                // activo
-                //var activo = fila["activo"].ToString();
-                //usuarioLoguado.Estado = activo == "S";
-
-                // perfil
-                /*var perfil = new Perfil();
-                perfil.Nombre = fila["perfil"].ToString();
-                perfil.Id = Convert.ToInt64(fila["id_perfil"].ToString());
-                usuarioLoguado.Perfil = perfil;*/
+                usuarioLogueado = new Usuario();
+                usuarioLogueado.NombreUsuario = fila["usuario"].ToString();
+                //usuarioLogueado.Perfil.Id = Convert.ToInt32(fila["perfil"].ToString());
             }
 
-            return usuarioLoguado;
+            return usuarioLogueado;
         }
-        //Este metodo hay que ver si es util porque muestra una lista de usuarios...
-        /*public List<Usuario> GetUsuarios()
+
+        public void RegistrarUsuario (Usuario usuario)
         {
-            var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil";
+            var sql = $"INSERT INTO usuarios (usuario,contraseña,perfil) " +
+                $"VALUES ('{usuario.NombreUsuario}','{usuario.Contrasenia}', {usuario.Perfil})";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+        }
+
+        public void ModificarUsuario(Usuario usuario)
+        {
+            var sql = $"update usuarios  set contraseña = '{usuario.Contrasenia}', perfil = {usuario.Perfil} " +
+                $"where usuario = '{usuario.NombreUsuario}'";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+        }
+
+        public void EliminarUsuario(Usuario usuario)
+        {
+            var sql = $"delete from usuarios where usuario = '{usuario.NombreUsuario}'";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+        }
+
+        public void ConsultarUsuario(Usuario usuario)
+        {
+            var sql = $"select from usuarios where usuario = '{usuario.NombreUsuario}'";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
+        }
+
+        public List<Usuario> GetUsuarios()
+        {
+            var sql = $"select * from usuarios";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var usuarios = new List<Usuario>();
-
             foreach (DataRow fila in tablaResultado.Rows)
             {
-                var usuarioLogueado = new Usuario();
-                usuarioLogueado.NombreUsuario = fila["usuario"].ToString();
-                usuarioLogueado.Id = Convert.ToInt64(fila["id_usuario"].ToString());
-                // activo
-                var activo = fila["activo"].ToString();
-                usuarioLogueado.Estado = activo == "S";
-
-                // perfil
-                var perfil = new Perfil();
-                perfil.Nombre = fila["perfil"].ToString();
-                perfil.Id = Convert.ToInt64(fila["id_perfil"].ToString());
-                usuarioLogueado.Perfil = perfil;
-
-                //agrego usuario a la lista usuarios
-                usuarios.Add(usuarioLogueado);
+                var usuario = new Usuario();
+                usuario.NombreUsuario = fila["usuario"].ToString();
+                usuario.Contrasenia = fila["contraseña"].ToString();
+                usuario.Perfil = Convert.ToInt64(fila["perfil"]);
+                usuarios.Add(usuario);
             }
-
             return usuarios;
-        }
-        */
 
-        //Este tambien hay que ver si sirve (Sobrecarga de "GetUsuarios()")
-        /*
-        public List<Usuario> GetUsuarios(Usuario filtro, bool soloActivos)
+        }
+
+        public List<Perfil> GetPerfil()
         {
-            var sql = $"SELECT u.*, p.nombre as perfil FROM Usuarios u LEFT JOIN Perfiles p ON u.id_perfil = p.id_perfil WHERE 1=1";
-            if (!string.IsNullOrEmpty(filtro.NombreCompleto))
-            {
-                sql += $"AND u.usuario like '%{filtro.NombreUsuario}%'";
-            }
-            if (filtro.Perfil != null && filtro.Perfil.Id != 0)
-            {
-                sql += $"AND u.id_perfil = {filtro.Perfil.Id}";
-            }
-            if (soloActivos)
-            {
-                sql += $"AND U.activo = 'S'";
-            }
+            var sql = $"select * from perfiles";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
-            var usuarios = new List<Usuario>();
-
+            var perfiles = new List<Perfil>();
             foreach (DataRow fila in tablaResultado.Rows)
             {
-                var usuarioLogueado = new Usuario();
-                usuarioLogueado.NombreUsuario = fila["usuario"].ToString();
-                usuarioLogueado.Id = Convert.ToInt64(fila["id_usuario"].ToString());
-                // activo
-                var activo = fila["activo"].ToString();
-                usuarioLogueado.Estado = activo == "S";
-
-                // perfil
                 var perfil = new Perfil();
-                perfil.Nombre = fila["perfil"].ToString();
-                perfil.Id = Convert.ToInt64(fila["id_perfil"].ToString());
-                usuarioLogueado.Perfil = perfil;
-
-                //agrego usuario a la lista usuarios
-                usuarios.Add(usuarioLogueado);
+                perfil.Id = Convert.ToInt32(fila["Id_perfil"]);
+                perfil.Nombre = fila["descripcion"].ToString();
+                perfiles.Add(perfil);
             }
+            return perfiles;
 
-            return usuarios;
         }
-        */
+
+        public void CargarGrillaUsuarios(DataGridView dgv)
+        {
+            var sql = "select * from usuarios";
+            var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            dgv.DataSource = midata;
+            var col = new DataGridViewCheckBoxColumn();
+            col.Name = "Seleccionar";
+            dgv.Columns.Add(col);
+
+        }
+
     }
 }

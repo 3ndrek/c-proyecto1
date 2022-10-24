@@ -110,26 +110,6 @@
     <Compile Include="InterfacesDeUsuario\Transacciones\Itinerario.Designer.cs">
       <DependentUpon>Itinerario.cs</DependentUpon>
     </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet211.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet31.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet41.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet51.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Servicios\EnvíoEmail.cs" />
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
@@ -196,16 +176,6 @@
     </Compile>
     <Compile Include="InterfacesDeUsuario\Usuario\RegistrarUsuario.Designer.cs">
       <DependentUpon>RegistrarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PAV_3K2_2022_12DataSet12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="InterfacesDeUsuario\Puerto\ConsultarPuerto.cs">
@@ -438,72 +408,6 @@
       <DependentUpon>Reserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesYSalidas\TicketReservacion\TicketReservaConfirmada.rdlc" />
-    <None Include="PAV_3K2_2022_12DataSet1.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet1.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet12.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet12.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet12.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet12.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet12.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet21.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet21.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet211.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet21.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet3.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet31.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet3.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet4.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet41.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet4.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet5.xsc">
-      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_3K2_2022_12DataSet51.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PAV_3K2_2022_12DataSet5.xss">
-      <DependentUpon>PAV_3K2_2022_12DataSet5.xsd</DependentUpon>
-    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

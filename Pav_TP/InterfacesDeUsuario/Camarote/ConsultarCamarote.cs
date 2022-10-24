@@ -16,27 +16,20 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 {
     public partial class ConsultarCamarote : Form
     {
-        SqlConnection myconn;
         private readonly CamaroteServicios camaroteServicios;
-        //Cuando termines hace el FormClosing
+
         private readonly FrmPrincipal frmPrincipal;
         public ConsultarCamarote(FrmPrincipal f)
         {
             camaroteServicios = new CamaroteServicios();
-            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
-            myconn = new SqlConnection();
-            myconn.ConnectionString = conbas;
-            myconn.Open();
             frmPrincipal = f;
             InitializeComponent();
         }
 
         private void ConsultarCamarote_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'pAV_3K2_2022_12DataSet5.camarotes' table. You can move, or remove it, as needed.
-            this.camarotesTableAdapter.Fill(this.pAV_3K2_2022_12DataSet5.camarotes);
             camaroteServicios.CargarBarcos(CmbNavio);
-
+            camaroteServicios.CargarGrillaCamarotes(GrillaCamarotes);
         }
 
         private void CargarCubierta(int b)
@@ -55,18 +48,6 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             CmbCubierta.SelectedItem = cubiertaDefault;
         }
 
-        private void CargarGrillaCamarotes()
-        {
-            SqlCommand consultar = new SqlCommand();
-            consultar.CommandType = CommandType.Text;
-            consultar.Connection = myconn;
-            consultar.CommandText = "select * from camarotes";
-            DataTable midata = new DataTable();
-            midata.Load(consultar.ExecuteReader());
-            GrillaCamarotes.DataSource = midata;
-
-        }
-
         private void CmbCubierta_Click(object sender, EventArgs e)
         {
             CargarCubierta(Convert.ToInt32(CmbNavio.SelectedValue));
@@ -74,54 +55,45 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            /*try
-            {*/
-            SqlCommand consultar = new SqlCommand();
-            consultar.CommandType = CommandType.Text;
-            consultar.Connection = myconn;
-            consultar.CommandText = "select c.num_camarote, c.tipo, c.ubicacion, c.cant_camas from camarotes c";
+
+            //Hay que validar los campos obligatorios
+            var cam = new Entidades.Camarote();
 
             if (!string.IsNullOrEmpty(CmbNavio.SelectedValue.ToString()))
-                consultar.CommandText += $" where c.cod_navio = {CmbNavio.SelectedValue}";
+                cam.cod_navio = (int)CmbNavio.SelectedValue;
             else
             {
                 MessageBox.Show("Ingrese un valor en el campo navio");
                 CmbNavio.Focus();
             }
             if (!string.IsNullOrEmpty(CmbCubierta.SelectedValue.ToString()))
-                consultar.CommandText += $" and c.num_cubierta = {CmbCubierta.SelectedValue}";
+                cam.num_cubierta = (int)CmbCubierta.SelectedValue;
             else
             {
                 MessageBox.Show("Ingrese un valor en el campo cubierta");
                 CmbCubierta.Focus();
             }
             if (!string.IsNullOrEmpty(TxtNro.Text))
-                consultar.CommandText += $" and c.num_camarote = {Convert.ToInt32(TxtNro.Text)}";
+                cam.num_camarote = Convert.ToInt32(TxtNro.Text);
+            else cam.num_camarote = 0;
 
-            DataTable midata = new DataTable();
-            midata.Load(consultar.ExecuteReader());
-            GrillaCamarotes.DataSource = midata;
-            /*}
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show("Error 404... Revise los campos de busqueda");
-            }*/
-
-
+            DataTable datos = camaroteServicios.ConsultarCamarote(cam);
+            GrillaCamarotes.DataSource = datos;
+            
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             Form registrarCamarote = new RegistrarCamarote();
             registrarCamarote.ShowDialog();
-            CargarGrillaCamarotes();
+            camaroteServicios.CargarGrillaCamarotes(GrillaCamarotes);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow lis in GrillaCamarotes.Rows)
             {
-                if (Convert.ToBoolean(lis.Cells[6].Value) == true)
+                if (Convert.ToBoolean(lis.Cells[7].Value) == true)
                 {
                     var cTemp = new Pav_TP.Entidades.Camarote();
                     //Si se busca el camarote, las columnas de la grilla que referencian cod_navio y num_Cubierta valen null en la grilla
@@ -139,7 +111,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 
                 }
             }
-            CargarGrillaCamarotes();
+            camaroteServicios.CargarGrillaCamarotes(GrillaCamarotes);
         }
 
         private void CerrarFormulario()

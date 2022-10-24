@@ -39,14 +39,11 @@
             this.perfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet = new Pav_TP.PAV_3K2_2022_12DataSet();
-            this.usuariosTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSetTableAdapters.usuariosTableAdapter();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -135,19 +132,7 @@
             this.Seleccionar.Name = "Seleccionar";
             this.Seleccionar.Width = 125;
             // 
-            // usuariosBindingSource
             // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.pAV_3K2_2022_12DataSet;
-            // 
-            // pAV_3K2_2022_12DataSet
-            // 
-            this.pAV_3K2_2022_12DataSet.DataSetName = "PAV_3K2_2022_12DataSet";
-            this.pAV_3K2_2022_12DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // BtnEliminar
             // 
@@ -186,7 +171,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,9 +182,7 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.DataGridView GrillaUsuario;
-        private PAV_3K2_2022_12DataSet pAV_3K2_2022_12DataSet;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private PAV_3K2_2022_12DataSetTableAdapters.usuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;

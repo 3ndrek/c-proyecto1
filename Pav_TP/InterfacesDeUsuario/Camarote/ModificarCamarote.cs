@@ -79,13 +79,6 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             camaroteServicio.CargarTipoCamarote(CmbTipo);
         }
 
-        private void CmbUbicacion_Click(object sender, EventArgs e)
-        {
-            camaroteServicio.CargarUbicaciones(CmbUbicacion);
-        }
-
-
-
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             try
@@ -95,6 +88,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
                 camarote.num_cubierta = Convert.ToInt32(CmbCubierta.SelectedValue);
                 camarote.num_camarote = Convert.ToInt32(CmbNroCamarote.SelectedValue);
                 camarote.tipo = Convert.ToInt32(CmbTipo.SelectedValue);
+                camarote.monto = Convert.ToInt32(txtMonto.Text);
                 camarote.cant_camas = Convert.ToInt32(Txtcamas.Text);
 
                 camaroteServicio.ModificarCamarote(camarote);

@@ -34,13 +34,7 @@
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GrillaUsuario = new System.Windows.Forms.DataGridView();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet1 = new Pav_TP.PAV_3K2_2022_12DataSet1();
-            this.usuariosTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet1TableAdapters.usuariosTableAdapter();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CmbPerfil = new System.Windows.Forms.ComboBox();
@@ -53,7 +47,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -100,11 +93,6 @@
             // 
             this.GrillaUsuario.AutoGenerateColumns = false;
             this.GrillaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usuarioDataGridViewTextBoxColumn,
-            this.contraseñaDataGridViewTextBoxColumn,
-            this.perfilDataGridViewTextBoxColumn,
-            this.Seleccionar});
             this.GrillaUsuario.DataSource = this.usuariosBindingSource;
             this.GrillaUsuario.Location = new System.Drawing.Point(9, 21);
             this.GrillaUsuario.Name = "GrillaUsuario";
@@ -112,51 +100,6 @@
             this.GrillaUsuario.RowTemplate.Height = 24;
             this.GrillaUsuario.Size = new System.Drawing.Size(725, 150);
             this.GrillaUsuario.TabIndex = 2;
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // perfilDataGridViewTextBoxColumn
-            // 
-            this.perfilDataGridViewTextBoxColumn.DataPropertyName = "perfil";
-            this.perfilDataGridViewTextBoxColumn.HeaderText = "perfil";
-            this.perfilDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.perfilDataGridViewTextBoxColumn.Name = "perfilDataGridViewTextBoxColumn";
-            this.perfilDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.MinimumWidth = 6;
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Width = 125;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.pAV_3K2_2022_12DataSet1;
-            // 
-            // pAV_3K2_2022_12DataSet1
-            // 
-            this.pAV_3K2_2022_12DataSet1.DataSetName = "PAV_3K2_2022_12DataSet1";
-            this.pAV_3K2_2022_12DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // BtnModificar
             // 
@@ -259,7 +202,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -274,13 +216,10 @@
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView GrillaUsuario;
-        private PAV_3K2_2022_12DataSet1 pAV_3K2_2022_12DataSet1;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
-        private PAV_3K2_2022_12DataSet1TableAdapters.usuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfilDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TxtContraseniaM;

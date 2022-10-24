@@ -35,7 +35,6 @@
             this.fecha_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet3 = new Pav_TP.PAV_3K2_2022_12DataSet3();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtCant = new System.Windows.Forms.TextBox();
@@ -49,8 +48,6 @@
             this.num_cubierta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAV_3K2_2022_12DataSet4 = new Pav_TP.PAV_3K2_2022_12DataSet4();
-            this.camarotesTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -58,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DgvPuertos = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viajeTableAdapter = new Pav_TP.PAV_3K2_2022_12DataSet3TableAdapters.viajeTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
             this.CmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,11 +68,9 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvViajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viajeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet3)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCamarotes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPuertos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,15 +132,6 @@
             this.duracion.ReadOnly = true;
             this.duracion.Width = 150;
             // 
-            // viajeBindingSource
-            // 
-            this.viajeBindingSource.DataMember = "viaje";
-            this.viajeBindingSource.DataSource = this.pAV_3K2_2022_12DataSet3;
-            // 
-            // pAV_3K2_2022_12DataSet3
-            // 
-            this.pAV_3K2_2022_12DataSet3.DataSetName = "PAV_3K2_2022_12DataSet3";
-            this.pAV_3K2_2022_12DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -274,20 +259,7 @@
             this.monto.Name = "monto";
             this.monto.ReadOnly = true;
             this.monto.Width = 150;
-            // 
-            // camarotesBindingSource
-            // 
-            this.camarotesBindingSource.DataMember = "camarotes";
-            this.camarotesBindingSource.DataSource = this.pAV_3K2_2022_12DataSet4;
-            // 
-            // pAV_3K2_2022_12DataSet4
-            // 
-            this.pAV_3K2_2022_12DataSet4.DataSetName = "PAV_3K2_2022_12DataSet4";
-            this.pAV_3K2_2022_12DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // camarotesTableAdapter
-            // 
-            this.camarotesTableAdapter.ClearBeforeFill = true;
+            //  
             // 
             // label1
             // 
@@ -359,9 +331,6 @@
             this.nombre.ReadOnly = true;
             this.nombre.Width = 150;
             // 
-            // viajeTableAdapter
-            // 
-            this.viajeTableAdapter.ClearBeforeFill = true;
             // 
             // label4
             // 
@@ -483,12 +452,10 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvViajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viajeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCamarotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.camarotesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pAV_3K2_2022_12DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPuertos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -499,14 +466,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView DgvViajes;
-        private PAV_3K2_2022_12DataSet3 pAV_3K2_2022_12DataSet3;
         private System.Windows.Forms.BindingSource viajeBindingSource;
-        private PAV_3K2_2022_12DataSet3TableAdapters.viajeTableAdapter viajeTableAdapter;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvCamarotes;
-        private PAV_3K2_2022_12DataSet4 pAV_3K2_2022_12DataSet4;
         private System.Windows.Forms.BindingSource camarotesBindingSource;
-        private PAV_3K2_2022_12DataSet4TableAdapters.camarotesTableAdapter camarotesTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button button2;

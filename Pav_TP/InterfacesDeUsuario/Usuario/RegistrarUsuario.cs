@@ -1,4 +1,5 @@
-﻿using seastar;
+﻿using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,49 +15,49 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
 {
     public partial class RegistrarUsuario : Form
     {
-        SqlConnection myconn;
+        private readonly UsuariosServicio usuariosServicio;
         private readonly FrmPrincipal frmPrincipal;
+
         public RegistrarUsuario()
         {
+            usuariosServicio = new UsuariosServicio();
             InitializeComponent();
         }
         public RegistrarUsuario(FrmPrincipal f)
         {
             frmPrincipal = f;
+            usuariosServicio = new UsuariosServicio();
             InitializeComponent();
         }
 
         private void RegistrarUsuario_Load(object sender, EventArgs e)
         {
-            string conbas = "Data Source=200.69.137.167,11333;Initial Catalog=PAV_3K2_2022_12;User ID=PAV_3K2_2022_12;Password=PAV_3K2_2022_12";
-            myconn = new SqlConnection
-            {
-                ConnectionString = conbas
-            };
-            myconn.Open();
-            SqlCommand myconn2 = new SqlCommand();
-            myconn2.CommandType = CommandType.Text;
-            myconn2.Connection = myconn;
-            myconn2.CommandText = "SELECT * FROM perfiles p";
-            DataTable datoperfil = new DataTable();
-            datoperfil.Load(myconn2.ExecuteReader());
-            CmbPerfil.DataSource = datoperfil;
-            CmbPerfil.DisplayMember = "descripcion";
-            CmbPerfil.ValueMember = "id_perfil";
+            usuariosServicio.CargarPerfiles(CmbPerfil);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            SqlCommand registrar = new SqlCommand();
-            registrar.CommandType = CommandType.Text;
-            registrar.Connection = myconn;
-            registrar.CommandText = "INSERT INTO usuarios (usuario,contraseña,perfil)" +
-                "VALUES ('" + TxtNombre.Text + "','" + TxtContrasenia.Text+ "','"+CmbPerfil.SelectedValue.ToString()+"')";
-            registrar.ExecuteNonQuery();
+            //MessageBox.Show(CmbPerfil.SelectedValue.ToString());
+            try
+            {
+            var usuario = new Entidades.Usuario();
+            usuario.NombreUsuario = TxtNombre.Text;
+            usuario.Contrasenia = TxtContrasenia.Text;
+            usuario.Perfil = Convert.ToInt64(CmbPerfil.SelectedValue.ToString());
+            usuariosServicio.RegistrarUsuario(usuario);
+
             TxtNombre.Text = "";
             TxtContrasenia.Text = "";
+            usuariosServicio.CargarPerfiles(CmbPerfil);
             TxtNombre.Focus();
-            MessageBox.Show("Se cargo con exito");
+
+            MessageBox.Show("El usuario se registro con exito.");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Registro invalido... Verifique los campos", "Error 404", MessageBoxButtons.OK);
+            }
 
         }
         private void CerrarFormulario()

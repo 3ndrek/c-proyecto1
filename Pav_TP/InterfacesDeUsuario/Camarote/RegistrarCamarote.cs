@@ -36,7 +36,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
         {
             camaroteServicio.CargarBarcos(CmbNavio);
             camaroteServicio.CargarTipoCamarote(CmbTipoCam);
-            camaroteServicio.CargarUbicaciones(CmbUbicacion);
+            
 
         }
 
@@ -76,6 +76,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
                 dato.num_cubierta = (int)CmbCubierta.SelectedValue;
                 dato.num_camarote = Convert.ToInt32(TxtNumCamarote.Text);
                 dato.tipo = (int)CmbTipoCam.SelectedValue;
+                dato.monto = Convert.ToInt32(txtMonto.Text);
                 dato.cant_camas = Convert.ToInt32(TxtCantCamas.Text);
 
 
