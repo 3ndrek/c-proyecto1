@@ -244,5 +244,15 @@ namespace seastar
             consultarReserva.Show();
             this.Hide();
         }
+
+        private void mODIFICARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void puertosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

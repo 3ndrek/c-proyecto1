@@ -8,20 +8,13 @@ using System.Threading.Tasks;
 
 namespace Pav_TP.Servicios
 {
-    public class PuertoServicios
+    public class PuertosServicios
     {
         private PuertosRepositorio puertosRepositorio;
-
-        public PuertoServicios()
+        public PuertosServicios()
         {
             puertosRepositorio = new PuertosRepositorio();
         }
-
-        public List<Puertos> GetPuertos(Entidades.Itinerario itinerario)
-        {
-            return puertosRepositorio.GetPuertos(itinerario);
-        }
-
 
         public List<Puerto> GetPuertos()
         {
@@ -64,6 +57,5 @@ namespace Pav_TP.Servicios
             if (filasAfectadas != 1)
                 throw new ApplicationException("Hubo un problema al actualizar");
         }
-
     }
 }

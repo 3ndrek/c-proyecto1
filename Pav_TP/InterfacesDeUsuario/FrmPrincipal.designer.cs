@@ -319,6 +319,7 @@
             this.puertosToolStripMenuItem.Name = "puertosToolStripMenuItem";
             this.puertosToolStripMenuItem.Size = new System.Drawing.Size(321, 40);
             this.puertosToolStripMenuItem.Text = "Gestionar puertos";
+            this.puertosToolStripMenuItem.Click += new System.EventHandler(this.puertosToolStripMenuItem_Click);
             // 
             // registrarPuerto
             // 
@@ -478,7 +479,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
+            this.Text = "              v";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
