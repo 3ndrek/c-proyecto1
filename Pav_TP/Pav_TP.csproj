@@ -77,6 +77,12 @@
     <Compile Include="Entidades\TipoDoc.cs" />
     <Compile Include="Entidades\Ubicacion.cs" />
     <Compile Include="Entidades\Viaje.cs" />
+    <Compile Include="InterfacesDeUsuario\Camarote\EliminarCamarote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Camarote\EliminarCamarote.Designer.cs">
+      <DependentUpon>EliminarCamarote.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\PruebaButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="InterfacesDeUsuario\Transacciones\Itinerario.Designer.cs">
       <DependentUpon>Itinerario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\EliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Usuario\EliminarUsuario.Designer.cs">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Servicios\EnvíoEmail.cs" />
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
@@ -366,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Usuario\ConsultarUsuario.resx">
       <DependentUpon>ConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Usuario\EliminarUsuario.resx">
+      <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Usuario\ModificarUsuario.resx">
       <DependentUpon>ModificarUsuario.cs</DependentUpon>

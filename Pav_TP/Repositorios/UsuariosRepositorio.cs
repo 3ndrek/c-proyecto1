@@ -43,8 +43,10 @@ namespace Pav_TP.Repositorios
 
         public void EliminarUsuario(Usuario usuario)
         {
-            var sql = $"delete from usuarios where usuario = '{usuario.NombreUsuario}'";
-            DBHelper.GetDBHelper().EjecutarSQL(sql);
+            //Hay que implementar la baja logica
+            MessageBox.Show("Hay que implementar la baja logica");
+            /*var sql = $"delete from usuarios where usuario = '{usuario.NombreUsuario}'";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);*/
         }
 
         public void ConsultarUsuario(Usuario usuario)
@@ -91,9 +93,20 @@ namespace Pav_TP.Repositorios
             var sql = "select * from usuarios";
             var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
             dgv.DataSource = midata;
-            var col = new DataGridViewCheckBoxColumn();
-            col.Name = "Seleccionar";
-            dgv.Columns.Add(col);
+        }
+
+        public void BuscarUsuario(DataGridView dgv, string nombre)
+        {
+            var sql = $"select * from usuarios where usuario like '{nombre}%'";
+            var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            dgv.DataSource = midata;
+        }
+
+        public int BuscarUsuarioParaEliminar(string nombre)
+        {
+            var sql = $"select * from usuarios where usuario = {nombre}";
+            int r = DBHelper.GetDBHelper().EjecutarSQL(sql);
+            return r;
 
         }
 

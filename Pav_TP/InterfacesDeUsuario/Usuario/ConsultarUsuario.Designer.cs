@@ -28,22 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GrillaUsuario = new System.Windows.Forms.DataGridView();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.perfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,14 +50,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(48, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(285, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Informacion usuario";
+            this.groupBox1.Text = "Ingrese el nombre del usuario";
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(106, 71);
+            this.BtnBuscar.Location = new System.Drawing.Point(195, 59);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
             this.BtnBuscar.TabIndex = 2;
@@ -86,14 +83,7 @@
             // 
             // GrillaUsuario
             // 
-            this.GrillaUsuario.AutoGenerateColumns = false;
             this.GrillaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usuarioDataGridViewTextBoxColumn,
-            this.contraseñaDataGridViewTextBoxColumn,
-            this.perfilDataGridViewTextBoxColumn,
-            this.Seleccionar});
-            this.GrillaUsuario.DataSource = this.usuariosBindingSource;
             this.GrillaUsuario.Location = new System.Drawing.Point(48, 158);
             this.GrillaUsuario.Name = "GrillaUsuario";
             this.GrillaUsuario.RowHeadersWidth = 51;
@@ -101,42 +91,9 @@
             this.GrillaUsuario.Size = new System.Drawing.Size(741, 250);
             this.GrillaUsuario.TabIndex = 1;
             // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // perfilDataGridViewTextBoxColumn
-            // 
-            this.perfilDataGridViewTextBoxColumn.DataPropertyName = "perfil";
-            this.perfilDataGridViewTextBoxColumn.HeaderText = "perfil";
-            this.perfilDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.perfilDataGridViewTextBoxColumn.Name = "perfilDataGridViewTextBoxColumn";
-            this.perfilDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.MinimumWidth = 6;
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Width = 125;
-            // 
-            // 
-            // 
             // BtnEliminar
             // 
-            this.BtnEliminar.Location = new System.Drawing.Point(358, 41);
+            this.BtnEliminar.Location = new System.Drawing.Point(335, 59);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
             this.BtnEliminar.TabIndex = 2;
@@ -146,7 +103,7 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(358, 85);
+            this.BtnAgregar.Location = new System.Drawing.Point(335, 29);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(75, 24);
             this.BtnAgregar.TabIndex = 3;
@@ -154,13 +111,43 @@
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(323, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Presione agregar si desea registrar un nuevo usuario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(295, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Presione eliminar para eliminar usuario existente";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BtnAgregar);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.BtnEliminar);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(369, 31);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(450, 100);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Algunas funcionalidades extra";
+            // 
             // ConsultarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
-            this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.BtnEliminar);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.GrillaUsuario);
             this.Controls.Add(this.groupBox1);
             this.Name = "ConsultarUsuario";
@@ -170,7 +157,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,12 +170,13 @@
         private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.DataGridView GrillaUsuario;
-        private System.Windows.Forms.BindingSource usuariosBindingSource;
         private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfilDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

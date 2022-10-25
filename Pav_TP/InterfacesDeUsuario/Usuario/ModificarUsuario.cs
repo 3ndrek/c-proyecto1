@@ -27,17 +27,47 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
         private void ModificarUsuario_Load(object sender, EventArgs e)
         {
             usuariosServicio.CargarUsuarios(GrillaUsuario);
-            //No carga la grilla... Resolver
+            usuariosServicio.CargarPerfiles(CmbPerfil);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            
+            usuariosServicio.BuscarUsuario(GrillaUsuario, TxtBuscar.Text);
+            usuariosServicio.CargarPerfiles(CmbPerfil);
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            
+            var usuarioM = CrearUsuarioParaModificar();
+
+            if (usuarioM != null)
+            {
+                usuariosServicio.ModificarUsuario(usuarioM);
+                usuariosServicio.CargarUsuarios(GrillaUsuario);
+                TxtNombre.Text = "";
+                TxtContraseniaM.Text = "";
+                usuariosServicio.CargarPerfiles(CmbPerfil);
+                TxtBuscar.Focus();
+                MessageBox.Show("Usuario modificado con exito");
+            }
+            else MessageBox.Show("Ingrese el nombre del usuario que desea modificar");
+        }
+
+        private Entidades.Usuario CrearUsuarioParaModificar()
+        {
+            if (TxtNombre.Text != "")
+            {
+                var usuarioM = new Entidades.Usuario();
+                usuarioM.NombreUsuario = TxtNombre.Text;
+                usuarioM.Contrasenia = TxtContraseniaM.Text;
+                usuarioM.Perfil = (long)CmbPerfil.SelectedValue;
+                return usuarioM;
+            }
+
+            else
+            {
+                return null;
+            }
         }
         private void CerrarFormulario()
         {

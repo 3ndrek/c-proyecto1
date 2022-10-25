@@ -26,44 +26,26 @@ namespace Pav_TP.InterfacesDeUsuario.Usuario
 
         private void ConsultarUsuario_Load(object sender, EventArgs e)
         {
-
+            usuariosServicios.CargarUsuarios(GrillaUsuario);
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-
+            usuariosServicios.BuscarUsuario(GrillaUsuario, TxtNombre.Text);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            /*SqlCommand eliminar = new SqlCommand();
-            eliminar.CommandType = CommandType.Text;
-            eliminar.Connection = myconn;
-            foreach (DataGridViewRow lis in GrillaUsuario.Rows)
-            {
-                if (Convert.ToBoolean(lis.Cells[3].Value) == true)
-                {
-                    eliminar.CommandText = "DELETE FROM usuarios WHERE usuario = '" + lis.Cells[0].Value.ToString() +"'";
-                    eliminar.ExecuteNonQuery();
-
-                    
-                    MessageBox.Show("El usuario "+(string)lis.Cells[0].Value+"ha sido eliminado.");
-                    
-                }
-            }
-            SqlCommand consultar = new SqlCommand();
-            consultar.CommandType = CommandType.Text;
-            consultar.Connection = myconn;
-            consultar.CommandText = "select * from usuarios";
-            DataTable midata = new DataTable();
-            midata.Load(consultar.ExecuteReader());
-            GrillaUsuario.DataSource = midata;*/
-            //MessageBox.Show("Usuario: Nombre: " + midata.Rows[0][0].ToString() + " contraseña:" + midata.Rows[0][1].ToString());
+            Form eliminarUsuario = new EliminarUsuario();
+            eliminarUsuario.ShowDialog();
+            usuariosServicios.CargarUsuarios(GrillaUsuario);
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            
+            Form registraUsuario = new RegistrarUsuario();
+            registraUsuario.ShowDialog();
+            usuariosServicios.CargarUsuarios(GrillaUsuario);
         }
         private void CerrarFormulario()
         {

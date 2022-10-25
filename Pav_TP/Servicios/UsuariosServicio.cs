@@ -35,6 +35,8 @@ namespace Pav_TP.Servicios
         public List<Usuario> GetUsuarios() { return usuariosRepositorio.GetUsuarios(); }
         public List<Perfil> GetPerfiles() { return usuariosRepositorio.GetPerfil(); }
         public void CargarUsuarios(DataGridView dgv) { usuariosRepositorio.CargarGrillaUsuarios(dgv); }
+        public void BuscarUsuario(DataGridView dgv, string nombre) { usuariosRepositorio.BuscarUsuario(dgv, nombre); }
+        public int BuscarUsuarioParaEliminar(string nombre) { return usuariosRepositorio.BuscarUsuarioParaEliminar(nombre); }
 
         public void CargarPerfiles(ComboBox cmb)
         {
