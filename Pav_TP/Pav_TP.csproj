@@ -485,6 +485,7 @@
     <Content Include="Recursos\pers.jpg" />
     <Content Include="Recursos\vaije.jpg" />
     <Content Include="Resources\barcoimg.png" />
+    <None Include="Resources\logo.bmp" />
     <Content Include="Resources\sea-star.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
