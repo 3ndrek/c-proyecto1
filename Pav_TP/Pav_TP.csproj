@@ -122,6 +122,7 @@
     <Compile Include="InterfacesDeUsuario\Usuario\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\ReporteRepositorio.cs" />
     <Compile Include="Servicios\EnvíoEmail.cs" />
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />
@@ -300,6 +301,7 @@
     <Compile Include="Servicios\PuertoServicios.cs" />
     <Compile Include="Servicios\PuertosServicios.cs" />
     <Compile Include="Servicios\PuestosServicios.cs" />
+    <Compile Include="Servicios\ReporteServicio.cs" />
     <Compile Include="Servicios\ReservacionesServicios.cs" />
     <Compile Include="Servicios\TipoDocServicio.cs" />
     <Compile Include="Servicios\TipoDocServicios.cs" />
@@ -422,6 +424,7 @@
     <EmbeddedResource Include="InterfacesDeUsuario\Transacciones\Reserva.resx">
       <DependentUpon>Reserva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesYSalidas\Reporte\Reporte.rdlc" />
     <EmbeddedResource Include="ReportesYSalidas\TicketReservacion\TicketReservaConfirmada.rdlc" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
