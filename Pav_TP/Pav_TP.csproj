@@ -151,6 +151,12 @@
     <Compile Include="ReportesYSalidas\Reporte\ReporteReserva.Designer.cs">
       <DependentUpon>ReporteReserva.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesYSalidas\TicketReservacion\CargaTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesYSalidas\TicketReservacion\CargaTicket.Designer.cs">
+      <DependentUpon>CargaTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\ReporteRepositorio.cs" />
     <Compile Include="Servicios\EnvíoEmail.cs" />
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
@@ -458,6 +464,9 @@
     <EmbeddedResource Include="ReportesYSalidas\Reporte\ReporteReserva.resx">
       <DependentUpon>ReporteReserva.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesYSalidas\TicketReservacion\CargaTicket.resx">
+      <DependentUpon>CargaTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesYSalidas\TicketReservacion\TicketReservaConfirmada.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -485,8 +494,6 @@
     <Content Include="Recursos\pers.jpg" />
     <Content Include="Recursos\vaije.jpg" />
     <Content Include="Resources\barcoimg.png" />
-    <None Include="Resources\logo.bmp" />
-    <Content Include="Resources\sea-star.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -500,6 +507,8 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\logo.bmp" />
+    <Content Include="Resources\sea-star.jpg" />
     <None Include="ReportesYSalidas\Reporte\ReporteDeReservaPorViaje.xsc">
       <DependentUpon>ReporteDeReservaPorViaje.xsd</DependentUpon>
     </None>

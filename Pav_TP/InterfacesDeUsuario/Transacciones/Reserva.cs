@@ -1,4 +1,5 @@
 ﻿using Pav_TP.Entidades;
+using Pav_TP.ReportesYSalidas.TicketReservacion;
 using Pav_TP.Servicios;
 using seastar;
 using System;
@@ -23,7 +24,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private readonly CobroServicios cobroServicio;
         private Entidades.Pasajero pasajero;
         private int bloqueoBusqueda;
-
+        private CargaTicket cargaTicket;
         public Reserva(FrmPrincipal Principal)
         {
             reserva = new Reservaciones();
@@ -34,6 +35,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             cobroServicio = new CobroServicios();
             pasajero = new Entidades.Pasajero();
             bloqueoBusqueda = new int();
+            cargaTicket = new CargaTicket();
             InitializeComponent();
         }
 
@@ -170,6 +172,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                 {
                     reseracionesServicios.CargarReserva(reserva);
                     MessageBox.Show("se registró la reserva con exito", "Reserva", MessageBoxButtons.OK);
+                    cargaTicket.CargarTicket(pasajero, reserva);
+                    cargaTicket.ShowDialog();
+
                     nombrePasajero.Hide();
                     apellidoPasajero.Hide();
                     bloqueoBusqueda = 0;
