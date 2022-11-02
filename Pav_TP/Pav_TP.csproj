@@ -157,7 +157,9 @@
     <Compile Include="ReportesYSalidas\TicketReservacion\CargaTicket.Designer.cs">
       <DependentUpon>CargaTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositorios\CategoriaItinerarioRepositorio.cs" />
     <Compile Include="Repositorios\ReporteRepositorio.cs" />
+    <Compile Include="Servicios\CategoriaItinerarioServicios.cs" />
     <Compile Include="Servicios\EnvíoEmail.cs" />
     <Compile Include="Repositorios\CamaroteRepositorio.cs" />
     <Compile Include="Repositorios\CiudadesRepositorio.cs" />

@@ -10,6 +10,6 @@ namespace Pav_TP.Entidades
     {
         public int categoria { get; set; }
         public string descripcion { get; set; }
-
+        public int precio_base { get; set; }
     }
 }
