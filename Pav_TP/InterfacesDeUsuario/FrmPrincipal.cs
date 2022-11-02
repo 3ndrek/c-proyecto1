@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pav_TP.ReportesYSalidas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ using Pav_TP.InterfacesDeUsuario.Barco;
 using Pav_TP.InterfacesDeUsuario.Usuario;
 using Pav_TP.InterfacesDeUsuario.Camarote;
 using Pav_TP.InterfacesDeUsuario.Transacciones;
-
+using Pav_TP.ReportesYSalidas.Reporte;
 
 namespace seastar
 {
@@ -245,14 +246,10 @@ namespace seastar
             this.Hide();
         }
 
-        private void mODIFICARToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gestionarReportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void puertosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            var frm = new ReporteReserva();
+            frm.ShowDialog();
         }
     }
 }

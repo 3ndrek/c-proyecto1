@@ -50,9 +50,9 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(9, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(632, 416);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -60,8 +60,9 @@
             // 
             // RwReserva
             // 
+            this.RwReserva.LocalReport.ReportEmbeddedResource = "Pav_TP.ReportesYSalidas.Reporte.Reporte.rdlc";
             this.RwReserva.Location = new System.Drawing.Point(4, 85);
-            this.RwReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RwReserva.Margin = new System.Windows.Forms.Padding(2);
             this.RwReserva.Name = "RwReserva";
             this.RwReserva.ServerReport.BearerToken = null;
             this.RwReserva.Size = new System.Drawing.Size(623, 326);
@@ -72,7 +73,7 @@
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(89, 61);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(144, 21);
             this.cmbCategoria.TabIndex = 7;
@@ -80,7 +81,7 @@
             // dtpFechaHasta
             // 
             this.dtpFechaHasta.Location = new System.Drawing.Point(327, 25);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(151, 20);
             this.dtpFechaHasta.TabIndex = 6;
@@ -89,7 +90,7 @@
             // 
             this.dtpFechaDesde.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaDesde.Location = new System.Drawing.Point(89, 26);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(144, 20);
             this.dtpFechaDesde.TabIndex = 5;
@@ -140,7 +141,7 @@
             this.ClientSize = new System.Drawing.Size(650, 472);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ReporteReserva";
             this.Text = "ReporteReserva";
             this.Load += new System.EventHandler(this.ReporteReserva_Load);
