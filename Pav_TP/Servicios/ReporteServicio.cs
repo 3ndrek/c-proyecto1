@@ -1,4 +1,5 @@
-﻿using Pav_TP.Repositorios;
+﻿using Pav_TP.Entidades;
+using Pav_TP.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,6 +22,10 @@ namespace Pav_TP.Servicios
         {
             return respositorio.ReporteReservas();
         }
-        
+
+        public DataTable ReportePorFiltro(ReporteFiltros r)
+        {
+            return respositorio.BugsPorFiltros(r);
+        }
     }
 }

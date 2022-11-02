@@ -1,4 +1,5 @@
-﻿using Pav_TP.Entidades;
+﻿using Microsoft.Reporting.WinForms;
+using Pav_TP.Entidades;
 using Pav_TP.Servicios;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Pav_TP.ReportesYSalidas.Reporte
         {
             CargarCategoria();
             ObtenerReporte();
-            this.reportViewer1.RefreshReport();
+            this.RwReserva.RefreshReport();
         }
         
         public void CargarCategoria()
@@ -45,10 +46,39 @@ namespace Pav_TP.ReportesYSalidas.Reporte
             cmbCategoria.ValueMember = "categoria";
             cmbCategoria.SelectedItem = catSeleccionar;
         }
-        
+
+        public void CargarReporte(ReporteFiltros filtros)
+        {
+            this.RwReserva.LocalReport.DataSources.Clear();
+            var datos = reporteServicio.ReportePorFiltro(filtros);
+
+            var datasource = new ReportDataSource("Grafico", datos);
+            this.RwReserva.LocalReport.DataSources.Add(datasource);
+
+            var hoy = DateTime.Now;
+            var parametros = new List<ReportParameter>() {
+                //new ReportParameter("AnioActual", hoy.Year.ToString()),
+                new ReportParameter("FechaGeneracionReporte", hoy.ToString("dd/MM/yyyy hh:mm")),
+                new ReportParameter("FechaDesde", filtros.FechaDesde?.ToString("dd/MM/yyyy")),
+                new ReportParameter("FechaHasta", filtros.FechaHasta?.ToString("dd/MM/yyyy")),
+                new ReportParameter("CategoriaItinerario",filtros.NomCategori)
+            };
+
+            this.RwReserva.LocalReport.SetParameters(parametros);
+            this.RwReserva.RefreshReport();
+        }
+
         public void ObtenerReporte()
         {
-            var filtros =  new 
+            var filtros = new ReporteFiltros();
+            filtros.FechaDesde = dtpFechaDesde.Value;
+            filtros.FechaHasta = dtpFechaHasta.Value;
+            filtros.Categoria = (int)cmbCategoria.SelectedValue;
+            var c = (CategoriasItinerarios)cmbCategoria.SelectedItem;
+            var cat = filtros.Categoria != 0 ?
+                c.descripcion : "TODAS";
+            filtros.NomCategori = cat;
+            CargarReporte(filtros);
         }
 
     }
