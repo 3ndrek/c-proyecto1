@@ -90,6 +90,7 @@
     <Compile Include="Entidades\Puerto.cs" />
     <Compile Include="Entidades\Puertos.cs" />
     <Compile Include="Entidades\Puestos.cs" />
+    <Compile Include="Entidades\ReporteFiltros.cs" />
     <Compile Include="Entidades\Reservaciones.cs" />
     <Compile Include="Entidades\TipoCamarote.cs" />
     <Compile Include="Entidades\TipoDoc.cs" />
@@ -139,6 +140,9 @@
     </Compile>
     <Compile Include="InterfacesDeUsuario\Usuario\EliminarUsuario.Designer.cs">
       <DependentUpon>EliminarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesYSalidas\Reporte\ReporteDeReservaPorViaje.cs">
+      <DependentUpon>ReporteDeReservaPorViaje.xsd</DependentUpon>
     </Compile>
     <Compile Include="ReportesYSalidas\Reporte\ReporteDeReservaPorViaje.Designer.cs">
       <AutoGen>True</AutoGen>
