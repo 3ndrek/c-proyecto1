@@ -28,7 +28,6 @@ namespace Pav_TP.ReportesYSalidas.Reporte
         {
             CargarCategoria();
             ObtenerReporte();
-            this.RwReserva.RefreshReport();
         }
         
         public void CargarCategoria()
@@ -81,5 +80,10 @@ namespace Pav_TP.ReportesYSalidas.Reporte
             CargarReporte(filtros);
         }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            ObtenerReporte();
+
+        }
     }
 }
