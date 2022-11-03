@@ -9,15 +9,23 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ReporteDeReservaPorViaje" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ReporteDeReservaPorViaje" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReporteDeReservaPorViaje">
+  <xs:element name="ReporteDeReservaPorViaje" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReporteDeReservaPorViaje" msprop:Generator_UserDSName="ReporteDeReservaPorViaje">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="reservaciones" msprop:Generator_RowEvHandlerName="reservacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="reservacionesRowDeleted" msprop:Generator_RowDeletingName="reservacionesRowDeleting" msprop:Generator_RowEvArgName="reservacionesRowChangeEvent" msprop:Generator_TablePropName="reservaciones" msprop:Generator_RowChangedName="reservacionesRowChanged" msprop:Generator_RowChangingName="reservacionesRowChanging" msprop:Generator_TableClassName="reservacionesDataTable" msprop:Generator_RowClassName="reservacionesRow" msprop:Generator_TableVarName="tablereservaciones" msprop:Generator_UserTableName="reservaciones">
+        <xs:element name="reservaciones" msprop:Generator_TableClassName="reservacionesDataTable" msprop:Generator_RowEvArgName="reservacionesRowChangeEvent" msprop:Generator_TableVarName="tablereservaciones" msprop:Generator_TablePropName="reservaciones" msprop:Generator_RowDeletingName="reservacionesRowDeleting" msprop:Generator_RowChangingName="reservacionesRowChanging" msprop:Generator_RowDeletedName="reservacionesRowDeleted" msprop:Generator_RowEvHandlerName="reservacionesRowChangeEventHandler" msprop:Generator_UserTableName="reservaciones" msprop:Generator_RowChangedName="reservacionesRowChanged" msprop:Generator_RowClassName="reservacionesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="fecha_viaje" msprop:Generator_ColumnPropNameInRow="fecha_viaje" msprop:Generator_ColumnPropNameInTable="fecha_viajeColumn" msprop:Generator_ColumnVarNameInTable="columnfecha_viaje" msprop:Generator_UserColumnName="fecha_viaje" type="xs:string" minOccurs="0" />
-              <xs:element name="puertoSalida" msprop:Generator_ColumnPropNameInRow="puertoSalida" msprop:Generator_ColumnPropNameInTable="puertoSalidaColumn" msprop:Generator_ColumnVarNameInTable="columnpuertoSalida" msprop:Generator_UserColumnName="puertoSalida" type="xs:string" minOccurs="0" />
-              <xs:element name="categoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_UserColumnName="categoria" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_viaje" msprop:Generator_ColumnVarNameInTable="columnfecha_viaje" msprop:Generator_ColumnPropNameInRow="fecha_viaje" msprop:Generator_ColumnPropNameInTable="fecha_viajeColumn" msprop:Generator_UserColumnName="fecha_viaje" type="xs:string" minOccurs="0" />
+              <xs:element name="puertoSalida" msprop:Generator_ColumnVarNameInTable="columnpuertoSalida" msprop:Generator_ColumnPropNameInRow="puertoSalida" msprop:Generator_ColumnPropNameInTable="puertoSalidaColumn" msprop:Generator_UserColumnName="puertoSalida" type="xs:string" minOccurs="0" />
+              <xs:element name="categoria" msprop:Generator_ColumnVarNameInTable="columncategoria" msprop:Generator_ColumnPropNameInRow="categoria" msprop:Generator_ColumnPropNameInTable="categoriaColumn" msprop:Generator_UserColumnName="categoria" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReservasPorCantidadDT" msprop:Generator_TableClassName="ReservasPorCantidadDTDataTable" msprop:Generator_TableVarName="tableReservasPorCantidadDT" msprop:Generator_TablePropName="ReservasPorCantidadDT" msprop:Generator_RowDeletingName="ReservasPorCantidadDTRowDeleting" msprop:Generator_RowChangingName="ReservasPorCantidadDTRowChanging" msprop:Generator_RowEvHandlerName="ReservasPorCantidadDTRowChangeEventHandler" msprop:Generator_RowDeletedName="ReservasPorCantidadDTRowDeleted" msprop:Generator_UserTableName="ReservasPorCantidadDT" msprop:Generator_RowChangedName="ReservasPorCantidadDTRowChanged" msprop:Generator_RowEvArgName="ReservasPorCantidadDTRowChangeEvent" msprop:Generator_RowClassName="ReservasPorCantidadDTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:string" minOccurs="0" />
+              <xs:element name="PaisSalida" msprop:Generator_ColumnVarNameInTable="columnPaisSalida" msprop:Generator_ColumnPropNameInRow="PaisSalida" msprop:Generator_ColumnPropNameInTable="PaisSalidaColumn" msprop:Generator_UserColumnName="PaisSalida" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
