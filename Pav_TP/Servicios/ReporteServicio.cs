@@ -25,7 +25,11 @@ namespace Pav_TP.Servicios
 
         public DataTable ReportePorFiltro(ReporteFiltros r)
         {
-            return respositorio.BugsPorFiltros(r);
+            return respositorio.ReporteFiltros(r);
+        }
+        public DataTable ObtenerReporte (ReporteFiltros r) 
+        { 
+            return respositorio.ObtenerReporte(r); 
         }
     }
 }

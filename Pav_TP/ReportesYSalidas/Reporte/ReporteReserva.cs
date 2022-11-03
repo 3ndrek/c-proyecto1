@@ -48,11 +48,16 @@ namespace Pav_TP.ReportesYSalidas.Reporte
 
         public void CargarReporte(ReporteFiltros filtros)
         {
+
             this.RwReserva.LocalReport.DataSources.Clear();
+            var datos2 = reporteServicio.ObtenerReporte(filtros);
             var datos = reporteServicio.ReportePorFiltro(filtros);
 
-            var datasource = new ReportDataSource("Grafico", datos);
+            var datasource = new ReportDataSource("DTtable", datos);
+            var datasource2 = new ReportDataSource("DtGrafico", datos2);
+
             this.RwReserva.LocalReport.DataSources.Add(datasource);
+            this.RwReserva.LocalReport.DataSources.Add(datasource2);
 
             var hoy = DateTime.Now;
             var parametros = new List<ReportParameter>() {
