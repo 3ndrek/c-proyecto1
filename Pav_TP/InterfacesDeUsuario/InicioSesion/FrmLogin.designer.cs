@@ -33,9 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.TxtContrasenia = new System.Windows.Forms.TextBox();
-            this.BtnIngresar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
-            this.BtnSalir = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnIngresar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +81,15 @@
             this.TxtContrasenia.TabIndex = 3;
             this.TxtContrasenia.UseSystemPasswordChar = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(97, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(222, 160);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // BtnIngresar
             // 
             this.BtnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
@@ -93,44 +101,14 @@
             this.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnIngresar.ForeColor = System.Drawing.Color.White;
-            this.BtnIngresar.Location = new System.Drawing.Point(82, 386);
+            this.BtnIngresar.Location = new System.Drawing.Point(73, 378);
             this.BtnIngresar.Name = "BtnIngresar";
-            this.BtnIngresar.Size = new System.Drawing.Size(79, 38);
+            this.BtnIngresar.Size = new System.Drawing.Size(210, 38);
             this.BtnIngresar.TabIndex = 7;
             this.BtnIngresar.Text = "Ingresar";
             this.BtnIngresar.TextColor = System.Drawing.Color.White;
             this.BtnIngresar.UseVisualStyleBackColor = false;
             this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
-            // 
-            // BtnSalir
-            // 
-            this.BtnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BtnSalir.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(238)))));
-            this.BtnSalir.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.BtnSalir.BorderRadius = 20;
-            this.BtnSalir.BorderSize = 0;
-            this.BtnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnSalir.FlatAppearance.BorderSize = 0;
-            this.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSalir.ForeColor = System.Drawing.Color.White;
-            this.BtnSalir.Location = new System.Drawing.Point(196, 386);
-            this.BtnSalir.Name = "BtnSalir";
-            this.BtnSalir.Size = new System.Drawing.Size(79, 38);
-            this.BtnSalir.TabIndex = 9;
-            this.BtnSalir.Text = "Cerrar";
-            this.BtnSalir.TextColor = System.Drawing.Color.White;
-            this.BtnSalir.UseVisualStyleBackColor = false;
-            this.BtnSalir.Click += new System.EventHandler(this.BtnSalir_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(97, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(222, 160);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
             // 
             // FrmLogin
             // 
@@ -140,7 +118,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(373, 506);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.BtnSalir);
             this.Controls.Add(this.BtnIngresar);
             this.Controls.Add(this.TxtContrasenia);
             this.Controls.Add(this.TxtUsuario);
@@ -166,7 +143,6 @@
         private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.TextBox TxtContrasenia;
         private Pav_TP.InterfacesDeUsuario.PruebaButton BtnIngresar;
-        private Pav_TP.InterfacesDeUsuario.PruebaButton BtnSalir;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

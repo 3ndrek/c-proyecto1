@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteReserva));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.RwReserva = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
@@ -37,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,90 +53,19 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 48);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(31, 69);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(880, 629);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(584, 347);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar reporte por:";
             // 
-            // RwReserva
-            // 
-            this.RwReserva.LocalReport.ReportEmbeddedResource = "Pav_TP.ReportesYSalidas.Reporte.Reporte.rdlc";
-            this.RwReserva.Location = new System.Drawing.Point(5, 105);
-            this.RwReserva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.RwReserva.Name = "RwReserva";
-            this.RwReserva.ServerReport.BearerToken = null;
-            this.RwReserva.Size = new System.Drawing.Size(869, 520);
-            this.RwReserva.TabIndex = 2;
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(119, 75);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(191, 24);
-            this.cmbCategoria.TabIndex = 7;
-            // 
-            // dtpFechaHasta
-            // 
-            this.dtpFechaHasta.Location = new System.Drawing.Point(436, 31);
-            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaHasta.Name = "dtpFechaHasta";
-            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 22);
-            this.dtpFechaHasta.TabIndex = 6;
-            // 
-            // dtpFechaDesde
-            // 
-            this.dtpFechaDesde.CustomFormat = "dd/MM/yyyy";
-            this.dtpFechaDesde.Location = new System.Drawing.Point(119, 32);
-            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(191, 22);
-            this.dtpFechaDesde.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Categoria:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Fecha hasta:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fecha desde:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
-            this.label1.TabIndex = 1;
-            // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(760, 71);
+            this.btnConsultar.Location = new System.Drawing.Point(344, 58);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 8;
@@ -142,14 +73,102 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // RwReserva
+            // 
+            this.RwReserva.LocalReport.ReportEmbeddedResource = "Pav_TP.ReportesYSalidas.Reporte.Reporte.rdlc";
+            this.RwReserva.Location = new System.Drawing.Point(4, 97);
+            this.RwReserva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RwReserva.Name = "RwReserva";
+            this.RwReserva.ServerReport.BearerToken = null;
+            this.RwReserva.Size = new System.Drawing.Size(576, 246);
+            this.RwReserva.TabIndex = 2;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(89, 61);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(144, 21);
+            this.cmbCategoria.TabIndex = 7;
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Location = new System.Drawing.Point(327, 25);
+            this.dtpFechaHasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(151, 20);
+            this.dtpFechaHasta.TabIndex = 6;
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaDesde.Location = new System.Drawing.Point(89, 26);
+            this.dtpFechaDesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(144, 20);
+            this.dtpFechaDesde.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Categoria:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(259, 29);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Fecha hasta:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Fecha desde:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(253, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(151, 24);
+            this.label13.TabIndex = 73;
+            this.label13.Text = "Generar Reporte";
+            // 
             // ReporteReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 688);
+            this.ClientSize = new System.Drawing.Size(650, 444);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReporteReserva";
             this.Text = "ReporteReserva";
             this.Load += new System.EventHandler(this.ReporteReserva_Load);
@@ -172,5 +191,6 @@
         private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer RwReserva;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Label label13;
     }
 }

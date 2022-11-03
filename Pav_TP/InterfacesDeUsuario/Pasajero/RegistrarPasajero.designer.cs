@@ -32,6 +32,7 @@ namespace TrabajoPracticoPav
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPasajero));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -307,6 +308,7 @@ namespace TrabajoPracticoPav
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarPasajero";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.Text = "RegistrarPasajero";
