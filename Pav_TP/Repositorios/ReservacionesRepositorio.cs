@@ -20,7 +20,7 @@ namespace Pav_TP.Repositorios
         public List<Reservaciones> GetReservaciones()
         {
             var reservas = new List<Reservaciones>();
-            var sentenciaSql = $"SELECT * FROM reservaciones";
+            var sentenciaSql = $"SELECT * FROM reservaciones WHERE esDadoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -35,7 +35,7 @@ namespace Pav_TP.Repositorios
         public List<Reservaciones> GetReservaciones(Reservaciones r)
         {
             var reservas = new List<Reservaciones>();
-            var sentenciaSql = $"SELECT * FROM reservaciones WHERE nro_reservacion = {r.num_reservacion}";
+            var sentenciaSql = $"SELECT * FROM reservaciones WHERE nro_reservacion = {r.num_reservacion} AND esDadoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -64,7 +64,7 @@ namespace Pav_TP.Repositorios
 
         public void EliminarReserva(int id, int num, DateTime fecha, int cubierta, int navio)
         {
-            var sentenciaSql = $"DELETE FROM reservaciones WHERE nro_reservacion={id}";
+            var sentenciaSql = $"UPDATE reservaciones set esDadoBaja=1 WHERE nro_reservacion={id}";
 
             using (var tx = DBHelper.GetDBHelper().IniciarTransaccion())
             {
@@ -94,7 +94,7 @@ namespace Pav_TP.Repositorios
 
         public List<Itinerario> GetItinerarios()
         {
-            var sql = "SELECT * from itinerarios";
+            var sql = "SELECT * from itinerarios WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var itne = new List<Itinerario>();
 

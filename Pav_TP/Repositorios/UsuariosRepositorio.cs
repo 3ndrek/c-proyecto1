@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
     {
         public Usuario LoginBD(Usuario usuario)
         {
-            var sql = $"SELECT * FROM usuarios  where usuario='{usuario.NombreUsuario}' and contraseña='{usuario.Contrasenia}'";
+            var sql = $"SELECT * FROM usuarios WHERE usuario='{usuario.NombreUsuario}' AND contraseña='{usuario.Contrasenia}' AND esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             Usuario usuarioLogueado = null;
             if (tablaResultado.Rows.Count == 1)
@@ -43,21 +43,20 @@ namespace Pav_TP.Repositorios
 
         public void EliminarUsuario(Usuario usuario)
         {
-            //Hay que implementar la baja logica
-            MessageBox.Show("Hay que implementar la baja logica");
-            /*var sql = $"delete from usuarios where usuario = '{usuario.NombreUsuario}'";
-            DBHelper.GetDBHelper().EjecutarSQL(sql);*/
+            
+            var sql = $"UPDATE usuarios set esDadoBaja=1 WHERE usuario = '{usuario.NombreUsuario}'";
+            DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
         public void ConsultarUsuario(Usuario usuario)
         {
-            var sql = $"select from usuarios where usuario = '{usuario.NombreUsuario}'";
+            var sql = $"select from usuarios where usuario = '{usuario.NombreUsuario}' and esDadoBaja is null";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
         public List<Usuario> GetUsuarios()
         {
-            var sql = $"select * from usuarios";
+            var sql = $"select * from usuarios where esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var usuarios = new List<Usuario>();
             foreach (DataRow fila in tablaResultado.Rows)
@@ -90,21 +89,21 @@ namespace Pav_TP.Repositorios
 
         public void CargarGrillaUsuarios(DataGridView dgv)
         {
-            var sql = "select * from usuarios";
+            var sql = "select * from usuarios where esDadoBaja is null";
             var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
             dgv.DataSource = midata;
         }
 
         public void BuscarUsuario(DataGridView dgv, string nombre)
         {
-            var sql = $"select * from usuarios where usuario like '{nombre}%'";
+            var sql = $"select * from usuarios where usuario like '{nombre}%' and esDadoBaja is null";
             var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
             dgv.DataSource = midata;
         }
 
         public int BuscarUsuarioParaEliminar(string nombre)
         {
-            var sql = $"select * from usuarios where usuario = {nombre}";
+            var sql = $"select * from usuarios where usuario = '{nombre}' and esDadoBaja is null";
             int r = DBHelper.GetDBHelper().EjecutarSQL(sql);
             return r;
 

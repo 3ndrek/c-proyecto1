@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
         public List<Barco> GetBarcos()
         {
             var barcos = new List<Barco>();
-            var sentenciaSql = $"SELECT * FROM navio";
+            var sentenciaSql = $"SELECT * FROM navio WHERE esDadoBaja is null";
             
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
         public List<Barco> GetBarcos(Barco b)
         {
             var barcos = new List<Barco>();
-            var sentenciaSql = $"SELECT * FROM navio WHERE nombre like '%{b.Nombre}%'";
+            var sentenciaSql = $"SELECT * FROM navio WHERE nombre like '%{b.Nombre}%' AND esDadoBaja is null";
             if (b.Codigo != 0)
                 sentenciaSql += $" AND codigo_navio={b.Codigo}";
 
@@ -47,7 +47,7 @@ namespace Pav_TP.Repositorios
         public Barco GetBarcos(int id)
         {
             var barco = new Barco();
-            var sentenciaSql = $"SELECT * FROM navio WHERE codigo_navio={id}";
+            var sentenciaSql = $"SELECT * FROM navio WHERE codigo_navio={id} AND esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -99,7 +99,7 @@ namespace Pav_TP.Repositorios
 
         public int EliminarBarco(int id)
         {
-            var sentenciaSql = $"DELETE FROM navio WHERE codigo_navio={id}";
+            var sentenciaSql = $"UPDATE navio set esDadoBaja=1 WHERE codigo_navio={id}";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;

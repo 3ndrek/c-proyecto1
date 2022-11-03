@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
         public List<Entidades.Puerto> GetPuertos()
         {
             var puertos = new List<Puerto>();
-            var sentenciaSql = $"SELECT * FROM puertos";
+            var sentenciaSql = $"SELECT * FROM puertos WHERE esDAdoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
         public List<Puertos> GetPuertos(Itinerario itinerario)
         {
             var puertos = new List<Puertos>();
-            var sentenciaSql = $"SELECT P.* FROM puertos P JOIN puertoXitinerarios PxI ON P.cod_puerto= PxI.cod_puerto JOIN itinerarios I ON PxI.cod_itinerarios = I.cod_itinerario WHERE I.cod_itinerario = {itinerario.Cod_Itinerario}";
+            var sentenciaSql = $"SELECT P.* FROM puertos P JOIN puertoXitinerarios PxI ON P.cod_puerto= PxI.cod_puerto JOIN itinerarios I ON PxI.cod_itinerarios = I.cod_itinerario WHERE I.cod_itinerario = {itinerario.Cod_Itinerario} AND P.esDAdoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -42,13 +42,12 @@ namespace Pav_TP.Repositorios
             }
 
             return puertos;
-
         }
 
-            public List<Puerto> GetPuertos(Puerto p)
+        public List<Puerto> GetPuertos(Puerto p)
         {
             var puertos = new List<Puerto>();
-            var sentenciaSql = $"SELECT * FROM puertos WHERE nombre like '%{p.Nombre}%'";
+            var sentenciaSql = $"SELECT * FROM puertos WHERE nombre like '%{p.Nombre}%' AND esDAdoBaja is null";
             if (p.Codigo != 0)
                 sentenciaSql += $" AND cod_puerto={p.Codigo}";
 
@@ -66,7 +65,7 @@ namespace Pav_TP.Repositorios
         public Puerto GetPuertos(int id)
         {
             var puerto = new Puerto();
-            var sentenciaSql = $"SELECT * FROM puertos WHERE cod_puerto={id}";
+            var sentenciaSql = $"SELECT * FROM puertos WHERE cod_puerto={id} AND esDAdoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -88,7 +87,7 @@ namespace Pav_TP.Repositorios
 
         public int EliminarPuerto(int id)
         {
-            var sentenciaSql = $"DELETE FROM puertos WHERE cod_puerto={id}";
+            var sentenciaSql = $"UPDATE puertos set esDAdoBaja=1 WHERE cod_puerto={id}";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;

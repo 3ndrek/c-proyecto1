@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
         public List<Tripulante> GetTripulantes()
         {
             var tripulantes = new List<Tripulante>();
-            var sentenciaSql = $"SELECT * FROM tripulantes";
+            var sentenciaSql = $"SELECT * FROM tripulantes WHERE esDadoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -29,9 +29,9 @@ namespace Pav_TP.Repositorios
         public List<Tripulante> GetTripulantes(Tripulante t)
         {
             var tripulantes = new List<Tripulante>();
-            var sentenciaSql = $"SELECT * FROM tripulantes";
+            var sentenciaSql = $"SELECT * FROM tripulantes WHERE esDadoBaja is null";
             if (t.legajo != 0)
-                sentenciaSql += $" WHERE legajo={t.legajo}";
+                sentenciaSql += $" AND legajo={t.legajo}";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -47,7 +47,7 @@ namespace Pav_TP.Repositorios
         public Tripulante GetTripulantes(int id)
         {
             var tripulante = new Tripulante();
-            var sentenciaSql = $"SELECT * FROM tripulantes WHERE legajo = {id}";
+            var sentenciaSql = $"SELECT * FROM tripulantes WHERE legajo = {id} AND esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -94,7 +94,7 @@ namespace Pav_TP.Repositorios
 
         public int EliminarTripulante(int id)
         {
-            var sentenciaSql = $"DELETE FROM tripulantes WHERE legajo ={id}";
+            var sentenciaSql = $"UPDATE tripulantes set esDadoBaja=1 WHERE legajo ={id}";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;

@@ -12,7 +12,7 @@ namespace Pav_TP.Repositorios
     {
         public List<Barco> GetBarcos()
         {
-            var sql = $"SELECT * from navio";
+            var sql = $"SELECT * FROM navio AND esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var barcos= new List<Barco>();
 
@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
 
         public List<Cubierta> GetCubiertas(Barco f)
         {
-            var sql = $"SELECT c.*, t.nombre,t.apellido from cubiertas c join tripulantes t on t.legajo = c.leg_encargado WHERE 1=1 "; 
+            var sql = $"SELECT c.*, t.nombre,t.apellido from cubiertas c join tripulantes t on t.legajo = c.leg_encargado WHERE 1=1 AND c.esDadoBaja is null and t.esDadoBaja is null"; 
             
             if (!string.IsNullOrEmpty(f.Codigo.ToString()))
             {
@@ -55,7 +55,7 @@ namespace Pav_TP.Repositorios
         }
         public List<Cubierta> GetCubiertas(Cubierta f)
         {
-            var sql = $"SELECT * from cubiertas  WHERE 1=1 ";
+            var sql = $"SELECT * from cubiertas  WHERE 1=1 AND esDadoBaja is null";
 
             if (!string.IsNullOrEmpty(f.cod_navio.ToString()))
             {
@@ -80,23 +80,17 @@ namespace Pav_TP.Repositorios
             }
 
             return cubiertas;
-
-
         }
 
         public void EliminarCubiertas(Cubierta filtro)
         {
-                var sql = $"DELETE from cubiertas WHERE cod_navio = {filtro.cod_navio} and num_cubierta = {filtro.num_cubierta}";
+            var sql = $"UPDATE cubiertas set esDadoBaja=1 WHERE cod_navio = {filtro.cod_navio} and num_cubierta = {filtro.num_cubierta}";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
-
-
-
-
         }
 
         public List<Tripulante> CargaTripulantes()
         {
-            var sql = $"SELECT * FROM tripulantes";
+            var sql = $"SELECT * FROM tripulantes WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var cubiertas = new List<Tripulante>();
 

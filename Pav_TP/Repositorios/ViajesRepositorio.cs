@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
         public List<Viaje> GetViajes()
         {
             var viajes = new List<Viaje>();
-            var sentenciaSql = $"SELECT * FROM viaje";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE esDadoBa is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
         public List<Viaje> GetViajes(Viaje v)
         {
             var viajes = new List<Viaje>();
-            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_navio = {v.Cod_navio}";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_navio = {v.Cod_navio} AND esDadoBa is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -45,7 +45,7 @@ namespace Pav_TP.Repositorios
         public List<Viaje> GetViajes(Entidades.Itinerario i)
         {
             var viajes = new List<Viaje>();
-            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_itinerario = {i.Cod_Itinerario}";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_itinerario = {i.Cod_Itinerario} AND esDadoBa is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -61,7 +61,7 @@ namespace Pav_TP.Repositorios
         public Viaje GetViajes(int id, DateTime fecha)
         {
             var viaje = new Viaje();
-            var sentenciaSql = $"SELECT * FROM viaje  WHERE cod_navio= {id} AND tipo_doc={fecha}";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE cod_navio= {id} AND tipo_doc={fecha} AND esDadoBa is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -74,7 +74,7 @@ namespace Pav_TP.Repositorios
         public List<Itinerario> GetItinerario()
         {
             var itinerarios = new List<Itinerario>();
-            var sentenciaSql = $"SELECT * FROM itinerarios";
+            var sentenciaSql = $"SELECT * FROM itinerarios WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -93,7 +93,7 @@ namespace Pav_TP.Repositorios
         public List<Barco> ObtenerBarcos()
         {
             var barcos = new List<Barco>();
-            var sentenciaSql = $"SELECT * FROM navio";
+            var sentenciaSql = $"SELECT * FROM navio WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -148,7 +148,7 @@ namespace Pav_TP.Repositorios
 
         public int EliminarViaje(int id, DateTime fecha)
         {
-            var sentenciaSql = $"DELETE FROM viaje WHERE cod_navio={id} AND fecha_viaje= '{fecha}'";
+            var sentenciaSql = $"UPDATE viaje set esDadoBa=1 WHERE cod_navio={id} AND fecha_viaje= '{fecha}'";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;

@@ -15,7 +15,7 @@ namespace Pav_TP.Repositorios
     {
         public List<Paises> GetPaises()
         {
-            var sql = "SELECT * from paises";
+            var sql = "SELECT * FROM paises WHERE esDadoBja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var paises = new List<Paises>();
 
@@ -47,7 +47,8 @@ namespace Pav_TP.Repositorios
 
         public List<Puertos> GetPuertosXPais(int cod_pais)
         {
-            var sql = $"select p.* from puertos p left join puertosXpaises pxp on p.cod_puerto = pxp.cod_puerto left join paises pa on pxp.cod_pais = pa.cod_pais where pa.cod_pais = {cod_pais}";
+            var sql = $"select p.* from puertos p left join puertosXpaises pxp on p.cod_puerto = pxp.cod_puerto left join paises pa on pxp.cod_pais = pa.cod_pais where pa.cod_pais = {cod_pais} and p.esDAdoBaja is null and pa.esDadoBja is null";
+
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var puertos = new List<Puertos>();
 
@@ -63,7 +64,7 @@ namespace Pav_TP.Repositorios
 
         public int GenerarCodItinerario()
         {
-            var sql = $"select count(i.cod_itinerario) from itinerarios i";
+            var sql = $"select count(i.cod_itinerario) from itinerarios i where i.esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             int cod_itinerario = Convert.ToInt32(tablaResultado.Rows[0][0]);
             return cod_itinerario+1;
@@ -77,7 +78,7 @@ namespace Pav_TP.Repositorios
         }
         public int GetCodPais(string n)
         {
-            var sql = $"select p.cod_pais from paises p where p.nombre = '{n}'";
+            var sql = $"select p.cod_pais from paises p where p.nombre = '{n}' and p.esDadoBja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             DataRow row = tablaResultado.Rows[0];
             int cod_p = (int)row[0];
@@ -86,7 +87,7 @@ namespace Pav_TP.Repositorios
 
         public int GetCodPuerto(string n)
         {
-            var sql = $"select p.cod_puerto from puertos p where p.nombre = '{n}'";
+            var sql = $"select p.cod_puerto from puertos p where p.nombre = '{n}' and p.esDAdoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             DataRow row = tablaResultado.Rows[0];
             int cod_p = (int)row[0];

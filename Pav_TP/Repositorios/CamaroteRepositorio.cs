@@ -16,7 +16,7 @@ namespace Pav_TP.Repositorios
     {
         public List<Barco> GetBarcos()
         {
-            var sql = "SELECT * from navio";
+            var sql = "SELECT * from navio WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var barcos = new List<Barco>();
 
@@ -33,7 +33,7 @@ namespace Pav_TP.Repositorios
 
         public List<Cubierta> GetCubiertas(int cod_navio)
         {
-            var sql = $"select cub.* from cubiertas cub left join navio n on cub.cod_navio = n.codigo_navio where n.codigo_navio = {cod_navio}";
+            var sql = $"select cub.* from cubiertas cub left join navio n on cub.cod_navio = n.codigo_navio where n.codigo_navio = {cod_navio} and cub.esDadoBaja is null and n.esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var cubiertas = new List<Cubierta>();
 
@@ -67,7 +67,7 @@ namespace Pav_TP.Repositorios
 
         public List<Camarote> GetCamarotes(int cod_navio)
         {
-            var sql = $"select c.* from camarotes c left join navio n on c.cod_navio =  n.codigo_navio where n.codigo_navio = {cod_navio}";
+            var sql = $"select c.* from camarotes c left join navio n on c.cod_navio = n.codigo_navio where n.codigo_navio = {cod_navio} and c.esDadoBaja is null and n.esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
             foreach (DataRow fila in tablaResultado.Rows)
@@ -90,7 +90,7 @@ namespace Pav_TP.Repositorios
             var sql = $"select c.cod_navio,c.num_cubierta,c.tipo,c.monto ,c.num_camarote, c.cant_camas, Cv.ocupacion, Cc.descripcion as cubierta_desc,Tc.descripcion as tipo_camarote " +
                 $"from camarotes c left join camarotesXviajes Cv on c.num_camarote= Cv.num_camarote and c.cod_navio=Cv.cod_navio and c.num_cubierta= Cv.num_cubierta " +
                 $"left join cubiertas Cc on Cc.num_cubierta = c.num_cubierta left join tipoCamarote Tc on Tc.tipo = c.tipo " +
-                $"where c.cod_navio = {cod_navio} and c.cant_camas >= {num} ";
+                $"where c.cod_navio = {cod_navio} and c.cant_camas >= {num} and c.esDadoBaja is null and Cc.esDadoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
@@ -124,7 +124,7 @@ namespace Pav_TP.Repositorios
 
         public List<Camarote> GetCamarotes(int b, int cub)
         {
-            var sql = $"select c.* from camarotes c left join cubiertas cub on c.num_cubierta = cub.num_cubierta left join navio n on cub.cod_navio = n.codigo_navio where n.codigo_navio = {b} and cub.num_cubierta = {cub}";
+            var sql = $"select c.* from camarotes c left join cubiertas cub on c.num_cubierta = cub.num_cubierta left join navio n on cub.cod_navio = n.codigo_navio where n.codigo_navio = {b} and cub.num_cubierta = {cub} and c.esDadoBaja is null and cub.esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var camarotes = new List<Camarote>();
             foreach (DataRow fila in tablaResultado.Rows)
@@ -142,13 +142,12 @@ namespace Pav_TP.Repositorios
 
         public void CargarGrillaCamarotes(DataGridView dgv)
         {
-            var sql = "select * from camarotes";
+            var sql = "select * from camarotes where esDadoBaja is null";
             var midata = DBHelper.GetDBHelper().ConsultaSQL(sql);
             dgv.DataSource = midata;
             var col = new DataGridViewCheckBoxColumn();
             col.Name = "Seleccionar";
             dgv.Columns.Add(col);
-
         }
 
         public void RegistrarCamarote(Camarote camarote)
@@ -168,8 +167,7 @@ namespace Pav_TP.Repositorios
 
         public void EliminarCamarote(Camarote camarote)
         {
-            var sql = $"Delete from camarotes where cod_navio = {camarote.cod_navio} and num_cubierta = {camarote.num_cubierta} " +
-                $"and num_camarote = {camarote.num_camarote}";
+            var sql = $"UPDATE camarotes set esDadoBaja=1 WHERE cod_navio = {camarote.cod_navio} and num_cubierta = {camarote.num_cubierta} and num_camarote = {camarote.num_camarote}";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 
@@ -179,7 +177,7 @@ namespace Pav_TP.Repositorios
             if (camarote.num_camarote == 0)
             {
                 sql = $"select c.cod_navio,c.num_cubierta,c.num_camarote, c.tipo,c.monto,c.cant_camas from camarotes c " +
-                    $"where c.cod_navio = {camarote.cod_navio} and c.num_cubierta = {camarote.num_cubierta} ";
+                    $"where c.cod_navio = {camarote.cod_navio} and c.num_cubierta = {camarote.num_cubierta}";
             }
             else sql += $"and c.num_camarote = {camarote.num_camarote}";
             DataTable datos = DBHelper.GetDBHelper().ConsultaSQL(sql);

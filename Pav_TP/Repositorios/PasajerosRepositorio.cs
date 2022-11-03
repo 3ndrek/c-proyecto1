@@ -13,7 +13,7 @@ namespace Pav_TP.Repositorios
         public List<Pasajero> GetPasajeros()
         {
             var pasajeros = new List<Pasajero>();
-            var sentenciaSql = $"SELECT * FROM pasajeros";
+            var sentenciaSql = $"SELECT * FROM pasajeros WHERE estáDadoBaja is null";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -29,7 +29,7 @@ namespace Pav_TP.Repositorios
         public List<Pasajero> GetPasajeros(Pasajero p)
         {
             var pasajeros = new List<Pasajero>();
-            var sentenciaSql = $"SELECT * FROM pasajeros";
+            var sentenciaSql = $"SELECT * FROM pasajeros WHERE estáDadoBaja is null";
             if (p.num_doc != 0)
                 sentenciaSql += $" WHERE num_doc={p.num_doc}";
 
@@ -47,7 +47,7 @@ namespace Pav_TP.Repositorios
         public Pasajero GetPasajeros(int tipo, int id)
         {
             var pasajero = new Pasajero();
-            var sentenciaSql = $"SELECT * FROM pasajeros WHERE num_doc= {id} AND tipo_doc={tipo}";
+            var sentenciaSql = $"SELECT * FROM pasajeros WHERE num_doc= {id} AND tipo_doc={tipo} AND estáDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -79,7 +79,6 @@ namespace Pav_TP.Repositorios
             pasajero.fechaNac = Convert.ToDateTime(fila["fechaNac"].ToString());
             pasajero.genero = Convert.ToInt32(fila["genero"].ToString());
 
-
             return pasajero;
         }
         public int ActualizarPasajero(Pasajero p)
@@ -93,7 +92,7 @@ namespace Pav_TP.Repositorios
 
         public int EliminarPasajero(int tipo, int id)
         {
-            var sentenciaSql = $"DELETE FROM pasajeros WHERE num_doc={id} AND tipo_doc={tipo}";
+            var sentenciaSql = $"UPDATE pasajeros set estáDadoBaja=1 WHERE num_doc={id} AND tipo_doc={tipo}";
             var filasAfectada = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
 
             return filasAfectada;
