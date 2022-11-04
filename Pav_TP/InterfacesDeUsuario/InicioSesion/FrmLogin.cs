@@ -57,9 +57,6 @@ namespace PAV1
                 CerrarFormulario();
             }
         }
-
-
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             
@@ -79,11 +76,6 @@ namespace PAV1
             {
                 MessageBox.Show("Usuario y/o contraseña inválidas", "Información", MessageBoxButtons.OK);
             }
-        }
-
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

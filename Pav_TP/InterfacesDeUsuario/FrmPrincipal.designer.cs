@@ -93,7 +93,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(722, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(756, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -322,14 +322,14 @@
             // registrarPuerto
             // 
             this.registrarPuerto.Name = "registrarPuerto";
-            this.registrarPuerto.Size = new System.Drawing.Size(180, 26);
+            this.registrarPuerto.Size = new System.Drawing.Size(147, 26);
             this.registrarPuerto.Text = "Registrar";
             this.registrarPuerto.Click += new System.EventHandler(this.registrarPuerto_Click);
             // 
             // consultarPuerto
             // 
             this.consultarPuerto.Name = "consultarPuerto";
-            this.consultarPuerto.Size = new System.Drawing.Size(180, 26);
+            this.consultarPuerto.Size = new System.Drawing.Size(147, 26);
             this.consultarPuerto.Text = "Consultar";
             this.consultarPuerto.Click += new System.EventHandler(this.consultarPuerto_Click);
             // 
@@ -447,7 +447,7 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(538, 357);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(578, 385);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(150, 41);
             this.btnCerrarSesion.TabIndex = 7;
@@ -460,10 +460,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(722, 432);
+            this.ClientSize = new System.Drawing.Size(756, 450);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.label2);
