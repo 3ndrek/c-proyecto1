@@ -144,5 +144,45 @@ namespace Pav_TP.Repositorios
                 }
             }
         }
+
+
+
+        public string BuscarEmail(Pasajero pasajero)
+        {
+            var sql = $"select email from pasajeros where num_doc = {pasajero.num_doc}";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            var mail = "no hubo un mail indicado";
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                return fila["email"].ToString();
+
+            }
+
+            return mail; 
+        }
+
+
+
+
+
+
+        public int NroReservacionBusq(Reservaciones reserva)
+        {
+            var sql = $"select nro_reservacion from reservaciones where cod_navio = {reserva.cod_navio} and num_cubierta= {reserva.num_cubierta}" +
+                $" and num_camarotes = {reserva.num_camarote} and fecha_viaje = '{reserva.fecha_viaje}' and num_doc = {reserva.num_doc} and esDadoBaja is null ";
+           
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            var mail = 0;
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                return Convert.ToInt32(fila["nro_reservacion"]);
+
+            }
+
+            return mail;
+
+        }
     }
 }

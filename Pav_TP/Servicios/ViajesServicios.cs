@@ -28,7 +28,21 @@ namespace Pav_TP.Servicios
         }
         public List<Viaje> GetViajes(Entidades.Itinerario itinerario)
         {
-            return repositorio.GetViajes(itinerario);
+            var listaViajes=  repositorio.GetViajes(itinerario);
+            var viajesFiltrados = new List<Viaje>();
+
+            DateTime fecha = DateTime.Now;
+
+            foreach ( Viaje viaj in listaViajes)
+            {
+                if (viaj.FechaSalida > fecha)
+                {
+                    viajesFiltrados.Add(viaj);
+                }
+
+            }
+
+            return viajesFiltrados; 
         }
         public List<Itinerario> GetItinerarios()
         {

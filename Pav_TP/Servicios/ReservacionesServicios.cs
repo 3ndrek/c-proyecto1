@@ -13,10 +13,14 @@ namespace Pav_TP.Servicios
     {
         private static ReservacionesRepositorio reservacionesRepositorio;
         private static CamaroteRepositorio camarotess;
+
+        public static Boolean ConfirmacionCargaTicket;
+
         public ReservacionesServicios()
         {
             reservacionesRepositorio = new ReservacionesRepositorio();
             camarotess = new CamaroteRepositorio();
+            ConfirmacionCargaTicket = new Boolean();
         }
 
         public List<Entidades.Itinerario> getItinerarios()
@@ -26,7 +30,7 @@ namespace Pav_TP.Servicios
 
         public List<Camarote> ObtenerCamarotes(int navio, int camas)
         {
-            var listaBDCamarotes = camarotess.ObtenerCamarotes(navio,camas );
+            var listaBDCamarotes = camarotess.ObtenerCamarotes(navio, camas);
             var lista = new List<Camarote>();
 
             foreach (Camarote camarote in listaBDCamarotes)
@@ -37,7 +41,7 @@ namespace Pav_TP.Servicios
                 }
             }
 
-            return lista; 
+            return lista;
         }
 
         public void CargarReserva(Reservaciones r)
@@ -50,6 +54,18 @@ namespace Pav_TP.Servicios
             return reservacionesRepositorio.GetReservaciones();
         }
 
+        public int GetNroReservacion(Reservaciones r)
+        {
+            return reservacionesRepositorio.NroReservacionBusq(r);
+
+        }
+
+        public string buscarMail(Pasajero pasajero)
+        {
+            return reservacionesRepositorio.BuscarEmail(pasajero);
+        }
+
+
         public List<Reservaciones> GetReservaciones(Reservaciones reserva)
         {
             return reservacionesRepositorio.GetReservaciones(reserva);
@@ -59,5 +75,17 @@ namespace Pav_TP.Servicios
         {
            reservacionesRepositorio.EliminarReserva(id, num, fecha, cubierta, navio);
         }
+
+        public void confirmReservaTicket (Boolean b )
+        {
+            ConfirmacionCargaTicket = b; 
+
+        }
+
+        public bool varConfirmarRetorno()
+        {
+            return ConfirmacionCargaTicket;
+        }
+
     }
 }

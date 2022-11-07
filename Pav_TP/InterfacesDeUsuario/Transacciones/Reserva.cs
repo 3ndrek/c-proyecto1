@@ -16,15 +16,18 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 {
     public partial class Reserva : Form
     {
-        private ReservacionesServicios reseracionesServicios;
-        private PuertoServicios puertoServicios;
-        private ViajesServicios viajesServicios;
+        private static ReservacionesServicios reseracionesServicios;
+        private static PuertoServicios puertoServicios;
+        private static ViajesServicios viajesServicios;
         private static FrmPrincipal frmPrincipal;
         private readonly Reservaciones reserva;
         private readonly CobroServicios cobroServicio;
         private Entidades.Pasajero pasajero;
         private int bloqueoBusqueda;
         private CargaTicket cargaTicket;
+        private EnvioMail envioMail;
+
+
         public Reserva(FrmPrincipal Principal)
         {
             reserva = new Reservaciones();
@@ -36,6 +39,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             pasajero = new Entidades.Pasajero();
             bloqueoBusqueda = new int();
             cargaTicket = new CargaTicket();
+            envioMail = new EnvioMail();
+
             InitializeComponent();
         }
 
@@ -75,7 +80,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             var seleccionadaIitinerario = (Entidades.Itinerario)CmbItinerario.SelectedItem;
             var puertos = puertoServicios.GetPuertos(seleccionadaIitinerario);
             DgvPuertos.Rows.Clear();
-            foreach (var puerto in puertos )
+            foreach (var puerto in puertos)
             {
                 var fila = new string[]
                 {
@@ -105,19 +110,27 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         {
             if (bloqueoBusqueda != 0)
             {
+                cargarCamarotes();
 
 
 
-                var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
-                var cant_camas = Convert.ToInt32(TxtCant.Text.Trim());
+            }
+        }
 
-                var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
 
-                DgvCamarotes.Rows.Clear();
-                foreach (var camarot in camarotes)
+        private void cargarCamarotes()
+        {
+
+            var cod = Convert.ToInt32(DgvViajes.SelectedRows[0].Cells["cod_navio"].Value);
+            var cant_camas = Convert.ToInt32(TxtCant.Text.Trim());
+
+            var camarotes = reseracionesServicios.ObtenerCamarotes(cod, cant_camas);
+
+            DgvCamarotes.Rows.Clear();
+            foreach (var camarot in camarotes)
+            {
+                var fila = new string[]
                 {
-                    var fila = new string[]
-                    {
                     camarot.cod_navio.ToString(),
                     camarot.num_camarote.ToString(),
                     camarot.cubierta_desc.ToString(),
@@ -125,11 +138,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                     camarot.cant_camas.ToString(),
                     camarot.num_cubierta.ToString(),
                     camarot.monto.ToString()
-                    };
-                    DgvCamarotes.Rows.Add(fila);
-                }
+                };
+                DgvCamarotes.Rows.Add(fila);
             }
-        }
+        } 
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -137,12 +149,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 CargarReserva();
 
-               
 
-                /*TxtNroDoc.Clear();
-                NombrePasajero.Hide();
-                ApellidoMostrar.Hide();
-                TxtMonto.Clear();*/
+                envioMail.EnviarMail(reserva, pasajero);
             }
             catch (Exception)
             {
@@ -164,24 +172,31 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             reserva.num_doc = (int)pasajero.num_doc;
             reserva.monto = Convert.ToInt32(DgvCamarotes.SelectedRows[0].Cells["monto"].Value);
 
-           
-            DialogResult result = MessageBox.Show($"la reservación corresponde a {pasajero.nombre}, {pasajero.apellido}, y se va a reservar el camarote: {reserva.num_camarote}, con {reserva.cama_ocupada} camas ocupadas, El monto total es: {reserva.monto}", "reservaciones",MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
+
+            var nroReserva = reseracionesServicios.GetNroReservacion(reserva);
+
+
+           cargaTicket.CargarTicket(pasajero, reserva);
+           cargaTicket.ShowDialog();
+
+            if (reseracionesServicios.varConfirmarRetorno()) 
             {
                 try
                 {
                     reseracionesServicios.CargarReserva(reserva);
-                    MessageBox.Show("se registró la reserva con exito", "Reserva", MessageBoxButtons.OK);
-                    cargaTicket.CargarTicket(pasajero, reserva);
-                    cargaTicket.ShowDialog();
+                    DialogResult result = MessageBox.Show("Reserva realizada con éxito  ", "Reserva", MessageBoxButtons.OK);
 
                     nombrePasajero.Hide();
                     apellidoPasajero.Hide();
+
+                    cargarCamarotes();
+                    
+
+
                     bloqueoBusqueda = 0;
                 }
                 catch (Exception)
                 {
-                    // cargar los errores 
                     throw;
                 }
 

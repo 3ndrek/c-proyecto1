@@ -20,11 +20,14 @@ namespace Pav_TP.ReportesYSalidas.TicketReservacion
     {
         private static BarcosServicios barcosServicios;
         private static TipoDocServicio tipoDocServicio;
+
+        private static ReservacionesServicios reservvv; 
         public CargaTicket()
         {
             InitializeComponent();
             barcosServicios = new BarcosServicios();
             tipoDocServicio = new TipoDocServicio();
+            reservvv = new ReservacionesServicios();
         }
 
         private string GetNombreBarco(int codigo_barco)
@@ -58,7 +61,6 @@ namespace Pav_TP.ReportesYSalidas.TicketReservacion
                 new ReportParameter("apellidoReserva",pasajero.apellido ),
                 new ReportParameter("tipo_documento",tipo),
                 new ReportParameter("NroDoumento",pasajero.num_doc.ToString()),
-                new ReportParameter("nro_reservacion",2.ToString()),
                 new ReportParameter("fecha_viaje", reservaciones.fecha_viaje.ToString("dd/MM/yyyy hh:mm")),
                 new ReportParameter("precio_reserva", reservaciones.monto.ToString()),
                 new ReportParameter("cant_camas", reservaciones.cama_ocupada.ToString()),
@@ -84,34 +86,11 @@ namespace Pav_TP.ReportesYSalidas.TicketReservacion
             }
             return null;
         }
-        /*
-        private void EnviarMail(Pasajero pasajero, Reservaciones reserva) 
-        {
-            RwTicket.Report = ".\\ReportesYSalidas\\TicketReservacion\\TicketReservaConfirmada.rdlc";
-            var bytes = RwTicket.ren;
 
 
-            MailMessage mail = new MailMessage();
-            mail.To.Add();
-            mail.From = new MailAddress("correo_prueba@servidor.dominio");
-            mail.Subject = Asunto;
-            mail.Body = CuerpoMensaje;
-            mail.Priority = MailPriority.High;
-            mail.IsBodyHtml = true;
-
-            mail.AttachmentFiles.Add(ExportReportToPDF("Invoice.pdf"));
-
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.servidor";
-            smtp.Credentials = new
-            System.Net.NetworkCredential("correo_prueba@servidor.dominio", "******");
-            smtp.EnableSsl = true;
-            smtp.Send(mail);
-
-        }
 
 
-        */
+
 
 
         private void CargaTicket_Load(object sender, EventArgs e)
@@ -119,6 +98,20 @@ namespace Pav_TP.ReportesYSalidas.TicketReservacion
 
         }
 
-       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reservvv.confirmReservaTicket(true);
+            this.Close();
+
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            reservvv.confirmReservaTicket(false);
+            this.Close(); 
+
+        }
     }
 }

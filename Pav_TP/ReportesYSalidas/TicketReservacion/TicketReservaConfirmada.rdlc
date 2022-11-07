@@ -139,7 +139,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>5.13856cm</Top>
+            <Top>4.30953cm</Top>
             <Left>1.24037cm</Left>
             <Height>0.6cm</Height>
             <Width>3.43486cm</Width>
@@ -169,7 +169,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>5.13856cm</Top>
+            <Top>4.30953cm</Top>
             <Left>5.91467cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24083cm</Width>
@@ -384,75 +384,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox15">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Número de reservación:</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>4.25662cm</Top>
-            <Left>1.24037cm</Left>
-            <Height>0.6cm</Height>
-            <Width>3.92875cm</Width>
-            <ZIndex>13</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox16">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!nro_reservacion.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>4.25662cm</Top>
-            <Left>5.91467cm</Left>
-            <Height>0.6cm</Height>
-            <Width>3.24083cm</Width>
-            <ZIndex>14</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox17">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -472,7 +403,7 @@
             <Left>11.87662cm</Left>
             <Height>0.6cm</Height>
             <Width>3.84056cm</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -502,7 +433,7 @@
             <Left>16.21578cm</Left>
             <Height>0.6cm</Height>
             <Width>2.92333cm</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -528,11 +459,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
-            <Top>5.96759cm</Top>
+            <Top>5.13856cm</Top>
             <Left>1.24037cm</Left>
             <Height>0.6cm</Height>
             <Width>3.43486cm</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -558,11 +489,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox20</rd:DefaultName>
-            <Top>5.96759cm</Top>
+            <Top>5.13856cm</Top>
             <Left>5.91467cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24083cm</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -592,7 +523,7 @@
             <Left>16.21578cm</Left>
             <Height>0.6cm</Height>
             <Width>2.92333cm</Width>
-            <ZIndex>19</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -622,7 +553,7 @@
             <Left>16.21578cm</Left>
             <Height>0.6cm</Height>
             <Width>2.92333cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -648,11 +579,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>6.99092cm</Top>
+            <Top>6.16189cm</Top>
             <Left>5.91467cm</Left>
             <Height>0.6cm</Height>
             <Width>3.24083cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -682,7 +613,7 @@
             <Left>11.87662cm</Left>
             <Height>0.6cm</Height>
             <Width>3.84056cm</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -712,7 +643,7 @@
             <Left>11.87662cm</Left>
             <Height>0.6cm</Height>
             <Width>3.84056cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -738,11 +669,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox26</rd:DefaultName>
-            <Top>6.99092cm</Top>
+            <Top>6.16189cm</Top>
             <Left>1.24037cm</Left>
             <Height>0.6cm</Height>
             <Width>3.43486cm</Width>
-            <ZIndex>24</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -881,10 +812,6 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="nro_reservacion">
-      <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="NombreReserva">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
@@ -938,11 +865,6 @@
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>precio_reserva</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
-          <ParameterName>nro_reservacion</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
