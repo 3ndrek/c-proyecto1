@@ -32,7 +32,7 @@ namespace Pav_TP.Repositorios
                       $" JOIN paises p ON pXp.cod_pais = p.cod_pais" +
                       $" JOIN itinerarios i ON i.cod_itinerario = v.cod_itinerario" +
                       $" JOIN categoriasItinerarios ci ON ci.categoria = i.categoria" +
-                      $" WHERE 1 = 1";
+                      $" WHERE 1 = 1 AND pXi.num_escala = 1";
             if (r.FechaDesde.HasValue)
                 sql += $" AND r.fecha_viaje > '{r.FechaDesde.Value.ToString("yyyy-MM-dd")}'";
             if (r.FechaHasta.HasValue)
@@ -57,7 +57,7 @@ namespace Pav_TP.Repositorios
                 sql += $" AND r.fecha_viaje < '{r.FechaHasta.Value.ToString("yyyy-MM-dd")}'";
             if (r.Categoria.HasValue && r.Categoria != 0)
                 sql += $" AND ci.categoria ={r.Categoria}";
-            sql += " GROUP BY p.nombre";
+            sql += " GROUP BY r.fecha_viaje, ci.descripcion, p.nombre";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sql);
             return tabla;
         }
