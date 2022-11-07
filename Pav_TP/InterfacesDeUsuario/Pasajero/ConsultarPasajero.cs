@@ -28,6 +28,12 @@ namespace TrabajoPracticoPav
         private void ConsultarPasajero_Load(object sender, EventArgs e)
         {
             CargarPasajeros();
+            this.FormClosed += new FormClosedEventHandler(cerrarForm);
+        }
+
+        private void cerrarForm(object sender, EventArgs e)
+        {
+            Dispose();
         }
         private void CargarPasajeros()
         {

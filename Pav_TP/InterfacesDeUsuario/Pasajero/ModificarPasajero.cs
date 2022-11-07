@@ -36,12 +36,16 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
         private void ModificarPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            
             CargarPais();
             CargarGenero();
             CargarDoc();
+            this.FormClosed += new FormClosedEventHandler(cerrarForm);
         }
 
+        private void cerrarForm(object sender, EventArgs e)
+        {
+            Dispose();
+        }
 
         private void CargarDatos()
         {
@@ -180,5 +184,11 @@ namespace Pav_TP.InterfacesDeUsuario.Pasajero
             comboBoxCiudad.ValueMember = "cod_ciudad";
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
+        
     }
 }

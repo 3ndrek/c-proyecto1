@@ -503,7 +503,9 @@
     <Content Include="Recursos\cruc.jpg" />
     <Content Include="Recursos\f.elconfidencial.com_original_3cf_5ed_1b1_3cf5ed1b1140b545d252ab90a510122e %281%29.png" />
     <Content Include="Recursos\pers.jpg" />
+    <Content Include="Recursos\sea-star.jpg" />
     <Content Include="Recursos\vaije.jpg" />
+    <Content Include="Recursos\WhatsApp_Image_2022-10-18_at_9.24.54_PM-removebg-preview %281%29.png" />
     <Content Include="Resources\barcoimg.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
