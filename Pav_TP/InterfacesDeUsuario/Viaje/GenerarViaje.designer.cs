@@ -90,7 +90,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(429, 19);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
             this.dateTimePicker1.TabIndex = 7;
@@ -113,7 +113,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Location = new System.Drawing.Point(329, 384);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 12;
@@ -127,7 +127,7 @@
             this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardar.Location = new System.Drawing.Point(192, 384);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 13;
@@ -138,7 +138,7 @@
             // TxtDuracion
             // 
             this.TxtDuracion.Location = new System.Drawing.Point(115, 63);
-            this.TxtDuracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtDuracion.Margin = new System.Windows.Forms.Padding(2);
             this.TxtDuracion.Name = "TxtDuracion";
             this.TxtDuracion.Size = new System.Drawing.Size(121, 20);
             this.TxtDuracion.TabIndex = 10;
@@ -148,7 +148,7 @@
             this.cmbItininerario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbItininerario.FormattingEnabled = true;
             this.cmbItininerario.Location = new System.Drawing.Point(115, 19);
-            this.cmbItininerario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbItininerario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbItininerario.Name = "cmbItininerario";
             this.cmbItininerario.Size = new System.Drawing.Size(238, 21);
             this.cmbItininerario.TabIndex = 9;
@@ -172,10 +172,11 @@
             this.cmbCod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCod.FormattingEnabled = true;
             this.cmbCod.Location = new System.Drawing.Point(115, 19);
-            this.cmbCod.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCod.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCod.Name = "cmbCod";
             this.cmbCod.Size = new System.Drawing.Size(121, 21);
             this.cmbCod.TabIndex = 10;
+           // this.cmbCod.SelectedValueChanged += new System.EventHandler(this.cmbCod_SelectedValueChanged);
             // 
             // groupBox2
             // 
@@ -215,7 +216,7 @@
             this.Controls.Add(this.btnGuardar);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(109)))), ((int)(((byte)(182)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GenerarViaje";
             this.Text = "Generar viaje";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GenerarViaje_FormClosing);

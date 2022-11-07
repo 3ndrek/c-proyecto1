@@ -33,7 +33,6 @@ namespace TrabajoPracticoPav
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPasajero));
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,19 +56,10 @@ namespace TrabajoPracticoPav
             this.TxtApe = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(387, 408);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // button1
             // 
@@ -91,6 +81,8 @@ namespace TrabajoPracticoPav
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.comboBoxCiudad);
             this.groupBox2.Controls.Add(this.cod);
@@ -133,7 +125,7 @@ namespace TrabajoPracticoPav
             this.comboBoxCiudad.FormattingEnabled = true;
             this.comboBoxCiudad.Location = new System.Drawing.Point(115, 265);
             this.comboBoxCiudad.Name = "comboBoxCiudad";
-            this.comboBoxCiudad.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCiudad.Size = new System.Drawing.Size(140, 21);
             this.comboBoxCiudad.TabIndex = 44;
             // 
             // cod
@@ -149,13 +141,13 @@ namespace TrabajoPracticoPav
             // 
             this.TxtDni.Location = new System.Drawing.Point(115, 165);
             this.TxtDni.Name = "TxtDni";
-            this.TxtDni.Size = new System.Drawing.Size(121, 20);
+            this.TxtDni.Size = new System.Drawing.Size(140, 20);
             this.TxtDni.TabIndex = 39;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(291, 70);
+            this.label2.Location = new System.Drawing.Point(344, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 38;
@@ -164,7 +156,7 @@ namespace TrabajoPracticoPav
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(291, 26);
+            this.label3.Location = new System.Drawing.Point(344, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 37;
@@ -189,9 +181,9 @@ namespace TrabajoPracticoPav
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(429, 114);
+            this.dateTimePicker2.Location = new System.Drawing.Point(482, 114);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(140, 20);
             this.dateTimePicker2.TabIndex = 36;
             // 
             // label6
@@ -207,9 +199,9 @@ namespace TrabajoPracticoPav
             // 
             this.comboBoxGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenero.FormattingEnabled = true;
-            this.comboBoxGenero.Location = new System.Drawing.Point(429, 63);
+            this.comboBoxGenero.Location = new System.Drawing.Point(482, 61);
             this.comboBoxGenero.Name = "comboBoxGenero";
-            this.comboBoxGenero.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGenero.Size = new System.Drawing.Size(140, 21);
             this.comboBoxGenero.TabIndex = 35;
             // 
             // label7
@@ -227,7 +219,7 @@ namespace TrabajoPracticoPav
             this.comboBoxPais.FormattingEnabled = true;
             this.comboBoxPais.Location = new System.Drawing.Point(115, 215);
             this.comboBoxPais.Name = "comboBoxPais";
-            this.comboBoxPais.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPais.Size = new System.Drawing.Size(140, 21);
             this.comboBoxPais.TabIndex = 34;
             this.comboBoxPais.SelectedIndexChanged += new System.EventHandler(this.comboBoxPais_SelectedIndexChanged);
             // 
@@ -237,7 +229,7 @@ namespace TrabajoPracticoPav
             this.comboBoxDni.FormattingEnabled = true;
             this.comboBoxDni.Location = new System.Drawing.Point(115, 114);
             this.comboBoxDni.Name = "comboBoxDni";
-            this.comboBoxDni.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDni.Size = new System.Drawing.Size(140, 21);
             this.comboBoxDni.TabIndex = 33;
             // 
             // label8
@@ -253,13 +245,13 @@ namespace TrabajoPracticoPav
             // 
             this.TxtNom.Location = new System.Drawing.Point(115, 19);
             this.TxtNom.Name = "TxtNom";
-            this.TxtNom.Size = new System.Drawing.Size(121, 20);
+            this.TxtNom.Size = new System.Drawing.Size(140, 20);
             this.TxtNom.TabIndex = 28;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(291, 121);
+            this.label9.Location = new System.Drawing.Point(344, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 13);
             this.label9.TabIndex = 31;
@@ -269,48 +261,76 @@ namespace TrabajoPracticoPav
             // 
             this.TxtApe.Location = new System.Drawing.Point(115, 63);
             this.TxtApe.Name = "TxtApe";
-            this.TxtApe.Size = new System.Drawing.Size(121, 20);
+            this.TxtApe.Size = new System.Drawing.Size(140, 20);
             this.TxtApe.TabIndex = 29;
             // 
             // TxtEmail
             // 
-            this.TxtEmail.Location = new System.Drawing.Point(429, 19);
+            this.TxtEmail.Location = new System.Drawing.Point(482, 18);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(121, 20);
+            this.TxtEmail.Size = new System.Drawing.Size(140, 20);
             this.TxtEmail.TabIndex = 30;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.label13.Location = new System.Drawing.Point(300, 29);
+            this.label13.Location = new System.Drawing.Point(269, 30);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 24);
+            this.label13.Size = new System.Drawing.Size(208, 25);
             this.label13.TabIndex = 72;
             this.label13.Text = "Registrar Pasajero";
             // 
-            // btnGuardar
+            // btnCancelar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(263, 408);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 18;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(109)))), ((int)(((byte)(182)))));
+            this.btnCancelar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(109)))), ((int)(((byte)(182)))));
+            this.btnCancelar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(407, 393);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(87, 38);
+            this.btnCancelar.TabIndex = 73;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.White;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pruebaButton1
+            // 
+            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(109)))), ((int)(((byte)(182)))));
+            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(109)))), ((int)(((byte)(182)))));
+            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton1.BorderRadius = 20;
+            this.pruebaButton1.BorderSize = 0;
+            this.pruebaButton1.FlatAppearance.BorderSize = 0;
+            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton1.Location = new System.Drawing.Point(274, 393);
+            this.pruebaButton1.Name = "pruebaButton1";
+            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton1.TabIndex = 74;
+            this.pruebaButton1.Text = "Aceptar";
+            this.pruebaButton1.TextColor = System.Drawing.Color.White;
+            this.pruebaButton1.UseVisualStyleBackColor = false;
+            this.pruebaButton1.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // RegistrarPasajero
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(756, 450);
+            this.Controls.Add(this.pruebaButton1);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrarPasajero";
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
@@ -324,7 +344,6 @@ namespace TrabajoPracticoPav
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -348,7 +367,8 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCiudad;
         private Label label13;
-        private Button btnGuardar;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton btnCancelar;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton1;
     }
 }
 

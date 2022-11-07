@@ -53,6 +53,11 @@ namespace Pav_TP.Servicios
             viajes.ValidarItininerario();
         }
 
+        public List<BarcoFecha> GetBarcoFechas(Barco cod)
+        {
+            return repositorio.GetBarcoFecha(cod);
+        }
+
         public bool RegistrarViaje(Viaje viajes)
         {
             var filasAfectadas = repositorio.RegistrarViaje(viajes);

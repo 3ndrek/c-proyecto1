@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Barco.cs" />
+    <Compile Include="Entidades\BarcoFecha.cs" />
     <Compile Include="Entidades\Camarote.cs" />
     <Compile Include="Entidades\CategoriasItinerarios.cs" />
     <Compile Include="Entidades\Ciudad.cs" />

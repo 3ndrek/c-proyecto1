@@ -42,6 +42,27 @@ namespace Pav_TP.Repositorios
             return viajes;
         }
 
+        public List<BarcoFecha> GetBarcoFecha(Barco cod)
+        {
+            var barcos = new List<BarcoFecha>();
+            var sentenciaSql = $"SELECT * FROM viaje WHERE esDadoBaja is null WHERE cod_navio= {cod}";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var barco = new BarcoFecha();
+                barco.fechaIncio = Convert.ToDateTime(fila["fecha_viaje"]);
+                barco.duracion = Convert.ToInt32(fila["duracion"]);
+                barco.fechaFin = Convert.ToDateTime(barco.fechaIncio.AddDays(barco.duracion));
+               
+
+                barcos.Add(barco);
+            }
+
+            return barcos;
+
+        }
+            
         public List<Viaje> GetViajes(Entidades.Itinerario i)
         {
             var viajes = new List<Viaje>();

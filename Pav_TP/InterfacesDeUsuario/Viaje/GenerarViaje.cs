@@ -73,6 +73,8 @@ namespace PAV1
                 if (!esViajeValido())
                     return;
                 RegistrarViajee();
+                VerificarFecha();
+
             }
             catch (ApplicationException aex)
             {
@@ -128,13 +130,40 @@ namespace PAV1
         {
             frmPrincipal.Show();
             this.Dispose();
-
         }
 
         private void GenerarViaje_FormClosing(object sender, FormClosingEventArgs e)
         {
             CerrarFormulario();
         }
+
+        private void VerificarFecha()
+        {
+            var cod = (Barco)cmbCod.SelectedItem;
+            var fechas = viajesServicios.GetBarcoFechas(cod);
+           
+            var fechaI = Convert.ToDateTime(dateTimePicker1.Text.Trim());
+            var duracion = Convert.ToInt32(TxtDuracion.Text.Trim());
+
+            foreach (BarcoFecha fecha in fechas)
+            {
+                if(!(fechaI < fecha.fechaIncio || fechaI > fecha.fechaFin))
+                    MessageBox.Show("La fecha seleccionada no esta disponible, intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+            }
+        }
+
+        //private void cmbCod_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    // fecha_incio, duracion
+        //    var fechaInicio = DateTime.Now;
+        //    var duracion = 10;
+        //    var datosViaje = viajesServicios.get_fecha_duracion(idNAvio);
+        //    // datosViajes: FEchaInicio, FechaFin
+        //    var fechaFin = fechaInicio.AddDays(duracion);
+        //    var fechaInicioSeleccoinada = dateTimePicker1.Value;
+        //    var fechaFinSeleccionada = 
+        //}
     }
     
 }
