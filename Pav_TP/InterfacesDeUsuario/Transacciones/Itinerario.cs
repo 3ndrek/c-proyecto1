@@ -72,7 +72,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            int cod_i = itinerarioServicios.GenerarCodItinerario();
+            //int cod_i = itinerarioServicios.GenerarCodItinerario();
             string c =cmbCategoria.Text;
             DataGridViewRow d1 = dgvPuertos.Rows[0];
             DataGridViewRow d2 = dgvPuertos.Rows[dgvPuertos.RowCount-2];
@@ -80,7 +80,8 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             string ultimoP = d2.Cells[1].Value.ToString();
             string nombreI = c + " - " + primerP + " - " + ultimoP;
             int cat = Convert.ToInt32(cmbCategoria.SelectedValue);
-            itinerarioServicios.RegistrarItinerario(cod_i,cat,nombreI);
+            itinerarioServicios.RegistrarItinerario(cat,nombreI);
+            int cod_i = itinerarioServicios.ObtenerUltimoCodi();
             itinerarioServicios.RegistrarPuertosXItinerario(dgvPuertos, cod_i);
             MessageBox.Show($"El itinerario {nombreI} se registro con exito...");
         }

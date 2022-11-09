@@ -16,7 +16,6 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
     public partial class RegistrarCamarote : Form
     {
         private readonly CamaroteServicios camaroteServicio;
-        //Cuando termines hace el FormClosing
         private readonly FrmPrincipal frmPrincipal;
         
         public RegistrarCamarote()
@@ -72,17 +71,22 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             try
             {
                 var dato = new Pav_TP.Entidades.Camarote();
-                dato.cod_navio = (int)CmbNavio.SelectedValue;
-                dato.num_cubierta = (int)CmbCubierta.SelectedValue;
+                if (CmbNavio.SelectedValue == null)
+                    CmbNavio.Focus();
+                else dato.cod_navio = (int)CmbNavio.SelectedValue;
+                if (CmbCubierta.SelectedValue == null && CmbNavio.SelectedValue != null)
+                    CmbNavio.Focus();
+                else dato.num_cubierta = (int)CmbCubierta.SelectedValue;
                 dato.num_camarote = Convert.ToInt32(TxtNumCamarote.Text);
                 dato.tipo = (int)CmbTipoCam.SelectedValue;
                 dato.monto = Convert.ToInt32(txtMonto.Text);
                 dato.cant_camas = Convert.ToInt32(TxtCantCamas.Text);
 
-
+                camaroteServicio.ValidarCamarote(dato);
                 RegistrarCamarote1(dato);
                 MessageBox.Show("Camarote cargado con exito", "Registrar camarote", MessageBoxButtons.OK);
             }
+            
             catch (Exception)
             {
                 MessageBox.Show("Registro invalido... Verifique los campos", "Error 404", MessageBoxButtons.OK);

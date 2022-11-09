@@ -20,6 +20,7 @@ namespace Pav_TP.Servicios
         public List<CategoriasItinerarios> GetCategoriasItinerarios() { return itinerarioRepositorio.GetCategoriasItinerarios(); }
 
         public List<Puertos> GetPuertosXPais(int cod_pais) { return itinerarioRepositorio.GetPuertosXPais(cod_pais);}
+        public int ObtenerUltimoCodi() { return itinerarioRepositorio.ObtenerUltimoCodI(); }
 
         public void CargarPaises(ComboBox cmb)
         {
@@ -70,11 +71,10 @@ namespace Pav_TP.Servicios
             return itinerarioRepositorio.GenerarCodItinerario();
         }
 
-        public int RegistrarItinerario(int cod_i, int cat, string n)
+        public void RegistrarItinerario(int cat, string n)
         {
-            var sql = $"insert into itinerarios(cod_itinerario,categoria, nombre) values ({cod_i},{cat},'{n}')";
+            var sql = $"insert into itinerarios(categoria, nombre) values ({cat},'{n}')";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
-            return cod_i;
         }
 
         public void RegistrarPuertosXItinerario(DataGridView dgv, int cod_i)

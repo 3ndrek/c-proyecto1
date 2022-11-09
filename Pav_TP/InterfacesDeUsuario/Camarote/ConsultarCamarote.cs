@@ -55,31 +55,34 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-
-            //Hay que validar los campos obligatorios
-            var cam = new Entidades.Camarote();
-
-            if (!string.IsNullOrEmpty(CmbNavio.SelectedValue.ToString()))
-                cam.cod_navio = (int)CmbNavio.SelectedValue;
-            else
+            try
             {
-                MessageBox.Show("Ingrese un valor en el campo navio");
-                CmbNavio.Focus();
-            }
-            if (!string.IsNullOrEmpty(CmbCubierta.SelectedValue.ToString()))
-                cam.num_cubierta = (int)CmbCubierta.SelectedValue;
-            else
-            {
-                MessageBox.Show("Ingrese un valor en el campo cubierta");
-                CmbCubierta.Focus();
-            }
-            if (!string.IsNullOrEmpty(TxtNro.Text))
-                cam.num_camarote = Convert.ToInt32(TxtNro.Text);
-            else cam.num_camarote = 0;
+                var cam = new Entidades.Camarote();
+                if (CmbNavio.SelectedValue == null || (int)CmbNavio.SelectedValue == 0)
+                {
+                    CmbNavio.Focus();
+                    MessageBox.Show("Ingrese un valor en el campo navio");
+                    return;
+                }
+                else cam.cod_navio = (int)CmbNavio.SelectedValue;
+                if (CmbCubierta.SelectedValue == null && CmbNavio.SelectedValue != null)
+                {
+                    CmbNavio.Focus();
+                    MessageBox.Show("Ingrese un valor en el campo cubierta");
+                    return;
+                }
+                else cam.num_cubierta = (int)CmbCubierta.SelectedValue;
+                if (!string.IsNullOrEmpty(TxtNro.Text))
+                    cam.num_camarote = Convert.ToInt32(TxtNro.Text);
+                else cam.num_camarote = 0;
 
-            DataTable datos = camaroteServicios.ConsultarCamarote(cam);
-            GrillaCamarotes.DataSource = datos;
-            
+                DataTable datos = camaroteServicios.ConsultarCamarote(cam);
+                GrillaCamarotes.DataSource = datos;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Consulta invalida... Verifique los campos obligatorios", "Error 404", MessageBoxButtons.OK);
+            }
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)

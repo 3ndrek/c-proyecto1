@@ -25,14 +25,14 @@ namespace Pav_TP.Entidades
         public int monto { get; set; } 
         public void ValidarNavio()
         {
-            if (string.IsNullOrEmpty(this.cod_navio.ToString()) && this.cod_navio < 0) {
+            if (cod_navio == null) {
                 crearException("Debe ingresar un valor en el campo navio");
             }
         }
 
         public void ValidarCubierta()
         {
-            if (string.IsNullOrEmpty(this.num_cubierta.ToString()) && this.num_cubierta < 0)
+            if (num_cubierta == null)
             {
                 crearException("Debe ingresar un valor en el campo cubierta");
             }
@@ -40,7 +40,7 @@ namespace Pav_TP.Entidades
 
         public void ValidarNro()
         {
-            if (string.IsNullOrEmpty(this.num_camarote.ToString()) && this.num_camarote < 0)
+            if (num_camarote == null || num_camarote < 0)
             {
                 crearException("Debe ingresar un valor en el campo numero camarote");
             }

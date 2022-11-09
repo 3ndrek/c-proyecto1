@@ -93,5 +93,14 @@ namespace Pav_TP.Repositorios
             int cod_p = (int)row[0];
             return cod_p;
         }
+
+        public int ObtenerUltimoCodI()
+        {
+            var sql = "SELECT i.cod_itinerario FROM itinerarios i WHERE cod_itinerario=(SELECT max(cod_itinerario) FROM itinerarios)";
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
+            DataRow row = tablaResultado.Rows[0];
+            int cod_i = (int)row[0];
+            return cod_i;
+        }
     }
 }
