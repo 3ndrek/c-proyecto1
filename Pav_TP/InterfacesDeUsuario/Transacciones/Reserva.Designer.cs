@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reserva));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DgvViajes = new System.Windows.Forms.DataGridView();
             this.cod_navio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,7 +37,6 @@
             this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnBuscar = new System.Windows.Forms.Button();
             this.TxtCant = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvCamarotes = new System.Windows.Forms.DataGridView();
@@ -49,8 +49,6 @@
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.camarotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnAceptar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.CmbItinerario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DgvPuertos = new System.Windows.Forms.DataGridView();
@@ -62,9 +60,12 @@
             this.TxtNroDoc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.BtnBuscarPasajero = new System.Windows.Forms.Button();
             this.nombrePasajero = new System.Windows.Forms.Label();
             this.apellidoPasajero = new System.Windows.Forms.Label();
+            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton3 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvViajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viajeBindingSource)).BeginInit();
@@ -132,10 +133,9 @@
             this.duracion.ReadOnly = true;
             this.duracion.Width = 150;
             // 
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.BtnBuscar);
+            this.groupBox2.Controls.Add(this.pruebaButton1);
             this.groupBox2.Controls.Add(this.TxtCant);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.DgvCamarotes);
@@ -147,16 +147,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccione un camarote";
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.Location = new System.Drawing.Point(463, 18);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscar.TabIndex = 3;
-            this.BtnBuscar.Text = "Buscar";
-            this.BtnBuscar.UseVisualStyleBackColor = true;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // TxtCant
             // 
@@ -259,7 +249,6 @@
             this.monto.Name = "monto";
             this.monto.ReadOnly = true;
             this.monto.Width = 150;
-            //  
             // 
             // label1
             // 
@@ -271,33 +260,11 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Esta seguro de que desea reservar este camarote?";
             // 
-            // BtnAceptar
-            // 
-            this.BtnAceptar.Location = new System.Drawing.Point(751, 499);
-            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BtnAceptar.Name = "BtnAceptar";
-            this.BtnAceptar.Size = new System.Drawing.Size(85, 30);
-            this.BtnAceptar.TabIndex = 3;
-            this.BtnAceptar.Text = "Aceptar";
-            this.BtnAceptar.UseVisualStyleBackColor = true;
-            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(923, 499);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 30);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // CmbItinerario
             // 
             this.CmbItinerario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbItinerario.FormattingEnabled = true;
-            this.CmbItinerario.Location = new System.Drawing.Point(29, 194);
+            this.CmbItinerario.Location = new System.Drawing.Point(29, 197);
             this.CmbItinerario.Name = "CmbItinerario";
             this.CmbItinerario.Size = new System.Drawing.Size(238, 21);
             this.CmbItinerario.TabIndex = 5;
@@ -306,9 +273,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(33, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 13);
+            this.label2.Size = new System.Drawing.Size(208, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Seleccione el itinerario a reservar";
             // 
@@ -331,11 +299,10 @@
             this.nombre.ReadOnly = true;
             this.nombre.Width = 150;
             // 
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 47);
+            this.label4.Location = new System.Drawing.Point(33, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 11;
@@ -343,8 +310,9 @@
             // 
             // CmbTipoDoc
             // 
+            this.CmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipoDoc.FormattingEnabled = true;
-            this.CmbTipoDoc.Location = new System.Drawing.Point(150, 47);
+            this.CmbTipoDoc.Location = new System.Drawing.Point(163, 39);
             this.CmbTipoDoc.Name = "CmbTipoDoc";
             this.CmbTipoDoc.Size = new System.Drawing.Size(104, 21);
             this.CmbTipoDoc.TabIndex = 12;
@@ -353,16 +321,17 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(29, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(197, 13);
+            this.label6.Size = new System.Drawing.Size(254, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Ingrese los datos del pasajero a reservar";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 82);
+            this.label7.Location = new System.Drawing.Point(33, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 13);
             this.label7.TabIndex = 14;
@@ -370,7 +339,7 @@
             // 
             // TxtNroDoc
             // 
-            this.TxtNroDoc.Location = new System.Drawing.Point(150, 82);
+            this.TxtNroDoc.Location = new System.Drawing.Point(163, 75);
             this.TxtNroDoc.Name = "TxtNroDoc";
             this.TxtNroDoc.Size = new System.Drawing.Size(104, 20);
             this.TxtNroDoc.TabIndex = 15;
@@ -395,16 +364,6 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Apellido: ";
             // 
-            // BtnBuscarPasajero
-            // 
-            this.BtnBuscarPasajero.Location = new System.Drawing.Point(192, 134);
-            this.BtnBuscarPasajero.Name = "BtnBuscarPasajero";
-            this.BtnBuscarPasajero.Size = new System.Drawing.Size(75, 23);
-            this.BtnBuscarPasajero.TabIndex = 18;
-            this.BtnBuscarPasajero.Text = "Buscar";
-            this.BtnBuscarPasajero.UseVisualStyleBackColor = true;
-            this.BtnBuscarPasajero.Click += new System.EventHandler(this.BtnBuscarPasajero_Click);
-            // 
             // nombrePasajero
             // 
             this.nombrePasajero.AutoSize = true;
@@ -421,14 +380,93 @@
             this.apellidoPasajero.Size = new System.Drawing.Size(0, 13);
             this.apellidoPasajero.TabIndex = 20;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardar.BorderRadius = 20;
+            this.btnGuardar.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(196, 131);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 38);
+            this.btnGuardar.TabIndex = 76;
+            this.btnGuardar.Text = "Buscar";
+            this.btnGuardar.TextColor = System.Drawing.Color.White;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnBuscarPasajero_Click);
+            // 
+            // pruebaButton1
+            // 
+            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton1.BorderRadius = 20;
+            this.pruebaButton1.BorderSize = 0;
+            this.pruebaButton1.FlatAppearance.BorderSize = 0;
+            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton1.Location = new System.Drawing.Point(446, 11);
+            this.pruebaButton1.Name = "pruebaButton1";
+            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton1.TabIndex = 77;
+            this.pruebaButton1.Text = "Buscar";
+            this.pruebaButton1.TextColor = System.Drawing.Color.White;
+            this.pruebaButton1.UseVisualStyleBackColor = false;
+            this.pruebaButton1.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
+            // pruebaButton2
+            // 
+            this.pruebaButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton2.BorderRadius = 20;
+            this.pruebaButton2.BorderSize = 0;
+            this.pruebaButton2.FlatAppearance.BorderSize = 0;
+            this.pruebaButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton2.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton2.Location = new System.Drawing.Point(757, 495);
+            this.pruebaButton2.Name = "pruebaButton2";
+            this.pruebaButton2.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton2.TabIndex = 78;
+            this.pruebaButton2.Text = "Aceptar";
+            this.pruebaButton2.TextColor = System.Drawing.Color.White;
+            this.pruebaButton2.UseVisualStyleBackColor = false;
+            this.pruebaButton2.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
+            // pruebaButton3
+            // 
+            this.pruebaButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton3.BorderRadius = 20;
+            this.pruebaButton3.BorderSize = 0;
+            this.pruebaButton3.FlatAppearance.BorderSize = 0;
+            this.pruebaButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton3.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton3.Location = new System.Drawing.Point(897, 495);
+            this.pruebaButton3.Name = "pruebaButton3";
+            this.pruebaButton3.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton3.TabIndex = 79;
+            this.pruebaButton3.Text = "Cancelar";
+            this.pruebaButton3.TextColor = System.Drawing.Color.White;
+            this.pruebaButton3.UseVisualStyleBackColor = false;
+            this.pruebaButton3.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Reserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1012, 571);
+            this.Controls.Add(this.pruebaButton3);
+            this.Controls.Add(this.pruebaButton2);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.apellidoPasajero);
             this.Controls.Add(this.nombrePasajero);
-            this.Controls.Add(this.BtnBuscarPasajero);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TxtNroDoc);
@@ -439,11 +477,11 @@
             this.Controls.Add(this.DgvPuertos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CmbItinerario);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Reserva";
             this.Text = "Reserva";
@@ -471,14 +509,11 @@
         private System.Windows.Forms.DataGridView DgvCamarotes;
         private System.Windows.Forms.BindingSource camarotesBindingSource;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button BtnAceptar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox CmbItinerario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DgvPuertos;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BtnBuscar;
         private System.Windows.Forms.TextBox TxtCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_navio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
@@ -490,7 +525,6 @@
         private System.Windows.Forms.TextBox TxtNroDoc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button BtnBuscarPasajero;
         private System.Windows.Forms.Label nombrePasajero;
         private System.Windows.Forms.Label apellidoPasajero;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_navio;
@@ -500,5 +534,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cant_camas;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_cubierta;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
+        private PruebaButton pruebaButton1;
+        private PruebaButton btnGuardar;
+        private PruebaButton pruebaButton2;
+        private PruebaButton pruebaButton3;
     }
 }

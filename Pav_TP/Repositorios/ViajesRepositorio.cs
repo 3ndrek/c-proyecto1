@@ -42,10 +42,10 @@ namespace Pav_TP.Repositorios
             return viajes;
         }
 
-        public List<BarcoFecha> GetBarcoFecha(Barco cod)
+        public List<BarcoFecha> GetBarcoFecha(BarcoFecha cod)
         {
             var barcos = new List<BarcoFecha>();
-            var sentenciaSql = $"SELECT * FROM viaje WHERE esDadoBaja is null WHERE cod_navio= {cod}";
+            var sentenciaSql = $"SELECT * FROM viaje WHERE esDadoBa is null and cod_navio= {cod.cod_navio}";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
             foreach (DataRow fila in tablaResultado.Rows)
@@ -54,6 +54,7 @@ namespace Pav_TP.Repositorios
                 barco.fechaIncio = Convert.ToDateTime(fila["fecha_viaje"]);
                 barco.duracion = Convert.ToInt32(fila["duracion"]);
                 barco.fechaFin = Convert.ToDateTime(barco.fechaIncio.AddDays(barco.duracion));
+               
                
 
                 barcos.Add(barco);

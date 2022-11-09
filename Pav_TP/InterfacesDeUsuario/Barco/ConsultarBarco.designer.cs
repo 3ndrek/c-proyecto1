@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarBarco));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnAgregar = new System.Windows.Forms.Button();
+            this.btnCancel = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.BtnModificar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.BtnEliminar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.BtnAgregar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.DgvBarco = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,10 +48,8 @@
             this.CantTripulantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.BtnEliminar = new System.Windows.Forms.Button();
-            this.BtnModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnFiltro = new System.Windows.Forms.Button();
+            this.btnBuscar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.TxtFiltroNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,25 +62,94 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Controls.Add(this.BtnModificar);
+            this.groupBox2.Controls.Add(this.BtnEliminar);
             this.groupBox2.Controls.Add(this.BtnAgregar);
             this.groupBox2.Controls.Add(this.DgvBarco);
-            this.groupBox2.Controls.Add(this.BtnEliminar);
-            this.groupBox2.Controls.Add(this.BtnModificar);
-            this.groupBox2.Location = new System.Drawing.Point(40, 213);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox2.Location = new System.Drawing.Point(75, 196);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(584, 233);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultados de la búsqueda";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 20;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(481, 184);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(87, 38);
+            this.btnCancel.TabIndex = 79;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.TextColor = System.Drawing.Color.White;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // BtnModificar
+            // 
+            this.BtnModificar.BackColor = System.Drawing.Color.DarkOrange;
+            this.BtnModificar.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.BtnModificar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnModificar.BorderRadius = 20;
+            this.BtnModificar.BorderSize = 0;
+            this.BtnModificar.FlatAppearance.BorderSize = 0;
+            this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnModificar.ForeColor = System.Drawing.Color.White;
+            this.BtnModificar.Location = new System.Drawing.Point(385, 184);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(87, 38);
+            this.BtnModificar.TabIndex = 78;
+            this.BtnModificar.Text = "Modificar";
+            this.BtnModificar.TextColor = System.Drawing.Color.White;
+            this.BtnModificar.UseVisualStyleBackColor = false;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
+            // BtnEliminar
+            // 
+            this.BtnEliminar.BackColor = System.Drawing.Color.Red;
+            this.BtnEliminar.BackgroundColor = System.Drawing.Color.Red;
+            this.BtnEliminar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnEliminar.BorderRadius = 20;
+            this.BtnEliminar.BorderSize = 0;
+            this.BtnEliminar.FlatAppearance.BorderSize = 0;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEliminar.ForeColor = System.Drawing.Color.White;
+            this.BtnEliminar.Location = new System.Drawing.Point(279, 184);
+            this.BtnEliminar.Name = "BtnEliminar";
+            this.BtnEliminar.Size = new System.Drawing.Size(87, 38);
+            this.BtnEliminar.TabIndex = 77;
+            this.BtnEliminar.Text = "Eliminar";
+            this.BtnEliminar.TextColor = System.Drawing.Color.White;
+            this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(250, 195);
+            this.BtnAgregar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnAgregar.BackgroundColor = System.Drawing.Color.ForestGreen;
+            this.BtnAgregar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.BtnAgregar.BorderRadius = 20;
+            this.BtnAgregar.BorderSize = 0;
+            this.BtnAgregar.FlatAppearance.BorderSize = 0;
+            this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregar.ForeColor = System.Drawing.Color.White;
+            this.BtnAgregar.Location = new System.Drawing.Point(170, 184);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.BtnAgregar.TabIndex = 29;
+            this.BtnAgregar.Size = new System.Drawing.Size(87, 38);
+            this.BtnAgregar.TabIndex = 76;
             this.BtnAgregar.Text = "Agregar";
-            this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.TextColor = System.Drawing.Color.White;
+            this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // DgvBarco
@@ -188,63 +258,54 @@
             this.Seleccionar.Name = "Seleccionar";
             this.Seleccionar.ReadOnly = true;
             // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.Location = new System.Drawing.Point(481, 195);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.BtnEliminar.TabIndex = 28;
-            this.BtnEliminar.Text = "Eliminar";
-            this.BtnEliminar.UseVisualStyleBackColor = true;
-            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
-            // 
-            // BtnModificar
-            // 
-            this.BtnModificar.Location = new System.Drawing.Point(364, 195);
-            this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(75, 23);
-            this.BtnModificar.TabIndex = 27;
-            this.BtnModificar.Text = "Modificar";
-            this.BtnModificar.UseVisualStyleBackColor = true;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.BtnFiltro);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.TxtFiltroNombre);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TxtFiltroCodigo);
-            this.groupBox1.Location = new System.Drawing.Point(40, 68);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox1.Location = new System.Drawing.Point(75, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 118);
+            this.groupBox1.Size = new System.Drawing.Size(584, 113);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por código o nombre";
             // 
-            // BtnFiltro
+            // btnBuscar
             // 
-            this.BtnFiltro.Location = new System.Drawing.Point(484, 83);
-            this.BtnFiltro.Name = "BtnFiltro";
-            this.BtnFiltro.Size = new System.Drawing.Size(75, 23);
-            this.BtnFiltro.TabIndex = 15;
-            this.BtnFiltro.Text = "Filtrar";
-            this.BtnFiltro.UseVisualStyleBackColor = true;
-            this.BtnFiltro.Click += new System.EventHandler(this.BtnFiltro_Click);
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBuscar.BorderRadius = 20;
+            this.btnBuscar.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(472, 57);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(87, 38);
+            this.btnBuscar.TabIndex = 76;
+            this.btnBuscar.Text = "Filtrar";
+            this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnFiltro_Click);
             // 
             // TxtFiltroNombre
             // 
-            this.TxtFiltroNombre.Location = new System.Drawing.Point(456, 31);
+            this.TxtFiltroNombre.Location = new System.Drawing.Point(361, 32);
             this.TxtFiltroNombre.Name = "TxtFiltroNombre";
-            this.TxtFiltroNombre.Size = new System.Drawing.Size(100, 20);
+            this.TxtFiltroNombre.Size = new System.Drawing.Size(100, 22);
             this.TxtFiltroNombre.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(361, 38);
+            this.label2.Location = new System.Drawing.Point(276, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Nombre";
             // 
@@ -253,7 +314,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Código";
             // 
@@ -261,17 +322,18 @@
             // 
             this.TxtFiltroCodigo.Location = new System.Drawing.Point(115, 31);
             this.TxtFiltroCodigo.Name = "TxtFiltroCodigo";
-            this.TxtFiltroCodigo.Size = new System.Drawing.Size(100, 20);
+            this.TxtFiltroCodigo.Size = new System.Drawing.Size(100, 22);
             this.TxtFiltroCodigo.TabIndex = 12;
             this.TxtFiltroCodigo.Text = "0";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(236, 24);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(253, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 24);
+            this.label3.Size = new System.Drawing.Size(233, 25);
             this.label3.TabIndex = 25;
             this.label3.Text = "Consultar embarcación";
             // 
@@ -279,7 +341,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 501);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(756, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -314,15 +377,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantTripulantes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
-        private System.Windows.Forms.Button BtnEliminar;
-        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TxtFiltroNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtFiltroCodigo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BtnFiltro;
-        private System.Windows.Forms.Button BtnAgregar;
+        private PruebaButton BtnAgregar;
+        private PruebaButton BtnEliminar;
+        private PruebaButton BtnModificar;
+        private PruebaButton btnCancel;
+        private PruebaButton btnBuscar;
     }
 }

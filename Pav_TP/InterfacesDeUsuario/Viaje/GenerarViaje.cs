@@ -72,8 +72,9 @@ namespace PAV1
                     return;
                 if (!esViajeValido())
                     return;
-                RegistrarViajee();
                 VerificarFecha();
+                RegistrarViajee();
+
 
             }
             catch (ApplicationException aex)
@@ -82,7 +83,7 @@ namespace PAV1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -95,7 +96,7 @@ namespace PAV1
 
         public bool esViajeValido()
         {
-            
+
             var cod = (Barco)cmbCod.SelectedItem;
             var fecha = Convert.ToDateTime(dateTimePicker1.Text.Trim());
             var duracion = Convert.ToInt32(TxtDuracion.Text.Trim());
@@ -140,16 +141,41 @@ namespace PAV1
         private void VerificarFecha()
         {
             var cod = (Barco)cmbCod.SelectedItem;
-            var fechas = viajesServicios.GetBarcoFechas(cod);
-           
+
+            BarcoFecha nuevoBarco = new BarcoFecha();
+            nuevoBarco.cod_navio = cod.Codigo;
+            nuevoBarco.duracion = int.Parse(TxtDuracion.Text);
+            nuevoBarco.fechaFin = dateTimePicker1.Value.AddDays(nuevoBarco.duracion);
+            nuevoBarco.fechaIncio = dateTimePicker1.Value;
+
+            var fechas = viajesServicios.GetBarcoFechas(nuevoBarco);
+           /*
             var fechaI = Convert.ToDateTime(dateTimePicker1.Text.Trim());
             var duracion = Convert.ToInt32(TxtDuracion.Text.Trim());
+            var fechaF = fechaI.AddDays(duracion);
+           */
+            //var viajeSelec = new BarcoFecha();
+            //viajeSelec.cod_navio = cod.cod_navio;
+            //viajeSelec.fechaIncio = fechaI;
+            //viajeSelec.fechaFin = fechaF;
+            //viajeSelec.duracion = duracion;
+
+            
 
             foreach (BarcoFecha fecha in fechas)
             {
-                if(!(fechaI < fecha.fechaIncio || fechaI > fecha.fechaFin))
-                    MessageBox.Show("La fecha seleccionada no esta disponible, intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!(nuevoBarco.fechaIncio < fecha.fechaIncio || nuevoBarco.fechaIncio > fecha.fechaFin))
+                {
+                    throw new ApplicationException("La fecha seleccionada no esta disponible");
+                    //MessageBox.Show("La fecha seleccionada no esta disponible, intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
+                }
+
+                if (!(nuevoBarco.fechaFin < fecha.fechaIncio || nuevoBarco.fechaFin > fecha.fechaFin))
+                {
+                    throw new ApplicationException("La fecha seleccionada no esta disponible");
+                    return;
+                }
             }
         }
 

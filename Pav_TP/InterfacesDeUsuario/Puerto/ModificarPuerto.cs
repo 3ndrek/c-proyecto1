@@ -79,5 +79,11 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
         {
             this.Dispose();
         }
+
+        private void pruebaButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPrincipal.Show();
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Pav_TP.Entidades;
 using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,8 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
         private Entidades.Barco barco;
         private BarcosServicios barcosServicios;
         private ClasificacionesServicios clasificacionesServicios;
+        private readonly FrmPrincipal frmPrincipal;
+
         public ModificarBarco(int id)
         {
             barcosServicios = new BarcosServicios();
@@ -124,9 +127,16 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
             MessageBox.Show("Se actualizo correctamente el barco", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        private void pruebaButton2_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
         private void CerrarFormulario()
         {
+            
             this.Dispose();
+
         }
     }
 }

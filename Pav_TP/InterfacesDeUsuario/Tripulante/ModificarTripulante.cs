@@ -134,5 +134,11 @@ namespace Pav_TP.InterfacesDeUsuario.Tripulante
         {
             this.Dispose();
         }
+
+        private void pruebaButton4_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
+
     }
 }

@@ -67,7 +67,7 @@ namespace Pav_TP.Servicios
             viajes.ValidarItininerario();
         }
 
-        public List<BarcoFecha> GetBarcoFechas(Barco cod)
+        public List<BarcoFecha> GetBarcoFechas(BarcoFecha cod)
         {
             return repositorio.GetBarcoFecha(cod);
         }

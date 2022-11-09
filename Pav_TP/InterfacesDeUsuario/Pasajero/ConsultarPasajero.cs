@@ -104,5 +104,11 @@ namespace TrabajoPracticoPav
             this.Hide();
             new RegistrarPasajero(frmPrincipal).Show();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPrincipal.Show();
+        }
     }
 }

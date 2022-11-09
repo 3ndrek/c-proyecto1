@@ -29,8 +29,12 @@ namespace TrabajoPracticoPav
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarTripulante));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.pruebaButton4 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton3 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.GrillaTripulante = new System.Windows.Forms.DataGridView();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,13 +43,10 @@ namespace TrabajoPracticoPav
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.TxtLegajo = new System.Windows.Forms.TextBox();
             this.genero = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaTripulante)).BeginInit();
@@ -54,28 +55,95 @@ namespace TrabajoPracticoPav
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnModificar);
+            this.groupBox1.Controls.Add(this.pruebaButton4);
+            this.groupBox1.Controls.Add(this.pruebaButton3);
+            this.groupBox1.Controls.Add(this.pruebaButton2);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.GrillaTripulante);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Location = new System.Drawing.Point(40, 199);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox1.Location = new System.Drawing.Point(75, 196);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(584, 233);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Tripulante";
             // 
-            // btnModificar
+            // pruebaButton4
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnModificar.ForeColor = System.Drawing.Color.Black;
-            this.btnModificar.Location = new System.Drawing.Point(481, 195);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 31;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.pruebaButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton4.BorderRadius = 20;
+            this.pruebaButton4.BorderSize = 0;
+            this.pruebaButton4.FlatAppearance.BorderSize = 0;
+            this.pruebaButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton4.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton4.Location = new System.Drawing.Point(478, 184);
+            this.pruebaButton4.Name = "pruebaButton4";
+            this.pruebaButton4.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton4.TabIndex = 79;
+            this.pruebaButton4.Text = "Cancelar";
+            this.pruebaButton4.TextColor = System.Drawing.Color.White;
+            this.pruebaButton4.UseVisualStyleBackColor = false;
+            this.pruebaButton4.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // pruebaButton3
+            // 
+            this.pruebaButton3.BackColor = System.Drawing.Color.DarkOrange;
+            this.pruebaButton3.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.pruebaButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton3.BorderRadius = 20;
+            this.pruebaButton3.BorderSize = 0;
+            this.pruebaButton3.FlatAppearance.BorderSize = 0;
+            this.pruebaButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton3.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton3.Location = new System.Drawing.Point(385, 184);
+            this.pruebaButton3.Name = "pruebaButton3";
+            this.pruebaButton3.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton3.TabIndex = 78;
+            this.pruebaButton3.Text = "Modificar";
+            this.pruebaButton3.TextColor = System.Drawing.Color.White;
+            this.pruebaButton3.UseVisualStyleBackColor = false;
+            this.pruebaButton3.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // pruebaButton2
+            // 
+            this.pruebaButton2.BackColor = System.Drawing.Color.Red;
+            this.pruebaButton2.BackgroundColor = System.Drawing.Color.Red;
+            this.pruebaButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton2.BorderRadius = 20;
+            this.pruebaButton2.BorderSize = 0;
+            this.pruebaButton2.FlatAppearance.BorderSize = 0;
+            this.pruebaButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton2.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton2.Location = new System.Drawing.Point(279, 184);
+            this.pruebaButton2.Name = "pruebaButton2";
+            this.pruebaButton2.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton2.TabIndex = 77;
+            this.pruebaButton2.Text = "Eliminar";
+            this.pruebaButton2.TextColor = System.Drawing.Color.White;
+            this.pruebaButton2.UseVisualStyleBackColor = false;
+            this.pruebaButton2.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnGuardar.BackgroundColor = System.Drawing.Color.ForestGreen;
+            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardar.BorderRadius = 20;
+            this.btnGuardar.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(170, 184);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 38);
+            this.btnGuardar.TabIndex = 76;
+            this.btnGuardar.Text = "Agregar";
+            this.btnGuardar.TextColor = System.Drawing.Color.White;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // GrillaTripulante
             // 
@@ -141,54 +209,11 @@ namespace TrabajoPracticoPav
             this.puesto.Name = "puesto";
             this.puesto.ReadOnly = true;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Lime;
-            this.btnAdd.Location = new System.Drawing.Point(250, 195);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 28;
-            this.btnAdd.Text = "Agregar";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(364, 195);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminar.TabIndex = 26;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(291, 452);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 29;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(251, 28);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 27;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // TxtLegajo
             // 
             this.TxtLegajo.Location = new System.Drawing.Point(115, 31);
             this.TxtLegajo.Name = "TxtLegajo";
-            this.TxtLegajo.Size = new System.Drawing.Size(100, 20);
+            this.TxtLegajo.Size = new System.Drawing.Size(100, 22);
             this.TxtLegajo.TabIndex = 23;
             this.TxtLegajo.Text = "0";
             // 
@@ -197,30 +222,52 @@ namespace TrabajoPracticoPav
             this.genero.AutoSize = true;
             this.genero.Location = new System.Drawing.Point(19, 38);
             this.genero.Name = "genero";
-            this.genero.Size = new System.Drawing.Size(39, 13);
+            this.genero.Size = new System.Drawing.Size(50, 16);
             this.genero.TabIndex = 22;
             this.genero.Text = "Legajo";
             this.genero.Click += new System.EventHandler(this.genero_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pruebaButton1);
             this.groupBox2.Controls.Add(this.genero);
             this.groupBox2.Controls.Add(this.TxtLegajo);
-            this.groupBox2.Controls.Add(this.btnBuscar);
-            this.groupBox2.Location = new System.Drawing.Point(40, 68);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox2.Location = new System.Drawing.Point(75, 67);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(584, 103);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar por legajo";
             // 
+            // pruebaButton1
+            // 
+            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton1.BorderRadius = 20;
+            this.pruebaButton1.BorderSize = 0;
+            this.pruebaButton1.FlatAppearance.BorderSize = 0;
+            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton1.Location = new System.Drawing.Point(248, 21);
+            this.pruebaButton1.Name = "pruebaButton1";
+            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton1.TabIndex = 76;
+            this.pruebaButton1.Text = "Buscar";
+            this.pruebaButton1.TextColor = System.Drawing.Color.White;
+            this.pruebaButton1.UseVisualStyleBackColor = false;
+            this.pruebaButton1.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 24);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(215, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(300, 24);
+            this.label3.Size = new System.Drawing.Size(346, 25);
             this.label3.TabIndex = 26;
             this.label3.Text = "Consultar Informacion de tripulante";
             // 
@@ -228,11 +275,12 @@ namespace TrabajoPracticoPav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 501);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(756, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarTripulante";
             this.Text = "ConsultarTripulante";
             this.Load += new System.EventHandler(this.ConsultarTripulante_Load);
@@ -248,15 +296,10 @@ namespace TrabajoPracticoPav
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox TxtLegajo;
         private System.Windows.Forms.Label genero;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView GrillaTripulante;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn jefe;
@@ -265,5 +308,10 @@ namespace TrabajoPracticoPav
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn puesto;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton1;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton btnGuardar;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton2;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton3;
+        private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton4;
     }
 }
