@@ -210,7 +210,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         {
             var tiposDoc = cobroServicio.GetTipos();
             var tipoDefault = new TipoDoc();
-            tipoDefault.desc = "seleccionar ";
+            tipoDefault.desc = "Seleccionar ";
             tipoDefault.tipo = 0;
             tiposDoc.Add(tipoDefault);
 

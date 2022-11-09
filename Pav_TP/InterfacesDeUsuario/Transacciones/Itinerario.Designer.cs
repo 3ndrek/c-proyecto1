@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Itinerario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.dgvPuertos = new System.Windows.Forms.DataGridView();
             this.cmbPais = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.groupBox1.SuspendLayout();
@@ -66,6 +66,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione los puertos que desea incluir en el itinerario:";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardar.BorderRadius = 20;
+            this.btnGuardar.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(294, 47);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 38);
+            this.btnGuardar.TabIndex = 75;
+            this.btnGuardar.Text = "Agregar";
+            this.btnGuardar.TextColor = System.Drawing.Color.White;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // dgvPuertos
             // 
             this.dgvPuertos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -79,6 +98,7 @@
             // 
             // cmbPais
             // 
+            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPais.FormattingEnabled = true;
             this.cmbPais.Location = new System.Drawing.Point(109, 25);
             this.cmbPais.Margin = new System.Windows.Forms.Padding(2);
@@ -98,6 +118,7 @@
             // 
             // cmbPuerto
             // 
+            this.cmbPuerto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuerto.FormattingEnabled = true;
             this.cmbPuerto.Location = new System.Drawing.Point(109, 58);
             this.cmbPuerto.Margin = new System.Windows.Forms.Padding(2);
@@ -133,6 +154,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(109, 29);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
@@ -155,30 +177,11 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.label13.Location = new System.Drawing.Point(289, 14);
+            this.label13.Location = new System.Drawing.Point(302, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 25);
             this.label13.TabIndex = 74;
             this.label13.Text = "Registrar Itinario";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.btnGuardar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.btnGuardar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnGuardar.BorderRadius = 20;
-            this.btnGuardar.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(294, 47);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(87, 38);
-            this.btnGuardar.TabIndex = 75;
-            this.btnGuardar.Text = "Agregar";
-            this.btnGuardar.TextColor = System.Drawing.Color.White;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // pruebaButton1
             // 
@@ -191,7 +194,7 @@
             this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pruebaButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pruebaButton1.ForeColor = System.Drawing.Color.White;
-            this.pruebaButton1.Location = new System.Drawing.Point(263, 400);
+            this.pruebaButton1.Location = new System.Drawing.Point(307, 400);
             this.pruebaButton1.Name = "pruebaButton1";
             this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
             this.pruebaButton1.TabIndex = 76;
@@ -211,7 +214,7 @@
             this.pruebaButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pruebaButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pruebaButton2.ForeColor = System.Drawing.Color.White;
-            this.pruebaButton2.Location = new System.Drawing.Point(384, 400);
+            this.pruebaButton2.Location = new System.Drawing.Point(412, 400);
             this.pruebaButton2.Name = "pruebaButton2";
             this.pruebaButton2.Size = new System.Drawing.Size(87, 38);
             this.pruebaButton2.TabIndex = 77;

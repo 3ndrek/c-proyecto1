@@ -29,13 +29,12 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarReserva));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtNumero = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.DgvReserva = new System.Windows.Forms.DataGridView();
             this.cod_navio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num_cubierta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +45,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.num_doc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioReserva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nro_reservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton3 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.btnBuscar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvReserva)).BeginInit();
@@ -55,81 +56,62 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TxtNumero);
             this.groupBox1.Controls.Add(this.btnBuscar);
+            this.groupBox1.Controls.Add(this.TxtNumero);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(60, 105);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox1.Location = new System.Drawing.Point(75, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(876, 182);
+            this.groupBox1.Size = new System.Drawing.Size(584, 113);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar viaje por código o fecha";
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Location = new System.Drawing.Point(214, 54);
+            this.TxtNumero.Location = new System.Drawing.Point(179, 35);
+            this.TxtNumero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtNumero.Name = "TxtNumero";
-            this.TxtNumero.Size = new System.Drawing.Size(148, 26);
+            this.TxtNumero.Size = new System.Drawing.Size(100, 22);
             this.TxtNumero.TabIndex = 17;
             this.TxtNumero.Text = "0";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(726, 128);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
-            this.btnBuscar.TabIndex = 15;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 58);
+            this.label8.Location = new System.Drawing.Point(19, 38);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 20);
+            this.label8.Size = new System.Drawing.Size(130, 16);
             this.label8.TabIndex = 1;
             this.label8.Text = "Número de Reserva";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(268, 31);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.label3.Location = new System.Drawing.Point(225, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(478, 33);
+            this.label3.Size = new System.Drawing.Size(352, 25);
             this.label3.TabIndex = 29;
             this.label3.Text = "Consultar Información de la reserva";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnCancel);
+            this.groupBox2.Controls.Add(this.pruebaButton3);
+            this.groupBox2.Controls.Add(this.pruebaButton2);
+            this.groupBox2.Controls.Add(this.pruebaButton1);
             this.groupBox2.Controls.Add(this.DgvReserva);
-            this.groupBox2.Controls.Add(this.btnEliminar);
-            this.groupBox2.Controls.Add(this.btnAgregar);
-            this.groupBox2.Location = new System.Drawing.Point(60, 328);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.groupBox2.Location = new System.Drawing.Point(75, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(876, 358);
+            this.groupBox2.Size = new System.Drawing.Size(584, 233);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado de la busqueda";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(722, 300);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(112, 35);
-            this.btnCancel.TabIndex = 32;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // DgvReserva
             // 
@@ -147,14 +129,13 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.num_doc,
             this.PrecioReserva,
             this.nro_reservacion});
-            this.DgvReserva.Location = new System.Drawing.Point(38, 43);
-            this.DgvReserva.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvReserva.Location = new System.Drawing.Point(25, 28);
             this.DgvReserva.MultiSelect = false;
             this.DgvReserva.Name = "DgvReserva";
             this.DgvReserva.ReadOnly = true;
             this.DgvReserva.RowHeadersWidth = 62;
             this.DgvReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvReserva.Size = new System.Drawing.Size(801, 231);
+            this.DgvReserva.Size = new System.Drawing.Size(534, 150);
             this.DgvReserva.TabIndex = 31;
             // 
             // cod_navio
@@ -229,35 +210,92 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.nro_reservacion.ReadOnly = true;
             this.nro_reservacion.Width = 150;
             // 
-            // btnEliminar
+            // pruebaButton1
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(546, 300);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(112, 35);
-            this.btnEliminar.TabIndex = 23;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton1.BorderRadius = 20;
+            this.pruebaButton1.BorderSize = 0;
+            this.pruebaButton1.FlatAppearance.BorderSize = 0;
+            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton1.Location = new System.Drawing.Point(472, 184);
+            this.pruebaButton1.Name = "pruebaButton1";
+            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton1.TabIndex = 83;
+            this.pruebaButton1.Text = "Cancelar";
+            this.pruebaButton1.TextColor = System.Drawing.Color.White;
+            this.pruebaButton1.UseVisualStyleBackColor = false;
+            this.pruebaButton1.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAgregar
+            // pruebaButton2
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(375, 300);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(112, 35);
-            this.btnAgregar.TabIndex = 22;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.pruebaButton2.BackColor = System.Drawing.Color.Red;
+            this.pruebaButton2.BackgroundColor = System.Drawing.Color.Red;
+            this.pruebaButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton2.BorderRadius = 20;
+            this.pruebaButton2.BorderSize = 0;
+            this.pruebaButton2.FlatAppearance.BorderSize = 0;
+            this.pruebaButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton2.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton2.Location = new System.Drawing.Point(379, 184);
+            this.pruebaButton2.Name = "pruebaButton2";
+            this.pruebaButton2.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton2.TabIndex = 81;
+            this.pruebaButton2.Text = "Eliminar";
+            this.pruebaButton2.TextColor = System.Drawing.Color.White;
+            this.pruebaButton2.UseVisualStyleBackColor = false;
+            this.pruebaButton2.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // pruebaButton3
+            // 
+            this.pruebaButton3.BackColor = System.Drawing.Color.ForestGreen;
+            this.pruebaButton3.BackgroundColor = System.Drawing.Color.ForestGreen;
+            this.pruebaButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton3.BorderRadius = 20;
+            this.pruebaButton3.BorderSize = 0;
+            this.pruebaButton3.FlatAppearance.BorderSize = 0;
+            this.pruebaButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton3.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton3.Location = new System.Drawing.Point(286, 184);
+            this.pruebaButton3.Name = "pruebaButton3";
+            this.pruebaButton3.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton3.TabIndex = 80;
+            this.pruebaButton3.Text = "Agregar";
+            this.pruebaButton3.TextColor = System.Drawing.Color.White;
+            this.pruebaButton3.UseVisualStyleBackColor = false;
+            this.pruebaButton3.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBuscar.BorderRadius = 20;
+            this.btnBuscar.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(472, 60);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(87, 38);
+            this.btnBuscar.TabIndex = 77;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ConsultarReserva
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 771);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(756, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConsultarReserva";
             this.Text = "Consultar Reserva";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarReserva_FormClosing);
@@ -275,14 +313,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TxtNumero;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridView DgvReserva;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_navio;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_cubierta;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_camarote;
@@ -292,5 +326,9 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private System.Windows.Forms.DataGridViewTextBoxColumn num_doc;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioReserva;
         private System.Windows.Forms.DataGridViewTextBoxColumn nro_reservacion;
+        private PruebaButton pruebaButton3;
+        private PruebaButton pruebaButton2;
+        private PruebaButton pruebaButton1;
+        private PruebaButton btnBuscar;
     }
 }

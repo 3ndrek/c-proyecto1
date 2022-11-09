@@ -163,6 +163,7 @@ namespace TrabajoPracticoPav
 
          private void CerrarFormulario()
         {
+            
             this.Dispose();
         }
 

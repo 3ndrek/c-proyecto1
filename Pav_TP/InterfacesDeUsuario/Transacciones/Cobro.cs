@@ -155,7 +155,7 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             {
                 cargaPasajero();
 
-                DialogResult result = MessageBox.Show("se registró el cobro con exito", "Cobro", MessageBoxButtons.OK);
+                DialogResult result = MessageBox.Show("Se registró el cobro con exito", "Cobro", MessageBoxButtons.OK);
                
                 TxtNroDoc.Clear();
                 NombrePasajero.Hide();

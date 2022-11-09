@@ -54,18 +54,21 @@
             this.groupBox1.Controls.Add(this.BtnBuscar);
             this.groupBox1.Controls.Add(this.TxtBuscar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(329, 77);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(247, 63);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar datos de usuario";
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(211, 34);
+            this.BtnBuscar.Location = new System.Drawing.Point(158, 28);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.Size = new System.Drawing.Size(56, 19);
             this.BtnBuscar.TabIndex = 2;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -73,35 +76,39 @@
             // 
             // TxtBuscar
             // 
-            this.TxtBuscar.Location = new System.Drawing.Point(82, 34);
+            this.TxtBuscar.Location = new System.Drawing.Point(62, 28);
+            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(100, 22);
+            this.TxtBuscar.Size = new System.Drawing.Size(76, 20);
             this.TxtBuscar.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Location = new System.Drawing.Point(4, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
             // GrillaUsuario
             // 
             this.GrillaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GrillaUsuario.Location = new System.Drawing.Point(9, 21);
+            this.GrillaUsuario.Location = new System.Drawing.Point(7, 17);
+            this.GrillaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.GrillaUsuario.Name = "GrillaUsuario";
             this.GrillaUsuario.RowHeadersWidth = 51;
             this.GrillaUsuario.RowTemplate.Height = 24;
-            this.GrillaUsuario.Size = new System.Drawing.Size(725, 150);
+            this.GrillaUsuario.Size = new System.Drawing.Size(544, 122);
             this.GrillaUsuario.TabIndex = 2;
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(319, 136);
+            this.BtnModificar.Location = new System.Drawing.Point(239, 110);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(90, 23);
+            this.BtnModificar.Size = new System.Drawing.Size(68, 19);
             this.BtnModificar.TabIndex = 3;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = true;
@@ -117,89 +124,101 @@
             this.groupBox2.Controls.Add(this.BtnModificar);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(21, 293);
+            this.groupBox2.Location = new System.Drawing.Point(16, 238);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(558, 178);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(418, 145);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Que usuario desea modificar?";
             // 
             // TxtNombre
             // 
-            this.TxtNombre.Location = new System.Drawing.Point(103, 38);
+            this.TxtNombre.Location = new System.Drawing.Point(77, 31);
+            this.TxtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(100, 22);
+            this.TxtNombre.Size = new System.Drawing.Size(76, 20);
             this.TxtNombre.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 38);
+            this.label6.Location = new System.Drawing.Point(10, 31);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Nombre";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 78);
+            this.label5.Location = new System.Drawing.Point(10, 63);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 16);
+            this.label5.Size = new System.Drawing.Size(127, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Nuevos datos del usuario";
             // 
             // CmbPerfil
             // 
             this.CmbPerfil.FormattingEnabled = true;
-            this.CmbPerfil.Location = new System.Drawing.Point(119, 136);
+            this.CmbPerfil.Location = new System.Drawing.Point(89, 110);
+            this.CmbPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CmbPerfil.Name = "CmbPerfil";
-            this.CmbPerfil.Size = new System.Drawing.Size(121, 24);
+            this.CmbPerfil.Size = new System.Drawing.Size(92, 21);
             this.CmbPerfil.TabIndex = 6;
             // 
             // TxtContraseniaM
             // 
-            this.TxtContraseniaM.Location = new System.Drawing.Point(119, 107);
+            this.TxtContraseniaM.Location = new System.Drawing.Point(89, 87);
+            this.TxtContraseniaM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxtContraseniaM.Name = "TxtContraseniaM";
-            this.TxtContraseniaM.Size = new System.Drawing.Size(100, 22);
+            this.TxtContraseniaM.Size = new System.Drawing.Size(76, 20);
             this.TxtContraseniaM.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 129);
+            this.label4.Location = new System.Drawing.Point(10, 105);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 16);
+            this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Perfil";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 104);
+            this.label3.Location = new System.Drawing.Point(10, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 16);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.GrillaUsuario);
-            this.groupBox3.Location = new System.Drawing.Point(21, 105);
+            this.groupBox3.Location = new System.Drawing.Point(16, 85);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(746, 182);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(560, 148);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Aqui puede ver los datos de los usuarios disponibles";
             // 
             // ModificarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 490);
+            this.ClientSize = new System.Drawing.Size(495, 450);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModificarUsuario";
             this.Text = "ModificarUsuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarUsuario_FormClosing);

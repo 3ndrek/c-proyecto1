@@ -105,7 +105,7 @@
             this.BtnModificar.FlatAppearance.BorderSize = 0;
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.ForeColor = System.Drawing.Color.White;
-            this.BtnModificar.Location = new System.Drawing.Point(385, 184);
+            this.BtnModificar.Location = new System.Drawing.Point(388, 184);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(87, 38);
             this.BtnModificar.TabIndex = 78;
@@ -124,7 +124,7 @@
             this.BtnEliminar.FlatAppearance.BorderSize = 0;
             this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnEliminar.Location = new System.Drawing.Point(279, 184);
+            this.BtnEliminar.Location = new System.Drawing.Point(295, 184);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(87, 38);
             this.BtnEliminar.TabIndex = 77;
@@ -143,7 +143,7 @@
             this.BtnAgregar.FlatAppearance.BorderSize = 0;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.ForeColor = System.Drawing.Color.White;
-            this.BtnAgregar.Location = new System.Drawing.Point(170, 184);
+            this.BtnAgregar.Location = new System.Drawing.Point(202, 184);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(87, 38);
             this.BtnAgregar.TabIndex = 76;
