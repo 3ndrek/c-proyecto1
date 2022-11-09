@@ -30,7 +30,7 @@
         {
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btbRegistrar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btbRegistrar
             // 
@@ -56,14 +57,15 @@
             this.btbRegistrar.TabIndex = 12;
             this.btbRegistrar.Text = "Registrar";
             this.btbRegistrar.UseVisualStyleBackColor = true;
+            this.btbRegistrar.Click += new System.EventHandler(this.btbRegistrar_Click);
             // 
-            // txtNombre
+            // TxtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(270, 216);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(153, 26);
-            this.txtNombre.TabIndex = 11;
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombre.Location = new System.Drawing.Point(270, 216);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(153, 26);
+            this.TxtNombre.TabIndex = 11;
             // 
             // txtCodigo
             // 
@@ -110,14 +112,13 @@
             this.ClientSize = new System.Drawing.Size(527, 382);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btbRegistrar);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.label1);
             this.Name = "RegistrarPuerto";
             this.Text = "RegistrarPuerto";
-            this.Load += new System.EventHandler(this.RegistrarPuerto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,7 +128,7 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btbRegistrar;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;

@@ -40,10 +40,7 @@ namespace PAV1
             {
                 LblDesc.Text=cubierta.desc;
                 LblEncargado.Text = cubierta.leg_encargado.ToString();
-
             }
-
-            
         }
         
         private void button1_Click(object sender, EventArgs e)

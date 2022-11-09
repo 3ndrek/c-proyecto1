@@ -30,11 +30,6 @@ namespace Pav_TP.Servicios
             return camaroteRepositorio.GetTipoCamarotes();
         }
 
-        public List<Ubicacion> GetUbicaciones()
-        {
-            return camaroteRepositorio.GetUbicaciones();
-        }
-
         public List<Camarote> GetCamarotes(int b)
         {
             return camaroteRepositorio.GetCamarotes(b);
@@ -104,22 +99,6 @@ namespace Pav_TP.Servicios
             cmb.DisplayMember = "desc";
             cmb.ValueMember = "tipo";
             cmb.SelectedItem = tipoDefault;
-        }
-
-        public void CargarUbicaciones(ComboBox cmb)
-        {
-            var ubicaciones = GetUbicaciones();
-            var ubiDefault = new Ubicacion();
-            ubiDefault.num = 0;
-
-            var conector = new BindingSource();
-            conector.DataSource = ubicaciones;
-
-            cmb.DataSource = conector;
-            cmb.DisplayMember = "desc";
-            cmb.ValueMember = "num";
-            cmb.SelectedItem = ubiDefault;
-        }
-        
+        }        
     }
 }

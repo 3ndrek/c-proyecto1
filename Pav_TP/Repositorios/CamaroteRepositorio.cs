@@ -63,22 +63,6 @@ namespace Pav_TP.Repositorios
             return tiposDeCamarotes;
         }
 
-        public List<Ubicacion> GetUbicaciones()
-        {
-            var sql = $"select * from ubicaciones";
-            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
-            var ubicaciones = new List<Ubicacion>();
-
-            foreach(DataRow fila in tablaResultado.Rows)
-            {
-                var ubi = new Ubicacion();
-                ubi.num = Convert.ToInt32(fila["num"]);
-                ubi.desc = fila["descripcion"].ToString();
-                ubicaciones.Add(ubi);
-            }
-            return ubicaciones;
-        }
-
         public List<Camarote> GetCamarotes(int cod_navio)
         {
             var sql = $"select c.* from camarotes c left join navio n on c.cod_navio =  n.codigo_navio where n.codigo_navio = {cod_navio}";
@@ -156,7 +140,7 @@ namespace Pav_TP.Repositorios
 
         public void RegistrarCamarote(Camarote camarote)
         {
-            var sql = $"Insert into camarotes(cod_navio,num_cubierta, num_camarote,tipo,ubicacion,cant_camas) " +
+            var sql = $"Insert into camarotes(cod_navio,num_cubierta, num_camarote,tipo,cant_camas) " +
                 $"values ({camarote.cod_navio}, {camarote.num_cubierta}, {camarote.num_camarote}, {camarote.tipo},{camarote.cant_camas})";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
@@ -165,7 +149,7 @@ namespace Pav_TP.Repositorios
         {
             var sql = $"Update camarotes set tipo = {camarote.tipo}," +
                 $"cant_camas = {camarote.cant_camas} where cod_navio = {camarote.cod_navio} and " +
-                $"num_cubierta = {camarote.num_cubierta} and num_camarote = {camarote.num_cubierta}";
+                $"num_cubierta = {camarote.num_cubierta} and num_camarote = {camarote.num_camarote}";
             DBHelper.GetDBHelper().EjecutarSQL(sql);
         }
 

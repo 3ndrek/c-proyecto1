@@ -34,7 +34,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
         private void ConsultarCamarote_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'pAV_3K2_2022_12DataSet5.camarotes' table. You can move, or remove it, as needed.
-            this.camarotesTableAdapter.Fill(this.pAV_3K2_2022_12DataSet5.camarotes);
+            //this.camarotesTableAdapter.Fill(this.pAV_3K2_2022_12DataSet5.camarotes);
             camaroteServicios.CargarBarcos(CmbNavio);
 
         }
@@ -79,7 +79,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             SqlCommand consultar = new SqlCommand();
             consultar.CommandType = CommandType.Text;
             consultar.Connection = myconn;
-            consultar.CommandText = "select c.num_camarote, c.tipo, c.ubicacion, c.cant_camas from camarotes c";
+            consultar.CommandText = "select c.cod_navio, c.num_cubierta, c.num_camarote, c.tipo, c.cant_camas from camarotes c";
 
             if (!string.IsNullOrEmpty(CmbNavio.SelectedValue.ToString()))
                 consultar.CommandText += $" where c.cod_navio = {CmbNavio.SelectedValue}";

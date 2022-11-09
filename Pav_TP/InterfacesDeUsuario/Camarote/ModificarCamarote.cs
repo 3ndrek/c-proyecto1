@@ -81,10 +81,8 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 
         private void CmbUbicacion_Click(object sender, EventArgs e)
         {
-            camaroteServicio.CargarUbicaciones(CmbUbicacion);
+
         }
-
-
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {

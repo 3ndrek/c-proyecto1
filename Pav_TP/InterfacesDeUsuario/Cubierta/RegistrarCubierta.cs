@@ -45,7 +45,6 @@ namespace PAV1
             CmbCodNav.DisplayMember = "Nombre";
             CmbCodNav.ValueMember = "Codigo";
             CmbCodNav.SelectedItem = barcoDefault;
-
         }
 
         private void GetTripulantes()

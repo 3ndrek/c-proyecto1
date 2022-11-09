@@ -36,8 +36,6 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
         {
             camaroteServicio.CargarBarcos(CmbNavio);
             camaroteServicio.CargarTipoCamarote(CmbTipoCam);
-            camaroteServicio.CargarUbicaciones(CmbUbicacion);
-
         }
 
         private void CargarCubierta(int b)
@@ -84,7 +82,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             }
             catch (Exception)
             {
-                MessageBox.Show("Registro invalido... Verifique los campos", "Error 404", MessageBoxButtons.OK);
+                MessageBox.Show("Registro invalido... Verifique los campos", "Error", MessageBoxButtons.OK);
             }
 
         }
