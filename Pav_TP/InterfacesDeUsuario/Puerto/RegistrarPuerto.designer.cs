@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPuerto));
             this.label1 = new System.Windows.Forms.Label();
             this.Informaci = new System.Windows.Forms.GroupBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.TxtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             // 
             // Informaci
             // 
-            this.Informaci.Controls.Add(this.txtNombre);
+            this.Informaci.Controls.Add(this.TxtNombre);
             this.Informaci.Controls.Add(this.txtCodigo);
             this.Informaci.Controls.Add(this.lblNombre);
             this.Informaci.Controls.Add(this.lblCodigo);
@@ -66,13 +66,13 @@
             this.Informaci.TabStop = false;
             this.Informaci.Text = "Información de Puerto";
             // 
-            // txtNombre
+            // TxtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(190, 127);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(153, 26);
-            this.txtNombre.TabIndex = 15;
+            this.TxtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombre.Location = new System.Drawing.Point(190, 127);
+            this.TxtNombre.Name = "TxtNombre";
+            this.TxtNombre.Size = new System.Drawing.Size(153, 26);
+            this.TxtNombre.TabIndex = 15;
             // 
             // txtCodigo
             // 
@@ -119,6 +119,7 @@
             this.btnGuardar.Text = "Registrar";
             this.btnGuardar.TextColor = System.Drawing.Color.White;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -163,7 +164,7 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox Informaci;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCodigo;

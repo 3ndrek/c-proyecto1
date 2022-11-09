@@ -173,13 +173,12 @@ namespace Pav_TP.Repositorios
 
         public DataTable ConsultarCamarote(Camarote camarote)
         {
-            var sql = "";
-            if (camarote.num_camarote == 0)
-            {
-                sql = $"select c.cod_navio,c.num_cubierta,c.num_camarote, c.tipo,c.monto,c.cant_camas from camarotes c " +
+            var sql = $"select c.cod_navio,c.num_cubierta,c.num_camarote, c.tipo,c.monto,c.cant_camas from camarotes c " +
                     $"where c.cod_navio = {camarote.cod_navio} and c.num_cubierta = {camarote.num_cubierta}";
+            if (camarote.num_camarote != 0)
+            {
+                sql += $"and c.num_camarote = {camarote.num_camarote}";
             }
-            else sql += $"and c.num_camarote = {camarote.num_camarote}";
             DataTable datos = DBHelper.GetDBHelper().ConsultaSQL(sql);
             return datos;
 
