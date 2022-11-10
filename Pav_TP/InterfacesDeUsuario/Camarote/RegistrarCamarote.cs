@@ -44,6 +44,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             var cubiertasXBarco = camaroteServicio.GetCubiertas(b);
             var cubiertaDefault = new Cubierta();
             cubiertaDefault.cod_navio = 0;
+            cubiertaDefault.desc = "Seleccionar";
             cubiertaDefault.num_cubierta = 0;
             
             var conector = new BindingSource();
@@ -84,7 +85,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
 
                 camaroteServicio.ValidarCamarote(dato);
                 RegistrarCamarote1(dato);
-                MessageBox.Show("Camarote cargado con exito", "Registrar camarote", MessageBoxButtons.OK);
+                MessageBox.Show("Se registró camarote con éxito", "Registrar camarote", MessageBoxButtons.OK);
             }
             
             catch (Exception)

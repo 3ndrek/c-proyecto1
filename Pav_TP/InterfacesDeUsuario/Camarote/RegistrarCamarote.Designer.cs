@@ -44,8 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnBuscar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.btnBuscar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,7 @@
             // CmbTipoCam
             // 
             this.CmbTipoCam.DisplayMember = "tipo";
+            this.CmbTipoCam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipoCam.FormattingEnabled = true;
             this.CmbTipoCam.Location = new System.Drawing.Point(173, 192);
             this.CmbTipoCam.Margin = new System.Windows.Forms.Padding(2);
@@ -112,6 +113,7 @@
             // CmbCubierta
             // 
             this.CmbCubierta.DisplayMember = "num_cubierta";
+            this.CmbCubierta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCubierta.FormattingEnabled = true;
             this.CmbCubierta.Location = new System.Drawing.Point(173, 89);
             this.CmbCubierta.Margin = new System.Windows.Forms.Padding(2);
@@ -124,6 +126,7 @@
             // CmbNavio
             // 
             this.CmbNavio.DisplayMember = "codigo_navio";
+            this.CmbNavio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbNavio.FormattingEnabled = true;
             this.CmbNavio.Location = new System.Drawing.Point(173, 49);
             this.CmbNavio.Margin = new System.Windows.Forms.Padding(2);
@@ -213,25 +216,6 @@
             this.label13.TabIndex = 74;
             this.label13.Text = "Registrar Camarote";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.btnBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.btnBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBuscar.BorderRadius = 20;
-            this.btnBuscar.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(274, 400);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(87, 38);
-            this.btnBuscar.TabIndex = 76;
-            this.btnBuscar.Text = "Registrar";
-            this.btnBuscar.TextColor = System.Drawing.Color.White;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.BtnAceptar_Click);
-            // 
             // pruebaButton1
             // 
             this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
@@ -250,6 +234,25 @@
             this.pruebaButton1.TextColor = System.Drawing.Color.White;
             this.pruebaButton1.UseVisualStyleBackColor = false;
             this.pruebaButton1.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.btnBuscar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBuscar.BorderRadius = 20;
+            this.btnBuscar.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(274, 400);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(87, 38);
+            this.btnBuscar.TabIndex = 76;
+            this.btnBuscar.Text = "Registrar";
+            this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // RegistrarCamarote
             // 

@@ -31,20 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarViaje));
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pruebaButton4 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
+            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.DgvViaje = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.cod_navio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_viaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_itinerario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pais_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pais_destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pruebaButton1 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
-            this.pruebaButton4 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
-            this.pruebaButton2 = new Pav_TP.InterfacesDeUsuario.PruebaButton();
-            this.btnGuardar = new Pav_TP.InterfacesDeUsuario.PruebaButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvViaje)).BeginInit();
@@ -74,10 +72,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar viaje por código o fecha";
             // 
+            // pruebaButton1
+            // 
+            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
+            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.pruebaButton1.BorderRadius = 20;
+            this.pruebaButton1.BorderSize = 0;
+            this.pruebaButton1.FlatAppearance.BorderSize = 0;
+            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
+            this.pruebaButton1.Location = new System.Drawing.Point(278, 27);
+            this.pruebaButton1.Name = "pruebaButton1";
+            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
+            this.pruebaButton1.TabIndex = 77;
+            this.pruebaButton1.Text = "Buscar";
+            this.pruebaButton1.TextColor = System.Drawing.Color.White;
+            this.pruebaButton1.UseVisualStyleBackColor = false;
+            this.pruebaButton1.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // TxtCodigo
             // 
             this.TxtCodigo.Location = new System.Drawing.Point(153, 35);
-            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(100, 22);
             this.TxtCodigo.TabIndex = 17;
@@ -97,95 +114,6 @@
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado de la busqueda";
-            // 
-            // DgvViaje
-            // 
-            this.DgvViaje.AllowUserToAddRows = false;
-            this.DgvViaje.AllowUserToDeleteRows = false;
-            this.DgvViaje.AllowUserToResizeRows = false;
-            this.DgvViaje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvViaje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cod_navio,
-            this.fecha_viaje,
-            this.duracion,
-            this.cod_itinerario,
-            this.pais_origen,
-            this.pais_destino});
-            this.DgvViaje.Location = new System.Drawing.Point(25, 28);
-            this.DgvViaje.MultiSelect = false;
-            this.DgvViaje.Name = "DgvViaje";
-            this.DgvViaje.ReadOnly = true;
-            this.DgvViaje.RowHeadersWidth = 62;
-            this.DgvViaje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvViaje.Size = new System.Drawing.Size(534, 150);
-            this.DgvViaje.TabIndex = 31;
-            // 
-            // cod_navio
-            // 
-            this.cod_navio.HeaderText = "cod_navio";
-            this.cod_navio.MinimumWidth = 8;
-            this.cod_navio.Name = "cod_navio";
-            this.cod_navio.ReadOnly = true;
-            this.cod_navio.Width = 150;
-            // 
-            // fecha_viaje
-            // 
-            this.fecha_viaje.HeaderText = "fecha_viaje";
-            this.fecha_viaje.MinimumWidth = 8;
-            this.fecha_viaje.Name = "fecha_viaje";
-            this.fecha_viaje.ReadOnly = true;
-            this.fecha_viaje.Width = 150;
-            // 
-            // duracion
-            // 
-            this.duracion.HeaderText = "duracion";
-            this.duracion.MinimumWidth = 8;
-            this.duracion.Name = "duracion";
-            this.duracion.ReadOnly = true;
-            this.duracion.Width = 150;
-            // 
-            // cod_itinerario
-            // 
-            this.cod_itinerario.HeaderText = "cod_itinerario";
-            this.cod_itinerario.MinimumWidth = 8;
-            this.cod_itinerario.Name = "cod_itinerario";
-            this.cod_itinerario.ReadOnly = true;
-            this.cod_itinerario.Width = 150;
-            // 
-            // pais_origen
-            // 
-            this.pais_origen.HeaderText = "pais_origen";
-            this.pais_origen.MinimumWidth = 8;
-            this.pais_origen.Name = "pais_origen";
-            this.pais_origen.ReadOnly = true;
-            this.pais_origen.Width = 150;
-            // 
-            // pais_destino
-            // 
-            this.pais_destino.HeaderText = "pais_destino";
-            this.pais_destino.MinimumWidth = 8;
-            this.pais_destino.Name = "pais_destino";
-            this.pais_destino.ReadOnly = true;
-            this.pais_destino.Width = 150;
-            // 
-            // pruebaButton1
-            // 
-            this.pruebaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.pruebaButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.pruebaButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.pruebaButton1.BorderRadius = 20;
-            this.pruebaButton1.BorderSize = 0;
-            this.pruebaButton1.FlatAppearance.BorderSize = 0;
-            this.pruebaButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pruebaButton1.ForeColor = System.Drawing.Color.White;
-            this.pruebaButton1.Location = new System.Drawing.Point(278, 27);
-            this.pruebaButton1.Name = "pruebaButton1";
-            this.pruebaButton1.Size = new System.Drawing.Size(87, 38);
-            this.pruebaButton1.TabIndex = 77;
-            this.pruebaButton1.Text = "Buscar";
-            this.pruebaButton1.TextColor = System.Drawing.Color.White;
-            this.pruebaButton1.UseVisualStyleBackColor = false;
-            this.pruebaButton1.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // pruebaButton4
             // 
@@ -244,6 +172,26 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // DgvViaje
+            // 
+            this.DgvViaje.AllowUserToAddRows = false;
+            this.DgvViaje.AllowUserToDeleteRows = false;
+            this.DgvViaje.AllowUserToResizeRows = false;
+            this.DgvViaje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvViaje.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cod_navio,
+            this.fecha_viaje,
+            this.duracion,
+            this.cod_itinerario});
+            this.DgvViaje.Location = new System.Drawing.Point(25, 28);
+            this.DgvViaje.MultiSelect = false;
+            this.DgvViaje.Name = "DgvViaje";
+            this.DgvViaje.ReadOnly = true;
+            this.DgvViaje.RowHeadersWidth = 62;
+            this.DgvViaje.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvViaje.Size = new System.Drawing.Size(534, 150);
+            this.DgvViaje.TabIndex = 31;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -255,6 +203,38 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "Consultar Informacion de viajes";
             // 
+            // cod_navio
+            // 
+            this.cod_navio.HeaderText = "cod_navio";
+            this.cod_navio.MinimumWidth = 8;
+            this.cod_navio.Name = "cod_navio";
+            this.cod_navio.ReadOnly = true;
+            this.cod_navio.Width = 150;
+            // 
+            // fecha_viaje
+            // 
+            this.fecha_viaje.HeaderText = "fecha_viaje";
+            this.fecha_viaje.MinimumWidth = 8;
+            this.fecha_viaje.Name = "fecha_viaje";
+            this.fecha_viaje.ReadOnly = true;
+            this.fecha_viaje.Width = 150;
+            // 
+            // duracion
+            // 
+            this.duracion.HeaderText = "duracion";
+            this.duracion.MinimumWidth = 8;
+            this.duracion.Name = "duracion";
+            this.duracion.ReadOnly = true;
+            this.duracion.Width = 150;
+            // 
+            // cod_itinerario
+            // 
+            this.cod_itinerario.HeaderText = "cod_itinerario";
+            this.cod_itinerario.MinimumWidth = 8;
+            this.cod_itinerario.Name = "cod_itinerario";
+            this.cod_itinerario.ReadOnly = true;
+            this.cod_itinerario.Width = 150;
+            // 
             // ConsultarViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,7 +245,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultarViaje";
             this.Text = "Consultar Viaje";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConsultarViaje_FormClosing);
@@ -284,17 +264,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvViaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_navio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_viaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_itinerario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pais_origen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pais_destino;
         private System.Windows.Forms.TextBox TxtCodigo;
         private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton1;
         private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton4;
         private Pav_TP.InterfacesDeUsuario.PruebaButton pruebaButton2;
         private Pav_TP.InterfacesDeUsuario.PruebaButton btnGuardar;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_navio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_viaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_itinerario;
     }
 }

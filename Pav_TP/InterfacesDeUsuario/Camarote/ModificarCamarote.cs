@@ -92,12 +92,12 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
                 camarote.cant_camas = Convert.ToInt32(Txtcamas.Text);
 
                 camaroteServicio.ModificarCamarote(camarote);
-                MessageBox.Show("La modificacion se realizo con exito");
+                MessageBox.Show("La modificación se realizo con éxito");
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la modificacion");
+                MessageBox.Show("Error en la modificación");
             }
         }
 

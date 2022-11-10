@@ -85,6 +85,7 @@ namespace Pav_TP.Servicios
             var barcos = GetBarcos();
             var barcoDefault = new Entidades.Barco();
             barcoDefault.Codigo = 0;
+            barcoDefault.Nombre = "Seleccionar";
             barcos.Add(barcoDefault);
 
             var conector = new BindingSource();

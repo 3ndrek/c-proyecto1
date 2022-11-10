@@ -37,6 +37,7 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
             var cubiertasXBarco = camaroteServicios.GetCubiertas(b);
             var cubiertaDefault = new Cubierta();
             cubiertaDefault.cod_navio = 0;
+            cubiertaDefault.desc = "Seleccionar";
             cubiertaDefault.num_cubierta = 0;
 
             var conector = new BindingSource();

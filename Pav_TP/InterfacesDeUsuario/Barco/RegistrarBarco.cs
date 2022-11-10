@@ -113,7 +113,7 @@ namespace Pav_TP.InterfacesDeUsuario.Barco
         {
             if (barcosServicios.RegistrarBarco(barco))
             {
-                MessageBox.Show("El barco se registro exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El barco se registró exitosamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             MessageBox.Show("Ocurrio un problema para registrar el barco, intentelo nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);

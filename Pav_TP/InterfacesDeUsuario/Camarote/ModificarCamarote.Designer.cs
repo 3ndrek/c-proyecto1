@@ -82,6 +82,7 @@
             // 
             // CmbCubierta
             // 
+            this.CmbCubierta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCubierta.FormattingEnabled = true;
             this.CmbCubierta.Location = new System.Drawing.Point(177, 79);
             this.CmbCubierta.Margin = new System.Windows.Forms.Padding(2);
@@ -92,6 +93,7 @@
             // 
             // CmbNavio
             // 
+            this.CmbNavio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbNavio.FormattingEnabled = true;
             this.CmbNavio.Location = new System.Drawing.Point(177, 42);
             this.CmbNavio.Margin = new System.Windows.Forms.Padding(2);
@@ -196,6 +198,7 @@
             // 
             // CmbTipo
             // 
+            this.CmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTipo.FormattingEnabled = true;
             this.CmbTipo.Location = new System.Drawing.Point(177, 42);
             this.CmbTipo.Margin = new System.Windows.Forms.Padding(2);

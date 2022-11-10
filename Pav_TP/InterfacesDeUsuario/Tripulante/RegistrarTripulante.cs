@@ -163,13 +163,8 @@ namespace TrabajoPracticoPav
 
          private void CerrarFormulario()
         {
-            
+            frmPrincipal.Show();
             this.Dispose();
-        }
-
-        private void RegistrarTripulante_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CerrarFormulario();
         }
 
     }
