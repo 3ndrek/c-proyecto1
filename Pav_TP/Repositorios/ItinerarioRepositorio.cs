@@ -140,6 +140,7 @@ namespace Pav_TP.Repositorios
             itinerario.Categoria= Convert.ToInt32(fila["categoria"].ToString());
             itinerario.Cod_Itinerario= Convert.ToInt32(fila["cod_itinerario"].ToString());
             itinerario.Descripcion= fila["nombre"].ToString();
+            itinerario.NumEscala= 
 
             return itinerario;
         }
