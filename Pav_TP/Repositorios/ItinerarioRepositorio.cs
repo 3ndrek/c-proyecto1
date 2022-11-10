@@ -87,7 +87,7 @@ namespace Pav_TP.Repositorios
 
         public int GetCodPuerto(string n)
         {
-            var sql = $"select p.cod_puerto from puertos p where p.nombre = '{n}' and p.esDAdoBaja is null";
+            var sql = $"select p.cod_puerto from puertos p where p.nombre = '{n}' and p.esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             DataRow row = tablaResultado.Rows[0];
             int cod_p = (int)row[0];
@@ -101,6 +101,47 @@ namespace Pav_TP.Repositorios
             DataRow row = tablaResultado.Rows[0];
             int cod_i = (int)row[0];
             return cod_i;
+        }
+        public List<Itinerario> GetItinerarios()
+        {
+            var itinerarios = new List<Entidades.Itinerario>();
+            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre as NomItinerario, pxI.num_escala, pu.nombre, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
+
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var itinerario = Mapear(fila);
+                itinerarios.Add(itinerario);
+            }
+
+            return itinerarios;
+        }
+        public List<Itinerario> GetItinerarios(Entidades.Itinerario i)
+        {
+            var itinerarios = new List<Entidades.Itinerario>();
+            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre, pxI.num_escala, pu.nombre, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
+            if (i.Cod_Itinerario != 0)
+                sentenciaSql += $" WHERE i.cod_itinerario={i.Cod_Itinerario}";
+
+            var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+
+            foreach (DataRow fila in tablaResultado.Rows)
+            {
+                var itinerario = Mapear(fila);
+                itinerarios.Add(itinerario);
+            }
+
+            return itinerarios;
+        }
+        private Entidades.Itinerario Mapear(DataRow fila)
+        {
+            var itinerario = new Entidades.Itinerario();
+            itinerario.Categoria= Convert.ToInt32(fila["categoria"].ToString());
+            itinerario.Cod_Itinerario= Convert.ToInt32(fila["cod_itinerario"].ToString());
+            itinerario.Descripcion= fila["nombre"].ToString();
+
+            return itinerario;
         }
     }
 }

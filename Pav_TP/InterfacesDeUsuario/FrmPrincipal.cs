@@ -251,5 +251,12 @@ namespace seastar
             var frm = new ReporteReserva();
             frm.ShowDialog();
         }
+
+        private void consultarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ConsultarItinerario consultarItinerario = new ConsultarItinerario(this);
+            consultarItinerario.Show();
+            this.Hide();
+        }
     }
 }

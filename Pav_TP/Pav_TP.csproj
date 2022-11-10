@@ -122,6 +122,12 @@
     <Compile Include="InterfacesDeUsuario\Camarote\RegistrarCamarote.Designer.cs">
       <DependentUpon>RegistrarCamarote.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfacesDeUsuario\Transacciones\ConsultarItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfacesDeUsuario\Transacciones\ConsultarItinerario.Designer.cs">
+      <DependentUpon>ConsultarItinerario.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfacesDeUsuario\Transacciones\ConsultarReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Barco\RegistrarBarco.resx">
       <DependentUpon>RegistrarBarco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfacesDeUsuario\Transacciones\ConsultarItinerario.resx">
+      <DependentUpon>ConsultarItinerario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfacesDeUsuario\Transacciones\ConsultarReserva.resx">
       <DependentUpon>ConsultarReserva.cs</DependentUpon>

@@ -53,6 +53,7 @@ namespace TrabajoPracticoPav
             {
                 var fila = new string[]
                 {
+
                     pasajero.tipo_doc.ToString(),
                     pasajero.num_doc.ToString(),
                     pasajero.nombre.ToString(),

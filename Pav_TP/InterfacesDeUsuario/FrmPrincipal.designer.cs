@@ -304,6 +304,7 @@
             this.consultarToolStripMenuItem3.Name = "consultarToolStripMenuItem3";
             this.consultarToolStripMenuItem3.Size = new System.Drawing.Size(214, 26);
             this.consultarToolStripMenuItem3.Text = "Consultar Itinerario";
+            this.consultarToolStripMenuItem3.Click += new System.EventHandler(this.consultarToolStripMenuItem3_Click);
             // 
             // toolStripSeparator1
             // 

@@ -94,6 +94,13 @@ namespace Pav_TP.Servicios
             int n = dgv.RowCount;
             return n;
         }
-
+        public List<Itinerario> GetItinerarios()
+        {
+            return itinerarioRepositorio.GetItinerarios();
+        }
+        public List<Itinerario> GetItinerarios(Entidades.Itinerario i)
+        {
+            return itinerarioRepositorio.GetItinerarios(i);
+        }
     }
 }
