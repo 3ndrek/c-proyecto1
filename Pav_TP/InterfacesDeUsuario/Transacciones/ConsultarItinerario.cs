@@ -56,7 +56,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
                 {
                     iti.Cod_Itinerario.ToString(),
                     iti.Categoria.ToString(),
-                    iti.Descripcion.ToString()
+                    iti.Descripcion.ToString(),
+                    iti.NumEscala.ToString(),
+                    iti.NomPais.ToString(),
+                    iti.NomPuerto.ToString()
                 };
                 DvgItinerarios.Rows.Add(fila);
             }

@@ -38,9 +38,12 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new Pav_TP.InterfacesDeUsuario.PruebaButton();
             this.DvgItinerarios = new System.Windows.Forms.DataGridView();
-            this.cod_itinerario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num_escala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cod_Itinerario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num_escala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomPais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomPuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DvgItinerarios)).BeginInit();
@@ -51,9 +54,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.label3.Location = new System.Drawing.Point(240, 22);
+            this.label3.Location = new System.Drawing.Point(360, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(304, 24);
+            this.label3.Size = new System.Drawing.Size(477, 33);
             this.label3.TabIndex = 30;
             this.label3.Text = "Consultar Informacion de itinerarios";
             // 
@@ -64,9 +68,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.groupBox2.Controls.Add(this.dni);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.groupBox2.Location = new System.Drawing.Point(75, 67);
+            this.groupBox2.Location = new System.Drawing.Point(112, 103);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(600, 103);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(900, 158);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Buscar por numero de documento";
@@ -81,9 +87,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(316, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(474, 37);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(87, 38);
+            this.btnBuscar.Size = new System.Drawing.Size(130, 58);
             this.btnBuscar.TabIndex = 75;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextColor = System.Drawing.Color.White;
@@ -92,18 +99,20 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             // 
             // TxtCod
             // 
-            this.TxtCod.Location = new System.Drawing.Point(181, 32);
+            this.TxtCod.Location = new System.Drawing.Point(272, 49);
+            this.TxtCod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCod.Name = "TxtCod";
-            this.TxtCod.Size = new System.Drawing.Size(121, 22);
+            this.TxtCod.Size = new System.Drawing.Size(180, 30);
             this.TxtCod.TabIndex = 31;
             this.TxtCod.Text = "0";
             // 
             // dni
             // 
             this.dni.AutoSize = true;
-            this.dni.Location = new System.Drawing.Point(19, 38);
+            this.dni.Location = new System.Drawing.Point(28, 58);
+            this.dni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dni.Name = "dni";
-            this.dni.Size = new System.Drawing.Size(125, 16);
+            this.dni.Size = new System.Drawing.Size(180, 25);
             this.dni.TabIndex = 20;
             this.dni.Text = "Código de itinerario";
             // 
@@ -113,9 +122,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.groupBox1.Controls.Add(this.DvgItinerarios);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(41)))), ((int)(((byte)(86)))));
-            this.groupBox1.Location = new System.Drawing.Point(75, 196);
+            this.groupBox1.Location = new System.Drawing.Point(112, 302);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 233);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(900, 358);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "InformaciónPasajero";
@@ -130,9 +141,10 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(478, 184);
+            this.btnCancel.Location = new System.Drawing.Point(717, 283);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 38);
+            this.btnCancel.Size = new System.Drawing.Size(130, 58);
             this.btnCancel.TabIndex = 78;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.TextColor = System.Drawing.Color.White;
@@ -146,45 +158,81 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
             this.DvgItinerarios.AllowUserToResizeRows = false;
             this.DvgItinerarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgItinerarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cod_itinerario,
-            this.num_escala,
-            this.nombre});
-            this.DvgItinerarios.Location = new System.Drawing.Point(22, 28);
+            this.Cod_Itinerario,
+            this.Categoria,
+            this.Descripcion,
+            this.Num_escala,
+            this.NomPais,
+            this.NomPuerto});
+            this.DvgItinerarios.Location = new System.Drawing.Point(33, 43);
+            this.DvgItinerarios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DvgItinerarios.MultiSelect = false;
             this.DvgItinerarios.Name = "DvgItinerarios";
             this.DvgItinerarios.ReadOnly = true;
+            this.DvgItinerarios.RowHeadersWidth = 62;
             this.DvgItinerarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DvgItinerarios.Size = new System.Drawing.Size(534, 150);
+            this.DvgItinerarios.Size = new System.Drawing.Size(801, 231);
             this.DvgItinerarios.TabIndex = 30;
             // 
-            // cod_itinerario
+            // Cod_Itinerario
             // 
-            this.cod_itinerario.HeaderText = "Codigo Itinerario";
-            this.cod_itinerario.Name = "cod_itinerario";
-            this.cod_itinerario.ReadOnly = true;
+            this.Cod_Itinerario.HeaderText = "Cod_Itinerario";
+            this.Cod_Itinerario.MinimumWidth = 8;
+            this.Cod_Itinerario.Name = "Cod_Itinerario";
+            this.Cod_Itinerario.ReadOnly = true;
+            this.Cod_Itinerario.Width = 150;
             // 
-            // num_escala
+            // Categoria
             // 
-            this.num_escala.HeaderText = "Número de escala";
-            this.num_escala.Name = "num_escala";
-            this.num_escala.ReadOnly = true;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 8;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 150;
             // 
-            // nombre
+            // Descripcion
             // 
-            this.nombre.HeaderText = "Nombre Puerto";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 8;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 150;
+            // 
+            // Num_escala
+            // 
+            this.Num_escala.HeaderText = "Num_escala";
+            this.Num_escala.MinimumWidth = 8;
+            this.Num_escala.Name = "Num_escala";
+            this.Num_escala.ReadOnly = true;
+            this.Num_escala.Width = 150;
+            // 
+            // NomPais
+            // 
+            this.NomPais.HeaderText = "NomPais";
+            this.NomPais.MinimumWidth = 8;
+            this.NomPais.Name = "NomPais";
+            this.NomPais.ReadOnly = true;
+            this.NomPais.Width = 150;
+            // 
+            // NomPuerto
+            // 
+            this.NomPuerto.HeaderText = "NomPuerto";
+            this.NomPuerto.MinimumWidth = 8;
+            this.NomPuerto.Name = "NomPuerto";
+            this.NomPuerto.ReadOnly = true;
+            this.NomPuerto.Width = 150;
             // 
             // ConsultarItinerario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(210)))), ((int)(((byte)(222)))));
-            this.ClientSize = new System.Drawing.Size(756, 450);
+            this.ClientSize = new System.Drawing.Size(1134, 692);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ConsultarItinerario";
             this.Text = "ConsultarItinerario";
             this.Load += new System.EventHandler(this.ConsultarItinerario_Load);
@@ -207,8 +255,11 @@ namespace Pav_TP.InterfacesDeUsuario.Transacciones
         private System.Windows.Forms.GroupBox groupBox1;
         private PruebaButton btnCancel;
         private System.Windows.Forms.DataGridView DvgItinerarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_itinerario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn num_escala;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Itinerario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num_escala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomPais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomPuerto;
     }
 }

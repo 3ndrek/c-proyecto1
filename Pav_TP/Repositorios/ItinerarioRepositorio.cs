@@ -105,7 +105,7 @@ namespace Pav_TP.Repositorios
         public List<Itinerario> GetItinerarios()
         {
             var itinerarios = new List<Entidades.Itinerario>();
-            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre as NomItinerario, pxI.num_escala, pu.nombre, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
+            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre as Descripcion, pxI.num_escala, pu.nombre as NomPuerto, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
 
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
 
@@ -120,7 +120,7 @@ namespace Pav_TP.Repositorios
         public List<Itinerario> GetItinerarios(Entidades.Itinerario i)
         {
             var itinerarios = new List<Entidades.Itinerario>();
-            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre, pxI.num_escala, pu.nombre, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
+            var sentenciaSql = $"SELECT i.cod_itinerario, i.categoria, i.nombre as Descripcion, pxI.num_escala, pu.nombre as NomPuerto, p.nombre FROM itinerarios i JOIN puertoXitinerarios pxI On i.cod_itinerario = pxI.cod_itinerarios JOIN puertosXpaises pXp ON pxI.cod_puerto = pXp.cod_puerto JOIN paises p ON pXp.cod_pais = p.cod_pais JOIN puertos pu On pXp.cod_puerto = pu.cod_puerto";
             if (i.Cod_Itinerario != 0)
                 sentenciaSql += $" WHERE i.cod_itinerario={i.Cod_Itinerario}";
 
@@ -137,10 +137,12 @@ namespace Pav_TP.Repositorios
         private Entidades.Itinerario Mapear(DataRow fila)
         {
             var itinerario = new Entidades.Itinerario();
-            itinerario.Categoria= Convert.ToInt32(fila["categoria"].ToString());
-            itinerario.Cod_Itinerario= Convert.ToInt32(fila["cod_itinerario"].ToString());
-            itinerario.Descripcion= fila["nombre"].ToString();
-            itinerario.NumEscala= 
+            itinerario.Categoria = Convert.ToInt32(fila["categoria"].ToString());
+            itinerario.Cod_Itinerario = Convert.ToInt32(fila["cod_itinerario"].ToString());
+            itinerario.Descripcion = fila["Descripcion"].ToString();
+            itinerario.NumEscala = Convert.ToInt32(fila["num_escala"].ToString());
+            itinerario.NomPais = fila["nombre"].ToString();
+            itinerario.NomPuerto = fila["NomPuerto"].ToString();
 
             return itinerario;
         }
