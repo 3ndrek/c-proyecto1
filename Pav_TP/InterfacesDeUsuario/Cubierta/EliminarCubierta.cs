@@ -26,9 +26,6 @@ namespace PAV1
             InitializeComponent();
         }
 
-
-
-
         private void ConsultarCubiertas(Cubierta filtros)
         {
             var cubiertas = cubiertasSServicio.GetCubiertas(filtros);
@@ -37,12 +34,8 @@ namespace PAV1
             {
                 LblDesc.Text = cubierta.desc;
                 LblEncargado.Text = cubierta.leg_encargado.ToString();
-
             }
-
-
         }
-
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -51,14 +44,12 @@ namespace PAV1
             filtros.num_cubierta = (int)CmbNumCub.SelectedValue;
 
             ConsultarCubiertas(filtros);
-
         }
 
         private void CmbCodNav_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarCubiertas((Barco)CmbCodNav.SelectedItem);
         }
-
 
         private void CargarBarco()
         {
@@ -74,12 +65,10 @@ namespace PAV1
             CmbCodNav.DisplayMember = "Nombre";
             CmbCodNav.ValueMember = "Codigo";
             CmbCodNav.SelectedItem = barcoDefault;
-
         }
 
         private void CargarCubiertas(Barco barco)
         {
-
             var cubiertas = cubiertasSServicio.GetCubiertas(barco);
             var cubiertaDefault = new Cubierta();
 
@@ -93,16 +82,12 @@ namespace PAV1
             CmbNumCub.DisplayMember = "num_cubierta";
             CmbNumCub.ValueMember = "num_cubierta";
             CmbNumCub.SelectedItem = cubiertaDefault;
-
-
-
         }
 
         private void EliminarCubierta_Load(object sender, EventArgs e)
         {
             CargarBarco();
         }
-
 
         private void Eliminar(Cubierta filtros)
         {
@@ -117,18 +102,16 @@ namespace PAV1
 
             Eliminar(filtros);
 
-            MessageBox.Show("eliminar exitoso", "Eliminar", MessageBoxButtons.OK);
+            MessageBox.Show("Eliminado exitosamente", "Eliminar", MessageBoxButtons.OK);
 
             LblDesc.Hide();
             LblEncargado.Hide();
-
-
         }
+
         private void CerrarFormulario()
         {
             frmPrincipal.Show();
             this.Dispose();
-
         }
 
         private void EliminarCubierta_FormClosing(object sender, FormClosingEventArgs e)

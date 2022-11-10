@@ -30,7 +30,6 @@ namespace PAV1
 
             InitializeComponent();
         }
-
         
         private void ConsultarCubiertas(Cubierta filtros)
         {
@@ -40,10 +39,7 @@ namespace PAV1
             {
                 LblDesc.Text=cubierta.desc;
                 LblEncargado.Text = cubierta.leg_encargado.ToString();
-
             }
-
-            
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -52,14 +48,8 @@ namespace PAV1
         }
 
         private void ConsultarCubierta_Load(object sender, EventArgs e)
-
         {
             CargarBarco();
-
-           
-           
-            
-
         }
 
         private void CargarBarco()
@@ -76,8 +66,8 @@ namespace PAV1
             CmbCodNav.DisplayMember = "Nombre";  
             CmbCodNav.ValueMember = "Codigo";
             CmbCodNav.SelectedItem = barcoDefault;
-            
         }
+
         private void CargarCubiertas(Barco barco)
         {
 
@@ -94,11 +84,7 @@ namespace PAV1
             CmbNumCub.DisplayMember = "num_cubierta";
             CmbNumCub.ValueMember = "num_cubierta";
             CmbNumCub.SelectedItem = cubiertaDefault;
-
-
-
         }
-
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -107,10 +93,6 @@ namespace PAV1
             filtros.num_cubierta = (int)CmbNumCub.SelectedValue;
 
             ConsultarCubiertas(filtros);
-
-
-
-           
         }
 
         private void CmbCodNav_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,6 +112,11 @@ namespace PAV1
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            CerrarFormulario();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             CerrarFormulario();
         }

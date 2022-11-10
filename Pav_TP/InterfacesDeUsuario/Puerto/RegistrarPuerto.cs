@@ -1,4 +1,5 @@
 ﻿using Pav_TP.Servicios;
+using seastar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,11 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
     {
         private Entidades.Puerto puerto;
         private PuertosServicios puertosServicios;
+        private readonly FrmPrincipal frmPrincipal;
 
-        public RegistrarPuerto()
+        public RegistrarPuerto(FrmPrincipal frmPrincipal1)
         {
+            frmPrincipal = frmPrincipal1;
             puertosServicios = new PuertosServicios();
             InitializeComponent();
         }
@@ -29,7 +32,8 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmPrincipal.Show();
+            this.Dispose();
         }
         
 

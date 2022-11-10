@@ -45,7 +45,6 @@ namespace PAV1
             CmbCodNav.DisplayMember = "Nombre";
             CmbCodNav.ValueMember = "Codigo";
             CmbCodNav.SelectedItem = barcoDefault;
-
         }
 
         private void GetTripulantes()
@@ -76,14 +75,13 @@ namespace PAV1
             dato.desc = TxtDesc.Text;
             registrarCubierta(dato);
 
-            MessageBox.Show("cubierta cargada con Exito", "Registrar Cubierta", MessageBoxButtons.OK);
+            MessageBox.Show("Cubierta cargada con Exito", "Registrar Cubierta", MessageBoxButtons.OK);
         }
 
         private void CerrarFormulario()
         {
             frmPrincipal.Show();
             this.Dispose();
-
         }
 
         private void RegistrarCubierta_FormClosing(object sender, FormClosingEventArgs e)

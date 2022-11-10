@@ -35,8 +35,6 @@ namespace Pav_TP.InterfacesDeUsuario.Camarote
         {
             camaroteServicio.CargarBarcos(CmbNavio);
             camaroteServicio.CargarTipoCamarote(CmbTipoCam);
-            
-
         }
 
         private void CargarCubierta(int b)

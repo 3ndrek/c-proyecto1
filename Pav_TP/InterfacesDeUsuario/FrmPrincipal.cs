@@ -178,14 +178,14 @@ namespace seastar
 
         private void registrarPuerto_Click(object sender, EventArgs e)
         {
-            RegistrarPuerto registrarPuerto = new RegistrarPuerto();
+            RegistrarPuerto registrarPuerto = new RegistrarPuerto(this);
             registrarPuerto.Show();
             this.Hide();
         }
 
         private void consultarPuerto_Click(object sender, EventArgs e)
         {
-            ConsultarPuerto consultarPuerto = new ConsultarPuerto();
+            ConsultarPuerto consultarPuerto = new ConsultarPuerto(this);
             consultarPuerto.Show();
             this.Hide();
         }

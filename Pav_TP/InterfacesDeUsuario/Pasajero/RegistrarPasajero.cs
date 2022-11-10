@@ -62,7 +62,6 @@ namespace TrabajoPracticoPav
             comboBoxDni.SelectedItem = tipoSeleccionar;
         }
 
-
         public void CargarPais()
         {
             var pais = paisesServicios.GetPaises();
@@ -132,7 +131,6 @@ namespace TrabajoPracticoPav
             var fechaNac = Convert.ToDateTime(dateTimePicker2.Text.Trim());
             var genero = (Genero)comboBoxGenero.SelectedItem;
            
-
             var pasajeroIngresado = new Pasajero();
             pasajeroIngresado.tipo_doc = tipo.tipo;
             pasajeroIngresado.num_doc = num;
@@ -144,7 +142,6 @@ namespace TrabajoPracticoPav
             pasajeroIngresado.fechaNac = fechaNac;
             pasajeroIngresado.genero = genero.tipo;
             
-
             pasajerosServicios.ValidarPasajeros(pasajeroIngresado);
             pasajero = pasajeroIngresado;
             return true;
@@ -164,11 +161,11 @@ namespace TrabajoPracticoPav
         {
             CerrarFormulario();
         }
+
         private void CerrarFormulario()
         {
             frmPrincipal.Show();
             this.Dispose();
-
         }
 
         private void comboBoxPais_SelectedIndexChanged(object sender, EventArgs e)

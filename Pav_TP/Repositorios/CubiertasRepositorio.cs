@@ -12,7 +12,7 @@ namespace Pav_TP.Repositorios
     {
         public List<Barco> GetBarcos()
         {
-            var sql = $"SELECT * FROM navio AND esDadoBaja is null";
+            var sql = $"SELECT * FROM navio WHERE esDadoBaja is null";
             var tablaResultado = DBHelper.GetDBHelper().ConsultaSQL(sql);
             var barcos= new List<Barco>();
 

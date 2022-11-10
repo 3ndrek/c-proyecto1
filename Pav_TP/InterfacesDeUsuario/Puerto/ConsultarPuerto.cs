@@ -18,8 +18,9 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
     {
         private FrmPrincipal frmPrincipal;
         private PuertosServicios puertosServicios;
-        public ConsultarPuerto()
+        public ConsultarPuerto(FrmPrincipal frmPrincipal1)
         {
+            frmPrincipal = frmPrincipal1;
             puertosServicios = new PuertosServicios();
             InitializeComponent();
         }
@@ -79,7 +80,7 @@ namespace Pav_TP.InterfacesDeUsuario.Puerto
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RegistrarPuerto().Show();
+            frmPrincipal.Show();
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)

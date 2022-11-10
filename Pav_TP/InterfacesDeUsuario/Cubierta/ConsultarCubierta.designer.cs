@@ -149,7 +149,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(40, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 16);
+            this.label2.Size = new System.Drawing.Size(125, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Número de cubierta";
             // 
@@ -158,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(40, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.Size = new System.Drawing.Size(43, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Navio";
             // 
@@ -206,6 +206,7 @@
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.TextColor = System.Drawing.Color.White;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ConsultarCubierta
             // 
